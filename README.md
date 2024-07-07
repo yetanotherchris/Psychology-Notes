@@ -1,5 +1,5 @@
-# ClusterB
-Cluster B Personality disorder information
+# Cluster B
+Cluster B Personality disorder information.
 
 ### NPD & Narcissism
 
