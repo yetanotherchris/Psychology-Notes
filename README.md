@@ -3,6 +3,8 @@
 This site contains all my notes relating to a Psychology and a Psychology degree. Where possible I will reference the source of the notes, 
 which are typically books and Youtube videos, as Youtube is a goldmine for Pyschology education, both good and bad.
 
+{:toc}
+
 ### Chat GPT
 I've used ChatGPT 4o to create summaries in a lot of the definitions, after reading and watching videos on the topics. I then added or ammended to the definitions where needed. 
 
