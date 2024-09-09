@@ -1,11 +1,11 @@
 
 # YouTube videos
 
-Below are lists of YouTube videos I've watched that are Psychology related, around 140 hours from September 2023 -> September 2024.
+Below are lists of YouTube videos I've watched that are Psychology related, around 90 hours from September 2023 -> September 2024.
 
 ## Psychopathy
 
-- [Psychopathy: Nature, Nurture, or Both? - Latest Research Findings](https://www.youtube.com/watch?v=i7nOHHM5zis)
+- [Psychopathy: Nature, Nurture, or Both? - Latest Research Findings](https://www.youtube.com/watch?v=QEWYCqteEtE)
 - [Inside Cornell: Analyzing the words of psychopaths 2012](https://www.youtube.com/watch?v=6vF5PtdiiCo)
 - [What Makes a Psychopath? A Forensic Psychiatry Perspective](https://www.youtube.com/watch?v=lTQX-YigYmU)
 - [Why do some people become psychopaths? (30 Jan 2014 UCL)](https://www.youtube.com/watch?v=4yB_syUDbjs)
