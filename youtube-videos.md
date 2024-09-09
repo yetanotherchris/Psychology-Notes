@@ -1,7 +1,7 @@
 
 # YouTube videos
 
-Below are lists of YouTube videos I've watched that are Psychology related, around 90 hours from September 2023 -> September 2024.
+Below are lists of YouTube videos I've watched that are Psychology related, around 90 hours from April 2023 -> September 2024.
 
 ## Psychopathy
 
