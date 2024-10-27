@@ -1,0 +1,27 @@
+name: Backup
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      - name: S3 Backup
+        uses: peter-evans/s3-backup@v1
+        env:
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          MIRROR_TARGET: ${{ secrets.MIRROR_TARGET }}
+          STORAGE_SERVICE_URL: ${{ secrets.STORAGE_SERVICE_URL }}
+        with:
+          args: --overwrite
