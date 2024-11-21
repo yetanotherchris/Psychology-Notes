@@ -5,7 +5,7 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 
 ## Contents
 
-- [Noteable Narcissism authors in Psychology](narcissism-authors.md)
+- [Noteable Narcissism authors in Psychology (what causes Narcissism)](narcissism-authors.md)
 - [YouTube video list - Psychology videos by category on Youtube](youtube-videos.md)
 - [Authors - various authors that I've learned about via academic Youtube lectures, interviews.](authors.md)
 - [Chat GPT - some notes about how I've used Chat GPT for summaries.](chatgpt-notes.md)
