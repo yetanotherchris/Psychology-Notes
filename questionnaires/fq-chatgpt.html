@@ -42,10 +42,10 @@
         document.getElementById('start-button').addEventListener('click', function() {
             document.getElementById('start-button').style.display = 'none';
             
-            var jsPsych = initJsPsych({
+            var jsPsychLocal = initJsPsych({
                 display_element: 'jspsych-target',
                 on_finish: function() {
-                    jsPsych.data.displayData();
+                    jsPsychLocal.data.displayData();
                 }
             });
             
@@ -98,7 +98,7 @@
             var score_trial = {
                 type: jsPsychHtmlKeyboardResponse,
                 stimulus: function() {
-                    var responses = jsPsych.data.get().values().map(d => d.response);
+                    var responses = jsPsychLocal.data.get().values().map(d => d.response);
                     var scoring = { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5 };
                     var totalScore = responses.reduce((sum, resp) => sum + scoring[resp], 0);
                     return `<p style='font-size: 28px;'>Your Friendship Score: <strong>${totalScore}</strong></p>`;
@@ -107,7 +107,7 @@
                 trial_duration: 5000
             };
             
-            jsPsych.run([...trials, score_trial]);
+            jsPsychLocal.run([...trials, score_trial]);
         });
     </script>
 </body>
