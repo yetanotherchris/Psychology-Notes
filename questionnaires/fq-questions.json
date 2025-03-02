@@ -1,0 +1,128 @@
+[
+    {
+        "question": "I have",
+        "answers": [
+            "I have one or two particular best friends.",
+            "I have several friends who I would call best friends.",
+            "I have have nobody who I would call a best friend."
+        ],
+        "scores": [5,2,0]
+    },
+    {
+        "question": "The most important thing about a friendship is",
+        "answers": [
+            "Having somebody to confide in.",
+            "Having somebody to have fun with."
+        ],
+        "scores": [5,0]
+    },
+    {
+        "question": "If I had to pick, I would rather have a friend who",
+        "answers": [
+            "Who enjoys doing the same things as me than a friend who feels the same way about life as I do.",
+            "Who feels the same way about life as I do, than a friend who enjoys doing the same things as me."
+        ],
+        "scores": [0,5]
+    },
+    {
+        "question": "I like to",
+        "answers": [
+            "Be close to people.",
+            "Keep my distance from people."
+        ],
+        "scores": [5,0]
+    },
+    {
+        "question": "When I talk with friends on the phone, it is usually",
+        "answers": [
+            "When I talk with friends on the phone, it is usually to make arrangements rather than to chat.",
+            "When I talk with friends on the phone, it is usually to chat rather than to make arrangements."
+        ],
+        "scores": [0,5]
+    },
+    {
+        "question": "I tend to",
+        "answers": [
+            "I tend to think of an activity I want to do and then find somebody to do it with.",
+            "I tend to arrange to meet somebody and then think of something to do."
+        ],
+        "scores": [0,5]
+    },
+    {
+        "question": "I prefer meeting a friend for a",
+        "answers": [
+            "I prefer meeting a friend for a specific activity, e.g. going to the cinema, playing golf.",
+            "I prefer meeting a friend for a chat, e.g. at a pub, at a café."
+        ],
+        "scores": [0,5]
+    },
+    {
+        "question": "If I moved to a new area, I would put more effort into",
+        "answers": [
+            "Staying in touch with old friends than making new friends.",
+            "Making new friends than staying in touch with old friends."
+        ],
+        "scores": [0,0]
+    },
+    {
+        "question": "My friends value me more as someone",
+        "answers": [
+            "Who is a support to them than as someone to have fun with.",
+            "To have fun with than as someone who is a support to them."
+        ],
+        "scores": [5,0]
+    },
+    {
+        "question": "If a friend had a problem, I would be better at",
+        "answers": [
+            "Discussing their feelings about the problem than coming up with practical solutions.",
+            "Coming up with practical solutions than discussing their feelings about the problem."
+        ],
+        "scores": [5,0]
+    },
+    {
+        "question": "If a friend was having personal problems, I would",
+        "answers": [
+            "Wait for them to contact me as I wouldn't want to interfere.",
+            "Contact them to discuss the problem."
+        ],
+        "scores": [0,0]
+    },
+    {
+        "question": "When I have a personal problem, I feel that it is better to",
+        "answers": [
+            "Work it out on my own.",
+            "Share it with a friend.",
+            "Try and forget about it."
+        ],
+        "scores": [0,5,0]
+    },
+    {
+        "question": "If I have to say something critical to a friend",
+        "answers": [
+            "I think it's best to broach the subject gently.",
+            "I think it's best to just come right out and say it."
+        ],
+        "scores": [5,0]
+    },
+    {
+        "question": "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would",
+        "answers": [
+            "Do whatever it takes to repair the relationship.",
+            "Be willing to make the first move, as long as they reciprocated.",
+            "Be willing to sort out the problem, if they made the first move.",
+            "Not feel able to be their close friend anymore."
+        ],
+        "scores": [5,3,1,0]
+    },
+    {
+        "question": "My ideal working space would be",
+        "answers": [
+            "In an office on my own, without any visitors during the day.",
+            "In an office on my own, with an occasional visitor during the day.",
+            "In an office with one or two others.",
+            "In an open plan office."
+        ],
+        "scores": [0,1,3,5]
+    }
+]

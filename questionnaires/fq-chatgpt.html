@@ -5,38 +5,23 @@
     <meta name="viewport" content="width=device-widthinitial-scale=1.0">
     <title>Friendship Questionnaire (inspired by)</title>
     <script src="dist/jspsych.js"></script>
+    <script src="dist/plugin-survey-multi-choice.js"></script>
     <script src="dist/plugin-html-button-response.js"></script>
     <script src="dist/plugin-html-keyboard-response.js"></script>
     <link rel="stylesheet" href="dist/jspsych.css">
     <style>
-        body {
-            font-family: Arialsans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
+        #jspsych-target { 
+            border: 1px solid rgb(133, 133, 133); 
+            border-radius: 5px;
+            padding:20px;
         }
-        .jspsych-display-element {
-            font-size: 24px;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-        }
-        button {
-            font-size: 22px;
-            padding: 15px;
-            margin: 10px;
-            width: 90%;
-        }
-
-        button[data-choice="4"] { background-color: greenyellow;}
-        button[data-choice="0"] { background-color: yellow;}
+        body { padding: 50px;}
     </style>
 </head>
 <body>
-    <button id="start-button" style="font-size: 24px; padding: 15px; margin-top: 50px;">Start Questionnaire</button>
-    <div id="jspsych-target"></div>
+    <div id="jspsych-target" class="flex one">
+        <button id="start-button" style="font-size: 24px; padding: 15px; margin-top: 50px;">Start Questionnaire</button>
+    </div>
     
     <script>
         document.getElementById('start-button').addEventListener('click', function() {
@@ -44,61 +29,78 @@
             
             var jsPsychLocal = initJsPsych({
                 display_element: 'jspsych-target',
+                show_progress_bar: true,
                 on_finish: function() {
                     jsPsychLocal.data.displayData();
                 }
             });
             
-            var questions = [
-                "I have one or two particular best friends.",
-                "I have several friends who I would call best friends.",
-                "I don't have anybody who I would call a best friend.",
-                "The most important thing about a friendship is having somebody to confide in.",
-                "The most important thing about a friendship is having somebody to have fun with.",
-                "If I had to pick, I would rather have a friend who enjoys doing the same things as me than a friend who feels the same way about life as I do.",
-                "If I had to pick, I would rather have a friend who feels the same way about life as I do, than a friend who enjoys doing the same things as me.",
-                "I like to be close to people.",
-                "I like to keep my distance from people.",
-                "When I talk with friends on the phone, it is usually to make arrangements rather than to chat.",
-                "When I talk with friends on the phone, it is usually to chat rather than to make arrangements.",
-                "I tend to think of an activity I want to do and then find somebody to do it with.",
-                "I tend to arrange to meet somebody and then think of something to do.",
-                "I prefer meeting a friend for a specific activity, e.g. going to the cinema, playing golf.",
-                "I prefer meeting a friend for a chat, e.g. at a pub, at a café.",
-                "If I moved to a new area, I would put more effort into staying in touch with old friends than making new friends.",
-                "If I moved to a new area, I would put more effort into making new friends than staying in touch with old friends.",
-                "My friends value me more as someone who is a support to them than as someone to have fun with.",
-                "My friends value me more as someone to have fun with than as someone who is a support to them.",
-                "If a friend had a problem, I would be better at discussing their feelings about the problem than coming up with practical solutions.",
-                "If a friend had a problem, I would be better at coming up with practical solutions than discussing their feelings about the problem.",
-                "If a friend was having personal problems, I would wait for them to contact me as I wouldn't want to interfere.",
-                "If a friend was having personal problems, I would contact them to discuss the problem.",
-                "When I have a personal problem, I feel that it is better to work it out on my own.",
-                "When I have a personal problem, I feel that it is better to share it with a friend.",
-                "When I have a personal problem, I feel that it is better to try and forget about it.",
-                "If I have to say something critical to a friend, I think it's best to broach the subject gently.",
-                "If I have to say something critical to a friend, I think it's best to just come right out and say it.",
-                "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would do whatever it takes to repair the relationship.",
-                "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would be willing to make the first move, as long as they reciprocated.",
-                "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would be willing to sort out the problem, if they made the first move.",
-                "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would not feel able to be their close friend anymore."
-            ];
+            var trialMulti = {
+                type: jsPsychSurveyMultiChoice,
+                questions: [
+                    {
+                        prompt: "I have:", 
+                        name: "q1", 
+                        options: [
+                            "One or two particular best friends.", 
+                            "Several friends who I call best friends.",
+                            "Nobody I would call a best friend."
+                        ], 
+                        required: true
+                    }, 
+                    {
+                        prompt: "The most important thing about a friendship is:", 
+                        name: "q2", 
+                        options: [
+                            "Having somebody to confide in.",
+                            "Having somebody to have fun with."
+                        ], 
+                        required: false
+                    }
+                ],
+            };
             
             var scale = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
             
-            var trials = questions.map((q, index) => {
+            var trials = multiQuestions.map((q, index) => {
                 return {
                     type: jsPsychHtmlButtonResponse,
-                    stimulus: `<p style='font-size: 28px;'>${q}</p>` ,
+                    stimulus: `<p style='font-size: 28px;'>${index+1}.&nbsp;${q}</p>` ,
                     choices: scale,
                     data: { question: q },
                 }
             });
+
+            var trialMulti = {
+                type: jsPsychSurveyMultiChoice,
+                questions: [
+                    {
+                        prompt: "I have:", 
+                        name: "q1", 
+                        options: [
+                            "One or two particular best friends.", 
+                            "Several friends who I call best friends.",
+                            "Nobody I would call a best friend."
+                        ], 
+                        required: true
+                    }, 
+                    {
+                        prompt: "The most important thing about a friendship is:", 
+                        name: "q2", 
+                        options: [
+                            "Having somebody to confide in.",
+                            "Having somebody to have fun with."
+                        ], 
+                        required: false
+                    }
+                ],
+            };
             
             var score_trial = {
                 type: jsPsychHtmlKeyboardResponse,
                 stimulus: function() {
                     var responses = jsPsychLocal.data.get().values().map(d => d.response);
+                    console.log(jsPsychLocal.data.get());
                     var scoring = { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5 };
                     var totalScore = responses.reduce((sum, resp) => sum + scoring[resp], 0);
                     return `<p style='font-size: 28px;'>Your Friendship Score: <strong>${totalScore}</strong></p>`;
@@ -107,7 +109,7 @@
                 trial_duration: 5000
             };
             
-            jsPsychLocal.run([...trials, score_trial]);
+            jsPsychLocal.run([trialMulti,...trials, score_trial]);
         });
     </script>
 </body>
