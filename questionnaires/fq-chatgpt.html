@@ -24,20 +24,25 @@
     <div id="jspsych-target" class="flex one">
         <button id="start-button" style="font-size: 24px; padding: 15px; margin-top: 50px;">Start Questionnaire</button>
     </div>
+    <script type="module">
+        async function loadJson(filename)
+        {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
 
-    <script>
-        var questions = [];
-        /*fetch('./fq-questions-1.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return null; 
             }
-            return response.json();
-        })
-        .then(data => {
-            questions = data;
-        })
-        .catch(error => console.error('Error loading JSON:', error));*/
+        }
+
+        var questions1 = await loadJson('./fq-questions-1.json');
+        var questions2 = await loadJson('./fq-questions-2.json');
 
         document.getElementById('start-button').addEventListener('click', function() {
             document.getElementById('start-button').style.display = 'none';
@@ -50,40 +55,29 @@
                 }
             });
             
-            var trialMulti = {
-                type: jsPsychSurveyMultiChoice,
-                questions: [
+            var questions = [...questions1,...questions2];
+            var pagedTrials = [];
+            var tempQuestions = [];
+            questions.map((q, index) => {
+                tempQuestions.push(
+                {
+                    name: `${index}`,
+                    prompt: q.question,
+                    options: q.answers,
+                    required: true
+                });
+
+                if (index % 3 == 0 && index > 0)
+                {
+                    pagedTrials.push(
                     {
-                        prompt: "I have:", 
-                        name: "q1", 
-                        options: [
-                            "One or two particular best friends.", 
-                            "Several friends who I call best friends.",
-                            "Nobody I would call a best friend."
-                        ], 
-                        required: true
-                    }, 
-                    {
-                        prompt: "The most important thing about a friendship is:", 
-                        name: "q2", 
-                        options: [
-                            "Having somebody to confide in.",
-                            "Having somebody to have fun with."
-                        ], 
-                        required: false
-                    }
-                ],
-            };
-            
-            var scale = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
-            
-            var trials = questions.map((q, index) => {
-                return {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: `<p style='font-size: 28px;'>${index+1}.&nbsp;${q}</p>` ,
-                    choices: scale,
-                    data: { question: q },
+                        type: jsPsychSurveyMultiChoice,
+                        questions: tempQuestions
+                    });
+
+                    tempQuestions = [];
                 }
+                
             });
             
             var score_trial = {
@@ -102,7 +96,8 @@
             ///
             const surveyTrial = {
                 type: jsPsychSurvey,
-                survey_json: {
+                survey_json: 
+                {
                     showQuestionNumbers: false,
                     title: 'Likert scale examples',
                     pages: [
@@ -122,68 +117,12 @@
                                 "High durability",
                                 "Low price"
                             ]
-                        }, 
-                        {
-                            type: 'rating',
-                            name: 'like-cake',
-                            title: 'I like to eat cake.',
-                            description: 'Star rating scale with min/max descriptions',
-                            minRateDescription: 'Strongly Disagree',
-                            maxRateDescription: 'Strongly Agree',
-                            rateType: 'stars',
-                            rateCount: 10,
-                            rateMax: 10,
-                        },
-                        {
-                            type: 'rating',
-                            name: 'like-cooking',
-                            title: 'How much do you enjoy cooking?',
-                            description: 'Smiley rating scale without min/max descriptions',
-                            rateType: 'smileys',
-                            rateCount: 10,
-                            rateMax: 10,
-                            scaleColorMode: 'colored',
-                        }
-                        ]
-                    }, {
-                        elements: [
-                        {
-                            type: 'matrix',
-                            name: 'like-food-matrix',
-                            title: 'Matrix question for rating mutliple statements on the same scale.',
-                            alternateRows: true,
-                            isAllRowRequired: true,
-                            rows: [
-                            {text: 'I like to eat vegetables.', value: 'VeggiesTable'},
-                            {text: 'I like to eat fruit.', value: 'FruitTable'},
-                            {text: 'I like to eat cake.', value: 'CakeTable'},
-                            {text: 'I like to cook.', value: 'CookTable'},
-                            ],
-                            columns: [{
-                            "value": 5,
-                            "text": "Strongly agree"
-                            }, {
-                            "value": 4,
-                            "text": "Agree"
-                            }, {
-                            "value": 3,
-                            "text": "Neutral"
-                            }, {
-                            "value": 2,
-                            "text": "Disagree"
-                            }, {
-                            "value": 1,
-                            "text": "Strongly disagree"
-                            }]
-                        }
-                        ]
-                    }
-                    ]
+                        }]
+                    }]
                 }
                 };
-            ///
-            
-            jsPsychLocal.run([surveyTrial,trialMulti,...trials, score_trial]);
+
+            jsPsychLocal.run([...pagedTrials, score_trial]);
         });
     </script>
 </body>
