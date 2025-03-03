@@ -1,5 +1,6 @@
 [
     {
+        "index": 1,
         "question": "I have",
         "answers": [
             "I have one or two particular best friends.",
@@ -9,6 +10,7 @@
         "scores": [5,2,0]
     },
     {
+        "index": 2,
         "question": "The most important thing about a friendship is",
         "answers": [
             "Having somebody to confide in.",
@@ -17,6 +19,7 @@
         "scores": [5,0]
     },
     {
+        "index": 3,
         "question": "If I had to pick, I would rather have a friend who",
         "answers": [
             "Who enjoys doing the same things as me than a friend who feels the same way about life as I do.",
@@ -25,6 +28,7 @@
         "scores": [0,5]
     },
     {
+        "index": 4,
         "question": "I like to",
         "answers": [
             "Be close to people.",
@@ -33,6 +37,7 @@
         "scores": [5,0]
     },
     {
+        "index": 5,
         "question": "When I talk with friends on the phone, it is usually",
         "answers": [
             "When I talk with friends on the phone, it is usually to make arrangements rather than to chat.",
@@ -41,6 +46,7 @@
         "scores": [0,5]
     },
     {
+        "index": 6,
         "question": "I tend to",
         "answers": [
             "I tend to think of an activity I want to do and then find somebody to do it with.",
@@ -49,6 +55,7 @@
         "scores": [0,5]
     },
     {
+        "index": 7,
         "question": "I prefer meeting a friend for a",
         "answers": [
             "I prefer meeting a friend for a specific activity, e.g. going to the cinema, playing golf.",
@@ -57,6 +64,7 @@
         "scores": [0,5]
     },
     {
+        "index": 8,
         "question": "If I moved to a new area, I would put more effort into",
         "answers": [
             "Staying in touch with old friends than making new friends.",
@@ -65,6 +73,7 @@
         "scores": [0,0]
     },
     {
+        "index": 9,
         "question": "My friends value me more as someone",
         "answers": [
             "Who is a support to them than as someone to have fun with.",
@@ -73,6 +82,7 @@
         "scores": [5,0]
     },
     {
+        "index": 10,
         "question": "If a friend had a problem, I would be better at",
         "answers": [
             "Discussing their feelings about the problem than coming up with practical solutions.",
@@ -81,6 +91,7 @@
         "scores": [5,0]
     },
     {
+        "index": 11,
         "question": "If a friend was having personal problems, I would",
         "answers": [
             "Wait for them to contact me as I wouldn't want to interfere.",
@@ -89,6 +100,7 @@
         "scores": [0,0]
     },
     {
+        "index": 12,
         "question": "When I have a personal problem, I feel that it is better to",
         "answers": [
             "Work it out on my own.",
@@ -98,6 +110,7 @@
         "scores": [0,5,0]
     },
     {
+        "index": 13,
         "question": "If I have to say something critical to a friend",
         "answers": [
             "I think it's best to broach the subject gently.",
@@ -106,6 +119,7 @@
         "scores": [5,0]
     },
     {
+        "index": 14,
         "question": "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would",
         "answers": [
             "Do whatever it takes to repair the relationship.",
@@ -116,6 +130,7 @@
         "scores": [5,3,1,0]
     },
     {
+        "index": 15,
         "question": "My ideal working space would be",
         "answers": [
             "In an office on my own, without any visitors during the day.",

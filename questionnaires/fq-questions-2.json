@@ -1,86 +1,97 @@
 [
     {
+        "index": 16,
         "question": "How easy do you find discussing your feel￾ings with your friends?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [5,4,3,2,1,0]
     },
     {
+        "index": 17,
         "question": "How easy would you find it to discuss your feelings with a stranger?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [0,0,0,0,0]
     },
     {
+        "index": 18,
         "question": "In terms of personality, how similar to your friends do you tend to be?",
         "answers": ["Very similar", "Quite similar", "Not very similar", "Very similar"],
         "scores": [5,3,1,0]
 
     },
     {
+        "index": 19,
         "question": "In terms of interests, how similar to your friends do you tend to be?",
         "answers": ["Very similar", "Quite similar", "Not very similar", "Very similar"],
         "scores": [0,0,0,0]
     },
     {
+        "index": 20,
         "question": " How important is it to you what your friends think of you?",
         "answers": ["Of no importance", "Of little importance", "Fairly important", "Very important", "Of upmost important"],
         "scores": [0,1,2,4,5]
     },
     {
+        "index": 21,
         "question": "How important is it to you what strangers think of you?",
         "answers": ["Of no importance", "Of little importance", "Fairly important", "Very important", "Of upmost important"],
         "scores": [0,0,0,0,0]
     },
     {
+        "index": 22,
         "question": "How easy do you find it to admit to your friends when you're wrong?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [5,4,3,2,1,0]
     },
     {
+        "index": 23,
         "question": "How easy to do you find it to tell a friend about your weaknesses and failures?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [5,4,3,2,1,0]
     },
     {
+        "index": 24,
         "question": "How easy do you find it to tell a friend about your achievements and successes?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [0,0,0,0,0]
     },
     {
+        "index": 25,
         "question": "25. How interested are you in the everyday details (e.g., their relationships, family, what's currently going on in their lives) of your close friends' lives?",
         "answers": ["Completely disinterested", "Not very interested", "Quite interested", "Very interested"],
         "scores": [0,1,3,5]
     },
     {
+        "index": 26,
         "question": " How interested are you in the everyday details (e.g., their relationships, family, what's currently going on in their lives) of your casual friends' lives?",
         "answers": ["Completely disinterested", "Not very interested", "Quite interested", "Very interested"],
         "scores": [0,1,3,5]
     },
     {
+        "index": 27,
         "question": "When you are in a group, e.g., at work, school, church, parent group etc., how important is it for you to know the “gossip,” e.g., who dislikes who, who's had a relationship with who, secrets.",
         "answers": ["Of no importance", "Of little importance", "Fairly important", "Very important", "Of upmost important"],
         "scores": [0,1,2,4,5]
     },
     {
+        "index": 28,
         "question": "Do you work harder at your career than at maintaining your relationships with friends?",
         "answers": ["Yes", "No", "Equal"],
         "scores": [0,5,2]
     },
     {
+        "index": 29,
         "question": "29.How often do you make plans to meet with friends?",
-        "answersType": ["Once or twice a year", "Once every 2 or 3 months", "Once a month", "Once every couple of weeks", "Once or twice a week", "3 or 4 times a week", "More than any of the above"],
+        "answers": ["Once or twice a year", "Once every 2 or 3 months", "Once a month", "Once every couple of weeks", "Once or twice a week", "3 or 4 times a week", "More than any of the above"],
         "scores": [0,1,2,3,4,5,5]
     },
     {
-        "question": "How would you prefer to keep in touch with friends?",
-        "answers" : ["Face to face contact", "Email/text/letters", "Telephone/video calls"],
-        "scores": [5,0,2]
-    },
-    {
+        "index": 31,
         "question": "31. How easy to do you find it to make new friends?",
         "answers": ["Very easy","Quite easy", "Not very easy", "Quite difficult", "Very difficult"],
         "scores": [5,4,3,2,1,0]
     },
     {
+        "index": 32,
         "question": "What would be the minimum social contact you would need to get through a day?",
         "answers": [
             "None - I don't get lonely",
@@ -94,6 +105,7 @@
         "scores": [0,1,2,3,4,5]
     },
     {
+        "index": 33,
         "question": "What would be the minimum social contact you would need to get through a week?",
         "answers": [
             "None - I don't get lonely",
@@ -105,31 +117,5 @@
             "Two or three chats every day with a friend"
         ],
         "scores": [0,1,2,3,4,5]
-    },
-    {
-        "question": "When talking with friends, what proportion of your time do you spend talking about the following:",
-        "answers": [
-            "Politics and current affairs", 
-            "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc.",
-            "Personal matters (e.g. life choice matters, arguments, feelings)",
-            "Work",
-            "Family and friends",
-            "The weather",
-            "What you've been doing since the last time you spoke"
-        ],
-        "scores" : [0,0,5,0,5,0,0]
-    },
-    {
-        "question": "At social occasions, when you meet someone for the first time, how likely are you to talk about the following.",
-        "answers": [
-            "Politics and current affairs", 
-            "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc.",
-            "Personal matters (e.g. life choice matters, arguments, feelings)",
-            "Work",
-            "Family and friends",
-            "The weather",
-            "What you've been doing recently"
-        ],
-        "scores" : [0,0,0,0,0,0,0]
     }
 ]

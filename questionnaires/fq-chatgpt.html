@@ -43,6 +43,7 @@
 
         var questions1 = await loadJson('./fq-questions-1.json');
         var questions2 = await loadJson('./fq-questions-2.json');
+        var questionsRanked = await loadJson('./fq-questions-ranking.json');
 
         document.getElementById('start-button').addEventListener('click', function() {
             document.getElementById('start-button').style.display = 'none';
@@ -79,6 +80,29 @@
                 }
                 
             });
+
+            var rankedElements = questionsRanked.map((q, index) => {
+                return {
+                    type: "ranking",
+                    name: q.question,
+                    title: q.question,
+                    isRequired: true,
+                    choices: q.answers
+                };
+            });
+
+            const rankedTrial = {
+                type: jsPsychSurvey,
+                survey_json: 
+                {
+                    showQuestionNumbers: false,
+                    title: "Ranked questions",
+                    pages: [
+                    {
+                        elements: rankedElements
+                    }]
+                }
+            };
             
             var score_trial = {
                 type: jsPsychHtmlKeyboardResponse,
@@ -93,36 +117,7 @@
                 trial_duration: 5000
             };
 
-            ///
-            const surveyTrial = {
-                type: jsPsychSurvey,
-                survey_json: 
-                {
-                    showQuestionNumbers: false,
-                    title: 'Likert scale examples',
-                    pages: [
-                    {
-                        elements: [
-                        {
-                            type: "ranking",
-                            name: "smartphone-features",
-                            title: "Please rank the following smartphone features from the most important to the least",
-                            isRequired: true,
-                            choices: [
-                                "Long battery life",
-                                "Plenty of storage capacity",
-                                "High-quality camera",
-                                "Powerful CPU",
-                                "Large screen size",
-                                "High durability",
-                                "Low price"
-                            ]
-                        }]
-                    }]
-                }
-                };
-
-            jsPsychLocal.run([...pagedTrials, score_trial]);
+            jsPsychLocal.run([...pagedTrials, rankedTrial, score_trial]);
         });
     </script>
 </body>
