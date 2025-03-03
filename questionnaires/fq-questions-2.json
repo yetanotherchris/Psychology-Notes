@@ -72,7 +72,8 @@
     },
     {
         "question": "How would you prefer to keep in touch with friends?",
-        "answersType": ""
+        "answers" : ["Face to face contact", "Email/text/letters", "Telephone/video calls"],
+        "scores": [5,0,2]
     },
     {
         "question": "31. How easy to do you find it to make new friends?",
@@ -81,18 +82,54 @@
     },
     {
         "question": "What would be the minimum social contact you would need to get through a day?",
-        "answersType": ""
+        "answers": [
+            "None - I don't get lonely",
+            "Being around people, even if I wasn't talking to them",
+            "Casual chats, e.g., with a shop assistant or hairdresser",
+            "One chat with a friend",
+            "Two or three chats during the week with friends",
+            "One chat every day with a friend",
+            "Two or three chats every day with a friend"
+        ],
+        "scores": [0,1,2,3,4,5]
     },
     {
         "question": "What would be the minimum social contact you would need to get through a week?",
-        "answersType": ""
+        "answers": [
+            "None - I don't get lonely",
+            "Being around people, even if I wasn't talking to them",
+            "Casual chats, e.g., with a shop assistant or hairdresser",
+            "One chat with a friend",
+            "Two or three chats during the week with friends",
+            "One chat every day with a friend",
+            "Two or three chats every day with a friend"
+        ],
+        "scores": [0,1,2,3,4,5]
     },
     {
         "question": "When talking with friends, what proportion of your time do you spend talking about the following:",
-        "answersType": ""
+        "answers": [
+            "Politics and current affairs", 
+            "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc.",
+            "Personal matters (e.g. life choice matters, arguments, feelings)",
+            "Work",
+            "Family and friends",
+            "The weather",
+            "What you've been doing since the last time you spoke"
+        ],
+        "scores" : [0,0,5,0,5,0,0]
     },
     {
         "question": "At social occasions, when you meet someone for the first time, how likely are you to talk about the following.",
-        "answersType": ""
+        "answers": [
+            "Politics and current affairs", 
+            "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc.",
+            "Personal matters (e.g. life choice matters, arguments, feelings)",
+            "Work",
+            "Family and friends",
+            "The weather",
+            "What you've been doing recently"
+        ],
+        "scores" : [0,0,0,0,0,0,0]
     }
 ]
