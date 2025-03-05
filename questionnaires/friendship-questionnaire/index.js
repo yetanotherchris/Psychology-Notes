@@ -53,6 +53,12 @@ function addPagesForSurvey(survey) {
     return pages;
 }
 
+function resetSurvey()
+{
+    window.localStorage.removeItem(STORAGE_ITEM_KEY);
+    location.reload();
+}
+
 function surveyComplete (survey)
 {
     // Notes about the scoring:
@@ -96,14 +102,13 @@ function surveyComplete (survey)
         }
     }
 
-    survey.completedHtml = `<h3>Your score was ${totalScore}</h3>`;
-    survey.completedHtml += "<b>Mean scores:</b>";
-    survey.completedHtml += "<div>";
-    survey.completedHtml += "<li>Neuro-diverse: 59.8 (Female), 53.2 (Male)</li>";
-    survey.completedHtml += "<li>Neuro-typical: 90.0 (Female), 70.3 (Male)</li>";
-    survey.completedHtml += "<li>Standard deviation is 18/24 and 15.7/16.1 respectively.</li>";
-    survey.completedHtml += "</div>";
+    var finishedDiv = document.getElementById("finished");
+    finishedDiv.style.display = "inline-block";
+    document.getElementById("finished").remove();
 
+    var html = finishedDiv.outerHTML;
+    html = html.replace("{{totalScore}}", totalScore);
+    survey.completedHtml = html;
 }
 
 document.addEventListener("DOMContentLoaded", async function() {

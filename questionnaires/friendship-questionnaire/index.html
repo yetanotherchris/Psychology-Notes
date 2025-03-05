@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +11,62 @@
     <script src="surveyjs/survey-core/themes/index.min.js"></script>
     <script src="surveyjs/survey-js-ui/survey-js-ui.js"></script>
     <link rel="stylesheet" href="surveyjs/survey-core/defaultV2.min.css" />
+    <style>
+        #surveyElement {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        #finished {
+            display:none;
+            max-width: 500px;
+            width: 80%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+        #finished table {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom:10px;
+        }
+        #reset-survey { margin-left: 30%; }
+    </style>
 </head>
+
 <body>
-    <div id="surveyElement" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; min-height: 100%; height:100%"></div>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h3>Your score was {{totalScore}}</h3>
+        <b>Scoring (means)</b>
+        <table class="sd-table">
+            <tr>
+                <td style="font-weight:bold">ASD:</td>
+                <td>59.8 (Female)</td>
+                <td>53.2 (Male)</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">Control:</td>
+                <td>90.0 (Female)</td>
+                <td>70.3 (Male)</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">Standard deviation:</td>
+                <td>18 and 15.7</td>
+                <td>24 and 16.1</td>
+            </tr>
+        </table>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
     <script src="./index.js"></script>
 </body>
+
 </html>
