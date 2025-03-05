@@ -1,0 +1,58 @@
+import { Question } from "../question";
+export interface ITextArea {
+    question: any;
+    id: () => string;
+    propertyName: string;
+    className: () => string;
+    isDisabledAttr: () => boolean;
+    isReadOnlyAttr?: () => boolean;
+    placeholder: () => string;
+    autoGrow: () => boolean;
+    maxLength: () => number;
+    rows: () => number;
+    cols?: () => number;
+    getTextValue?: () => any;
+    onTextAreaChange?: (event: any) => void;
+    onTextAreaInput?: (event: any) => void;
+    onTextAreaKeyDown?: (event: any) => void;
+    onTextAreaBlur?: (event: any) => void;
+    onTextAreaFocus?: (event: any) => void;
+    ariaRequired: () => "true" | "false";
+    ariaLabel: () => string;
+    ariaInvalid?: () => "true" | "false";
+    ariaLabelledBy?: () => string;
+    ariaDescribedBy?: () => string;
+    ariaErrormessage?: () => string;
+}
+export declare class TextAreaModel {
+    private options;
+    private element;
+    updateElement(): void;
+    private onPropertyChangedCallback;
+    constructor(options: ITextArea);
+    setElement(element: HTMLTextAreaElement | null): void;
+    resetElement(): void;
+    getTextValue(): string;
+    onTextAreaChange(event: any): void;
+    onTextAreaInput(event: any): void;
+    onTextAreaKeyDown(event: any): void;
+    onTextAreaBlur(event: any): void;
+    onTextAreaFocus(event: any): void;
+    get question(): Question;
+    get id(): string;
+    get placeholder(): string;
+    get className(): string;
+    get maxLength(): number;
+    get autoGrow(): boolean;
+    get rows(): number;
+    get cols(): number | undefined;
+    get isDisabledAttr(): boolean;
+    get isReadOnlyAttr(): boolean | undefined;
+    get ariaRequired(): "true" | "false";
+    get ariaLabel(): string;
+    get ariaInvalid(): "true" | "false";
+    get ariaLabelledBy(): string;
+    get ariaDescribedBy(): string;
+    get ariaErrormessage(): string;
+    dispose(): void;
+}

@@ -5,11 +5,18 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 
 ## Contents
 
-- [Noteable Narcissism authors in Psychology (what causes Narcissism)](narcissism-authors.md)
-- [YouTube video list - Psychology videos by category on Youtube](youtube-videos.md)
+### General
 - [Authors - various authors that I've learned about via academic Youtube lectures, interviews.](authors.md)
 - [Chat GPT - some notes about how I've used Chat GPT for summaries.](chatgpt-notes.md)
-- [Cluster B - my initial interest with academic Psychology was from learning about Cluster B personality disorders, these are the original notes](Cluster-B/)
+- [YouTube video list - Psychology videos by category on Youtube](youtube-videos.md)
 - [Cognitive Biases](cognitive-biases.md)
 - [Logical fallacies](logical-fallacies.md)
+
+### Borderline personality organisation
+Borderline personality *organisation* includes both BPD/EUPD and NPD.
+
+- [Noteable Narcissism authors in Psychology (what causes Narcissism)](narcissism-authors.md)
+- [Cluster B - my initial interest with academic Psychology was from learning about Cluster B personality disorders, these are the original notes](Cluster-B/)
+
+### Questionnaires & Inventories
 - [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/fq-surveyjs.html)
