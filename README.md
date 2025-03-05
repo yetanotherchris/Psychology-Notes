@@ -19,4 +19,4 @@ Borderline personality *organisation* includes both BPD/EUPD and NPD.
 - [Cluster B - my initial interest with academic Psychology was from learning about Cluster B personality disorders, these are the original notes](Cluster-B/)
 
 ### Questionnaires & Inventories
-- [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/fq-surveyjs.html)
+- [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
