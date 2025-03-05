@@ -12,4 +12,4 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 - [Cluster B - my initial interest with academic Psychology was from learning about Cluster B personality disorders, these are the original notes](Cluster-B/)
 - [Cognitive Biases](cognitive-biases.md)
 - [Logical fallacies](logical-fallacies.md)
-- [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/fq-chatgpt.html)
+- [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/fq-surveyjs.html)

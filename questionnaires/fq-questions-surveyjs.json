@@ -1,0 +1,486 @@
+{
+    "elements":
+    [
+        {
+            "name": "1",
+            "type": "radiogroup",
+            "title": "I have",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "One or two particular best friends." },
+                { "value": 2, "text": "Several friends who I would call best friends." },
+                { "value": 0, "text": "Have nobody who I would call a best friend." }
+            ]
+        },
+        {
+            "name": "2",
+            "type": "radiogroup",
+            "title": "The most important thing about a friendship is",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "Having somebody to confide in." },
+                { "value": 0, "text": "Having somebody to have fun with."}
+            ]
+        },
+        {
+            "name": "3",
+            "type": "radiogroup",
+            "title": "If I had to pick, I would rather have a friend who",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 0, "text": "Enjoys doing the same things as me than a friend who feels the same way about life as I do." },
+                { "value": 5, "text": "Feels the same way about life as I do, than a friend who enjoys doing the same things as me."}
+            ]
+        },
+        {
+            "name": "4",
+            "type": "radiogroup",
+            "title": "I like to",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "Be close to people." },
+                { "value": 0, "text": "Keep my distance from people."}
+            ]
+        },
+        {
+            "name": "5",
+            "type": "radiogroup",
+            "title": "When I talk with friends on the phone, it is usually",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 0, "text": "To make arrangements rather than to chat." },
+                { "value": 5, "text": "To chat rather than to make arrangements."}
+            ]
+        },
+        {
+            "name": "6",
+            "type": "radiogroup",
+            "title": "I tend to",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": -1, "text": "Think of an activity I want to do and then find somebody to do it with." },
+                { "value": -2, "text": "Arrange to meet somebody and then think of something to do."}
+            ]
+        },
+        {
+            "name": "7",
+            "type": "radiogroup",
+            "title": "I prefer meeting a friend for a",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 0, "text": "Specific activity, e.g. going to the cinema, playing golf." },
+                { "value": 5, "text": "Chat, e.g. at a pub, at a café."}
+            ]
+        },
+        {
+            "name": "8",
+            "type": "radiogroup",
+            "title": "If I moved to a new area, I would put more effort into",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": -1, "text": "Staying in touch with old friends than making new friends." },
+                { "value": -2, "text": "Making new friends than staying in touch with old friends."}
+            ]
+        },
+        {
+            "name": "9",
+            "type": "radiogroup",
+            "title": "My friends value me more as someone",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "Who is a support to them than as someone to have fun with." },
+                { "value": 0, "text": "To have fun with than as someone who is a support to them."}
+            ]
+        },
+        {
+            "name": "10",
+            "type": "radiogroup",
+            "title": "If a friend had a problem, I would be better at",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "Discussing their feelings about the problem than coming up with practical solutions." },
+                { "value": 0, "text": "Coming up with practical solutions than discussing their feelings about the problem."}
+            ]
+        },
+        {
+            "name": "11",
+            "type": "radiogroup",
+            "title": "If a friend was having personal problems, I would",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": -1, "text": "Wait for them to contact me as I wouldn't want to interfere." },
+                { "value": -2, "text": "Contact them to discuss the problem."}
+            ]
+        },
+        {
+            "name": "12",
+            "type": "radiogroup",
+            "title": "When I have a personal problem, I feel that it is better to",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": -1, "text": "Work it out on my own." },
+                { "value": 5, "text": "Share it with a friend."},
+                { "value": -2, "text": "Try and forget about it." }
+            ]
+        },
+        {
+            "name": "13",
+            "type": "radiogroup",
+            "title": "If I have to say something critical to a friend",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "I think it's best to broach the subject gently." },
+                { "value": 0, "text": "I think it's best to just come right out and say it."}
+            ]
+        },
+        {
+            "name": "14",
+            "type": "radiogroup",
+            "title": "If I fell out with a good friend and I thought that I hadn't done anything wrong, I would",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 5, "text": "Do whatever it takes to repair the relationship." },
+                { "value": 3, "text": "Be willing to make the first move, as long as they reciprocated." },
+                { "value": 1, "text": "Be willing to sort out the problem, if they made the first move." },
+                { "value": 0, "text": "Not feel able to be their close friend anymore." }
+            ]
+        },
+        {
+            "name": "15",
+            "type": "radiogroup",
+            "title": "My ideal working space would be",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [
+                { "value": 0, "text": "In an office on my own, without any visitors during the day." },
+                { "value": 1, "text": "In an office on my own, with an occasional visitor during the day."},
+                { "value": 3, "text": "In an office with one or two others." },
+                { "value": 5, "text": "In an open plan office." }
+            ]
+        },
+        {
+            "name": "16",
+            "type": "radiogroup",
+            "title": "How easy do you find discussing your feel￾ings with your friends?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 5, "text": "Very easy" },
+                { "value": 4, "text": "Quite easy" },
+                { "value": 2, "text": "Not very easy" },
+                { "value": 1, "text": "Quite difficult" },
+                { "value": 0, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "17",
+            "type": "radiogroup",
+            "title": "How easy would you find it to discuss your feelings with a stranger?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": -1, "text": "Very easy" },
+                { "value": -2, "text": "Quite easy" },
+                { "value": -3, "text": "Not very easy" },
+                { "value": -4, "text": "Quite difficult" },
+                { "value": -5, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "18",
+            "type": "radiogroup",
+            "title": "In terms of personality, how similar to your friends do you tend to be?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 5, "text": "Very similar" },
+                { "value": 3, "text": "Quite similar" },
+                { "value": 1, "text": "Not very similar" },
+                { "value": 0, "text": "Very similar" }
+            ]
+        },
+        {
+            "name": "19",
+            "type": "radiogroup",
+            "title": "In terms of interests, how similar to your friends do you tend to be?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": -1, "text": "Very similar" },
+                { "value": -2, "text": "Quite similar" },
+                { "value": -3, "text": "Not very similar" },
+                { "value": -4, "text": "Very similar" }
+            ]
+        },
+        {
+            "name": "20",
+            "type": "radiogroup",
+            "title": " How important is it to you what your friends think of you?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Of no importance" },
+                { "value": 1, "text": "Of little importance" },
+                { "value": 2, "text": "Fairly important" },
+                { "value": 4, "text": "Very important" },
+                { "value": 5, "text": "Of upmost important" }
+            ]
+        },
+        {
+            "name": "21",
+            "type": "radiogroup",
+            "title": "How important is it to you what strangers think of you?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": -1, "text": "Of no importance" },
+                { "value": -2, "text": "Of little importance" },
+                { "value": -3, "text": "Fairly important" },
+                { "value": -4, "text": "Very important" },
+                { "value": -5, "text": "Of upmost important" }
+            ]
+        },
+        {
+            "name": "22",
+            "type": "radiogroup",
+            "title": "How easy do you find it to admit to your friends when you're wrong?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 5, "text": "Very easy" },
+                { "value": 4, "text": "Quite easy" },
+                { "value": 2, "text": "Not very easy" },
+                { "value": 1, "text": "Quite difficult" },
+                { "value": 0, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "23",
+            "type": "radiogroup",
+            "title": "How easy to do you find it to tell a friend about your weaknesses and failures?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 5, "text": "Very easy" },
+                { "value": 4, "text": "Quite easy" },
+                { "value": 2, "text": "Not very easy" },
+                { "value": 1, "text": "Quite difficult" },
+                { "value": 0, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "24",
+            "type": "radiogroup",
+            "title": "How easy do you find it to tell a friend about your achievements and successes?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": -1, "text": "Very easy" },
+                { "value": -2, "text": "Quite easy" },
+                { "value": -3, "text": "Not very easy" },
+                { "value": -4, "text": "Quite difficult" },
+                { "value": -5, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "25",
+            "type": "radiogroup",
+            "title": "How interested are you in the everyday details (e.g., their relationships, family, what's currently going on in their lives) of your close friends' lives?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Completely disinterested" },
+                { "value": 1, "text": "Not very interested" },
+                { "value": 3, "text": "Quite interested" },
+                { "value": 5, "text": "Very interested" }
+            ]
+        },
+        {
+            "name": "26",
+            "type": "radiogroup",
+            "title": "How interested are you in the everyday details (e.g., their relationships, family, what's currently going on in their lives) of your casual friends' lives?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Completely disinterested" },
+                { "value": 1, "text": "Not very interested" },
+                { "value": 3, "text": "Quite interested" },
+                { "value": 5, "text": "Very interested" }
+            ]
+        },
+        {
+            "name": "27",
+            "type": "radiogroup",
+            "title": "When you are in a group, e.g., at work, school, church, parent group etc., how important is it for you to know the “gossip,” e.g., who dislikes who, who's had a relationship with who, secrets.",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Of no importance" },
+                { "value": 1, "text": "Of little importance" },
+                { "value": 2, "text": "Fairly important" },
+                { "value": 4, "text": "Very important" },
+                { "value": 5, "text": "Of upmost important" }
+            ]
+        },
+        {
+            "name": "28",
+            "type": "radiogroup",
+            "title": "Do you work harder at your career than at maintaining your relationships with friends?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Yes" },
+                { "value": 5, "text": "No" },
+                { "value": 2, "text": "Equal" }
+            ]
+        },
+        {
+            "name": "29",
+            "type": "radiogroup",
+            "title": "How often do you make plans to meet with friends?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "Once or twice a year" },
+                { "value": 1, "text": "Once every 2 or 3 months" },
+                { "value": 2, "text": "Once a month" },
+                { "value": 3, "text": "Once every couple of weeks" },
+                { "value": 4, "text": "Once or twice a week" },
+                { "value": 5, "text": "3 or 4 times a week" },
+                { "value": 6, "text": "More than any of the above" }
+            ]
+        },
+        {
+            "name": "30",
+            "type": "ranking",
+            "title": "How would you prefer to keep in touch with friends?",
+            "isRequired": true,
+            "choices" : [
+                { "value": 5, "text": "Face to face contact" },
+                { "value": 0, "text": "Email/text/letters" },
+                { "value": 2, "text": "Telephone/video calls" }
+            ]
+        },
+        {
+            "name": "31",
+            "type": "radiogroup",
+            "title": "How easy to do you find it to make new friends?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 5, "text": "Very easy" },
+                { "value": 4, "text": "Quite easy" },
+                { "value": 2, "text": "Not very easy" },
+                { "value": 1, "text": "Quite difficult" },
+                { "value": 0, "text": "Very difficult" }
+            ]
+        },
+        {
+            "name": "32",
+            "type": "radiogroup",
+            "title": "What would be the minimum social contact you would need to get through a day?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "No contact - I don't get lonely" },
+                { "value": 1, "text": "Being around people, even if I wasn't talking to them" },
+                { "value": 2, "text": "Casual chats, e.g., with a shop assistant or hairdresser" },
+                { "value": 3, "text": "A chat with a friend" },
+                { "value": 4, "text": "Two or three chats during the day with friends" },
+                { "value": 5, "text": "More than any of the above" }
+            ]
+        },
+        {
+            "name": "33",
+            "type": "radiogroup",
+            "title": "What would be the minimum social contact you would need to get through a week?",
+            "isRequired": true,
+            "showNoneItem": false,
+            "showOtherItem": false,
+            "choices": [ 
+                { "value": 0, "text": "None - I don't get lonely" },
+                { "value": 1, "text": "Being around people, even if I wasn't talking to them" },
+                { "value": 2, "text": "Casual chats, e.g., with a shop assistant or hairdresser" },
+                { "value": 3, "text": "One chat with a friend" },
+                { "value": 4, "text": "One chat every day with a friend" },
+                { "value": 5, "text": "Two or three chats every day with a friend" },
+                { "value": 6, "text": "More than any of the above" }
+            ]
+        },
+        {
+            "name": "34",
+            "type": "ranking",
+            "title": "When talking with friends, what proportion of your time do you spend talking about the following:",
+            "isRequired": true,
+            "choices": [
+                { "value": -1, "text": "Politics and current affairs" },
+                { "value": -2, "text": "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc." },
+                { "value": 5, "text": "Personal matters (e.g. life choice matters, arguments, feelings)" },
+                { "value": -3, "text": "Work" },
+                { "value": 6, "text": "Family and friends" },
+                { "value": -4, "text": "The weather" },
+                { "value": -5, "text": "What you've been doing since the last time you spoke" }
+            ]
+        },
+        {
+            "name": "35",
+            "type": "ranking",
+            "title": "At social occasions, when you meet someone for the first time, how likely are you to talk about the following.",
+            "isRequired": true,
+            "choices": [
+                { "value": -1, "text": "Politics and current affairs" },
+                { "value": -2, "text": "Hobbies and interests (e.g. sport, TV, music, cinema, fashion, holidays, gardening, DIY etc." },
+                { "value": -3, "text": "Personal matters (e.g. life choice matters, arguments, feelings)" },
+                { "value": -4, "text": "Work" },
+                { "value": -5, "text": "Family and friends" },
+                { "value": -6, "text": "The weather" },
+                { "value": -7, "text": "What you've been doing recently" }
+            ]
+        }
+    ]
+}
