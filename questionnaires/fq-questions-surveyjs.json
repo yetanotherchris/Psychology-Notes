@@ -190,7 +190,7 @@
         {
             "name": "16",
             "type": "radiogroup",
-            "title": "How easy do you find discussing your feel￾ings with your friends?",
+            "title": "How easy do you find discussing your feelings with your friends?",
             "isRequired": true,
             "showNoneItem": false,
             "showOtherItem": false,
@@ -228,7 +228,7 @@
                 { "value": 5, "text": "Very similar" },
                 { "value": 3, "text": "Quite similar" },
                 { "value": 1, "text": "Not very similar" },
-                { "value": 0, "text": "Very similar" }
+                { "value": 0, "text": "Very dissimilar" }
             ]
         },
         {
@@ -242,7 +242,7 @@
                 { "value": -1, "text": "Very similar" },
                 { "value": -2, "text": "Quite similar" },
                 { "value": -3, "text": "Not very similar" },
-                { "value": -4, "text": "Very similar" }
+                { "value": -4, "text": "Very dissimilar" }
             ]
         },
         {
