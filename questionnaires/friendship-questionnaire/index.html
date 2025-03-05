@@ -37,7 +37,14 @@
             border-radius: 10px;
             margin-bottom:10px;
         }
-        #reset-survey { margin-left: 30%; }
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+        #finished #reset-survey { margin-left: 30%; }
     </style>
 </head>
 
@@ -47,15 +54,22 @@
         <h3>Your score was {{totalScore}}</h3>
         <b>Scoring (means)</b>
         <table class="sd-table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td style="font-weight:bold">Female</td>
+                    <td style="font-weight:bold">Male</td>
+                </tr>
+            </thead>
             <tr>
                 <td style="font-weight:bold">ASD:</td>
-                <td>59.8 (Female)</td>
-                <td>53.2 (Male)</td>
+                <td>59.8</td>
+                <td>53.2</td>
             </tr>
             <tr>
                 <td style="font-weight:bold">Control:</td>
-                <td>90.0 (Female)</td>
-                <td>70.3 (Male)</td>
+                <td>90.0</td>
+                <td>70.3</td>
             </tr>
             <tr>
                 <td style="font-weight:bold">Standard deviation:</td>
@@ -63,6 +77,10 @@
                 <td>24 and 16.1</td>
             </tr>
         </table>
+        <cite>
+            Baron-Cohen, S. and Wheelwright, S. (2003) 'The friendship questionnaire: An investigation of adults with Asperger syndrome or high-functioning autism, and normal sex differences', 
+            Journal of autism and developmental disorders, 33(5), pp. 509-517. Available at: <a href="https://doi.org/10.1023/A:1025879411971" target="_blank">https://doi.org/10.1023/A:1025879411971</a>
+        </cite>
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 
