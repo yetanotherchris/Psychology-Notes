@@ -79,6 +79,7 @@ function surveyComplete (survey)
         if (data[key] === undefined) data[key] = 0;
     }
 
+    // TODO: add reverse scoring to answers.json
     for (const valueKey in survey.valuesHash) 
     {
         for (const scoreKey in scores)
@@ -102,11 +103,11 @@ function surveyComplete (survey)
     html = html.replace("{{a-score}}", scores["A"]); 
     html = html.replace("{{n-score}}", scores["N"]); 
 
-    html = html.replace("{{o-style}}", "background-color:rgb(20, 149, 20, 0."+scores["O"] *2+");"); 
-    html = html.replace("{{c-style}}", "background-color:rgb(20, 149, 20, 0."+scores["C"] *2+");"); 
-    html = html.replace("{{e-style}}", "background-color:rgb(20, 149, 20, 0."+scores["E"] *2+");"); 
-    html = html.replace("{{a-style}}", "background-color:rgb(20, 149, 20, 0."+scores["A"] *2+");"); 
-    html = html.replace("{{n-style}}", "background-color:rgb(20, 149, 20, 0."+scores["N"] *2+");"); 
+    html = html.replace("{{o-style}}", "background-color:rgb(20 149 20 / "+scores["O"] *2+"%);"); 
+    html = html.replace("{{c-style}}", "background-color:rgb(20 149 20 / "+scores["C"] *2+"%);"); 
+    html = html.replace("{{e-style}}", "background-color:rgb(20 149 20 / "+scores["E"] *2+"%);"); 
+    html = html.replace("{{a-style}}", "background-color:rgb(20 149 20 / "+scores["A"] *2+"%);"); 
+    html = html.replace("{{n-style}}", "background-color:rgb(20 149 20 / "+scores["N"] *2+"%);"); 
 
     survey.completedHtml = html;
 }
