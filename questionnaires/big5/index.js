@@ -79,7 +79,6 @@ function surveyComplete (survey)
         if (data[key] === undefined) data[key] = 0;
     }
 
-    // TODO: add reverse scoring to answers.json
     for (const valueKey in survey.valuesHash) 
     {
         for (const scoreKey in scores)
