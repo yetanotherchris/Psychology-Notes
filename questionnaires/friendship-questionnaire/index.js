@@ -1,4 +1,4 @@
-/// <reference path="surveyjs/survey-core/survey.core.d.ts" />
+/// <reference path="../surveyjs/survey-core/survey.core.d.ts" />
 
 async function loadJson(filename)
 {

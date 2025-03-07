@@ -32,18 +32,25 @@
             background-color: white;
             text-align: center;
         }
+        #finished h3,p  { margin:0px; padding:0px; }
         #finished table {
             border: 1px solid #ccc;
             border-radius: 10px;
             margin-bottom:10px;
+            padding:10px;
         }
-        #finished cite {
+        #finished table td { border-bottom: 1px solid #b0afaf; }
+        #finished table td:nth-child(1) {
+            font-weight: bold;
+            width: 80%;
             text-align: left;
-            display: block;
-            padding: 20px;
-            line-height: normal;
-            font-size: 8pt;
         }
+        #finished table td:nth-child(2) {
+            font-weight: bold;
+            width: 20%;
+            text-align: center;
+        }
+
         #finished #reset-survey { margin-left: 30%; }
     </style>
 </head>
@@ -51,36 +58,30 @@
 <body>
     <div id="surveyElement"></div>
     <div id="finished">
-        <h3>Your score was {{totalScore}}</h3>
-        <b>Scoring (means)</b>
+        <h3>Your scores</h3>
+        <p>Scores are 0-50.</p>
         <table class="sd-table">
-            <thead>
-                <tr>
-                    <td></td>
-                    <td style="font-weight:bold">Female</td>
-                    <td style="font-weight:bold">Male</td>
-                </tr>
-            </thead>
             <tr>
-                <td style="font-weight:bold">ASD:</td>
-                <td>59.8</td>
-                <td>53.2</td>
+                <td>Openness</td>
+                <td style="{{o-style}}">{{o-score}}</td>
             </tr>
             <tr>
-                <td style="font-weight:bold">Control:</td>
-                <td>90.0</td>
-                <td>70.3</td>
+                <td>Conscientiousness</td>
+                <td style="{{c-style}}">{{c-score}}</td>
             </tr>
             <tr>
-                <td style="font-weight:bold">Standard deviation:</td>
-                <td>18 and 15.7</td>
-                <td>24 and 16.1</td>
+                <td>Extraversion</td>
+                <td style="{{e-style}}">{{e-score}}</td>
+            </tr>
+            <tr>
+                <td>Agreeableness</td>
+                <td style="{{a-style}}">{{a-score}}</td>
+            </tr>
+            <tr>
+                <td>Neuroticism</td>
+                <td style="{{n-style}}">{{n-score}}</td>
             </tr>
         </table>
-        <cite>
-            Baron-Cohen, S. and Wheelwright, S. (2003) 'The friendship questionnaire: An investigation of adults with Asperger syndrome or high-functioning autism, and normal sex differences', 
-            Journal of autism and developmental disorders, 33(5), pp. 509-517. Available at: <a href="https://doi.org/10.1023/A:1025879411971" target="_blank">https://doi.org/10.1023/A:1025879411971</a>
-        </cite>
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 

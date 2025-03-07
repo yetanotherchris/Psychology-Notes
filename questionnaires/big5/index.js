@@ -1,4 +1,4 @@
-/// <reference path="surveyjs/survey-core/survey.core.d.ts" />
+/// <reference path="../surveyjs/survey-core/survey.core.d.ts" />
 
 async function loadJson(filename)
 {
@@ -18,7 +18,7 @@ async function loadJson(filename)
     }
 }
 
-const STORAGE_ITEM_KEY = "fq-survey-v1";
+const STORAGE_ITEM_KEY = "big5-survey-v1";
 
 function saveSurveyData (survey)
 {
@@ -40,7 +40,7 @@ function restoreSurveyData (survey)
 }
 
 function addPagesForSurvey(survey) {
-    const elementsPerPage = 7;
+    const elementsPerPage = 10;
     const pages = [];
 
     for (let i = 0; i < survey.elements.length; i += elementsPerPage) {
@@ -61,30 +61,34 @@ function resetSurvey()
 
 function surveyComplete (survey)
 {
-    // Notes about the scoring:
-    //
-    // - The original PDF has 0 for some answers, and multiple answers with 0.
-    //  - Because radioboxes in HTML can't have the same value, these are stored as -1, -2 etc. in the JSON.
-    // - The original PDF has multiple "5" answers for some questions.#
-    //  - Because radioboxes in HTML can't have the same value, these are stored as 6 or 7.
-    //  - The value is capped at 5 in the code below. 
-
     const userId = "";
     survey.setValue("userId", userId);
     console.log(survey);
 
-    let data = sender.data;
+    var scores = {
+        "O" : 0,
+        "C" : 0,
+        "E" : 0,
+        "A" : 0,
+        "N" : 0    
+    }
+
+    // Skipped questions need a 0
+    let data = survey.data;
     for (let key in data) {
         if (data[key] === undefined) data[key] = 0;
     }
 
-    let totalScore = 0;
-
-    for (const key in survey.valuesHash) 
+    for (const valueKey in survey.valuesHash) 
     {
-        var score = 0;
-        score = parseInt(survey.valuesHash[key], 10);
-
+        for (const scoreKey in scores)
+        {
+            if (valueKey.indexOf(scoreKey) != -1)
+            {
+                score = parseInt(survey.valuesHash[valueKey], 10);
+                scores[scoreKey] += score;
+            }
+        }
     }
 
     var finishedDiv = document.getElementById("finished");
@@ -92,17 +96,28 @@ function surveyComplete (survey)
     document.getElementById("finished").remove();
 
     var html = finishedDiv.outerHTML;
-    html = html.replace("{{totalScore}}", totalScore);
+    html = html.replace("{{o-score}}", scores["O"]); 
+    html = html.replace("{{c-score}}", scores["C"]); 
+    html = html.replace("{{e-score}}", scores["E"]); 
+    html = html.replace("{{a-score}}", scores["A"]); 
+    html = html.replace("{{n-score}}", scores["N"]); 
+
+    html = html.replace("{{o-style}}", "background-color:rgb(20, 149, 20, 0."+scores["O"] *2+");"); 
+    html = html.replace("{{c-style}}", "background-color:rgb(20, 149, 20, 0."+scores["C"] *2+");"); 
+    html = html.replace("{{e-style}}", "background-color:rgb(20, 149, 20, 0."+scores["E"] *2+");"); 
+    html = html.replace("{{a-style}}", "background-color:rgb(20, 149, 20, 0."+scores["A"] *2+");"); 
+    html = html.replace("{{n-style}}", "background-color:rgb(20, 149, 20, 0."+scores["N"] *2+");"); 
+
     survey.completedHtml = html;
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
     var surveyJson = await loadJson('./questions.json');
-    //const pages = addPagesForSurvey(surveyJson);
+    const pages = addPagesForSurvey(surveyJson);
 
-    let survey = new Survey.Model(surveyJson);
+    let survey = new Survey.Model({pages});
     survey.title = "BIG 5";
-    survey.description = "For educational purposes only.";
+    survey.description = "Personality test (NEO-PI)";
     survey.showQuestionNumbers =  true;
     survey.showProgressBar =  "aboveHeader";
     survey.progressBarType =  "pages";
