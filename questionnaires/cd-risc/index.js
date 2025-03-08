@@ -58,12 +58,12 @@ function addPagesForSurvey(survey) {
 function addIntroPage(){
     return {
         title: "Welcome to the CD-RISC Questionnaire",
-        description: "This questionnaire is designed to measure your resilience. Please answer each question honestly.",
+        description: "This questionnaire is designed to measure your resilience. It consists of 25 questions and should take about 5 minutes to complete. Please answer each question honestly.",
         questions: [
             {
                 type: "html",
                 name: "info",
-                html: "<p>No data is sent to the server, everything stays in your browser. Click 'Next' to begin the questionnaire.</p>"
+                html: "<p><b>No data is sent to the server, everything stays in your browser.</b><br /> Click 'Next' to begin the questionnaire.</p>"
             }
         ]
     };

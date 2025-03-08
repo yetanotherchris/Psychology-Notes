@@ -43,6 +43,8 @@ function addPagesForSurvey(survey) {
     const elementsPerPage = 7;
     const pages = [];
 
+    pages.push(addIntroPage());
+
     for (let i = 0; i < survey.elements.length; i += elementsPerPage) {
         pages.push({
             name: `Page ${i / elementsPerPage + 1}`,
@@ -51,6 +53,20 @@ function addPagesForSurvey(survey) {
     }
 
     return pages;
+}
+
+function addIntroPage(){
+    return {
+        title: "Welcome to the Friendship Questionnaire",
+        description: "This questionnaire is used in Autism Spectrum Diagnosis to measure your friendship style. It consists of 35 questions and should take about 10 minutes to complete. Please answer the questions as honestly as possible.",
+        questions: [
+            {
+                type: "html",
+                name: "info",
+                html: "<p><b>No data is sent to the server, everything stays in your browser.</b><br /> Click 'Next' to begin the questionnaire.</p>"
+            }
+        ]
+    };
 }
 
 function resetSurvey()

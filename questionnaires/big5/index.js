@@ -43,6 +43,8 @@ function addPagesForSurvey(survey) {
     const elementsPerPage = 10;
     const pages = [];
 
+    pages.push(addIntroPage());
+
     for (let i = 0; i < survey.elements.length; i += elementsPerPage) {
         pages.push({
             name: `Page ${i / elementsPerPage + 1}`,
@@ -51,6 +53,19 @@ function addPagesForSurvey(survey) {
     }
 
     return pages;
+}
+
+function addIntroPage(){
+    return {
+        title: "Welcome to the BIG 5 Questionnaire",
+        description: "This questionnaire is a personality test based on the NEO-PI model. It consists of 50 questions and should take about 10 minutes to complete.",
+        questions: [
+            {
+                type: "html",
+                html: "<p><b>No data is sent to the server, everything stays in your browser.</b><br /> Click 'Next' to begin the questionnaire.</p>"
+            }
+        ]
+    };
 }
 
 function resetSurvey()
