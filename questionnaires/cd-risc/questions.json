@@ -1,0 +1,211 @@
+{
+  "likertChoices": [
+    { "value": 0, "text": "Not true at all" },
+    { "value": 1, "text": "Rarely true" },
+    { "value": 2, "text": "Sometimes true" },
+    { "value": 3, "text": "Often true" },
+    { "value": 4, "text": "True nearly all the time" }
+  ],
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q1",
+      "title": "I am able to adapt to change.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q2",
+      "title": "I have close and secure relationships.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q3",
+      "title": "Sometimes fate or God can help.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q4",
+      "title": "I can deal with whatever comes.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q5",
+      "title": "Past success gives me confidence for new challenges.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q6",
+      "title": "I try to see the humorous side of things.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q7",
+      "title": "Coping with stress strengthens me.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q8",
+      "title": "I tend to bounce back after illness or hardship.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q9",
+      "title": "Things happen for a reason.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q10",
+      "title": "I give my best effort no matter what.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q11",
+      "title": "I can achieve my goals.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q12",
+      "title": "When things look hopeless, I don’t give up.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q13",
+      "title": "I know where to turn for help.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q14",
+      "title": "Under pressure, I can focus and think clearly.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q15",
+      "title": "I prefer to take the lead in problem-solving.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q16",
+      "title": "I am not easily discouraged by failure.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q17",
+      "title": "I think of myself as a strong person.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q18",
+      "title": "I can make unpopular or difficult decisions.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q19",
+      "title": "I can handle unpleasant feelings.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q20",
+      "title": "I have to act on a hunch sometimes.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q21",
+      "title": "I have a strong sense of purpose.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q22",
+      "title": "I feel in control of my life.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q23",
+      "title": "I like challenges.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q24",
+      "title": "I work to attain my goals.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q25",
+      "title": "I take pride in my achievements.",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    }
+  ]
+}

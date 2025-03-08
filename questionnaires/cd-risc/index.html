@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connor-Davidson Resilience Scale (CD-RISC)</title>
+
+    <script src="../surveyjs/survey-core/survey.core.min.js"></script>
+    <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
+    <script src="../surveyjs/survey-core/themes/index.min.js"></script>
+    <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
+    <style>
+        #surveyElement {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        #finished {
+            display: none;
+            width: 80%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #finished table {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #finished table tr:nth-child(1) td { 
+            background-color: rgb(179, 238, 179);
+        }
+
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+
+        #finished #reset-survey {
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h3>Your score was {{totalScore}}</h3>
+        <b>Notes</b>
+        <p>
+            This survey is often used before and after therapy, counselling, and other treatments to see if the 
+            treatment has helped. The higher the score, the better.
+        </p>
+        <p>
+            The average population score is highlighted in green below.
+        </p>
+        <p>
+            Primary care is defined as people at a Doctor's appointment etc. SD is standard deviation,
+            so if this is 18, that means people in that group were 12 below or above the mean average, e.g 92 or 68 if it's 80.
+        </p>
+        <b>Population scores</b>
+        <table class="sd-table">
+            <thead>
+                <tr>
+                    <th>Study Group</th>
+                    <th>Group #</th>
+                    <th>Sample Size</th>
+                    <th>Mean (SD)</th>
+                    <th>Median (1st, 4th quartile)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>General population</td>
+                    <td>1</td>
+                    <td>577</td>
+                    <td>80.4 (12.8)</td>
+                    <td>82 (73, 90)</td>
+                </tr>
+                <tr>
+                    <td>Primary care</td>
+                    <td>2</td>
+                    <td>139</td>
+                    <td>71.8 (18.4)</td>
+                    <td>75 (60, 86)</td>
+                </tr>
+                <tr>
+                    <td>Psychiatric outpatients</td>
+                    <td>3</td>
+                    <td>43</td>
+                    <td>68.0 (15.3)</td>
+                    <td>69 (57, 79)</td>
+                </tr>
+                <tr>
+                    <td>GAD patients</td>
+                    <td>4</td>
+                    <td>24</td>
+                    <td>62.4 (10.7)</td>
+                    <td>64.5 (53, 71)</td>
+                </tr>
+                <tr>
+                    <td>PTSD patients</td>
+                    <td>5</td>
+                    <td>22</td>
+                    <td>47.8 (19.5)</td>
+                    <td>47 (31, 61)</td>
+                </tr>
+            </tbody>
+        </table>
+        <cite>
+            Connor, K.M. and Davidson, J.R.T. (2003) 'Development of a new resilience scale: The Connor-Davidson
+            Resilience Scale (CD-RISC)', Depression and anxiety, 18(2), pp. 76-82.
+            Available at: <a href="https://doi.org/10.1002/da.10113" target="_blank">https://doi.org/10.1002/da.10113</a>
+        </cite>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

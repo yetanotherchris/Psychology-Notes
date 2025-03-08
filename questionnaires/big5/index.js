@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     survey.onComplete.add(surveyComplete);
     survey.onValueChanged.add(saveSurveyData);
-    survey.onCurrentPageChanged.add(saveSurveyData)
+    survey.onCurrentPageChanged.add(saveSurveyData);
 
     restoreSurveyData(survey);
     console.log("loaded");

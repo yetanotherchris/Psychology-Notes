@@ -12,12 +12,13 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 - [Cognitive Biases](cognitive-biases.md)
 - [Logical fallacies](logical-fallacies.md)
 
+### Questionnaires & Inventories
+- [Connor-Davidson Resilience Scale (CD-RISC)](questionnaires/cd-risc/index.html)
+- [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
+- [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
+
 ### Borderline personality organisation
-Borderline personality *organisation* includes both BPD/EUPD and NPD.
+Kernberg described Borderline personality *organisation* to include both BPD/EUPD and NPD.
 
 - [Noteable Narcissism authors in Psychology (what causes Narcissism)](narcissism-authors.md)
 - [Cluster B - my initial interest with academic Psychology was from learning about Cluster B personality disorders, these are the original notes](Cluster-B/)
-
-### Questionnaires & Inventories
-- [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
-- [Friendship Questionnaire (used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)

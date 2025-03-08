@@ -18,7 +18,7 @@ async function loadJson(filename)
     }
 }
 
-const STORAGE_ITEM_KEY = "fq-survey-v1";
+const STORAGE_ITEM_KEY = "cd-risc-survey-v1";
 
 function saveSurveyData (survey)
 {
@@ -40,8 +40,10 @@ function restoreSurveyData (survey)
 }
 
 function addPagesForSurvey(survey) {
-    const elementsPerPage = 7;
+    const elementsPerPage = 10;
     const pages = [];
+
+    pages.push(addIntroPage());
 
     for (let i = 0; i < survey.elements.length; i += elementsPerPage) {
         pages.push({
@@ -53,6 +55,20 @@ function addPagesForSurvey(survey) {
     return pages;
 }
 
+function addIntroPage(){
+    return {
+        title: "Welcome to the CD-RISC Questionnaire",
+        description: "This questionnaire is designed to measure your resilience. Please answer each question honestly.",
+        questions: [
+            {
+                type: "html",
+                name: "info",
+                html: "<p>No data is sent to the server, everything stays in your browser. Click 'Next' to begin the questionnaire.</p>"
+            }
+        ]
+    };
+}
+
 function resetSurvey()
 {
     window.localStorage.removeItem(STORAGE_ITEM_KEY);
@@ -61,14 +77,6 @@ function resetSurvey()
 
 function surveyComplete (survey)
 {
-    // Notes about the scoring:
-    //
-    // - The original PDF has 0 for some answers, and multiple answers with 0.
-    //  - Because radioboxes in HTML can't have the same value, these are stored as -1, -2 etc. in the JSON.
-    // - The original PDF has multiple "5" answers for some questions.#
-    //  - Because radioboxes in HTML can't have the same value, these are stored as 6 or 7.
-    //  - The value is capped at 5 in the code below. 
-
     const userId = "";
     survey.setValue("userId", userId);
     console.log(survey);
@@ -77,25 +85,8 @@ function surveyComplete (survey)
 
     for (const key in survey.valuesHash) 
     {
-        var score = 0;
+        var score = parseInt(survey.valuesHash[key], 10);
 
-        if (survey.valuesHash[key].length > 0)
-        {
-            // rankings have an array of values
-            survey.valuesHash[key].forEach(element => {
-                score += parseInt(element, 10);
-            });
-        }
-        else
-        {
-            score = parseInt(survey.valuesHash[key], 10);
-
-            // radiogroup work around for multiple "5" values - anything above 5 is the same as 5
-            if (score > 5)
-                score = 5;
-        }
-
-        // Ignore any score lower than 0 (e.g. minus scores)
         if (score > 0)
         {
             totalScore += score;   
@@ -112,12 +103,13 @@ function surveyComplete (survey)
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
+    
     var surveyJson = await loadJson('./questions.json');
     const pages = addPagesForSurvey(surveyJson);
 
     let survey = new Survey.Model({pages});
-    survey.title = "Friendship Questionnaire";
-    survey.description = "For educational purposes only.";
+    survey.title = "CD-RISC Questionnaire";
+    survey.description = "Connor-Davidson Resilience Scale (CD-RISC)";
     survey.showQuestionNumbers =  true;
     survey.showProgressBar =  "aboveHeader";
     survey.progressBarType =  "pages";
@@ -128,6 +120,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     survey.onComplete.add(surveyComplete);
     survey.onValueChanged.add(saveSurveyData);
     survey.onCurrentPageChanged.add(saveSurveyData);
+
+    survey.getAllQuestions().forEach(question => {
+        question.choices = surveyJson.likertChoices
+    });
 
     restoreSurveyData(survey);
     console.log("loaded");
