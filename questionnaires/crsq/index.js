@@ -58,7 +58,7 @@ function addPagesForSurvey(survey) {
 function addIntroPage(){
     return {
         title: "Welcome to the CSRQ Questionnaire",
-        description: "Please answer each question honestly.",
+        description: "This questionnaire is designed to assess how children respond to potential social rejection by measuring their tendency to anxiously or angrily expect, perceive, and overreact to it. Please answer each question honestly.",
         questions: [
             {
                 type: "html",
@@ -75,27 +75,57 @@ function resetSurvey()
     location.reload();
 }
 
+class QuestionScore {
+    constructor() {
+        this.nervousness = 0;
+        this.expectations = 0;
+    }
+
+    get total() {
+        return this.nervousness * this.expectations;
+    }
+}
+
 function surveyComplete (survey)
 {
     const userId = "";
     survey.setValue("userId", userId);
     console.log(survey);
 
-    let totalScore = 0;
+    var scores = {
+        "1" : new QuestionScore(),
+        "2" : new QuestionScore(),
+        "3" : new QuestionScore(),
+        "4" : new QuestionScore(),
+        "5" : new QuestionScore(),
+        "6" : new QuestionScore(),    
+    };
 
     for (const key in survey.valuesHash) 
     {
         var score = parseInt(survey.valuesHash[key], 10);
+        var questionNo = key.substring(0,1);
 
-        if (score > 0)
+        if (key.indexOf("nervousness") != -1)
         {
-            totalScore += score;   
+            scores[questionNo].nervousness = score;
+        }
+        else if (key.indexOf("expectations") != -1)
+        {
+            scores[questionNo].expectations = score;
         }
     }
 
     var finishedDiv = document.getElementById("finished");
     finishedDiv.style.display = "inline-block";
     document.getElementById("finished").remove();
+
+    var totalScore = 0;
+    var scoresKeys = Object.keys(scores);
+    scoresKeys.map(key => {
+        totalScore += scores[key].total;
+    });
+    totalScore = Math.round(totalScore / scoresKeys.length);
 
     var html = finishedDiv.outerHTML;
     html = html.replace("{{totalScore}}", totalScore);

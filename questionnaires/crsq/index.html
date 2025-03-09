@@ -42,15 +42,6 @@
             padding: 20px;
         }
 
-        #finished table tr td {
-            text-align: left;
-        }
-
-        #finished table tr td:nth-child(1) {
-            font-weight: bold;
-            width:60px;
-        }
-
         #finished cite {
             text-align: left;
             display: block;
@@ -69,32 +60,29 @@
     <div id="surveyElement"></div>
     <div id="finished">
         <h3>Your score was {{totalScore}}</h3>
+
         <div class="container">
             <div class="centered-content">
                 <b>Notes</b>
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+                <p>
+                    The score is a maximum of 36. The mean was 12 and a SD (standard deviation) of 5.
+                </p>
+                <p>
+                    <b>So scores over 17 might flag higher sensitivity, 11-12 suggests moderate sensitivity</b>.
+                </p>
+                <p>
+                    The original questionnaire was a 12 item questionnaire, this is the 6 item version.
+                    The score is calculated using each scenario's Nervousness (1-6) x Expectation (1-6) question, then the toal is divided by 6.
+                </p>
             </div>
         </div>
 
         <cite>
-            Downey, G., Lebolt, A., Rincan, C., and Freitas, A.
-            L.. (2013) . Children's Rejection Sensitivity
-            Questionnaire (CRSQ) . Measurement Instrument
-            Database for the Social Science. Retrieved from
-            www.midss.ie
+            Downey, G. et al. (1998) 'Rejection Sensitivity and Children's Interpersonal Difficulties', Child development, 69(4), pp. 1074-1091. 
+            Available at: <a href="https://doi.org/10.1111/j.1467-8624.1998.tb06161.x" target="_blank">https://doi.org/10.1111/j.1467-8624.1998.tb06161.x</a>
+            <br /><br />
+            6 item questionnaire is from 
+            <a href="https://socialrelationslab.psychology.columbia.edu/content/measures" target="_blank">https://socialrelationslab.psychology.columbia.edu/content/measures</a>
         </cite>
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>

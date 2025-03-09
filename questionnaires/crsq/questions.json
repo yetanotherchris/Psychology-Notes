@@ -8,7 +8,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s1_nervous",
+      "name": "1_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not the kid will show up?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -22,7 +22,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s1_mad",
+      "name": "1_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not the kid will show up?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -36,7 +36,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s1_expectation",
+      "name": "1_expectations",
       "title": "Do you think the kid will show up to give you the money?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
@@ -55,7 +55,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s2_nervous",
+      "name": "2_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not your teacher will choose you?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -69,7 +69,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s2_mad",
+      "name": "2_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not your teacher will choose you?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -83,7 +83,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s2_expectation",
+      "name": "2_expectations",
       "title": "Do you think your teacher will choose you to meet the famous person?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
@@ -102,7 +102,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s3_nervous",
+      "name": "3_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not your friend will want to talk to you and listen to your problem?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -116,7 +116,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s3_mad",
+      "name": "3_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not your friend will want to talk to you and listen to your problem?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -130,7 +130,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s3_expectation",
+      "name": "3_expectations",
       "title": "Do you think your friend will want to talk to you and listen to your problem?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
@@ -149,7 +149,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s4_nervous",
+      "name": "4_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not the kids will want to come to your party?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -163,7 +163,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s4_mad",
+      "name": "4_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not the kids will want to come to your party?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -177,7 +177,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s4_expectation",
+      "name": "4_expectations",
       "title": "Do you think the kids will want to come to your party?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
@@ -196,7 +196,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s5_nervous",
+      "name": "5_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not the kids still want you to play with them?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -210,7 +210,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s5_mad",
+      "name": "5_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not the kids still want you to play with them?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -224,7 +224,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s5_expectation",
+      "name": "5_expectations",
       "title": "Do you think the kids still want you to play with them?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
@@ -243,7 +243,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s6_nervous",
+      "name": "6_nervousness",
       "title": "How NERVOUS would you feel, RIGHT THEN, about whether or not the kids will let you join them?",
       "choices": [
         { "value": 1, "text": "Not nervous" },
@@ -257,7 +257,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s6_mad",
+      "name": "6_mad",
       "title": "How MAD would you feel, RIGHT THEN, about whether or not the kids will let you join them?",
       "choices": [
         { "value": 1, "text": "Not mad" },
@@ -271,7 +271,7 @@
     },
     {
       "type": "radiogroup",
-      "name": "s6_expectation",
+      "name": "6_expectations",
       "title": "Do you think the kids will let you join them?",
       "choices": [
         { "value": 1, "text": "YES!!!" },
