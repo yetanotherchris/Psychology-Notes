@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruminative Response Scale (RRS-10)</title>
+
+    <script src="../surveyjs/survey-core/survey.core.min.js"></script>
+    <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
+    <script src="../surveyjs/survey-core/themes/index.min.js"></script>
+    <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
+    <style>
+        #surveyElement {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        #finished {
+            display: none;
+            width: 50%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #finished .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #finished .centered-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #finished p {
+            text-align: left;
+        }
+
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+
+        #finished #reset-survey {
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h4>Your brooding score: {{broodingScore}}. <br/> Your reflection score: {{reflectionScore}}.</h4>
+        <div class="container">
+            <div class="centered-content">
+                <b>Notes</b>
+                <p>
+                    Each score is out of <b>a total of 20</b>. A <b>lower brooding</b> score and <b>higher reflection</b> score are considered more adaptive.
+                </p>
+                <p>
+                    <b>Brooding</b> refers to a maladaptive form of rumination characterized by self-critical, and passive dwelling 
+                    on negative emotions or situations. It's often linked to asking passive "why" questions e.g. "Why am I such a failure?",  
+                    without moving toward solutions, thus amplifying distress and correlated with depression and anxiety.
+                    As the RRS-10 study notes, it leads to negative affect (emotions) in both the short and long term.
+                </p>
+                <p>
+                    <b>Reflection</b> refers to a more neutral or adaptive form of rumination involving introspection and analysis aimed at understanding one's feelings 
+                    or situation. It's less emotionally charged and more cognitive, often with a problem-solving focus, e.g. "Why did this happen - what can I learn?".
+                    As the RRS-10 study notes, it leads to negative affect (emotions) in the short term, but may reduce them in the long term.
+                </p>
+            </div>
+        </div>
+
+        <cite>
+            1. Nolen-Hoeksema et al., 1999 quoted in Treynor, W., Gonzalez, R. and Nolen-Hoeksema, S. (2003) p250. <br/>
+            2. Treynor, W., Gonzalez, R. and Nolen-Hoeksema, S. (2003) 'Rumination reconsidered: A psychometric analysis', 
+            Cognitive therapy and research, 27(3), pp. 247-259.
+            Available at: <a href="https://doi.org/10.1023/A:1023910315561" target="_blank">https://doi.org/10.1023/A:1023910315561</a>
+        </cite>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
