@@ -1,61 +1,10 @@
 /// <reference path="../surveyjs/survey-core/survey.core.d.ts" />
-
-async function loadJson(filename)
-{
-    // The questionnaire is stored as JSON instead of JS so it
-    // can be re-used in other programming languages.
-    try {
-        const response = await fetch(filename);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-
-        return data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return null; 
-    }
-}
+/// <reference path="../common.js" />
 
 const STORAGE_ITEM_KEY = "crsq-v1";
+const ELEMENTS_PER_PAGE = 8;
 
-function saveSurveyData (survey)
-{
-    const data = survey.data;
-    data.pageNo = survey.currentPageNo;
-    window.localStorage.setItem(STORAGE_ITEM_KEY, JSON.stringify(data));
-}
-
-function restoreSurveyData (survey)
-{
-    const prevData = window.localStorage.getItem(STORAGE_ITEM_KEY) || null;
-    if (prevData) {
-        const data = JSON.parse(prevData);
-        survey.data = data;
-        if (data.pageNo) {
-            survey.currentPageNo = data.pageNo;
-        }
-    }
-}
-
-function addPagesForSurvey(survey) {
-    const elementsPerPage = 8;
-    const pages = [];
-
-    pages.push(addIntroPage());
-
-    for (let i = 0; i < survey.elements.length; i += elementsPerPage) {
-        pages.push({
-            name: `Page ${i / elementsPerPage + 1}`,
-            elements: survey.elements.slice(i, i + elementsPerPage)
-        });
-    }
-
-    return pages;
-}
-
-function addIntroPage(){
+function getIntroPage(){
     return {
         title: "Welcome to the CSRQ Questionnaire",
         description: "This questionnaire is designed to assess how children respond to potential social rejection by measuring their tendency to anxiously or angrily expect, perceive, and overreact to it. Please answer each question honestly.",
@@ -67,12 +16,6 @@ function addIntroPage(){
             }
         ]
     };
-}
-
-function resetSurvey()
-{
-    window.localStorage.removeItem(STORAGE_ITEM_KEY);
-    location.reload();
 }
 
 class QuestionScore {
@@ -132,10 +75,9 @@ function surveyComplete (survey)
     survey.completedHtml = html;
 }
 
-document.addEventListener("DOMContentLoaded", async function() {
-    
+document.addEventListener("DOMContentLoaded", async function() { 
     var surveyJson = await loadJson('./questions.json');
-    const pages = addPagesForSurvey(surveyJson);
+    const pages = addPagesForSurvey(surveyJson, getIntroPage(), ELEMENTS_PER_PAGE);
 
     let survey = new Survey.Model({pages});
     survey.title = "CRSQ Questionnaire";
@@ -148,10 +90,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     survey.focusFirstQuestionAutomatic = true;
 
     survey.onComplete.add(surveyComplete);
-    survey.onValueChanged.add(saveSurveyData);
-    survey.onCurrentPageChanged.add(saveSurveyData);
+    survey.onValueChanged.add(survey => saveSurveyData(survey, STORAGE_ITEM_KEY));
+    survey.onCurrentPageChanged.add(survey => saveSurveyData(survey, STORAGE_ITEM_KEY));
 
-    restoreSurveyData(survey);
+    restoreSurveyData(survey, STORAGE_ITEM_KEY);
     console.log("loaded");
     survey.render(document.getElementById("surveyElement"));
 });
