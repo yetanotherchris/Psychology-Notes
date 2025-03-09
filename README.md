@@ -14,6 +14,7 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 
 ### Questionnaires & Inventories
 - [Connor-Davidson Resilience Scale (CD-RISC)](questionnaires/cd-risc/index.html)
+- [Ruminative Response Scale (RRS-10)](questionnaires/rrs-10/index.html)
 - [Perceived Stress Scale (PSS-10)](questionnaires/pss-10/index.html)
 - [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
