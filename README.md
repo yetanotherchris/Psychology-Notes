@@ -17,6 +17,7 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 - [Perceived Stress Scale (PSS-10)](questionnaires/pss-10/index.html)
 - [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
+- [Children's Rejection Sensitivity Questionnaire (CRSQ)](questionnaires/crsq/index.html)
 
 ### Borderline personality organisation
 Kernberg described Borderline personality *organisation* to include both BPD/EUPD and NPD.
