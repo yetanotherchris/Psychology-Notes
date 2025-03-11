@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adult Rejection Sensitivity Questionnaire (A-RSQ)</title>
+
+    <script src="../surveyjs/survey-core/survey.core.min.js"></script>
+    <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
+    <script src="../surveyjs/survey-core/themes/index.min.js"></script>
+    <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
+    <style>
+        #surveyElement {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        #finished {
+            display: none;
+            width: 50%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #finished .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #finished .centered-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #finished table {
+            border-bottom: 1px solid #a3a3a3;
+            padding: 0px 30px;
+        }
+
+        #finished table th {
+            text-align: left;
+        }
+
+        #finished table tr>td {
+            text-align: left;
+            display:list-item;
+            list-style-type: square;
+            margin-left: 5px;
+        }
+
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+
+        #finished .scoring {
+            font-size: 8pt;
+            line-height: 15px;
+        }
+
+        #finished #reset-survey {
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h3>Your score was {{totalScore}}</h3>
+
+        <div class="container">
+            <div class="centered-content">
+                <table>
+                    <thead>
+                        <th>Notes</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The score can be between 1 and 36</td>
+                        </tr>
+                        <tr>
+                            <td>Above 12 is high sensitivity</td>
+                        </tr>
+                        <tr>
+                            <td>Above 16 is very high sensitivity</td>
+                        </tr>
+                        <tr>
+                            <td>The mean from the original study was 8.61, with a standard deviation of 3.61, e.g. 5 and 12.22</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="scoring">
+                    The scoring is: <br/>
+                    Rejection expectancy = 7 - acceptance expectancy <br/>
+                    Rejection sensitivity = (rejection concern) * (rejection expectancy) <br/>
+                    All 9 situations are summed up.
+                </p>
+            </div>
+        </div>
+
+        <cite>
+            Berenson, K. R., Gyurak A., Ayduk, O., Downey G., Garner, M. J., Mogg, K. Bradley, B. P., & Pine, D. S. (2009). 
+            Rejection sensitivity and disruption of attention by social threat cues. Journal of Research in Personality, 43, 1064-1072.
+
+            Available at: <a href="https://berenson.sites.gettysburg.edu/a-rsq/" target="_blank">https://berenson.sites.gettysburg.edu/a-rsq/</a>
+        </cite>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
+    <script src="../common.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

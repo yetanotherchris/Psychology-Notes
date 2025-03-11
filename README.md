@@ -16,9 +16,10 @@ which are typically books and Youtube videos, as Youtube is a goldmine for Pysch
 - [Connor-Davidson Resilience Scale (CD-RISC)](questionnaires/cd-risc/index.html)
 - [Ruminative Response Scale (RRS-10)](questionnaires/rrs-10/index.html)
 - [Perceived Stress Scale (PSS-10)](questionnaires/pss-10/index.html)
-- [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
+- [Adult Rejection Sensitivity Questionnaire (A-RSQ)](questionnaires/a-rsq/index.html)
+- [Children's Rejection Sensitivity Questionnaire (C-RSQ)](questionnaires/c-rsq/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
-- [Children's Rejection Sensitivity Questionnaire (CRSQ)](questionnaires/crsq/index.html)
+- [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
 
 ### Borderline personality organisation
 Kernberg described Borderline personality *organisation* to include both BPD/EUPD and NPD.
