@@ -7,7 +7,7 @@ const ELEMENTS_PER_PAGE = 8;
 function getIntroPage(){
     return {
         title: "Welcome to the Adult Rejection Sensitivity Questionnaire (A-RSQ)",
-        description: "This questionnaire is designed to assess how adults respond to potential social rejection by measuring their tendency to anxiously or angrily expect, perceive, and overreact to it. Please answer each question honestly.",
+        description: "This questionnaire is designed to assess how adults respond to potential social rejection by measuring their. Please imagine yourself in each of the following situations and answer the two questions in each provided.",
         questions: [
             {
                 type: "html",
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     let survey = new Survey.Model({pages});
     survey.title = "A-RSQ Questionnaire";
     survey.description = "Adult Rejection Sensitivity Questionnaire (A-RSQ)";
-    survey.showQuestionNumbers =  true;
+    survey.showQuestionNumbers =  false;
     survey.showProgressBar =  "aboveHeader";
     survey.progressBarType =  "pages";
     survey.progressBarShowPageNumbers =  true;

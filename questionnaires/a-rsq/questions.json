@@ -1,6 +1,5 @@
 {
     "title": "Adult Rejection Sensitivity Questionnaire (A-RSQ)",
-    "description": "Please imagine yourself in each of the following situations and answer the two questions in each situation provided.",
     "concernChoices": [
       { "value": 1, "text": "1 - Very unconcerned" },
       { "value": 2, "text": "2" },
@@ -17,38 +16,34 @@
       { "value": 5, "text": "5" },
       { "value": 6, "text": "6 - Very likely" }
     ],
-    "name": "page1",
-    "showQuestionNumbers": "on",
     "elements": [
       {
         "type": "panel",
-        "name": "situation1",
-        "title": "Situation 1: You ask your parents or another family member for a loan to help you through a difficult financial time.",
+        "name": "q1",
+        "title": "1. You ask your parents or another family member for a loan to help you through a difficult financial time.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "1_concern",
-            "title": "How concerned or anxious would you be over whether or not they would want to give you a loan?",
+            "title": "How concerned or anxious would you be over whether or not your family would want to help you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "1_expectancy",
-            "title": "I expect that they would give me a loan without much problem.",
+            "title": "I would expect that they would agree to help as much as they can.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation2",
-        "title": "Situation 2: You approach a close friend to talk after doing or saying something that seriously upset them.",
+        "name": "q2",
+        "title": "2. You approach a close friend to talk after doing or saying something that seriously upset him/her.",
         "elements": [
           {
             "type": "radiogroup",
@@ -56,192 +51,176 @@
             "title": "How concerned or anxious would you be over whether or not your friend would want to talk with you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "2_expectancy",
-            "title": "I expect that they would want to talk with me to sort out the problem.",
+            "title": "I would expect that he/she would want to talk with me to try to work things out.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation3",
-        "title": "Situation 3: You ask your partner to move in with you.",
+        "name": "q3",
+        "title": "3. You bring up the issue of sexual protection with your significant other and tell him/her how important you think it is.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "3_concern",
-            "title": "How concerned or anxious would you be over whether or not your partner would want to move in with you?",
+            "title": "How concerned or anxious would you be over his/her reaction?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "3_expectancy",
-            "title": "I expect that my partner would agree to move in with me.",
+            "title": "I would expect that he/she would be willing to discuss our possible options without getting defensive.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation4",
-        "title": "Situation 4: You ask someone you don’t know very well out on a date.",
+        "name": "q4",
+        "title": "4. You ask your supervisor for help with a problem you have been having at work.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "4_concern",
-            "title": "How concerned or anxious would you be over whether or not they would want to go out with you?",
+            "title": "How concerned or anxious would you be over whether or not the person would want to help you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "4_expectancy",
-            "title": "I expect that they would want to go out with me.",
+            "title": "I would expect that he/she would want to try to help me out.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation5",
-        "title": "Situation 5: After an argument, you call your partner to apologize and suggest meeting to work things out.",
+        "name": "q5",
+        "title": "5. After a bitter argument, you call or approach your significant other because you want to make up.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "5_concern",
-            "title": "How concerned or anxious would you be over whether or not your partner would want to accept your apology?",
+            "title": "How concerned or anxious would you be over whether or not your significant other would want to make up with you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "5_expectancy",
-            "title": "I expect that my partner would accept my apology and agree to meet.",
+            "title": "I would expect that he/she would be at least as eager to make up as I would be.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation6",
-        "title": "Situation 6: You ask your boss for some extra time off from work.",
+        "name": "q6",
+        "title": "6. You ask your parents or other family members to come to an occasion important to you.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "6_concern",
-            "title": "How concerned or anxious would you be over whether or not your boss would give you the time off?",
+            "title": "How concerned or anxious would you be over whether or not they would want to come?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "6_expectancy",
-            "title": "I expect that my boss would give me the extra time off without much problem.",
+            "title": "I would expect that they would want to come.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation7",
-        "title": "Situation 7: You ask a friend to do you a big favor.",
+        "name": "q7",
+        "title": "7. At a party, you notice someone on the other side of the room that you'd like to get to know, and you approach him or her to try to start a conversation.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "7_concern",
-            "title": "How concerned or anxious would you be over whether or not your friend would be willing to do this favor?",
+            "title": "How concerned or anxious would you be over whether or not the person would want to talk with you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "7_expectancy",
-            "title": "I expect that my friend would willingly do this favor for me.",
+            "title": "I would expect that he/she would want to talk with me.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation8",
-        "title": "Situation 8: You call up a friend to ask if you can stay with them for a few days while visiting their city.",
+        "name": "q8",
+        "title": "8. Lately you've been noticing some distance between yourself and your significant other, and you ask him/her if there is something wrong.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "8_concern",
-            "title": "How concerned or anxious would you be over whether or not your friend would let you stay with them?",
+            "title": "How concerned or anxious would you be over whether or not he/she still loves you and wants to be with you?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "8_expectancy",
-            "title": "I expect that my friend would let me stay with them without much hesitation.",
+            "title": "I would expect that he/she will show sincere love and commitment to our relationship no matter what else may be going on.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       },
       {
         "type": "panel",
-        "name": "situation9",
-        "title": "Situation 9: You ask someone in one of your classes or at work to join you for coffee afterwards.",
+        "name": "q9",
+        "title": "9. You call a friend when there is something on your mind that you feel you really need to talk about.",
         "elements": [
           {
             "type": "radiogroup",
             "name": "9_concern",
-            "title": "How concerned or anxious would you be over whether or not they would want to have coffee with you?",
+            "title": "How concerned or anxious would you be over whether or not your friend would want to listen?",
             "choices": "concernChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           },
           {
             "type": "radiogroup",
             "name": "9_expectancy",
-            "title": "I expect that they would agree to have coffee with me.",
+            "title": "I would expect that he/she would listen and support me.",
             "choices": "expectancyChoices",
             "isRequired": true,
-            "showNoneItem": false,
-            "showOtherItem": false
+            "showQuestionNumbers": false
           }
         ]
       }
