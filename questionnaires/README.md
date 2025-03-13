@@ -2,4 +2,4 @@ These are questionnaires and inventories, tured into [surveyjs](https://surveyjs
 
 - They should all be accessible with easy to use UIs.
 - I'm hoping to take some https://github.com/haghish/openpsychometrics and others and import them.
-- The data in this folder is for educational purposes only, not for commercial use, based on fair use principles.
+- The data in this folder is for educational purposes only, not for commercial use. Sources are always credited.

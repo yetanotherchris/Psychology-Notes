@@ -1,7 +1,7 @@
 
 # Comprehensive List of Psychology and Psychotherapy-Based Modalities
 
-Source: https://chatgpt.com/share/6739c9ce-c72c-800f-8155-dbc584155e26
+Source: [Can you list all 500 forms of psychotherapy? (Chat GPT)](https://chatgpt.com/share/6739c9ce-c72c-800f-8155-dbc584155e26)
 
 1. **Psychodynamic Therapies**  
    Rooted in classical psychology theories, these therapies emphasize unconscious processes and early life experiences.
