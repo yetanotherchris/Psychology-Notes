@@ -5,10 +5,3 @@ theme:
   name: material
   features:
     - navigation.instant.preview
-    
-markdown_extensions:
-  - material.extensions.preview:
-      configurations:
-        - targets:
-            include:
-              - youtube-videos.md
