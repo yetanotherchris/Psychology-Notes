@@ -29,12 +29,14 @@ jobs:
           # pip install mkdocs-some-plugin
           
       - name: Build and deploy MkDocs site
+        run: mkdocs build
+
+      - name: Copy questionnaires to the site
         run: |
-          # Build the site
-          mkdocs build
-          
-          # Copy questionnaires
           cp -r questionnaires/ site/questionnaires/
-          
-          # Deploy without rebuilding
-          mkdocs gh-deploy --force --no-build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
