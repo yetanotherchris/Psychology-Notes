@@ -3,6 +3,6 @@ site_name: Pyschology Notes (github.com/yetanotherchris)
 theme:
   name: material
 
-plugins:
-  - mkdocs-snippets:
-      base_path: ./questionnaires
+extra:
+  assets:
+    - questionnaires/
