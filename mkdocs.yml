@@ -1,5 +1,7 @@
 site_name: Pyschology Notes
 
+docs_dir: '.'
+
 theme:
   name: material
 
