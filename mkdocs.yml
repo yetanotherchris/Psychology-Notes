@@ -1,12 +1,9 @@
 site_name: Pyschology Notes
 repo_url: https://github.com/yetanotherchris/Psychology-Notes/
+repo_name: yetanotherchris/Psychology-Notes/
 
 theme:
   name: material
 
 markdown_extensions:
   - attr_list
-  - material.extensions.preview:
-      targets:
-        include:
-          - youtube-videos.md

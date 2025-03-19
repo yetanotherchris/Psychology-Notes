@@ -3,8 +3,8 @@
 Below are lists of YouTube videos I've watched that are Psychology related, around 90 hours from April 2023 -> September 2024.
 
 ## Psychopathy
-- [Dr. Daniel Fox - Relationship Rupture and Repair Pattern of Destruction and Restoration BPD NPD (16:59)](https://www.youtube.com/watch?v=i7nOHHM5zis)
-- [Cornell University - Inside Cornell: Analyzing the words of psychopaths (53:38)](https://www.youtube.com/watch?v=6vF5PtdiiCo)
+- [Dr. Daniel Fox - Relationship Rupture and Repair Pattern of Destruction and Restoration BPD NPD (16:59)](https://www.youtube.com/watch?v=i7nOHHM5zis){ data-preview }
+- [Cornell University - Inside Cornell: Analyzing the words of psychopaths (53:38)](https://www.youtube.com/watch?v=6vF5PtdiiCo){ data-preview }
 - [Dr. Becky Spelman - What Makes a Psychopath? A Forensic Psychiatry Perspective (32:50)](https://www.youtube.com/watch?v=lTQX-YigYmU)
 - [UCL Minds Lunch Hour Lectures - Why do some people become psychopaths? (30 Jan 2014) (42:22)](https://www.youtube.com/watch?v=4yB_syUDbjs)
 - [Prof. Sam Vaknin - False Hope of Hot and Cold: Intermittent Reinforcement, Trauma Bonding, Approach-Avoidance (15:12)](https://www.youtube.com/watch?v=-PjtJeMvsFI)
