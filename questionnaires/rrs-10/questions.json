@@ -1,0 +1,131 @@
+{
+  "title": "Ruminative Response Scale (RRS-10)",
+  "showQuestionNumbers": "on",
+  "elements": [
+    {
+      "type": "html",
+      "name": "situation1Text",
+      "html": "<p>People think and do many different things when they feel sad, blue, or depressed. Below is a list of possibilities, answer if you never, sometimes, often, or always think or do each one when you feel down, sad, or depressed. <b>Please indicate what you generally do, not what you think you should do.</b></p>"
+    },
+    {
+      "type": "radiogroup",
+      "name": "brooding1",
+      "title": "Think 'What am I doing to deserve this?'",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "brooding2",
+      "title": "Think 'Why do I always react this way?'",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "brooding3",
+      "title": "Think about a recent situation, wishing it had gone better.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "brooding4",
+      "title": "Think 'Why do I have problems other people don’t have?'",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "brooding5",
+      "title": "Think about how angry you are with yourself.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "reflection6",
+      "title": "Analyze recent events to try to understand why you are depressed.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "reflection7",
+      "title": "Go away by yourself and think about why you feel this way.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "reflection8",
+      "title": "Write down what you are thinking and analyze it.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "reflection9",
+      "title": "Think about how you don't feel up to doing anything.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "reflection10",
+      "title": "Analyze your personality to try to understand why you are depressed.",
+      "choices": [
+        { "value": 1, "text": "Almost never" },
+        { "value": 2, "text": "Sometimes" },
+        { "value": 3, "text": "Often" },
+        { "value": 4, "text": "Almost always" }
+      ],
+      "isRequired": true
+    }
+  ]
+}

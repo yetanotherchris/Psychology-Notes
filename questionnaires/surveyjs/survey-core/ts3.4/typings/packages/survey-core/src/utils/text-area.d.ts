@@ -1,0 +1,58 @@
+import { Question } from "../question";
+export interface ITextArea {
+    question: any;
+    id: () => string;
+    propertyName: string;
+    className: () => string;
+    isDisabledAttr: () => boolean;
+    isReadOnlyAttr?: () => boolean;
+    placeholder: () => string;
+    autoGrow: () => boolean;
+    maxLength: () => number;
+    rows: () => number;
+    cols?: () => number;
+    getTextValue?: () => any;
+    onTextAreaChange?: (event: any) => void;
+    onTextAreaInput?: (event: any) => void;
+    onTextAreaKeyDown?: (event: any) => void;
+    onTextAreaBlur?: (event: any) => void;
+    onTextAreaFocus?: (event: any) => void;
+    ariaRequired: () => "true" | "false";
+    ariaLabel: () => string;
+    ariaInvalid?: () => "true" | "false";
+    ariaLabelledBy?: () => string;
+    ariaDescribedBy?: () => string;
+    ariaErrormessage?: () => string;
+}
+export declare class TextAreaModel {
+    private options;
+    private element;
+    updateElement(): void;
+    private onPropertyChangedCallback;
+    constructor(options: ITextArea);
+    setElement(element: HTMLTextAreaElement | null): void;
+    resetElement(): void;
+    getTextValue(): string;
+    onTextAreaChange(event: any): void;
+    onTextAreaInput(event: any): void;
+    onTextAreaKeyDown(event: any): void;
+    onTextAreaBlur(event: any): void;
+    onTextAreaFocus(event: any): void;
+    readonly question: Question;
+    readonly id: string;
+    readonly placeholder: string;
+    readonly className: string;
+    readonly maxLength: number;
+    readonly autoGrow: boolean;
+    readonly rows: number;
+    readonly cols: number | undefined;
+    readonly isDisabledAttr: boolean;
+    readonly isReadOnlyAttr: boolean | undefined;
+    readonly ariaRequired: "true" | "false";
+    readonly ariaLabel: string;
+    readonly ariaInvalid: "true" | "false";
+    readonly ariaLabelledBy: string;
+    readonly ariaDescribedBy: string;
+    readonly ariaErrormessage: string;
+    dispose(): void;
+}
