@@ -9,9 +9,9 @@ Any brief quotes are for study purposes and credited to their sources.
 ## Contents
 
 ### General
-- [Authors - various authors that I've learned about via academic Youtube lectures, interviews.](authors.md)
-- [Chat GPT - some notes about how I've used Chat GPT for summaries.](chatgpt-notes.md)
-- [YouTube video list - Psychology videos by category on Youtube](youtube-videos.md)
+- [Authors - various authors that I've learned about via academic Youtube lectures, interviews.](authors.md){ data-preview }
+- [Chat GPT - some notes about how I've used Chat GPT for summaries.](chatgpt-notes.md){ data-preview }
+- [YouTube video list - Psychology videos by category on Youtube](youtube-videos.md){ data-preview }
 - [Cognitive Biases](cognitive-biases.md)
 - [Logical fallacies](logical-fallacies.md)
 
