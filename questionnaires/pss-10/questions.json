@@ -1,0 +1,110 @@
+{
+  "likertChoices": [
+    { "value": 0, "text": "Never" },
+    { "value": 1, "text": "Almost Never" },
+    { "value": 2, "text": "Sometimes" },
+    { "value": 3, "text": "Fairly Often" },
+    { "value": 4, "text": "Very Often" }
+  ],
+  "likertChoicesReversed": [
+    { "value": 4, "text": "Never" },
+    { "value": 3, "text": "Almost Never" },
+    { "value": 2, "text": "Sometimes" },
+    { "value": 1, "text": "Fairly Often" },
+    { "value": 0, "text": "Very Often" }
+  ],
+  "title": "Perceived Stress Scale (PSS-10)",
+  "showQuestionNumbers": "on",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q1",
+      "title": "In the last month, how often have you been upset because of something that happened unexpectedly?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q2",
+      "title": "In the last month, how often have you felt that you were unable to control the important things in your life?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q3",
+      "title": "In the last month, how often have you felt nervous and stressed?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q4",
+      "title": "In the last month, how often have you felt confident about your ability to handle your personal problems?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "q5",
+      "title": "In the last month, how often have you felt that things were going your way?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "q6",
+      "title": "In the last month, how often have you found that you could not cope with all the things that you had to do?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q7",
+      "title": "In the last month, how often have you been able to control irritations in your life?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "q8",
+      "title": "In the last month, how often have you felt that you were on top of things?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": true
+    },
+    {
+      "type": "radiogroup",
+      "name": "q9",
+      "title": "In the last month, how often have you been angered because of things that happened that were outside of your control?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q10",
+      "title": "In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "reversedValues": false
+    }
+  ]
+}

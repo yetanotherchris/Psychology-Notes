@@ -1,0 +1,126 @@
+{
+  "title": "Reflective Functioning Questionnaire (RFQ-8)",
+  "description": "Please read each statement and select the one response that you feel describes you most clearly. Do not think too much about it - your first responses are usually the best.",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "question1",
+      "title": "Sometimes I do things without really knowing why",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question2",
+      "title": "I always know what I feel",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question3",
+      "title": "People’s thoughts are a mystery to me",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question4",
+      "title": "I always know why I feel the way I do",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question5",
+      "title": "I often don’t know why I act the way I do",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question6",
+      "title": "I can always predict how others will react",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question7",
+      "title": "I often get confused about how I’m really feeling",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    },
+    {
+      "type": "radiogroup",
+      "name": "question8",
+      "title": "I always understand why people behave the way they do",
+      "choices": [
+        { "value": 1, "text": "Strongly Disagree" },
+        { "value": 2, "text": "Disagree" },
+        { "value": 3, "text": "Disagree Somewhat" },
+        { "value": 4, "text": "Somewhat Agree" },
+        { "value": 5, "text": " Agree" },
+        { "value": 6, "text": "Strongly Agree" }
+      ],
+      "choicesOrder": "asc",
+      "colCount": 0
+    }
+  ]
+}
