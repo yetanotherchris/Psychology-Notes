@@ -1,4 +1,5 @@
 site_name: Pyschology Notes
+repo_url: https://github.com/yetanotherchris/Psychology-Notes/
 
 theme:
   name: material

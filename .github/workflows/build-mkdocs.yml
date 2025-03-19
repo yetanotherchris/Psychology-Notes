@@ -1,4 +1,4 @@
-name: Build and deploy MkDocs site
+name: Build and deploy mkdocs
 on:
   push:
     branches:
@@ -29,4 +29,12 @@ jobs:
           # pip install mkdocs-some-plugin
           
       - name: Build and deploy MkDocs site
-        run: mkdocs gh-deploy --force
+        run: |
+          # Build the site
+          mkdocs build
+          
+          # Copy questionnaires
+          cp -r questionnaires/ site/questionnaires/
+          
+          # Deploy without rebuilding
+          mkdocs gh-deploy --force --no-build
