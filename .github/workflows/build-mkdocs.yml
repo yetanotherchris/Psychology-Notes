@@ -28,7 +28,7 @@ jobs:
           # Add any other plugins you need here
           # pip install mkdocs-some-plugin
           
-      - name: Build and deploy MkDocs site
+      - name: Build mkdocs site
         run: mkdocs build
 
       - name: Copy questionnaires to the site
