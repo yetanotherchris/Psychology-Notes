@@ -3,5 +3,10 @@ repo_url: https://github.com/yetanotherchris/Psychology-Notes/
 
 theme:
   name: material
-  features:
-    - navigation.instant.preview
+
+markdown_extensions:
+  - attr_list
+  - material.extensions.preview:
+      targets:
+        include:
+          - youtube-videos.md
