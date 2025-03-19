@@ -2,7 +2,3 @@ site_name: Pyschology Notes
 
 theme:
   name: material
-
-extra:
-  assets:
-    - questionnaires/
