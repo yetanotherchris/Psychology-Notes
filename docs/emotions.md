@@ -29,3 +29,10 @@ Scherer, K.R. (2009). The dynamic architecture of emotion: Evidence for the comp
 
 Cowen, A.S. & Keltner, D. (2021). Semantic space theory: A computational approach to emotion. Trends in Cognitive Sciences, 25(2), 124-136. https://doi.org/10.1016/j.tics.2020.11.004
 ```
+
+And a similar thread contained this breakdown:
+
+- Categorical theories of emotion: Ekman, Panksepp
+- Dimensional theories of emotions: Russell & Bullock (1985), Cacioppo & Barrett (1999), Thayer’s model (1989; Shimmack & Grob, 2000)
+- Appraisal (cognitive) theories of emotion: Marinier, Laird and Lewis (2009).
+- Constructionist theories of emotion: Constructed theory of emotions, Barret which came from Conceptual Act Theory.
