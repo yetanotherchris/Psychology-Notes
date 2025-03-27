@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adverse Childhood Events Questionnaire (ACE)</title>
+
+    <script src="../surveyjs/survey-core/survey.core.min.js"></script>
+    <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
+    <script src="../surveyjs/survey-core/themes/index.min.js"></script>
+    <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
+    <style>
+        #finished {
+            display: none;
+            width: 50%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #finished .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #finished .centered-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #finished td {
+            text-align: left;
+        }
+
+        #finished td h4 {
+            padding: 0px;
+            margin: 0px;
+            border-bottom: 1px solid #000;
+        }
+
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+
+        #finished #reset-survey {
+            margin-left: 40%;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../inter-font.css">
+</head>
+
+<body>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h3>Your score was {{totalScore}} ACEs</h3>
+
+        <div class="container">
+            <div class="centered-content">
+                <table>
+                    <tr>
+                        <td><h4>Notes</h4></td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 47% of participants reported at least one ACE in the UK</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 9% of participants reported at 4+ ACEs in the UK</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 4+ ACEs are associated with 4x higher mental health problems, 7x higher alcoholism.</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 7+ ACEs are associated with 30x increase in suicide</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; <a href="https://en.wikipedia.org/wiki/Adverse_childhood_experiences#Findings">More findings...</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <cite>
+            Felitti, V.J. et al. (1998) 'Relationship of Childhood Abuse and Household Dysfunction to Many of the Leading Causes of Death in Adults: The Adverse Childhood Experiences (ACE) Study, American journal of preventive medicine, 14(4), pp. 245-258. 
+            Available at: <a href="https://doi.org/10.1016/S0749-3797(98)00017-8">https://doi.org/10.1016/S0749-3797(98)00017-8</a>.
+        </cite>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
+    <script src="../common.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

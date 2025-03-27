@@ -1,0 +1,106 @@
+{
+  "title": "ACE Questionnaire",
+  "description": "Adverse Childhood Events Questionnaire (ACE)",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q1",
+      "title": "Did a parent or adult in your household often swear at, insult, put down, or humiliate you? Or act in a way that made you fear physical harm?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q2",
+      "title": "Did a parent or adult in your household often push, grab, slap, or throw objects at you? Or ever hit you hard enough to cause injury?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q3",
+      "title": "Did anyone at least 5 years older than you ever touch you sexually or force sexual contact?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q4",
+      "title": "Did you often feel unsupported, unloved, or that family members didn't care for each other?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q5",
+      "title": "Did you often lack adequate food, clean clothing, or protection due to parental neglect?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q6",
+      "title": "Were your biological parents ever separated or divorced?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q7",
+      "title": "Was your mother (or stepmother) ever physically abused by a partner? This includes pushing, slapping, or threats with weapons.",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q8",
+      "title": "Did you live with anyone who abused alcohol or used illegal drugs?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q9",
+      "title": "Did you live with anyone who was depressed, mentally ill, or attempted suicide?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    },
+    {
+      "type": "radiogroup",
+      "name": "q10",
+      "title": "Did a household member ever go to prison?",
+      "isRequired": true,
+      "choices": [
+        {"value": 1, "text": "Yes"},
+        {"value": 0, "text": "No"}
+      ]
+    }
+  ]
+}
