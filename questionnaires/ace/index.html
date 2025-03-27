@@ -4,14 +4,13 @@
 <head>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Reflective Functioning Questionnaire (RFQ-8)</title>
+    <title>Adverse Childhood Events Questionnaire (ACE)</title>
 
     <script src="../surveyjs/survey-core/survey.core.min.js"></script>
     <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
     <script src="../surveyjs/survey-core/themes/index.min.js"></script>
     <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
     <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
-    <link rel="stylesheet" href="../common.css" />
     <style>
         #finished {
             display: none;
@@ -33,13 +32,14 @@
             padding: 20px;
         }
 
-        #finished table tr td {
+        #finished td {
             text-align: left;
         }
 
-        #finished table tr td:nth-child(1) {
-            font-weight: bold;
-            width:60px;
+        #finished td h4 {
+            padding: 0px;
+            margin: 0px;
+            border-bottom: 1px solid #000;
         }
 
         #finished cite {
@@ -63,20 +63,36 @@
 <body>
     <div id="surveyElement"></div>
     <div id="finished">
-        <h3>Your score was {{totalScore}}</h3>
+        <h3>Your score was {{totalScore}} ACEs</h3>
+
         <div class="container">
             <div class="centered-content">
-                <b>Notes</b>
                 <table>
                     <tr>
-                        <td></td>
+                        <td><h4>Notes</h4></td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 47% of participants reported at least one ACE in the UK</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 9% of participants reported at 4+ ACEs in the UK</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 4+ ACEs are associated with 4x higher mental health problems, 7x higher alcoholism.</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; 7+ ACEs are associated with 30x increase in suicide</td>
+                    </tr>
+                    <tr>
+                        <td>&#8226; <a href="https://en.wikipedia.org/wiki/Adverse_childhood_experiences#Findings">More findings...</a></td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <cite>
-            https://www.ucl.ac.uk/psychoanalysis/research/reflective-functioning-questionnaire-rfq
+            Felitti, V.J. et al. (1998) 'Relationship of Childhood Abuse and Household Dysfunction to Many of the Leading Causes of Death in Adults: The Adverse Childhood Experiences (ACE) Study, American journal of preventive medicine, 14(4), pp. 245-258. 
+            Available at: <a href="https://doi.org/10.1016/S0749-3797(98)00017-8">https://doi.org/10.1016/S0749-3797(98)00017-8</a>.
         </cite>
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
@@ -84,5 +100,4 @@
     <script src="../common.js"></script>
     <script src="./index.js"></script>
 </body>
-
 </html>
