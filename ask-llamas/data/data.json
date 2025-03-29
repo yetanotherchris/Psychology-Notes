@@ -1,0 +1,20 @@
+{
+    "prompt-pretext": "Please use academic citations and references, and start researching without prompting me.",
+    "questions" : 
+    [
+        {
+            "id": "loneliness-personality-disorders",
+            "title": "Loneliness and isolation in working adults",
+            "subtitle": "Personality and behavioural aspects",
+            "models": [ "claude-3.7", "gemini-flash-2.0", "grok-2", "gpt-4.5", "deepseek-3"],
+            "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know about personality changes including disorders, and also include other mental health changes such as depression if necessary, from loneliness and isolation in working adults."
+        },
+        {
+            "id": "loneliness-attachment",
+            "title": "Loneliness and isolation in working adults",
+            "subtitle": "Influence of attachment style",
+            "models": [ "claude-3.7", "gemini-flash-2.0", "grok-2", "gpt-4.5", "deepseek-3"],
+            "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know how attachment styles, and their knock on effects, might influence loneliness and isolation in working adults."
+        }
+    ]
+}
