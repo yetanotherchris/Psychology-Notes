@@ -34,6 +34,7 @@ jobs:
       - name: Copy questionnaires to the site
         run: |
           cp -r questionnaires/ site/questionnaires/
+          cp -r ask-llamas/ site/ask-llamas/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
