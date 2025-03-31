@@ -31,12 +31,11 @@ I ask the LLM for its sources when I do this, and when there's questions of copy
 - [Children's Rejection Sensitivity Questionnaire (C-RSQ)](questionnaires/c-rsq/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
 - [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
-- TODO: 15-Item Mentalization Questionnaire (MZQ) (https://doi.org/10.3390/diagnostics13010135)
-- TODO: Positive and Negative Syndrome Scale (PANSS) 
-- TODO: MACH-IV
-- TODO: Hare's Psychopathy Checklist (PCL-R)
-- TODO: rosenberg self-esteem inventory
-- TODO: The revised Janis-Field Feelings of Inadequacy Scale (JFFIS)
+- TODO: MACH-IV (https://github.com/yetanotherchris/openpsychometrics/blob/main/MACH_data/codebook.txt)
+- TODO: NPI & Narcissism questionnaires
+- TODO: Rosenberg Self-esteem inventory
+- TODO: The Revised Janis-Field Feelings of Inadequacy Scale (JFFIS)
+- TODO: The Outcome Questionnaire-45 (OQ-45)
 
 #### General
 
