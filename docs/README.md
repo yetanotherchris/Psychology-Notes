@@ -1,7 +1,7 @@
 # Psychology notes
 
-This site contains all my notes relating to a Psychology and a Psychology degree. Where possible I will reference the source of the notes, 
-which are typically books and Youtube videos, as Youtube is a goldmine for Pyschology education, both good and bad.
+This site contains all my notes relating to Psychology and Psychology degree I'm studying. Where possible I will reference the source of the notes, 
+which are typically papers and books but can be Youtube videos, as Youtube is a goldmine for (non-academic) Pyschology education, both good and bad.
 
 These are my personal psychology notes, written in my own words or re-written by an LLM (this should be clear  when this is the case). 
 Any brief quotes are for study purposes and credited to their sources.
@@ -10,7 +10,9 @@ Any brief quotes are for study purposes and credited to their sources.
 
 ### Academic Psychology
 
+- [Stress scale - updated version of SRRS by Holmes and Rahe](./stress.md)
 - [Affect (emotion) theory](./emotions.md)
+
 
 ### Pyschotherapy and Pyschiatry
 
@@ -31,7 +33,7 @@ I ask the LLM for its sources when I do this, and when there's questions of copy
 - [Children's Rejection Sensitivity Questionnaire (C-RSQ)](questionnaires/c-rsq/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](questionnaires/friendship-questionnaire/index.html)
 - [Big5 (OCEAN/NEO-PI) personality test](questionnaires/big5/index.html)
-- TODO: MACH-IV (https://github.com/yetanotherchris/openpsychometrics/blob/main/MACH_data/codebook.txt)
+- TODO: [MACH-IV](https://github.com/yetanotherchris/openpsychometrics/blob/main/MACH_data/codebook.txt)
 - TODO: NPI & Narcissism questionnaires
 - TODO: Rosenberg Self-esteem inventory
 - TODO: The Revised Janis-Field Feelings of Inadequacy Scale (JFFIS)
