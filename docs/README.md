@@ -10,6 +10,7 @@ Any brief quotes are for study purposes and credited to their sources.
 
 ### Academic Psychology
 
+- [**DOI lookup tool (includes license info)**](./doi-lookup/)
 - [Stress scale - updated version of SRRS by Holmes and Rahe](./stress.md)
 - [Affect (emotion) theory](./emotions.md)
 

@@ -31,10 +31,11 @@ jobs:
       - name: Build mkdocs site
         run: mkdocs build
 
-      - name: Copy questionnaires to the site
+      - name: Copy extra HTML folders to the site
         run: |
           cp -r questionnaires/ site/questionnaires/
           cp -r ask-llamas/ site/ask-llamas/
+          cp -r doi-lookup/ site/doi-lookup/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
