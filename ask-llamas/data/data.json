@@ -1,20 +1,46 @@
 {
     "prompt-pretext": "Please use academic citations and references, and start researching without prompting me.",
+    "prompt-posttext": "In your response, can you link all citations, which includes the author and year in the link, to the url path '/doi-lookup/?doi='(so using the same server) and add the DOI to as part of this link, e.g. '/doi-lookup/?doi=10/23' if the DOI was 10/23",
     "questions" : 
     [
         {
             "id": "loneliness-personality-disorders",
             "title": "Loneliness and isolation in working adults",
             "subtitle": "Personality and behavioural aspects",
-            "models": [ "claude-3.7", "gemini-flash-2.0", "grok-2", "gpt-4.5", "deepseek-3"],
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.0 Flash",
+                "Grok": "2",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
             "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know about personality changes including disorders, and also include other mental health changes such as depression if necessary, from loneliness and isolation in working adults."
         },
         {
             "id": "loneliness-attachment",
             "title": "Loneliness and isolation in working adults",
             "subtitle": "Influence of attachment style",
-            "models": [ "claude-3.7", "gemini-flash-2.0", "grok-2", "gpt-4.5", "deepseek-3"],
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.0 Flash",
+                "Grok": "2",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
             "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know how attachment styles, and their knock on effects, might influence loneliness and isolation in working adults."
+        },
+        {
+            "id": "resilience-self-compassion-pity",
+            "title": "Self compassion in resilience",
+            "subtitle": "Is self compassion a part of resilience?",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.0 Flash",
+                "Grok": "3 Beta",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Using academic citations and references, can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
         }
     ]
 }

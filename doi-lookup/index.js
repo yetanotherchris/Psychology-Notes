@@ -175,3 +175,19 @@ document.getElementById('doiInput').addEventListener('keypress', (event) => {
         document.getElementById('lookupButton').click();
     }
 });
+
+document.addEventListener("DOMContentLoaded", async function() {
+    const doiInput = document.getElementById('doiInput');
+    var doi = getQueryParam('doi');
+    if (doi) {
+        doiInput.value = doi;
+        fetchAndDisplayDOI(doi, 'results');
+    } else {
+        doiInput.value = '';
+    }
+});
+
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
