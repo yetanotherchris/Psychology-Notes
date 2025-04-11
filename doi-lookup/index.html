@@ -15,7 +15,10 @@
 <body>
   <div class="container mt-5">
     <h1 class="mb-4">DOI Lookup</h1>
-    <p>The lookup below uses the <a href="https://api.crossref.org/works/10.1016/S0749-3797(98)00017-8" target="_blank">crossref.org API</a></p>
+    <p>
+      The lookup below uses the <a href="https://api.crossref.org/works/10.1016/S0749-3797(98)00017-8" target="_blank">crossref.org API</a> 
+      and <a href="https://citation.doi.org/api-docs.html" target="_blank">citation.doi.org</a> to retrieve a citation (Harvard Cite It Right).
+    </p>
     
     <div class="row mb-4">
       <div class="col-md-8">
@@ -89,6 +92,11 @@
           <div class="row mb-3">
             <div class="col-md-3 fw-bold">License:</div>
             <div class="col-md-9 data-license"></div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-3 fw-bold">Citation:</div>
+            <div class="col-md-9 data-citation"></div>
           </div>
         </div>
       </div>

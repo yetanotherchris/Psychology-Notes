@@ -1,3 +1,20 @@
+async function fetchCitation(doi) {
+    let url = `https://citation.doi.org/format?doi=${doi}&style=harvard-cite-them-right&lang=en-GB`;
+    console.log('Fetching citation from URL:', url);
+    try {
+        const response = await fetch(url, { method: 'GET' });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const citation = await response.text();
+        return citation;
+    }
+    catch (error) {
+        console.error('Error fetching citation:', error);
+        return null;
+    }
+}
+
 /**
  * Fetches metadata for a DOI and displays it using HTML templates
  * @param {string} doi - The DOI to look up (e.g., "10.4236/psych.2023.147061")
@@ -127,6 +144,11 @@ async function fetchAndDisplayDOI(doi, targetElementId) {
         } else {
             licenseElement.innerHTML = '<p class="text-muted">No license information available</p>';
         }
+
+        // Set citation information
+        let citation = await fetchCitation(doi);
+        const citationElement = resultElement.querySelector('.data-citation');
+        citationElement.innerHTML = `<code>${citation}</code>`;
 
         // Add the populated template to the target element
         targetElement.appendChild(resultElement);
