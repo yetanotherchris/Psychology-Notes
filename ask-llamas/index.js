@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         let anchorElement = document.createElement("a");
         anchorElement.setAttribute("data-question-id", questionId);
-        anchorElement.setAttribute("data-question-id", questionId);
         anchorElement.setAttribute("class", "dropdown-item");
         anchorElement.setAttribute("href", "#");
         anchorElement.innerHTML = `${question.title} <span class="italic light-grey">(${question.subtitle})</span>`;
@@ -64,19 +63,25 @@ async function renderContent(question)
     document.getElementById("question-subtitle").innerHTML = question.subtitle;
     document.getElementById("prompt-text").innerHTML = question.prompt;
 
+    document.getElementById("claude-version").innerHTML = question.models["Claude"];
+    document.getElementById("gemini-version").innerHTML = question.models["Gemini"];
+    document.getElementById("grok-version").innerHTML = question.models["Grok"];
+    document.getElementById("chatgpt-version").innerHTML = question.models["ChatGPT"];
+    document.getElementById("deepseek-version").innerHTML = question.models["Deepseek"];
+
     let questionPath = DATA_ROOT + question.id;
 
     let claudeMarkdown = await loadMarkdown(`${questionPath}/claude.md`);
     let geminiMarkdown = await loadMarkdown(`${questionPath}/gemini.md`);
     let grokMarkdown = await loadMarkdown(`${questionPath}/grok.md`);
     let gptMarkdown = await loadMarkdown(`${questionPath}/gpt.md`);
-    let deepeeekMarkdown = await loadMarkdown(`${questionPath}/gpt.md`);
+    let deepseekMarkdown = await loadMarkdown(`${questionPath}/deepseek.md`);
     
     let claudeHtml = marked.parse(claudeMarkdown);
     let geminiHtml = marked.parse(geminiMarkdown);
     let grokHtml = marked.parse(grokMarkdown);
     let gptHtml = marked.parse(gptMarkdown);
-    let deepseekHtml = marked.parse(deepeeekMarkdown);
+    let deepseekHtml = marked.parse(deepseekMarkdown);
 
     document.getElementById("claude-body").innerHTML = claudeHtml;
     document.getElementById("gemini-body").innerHTML = geminiHtml;
