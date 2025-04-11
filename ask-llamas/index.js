@@ -30,9 +30,24 @@ async function loadMarkdown(filename)
     }
 }
 
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
 document.addEventListener("DOMContentLoaded", async function() {
 
     let questionsJson = await loadJson(`${DATA_ROOT}/data.json`);
+
+    // Query parameters
+    let questionId = getQueryParam("questionId");
+    let questionIndex = getQueryParam("questionIndex");
+    if (!questionId) {
+        questionId = questionsJson.questions[0].id;
+    } 
+    if (questionIndex && questionIndex < questionsJson.questions.length) {
+        questionId = questionsJson.questions[questionIndex].id;
+    } 
     
     // Fill the dropdown with questions
     for (let i = 0; i < questionsJson.questions.length; i++) {
@@ -54,7 +69,8 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Render the first question by default
-    renderContent(questionsJson.questions[0]);
+    let question = questionsJson.questions.find(q => q.id === questionId);
+    renderContent(question);
 });
 
 async function renderContent(question)
