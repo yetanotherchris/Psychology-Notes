@@ -16,12 +16,12 @@ nav:
     - DOI Lookup: ./doi-lookup/
     - Questionnaires: questionnaires-list.md
   - Cluster B:
-    - Cluster-B\README.md
-    - Cluster-B\narcissism-authors.md
-    - Cluster-B\chatgpt-on-npd.md
-    - Cluster-B\the-middle-years-book.md
-    - Cluster-B\vaknin-narcissism-notes.md
-    - Cluster-B\vaknin-references.md
+    - Cluster-B/README.md
+    - Cluster-B/narcissism-authors.md
+    - Cluster-B/chatgpt-on-npd.md
+    - Cluster-B/the-middle-years-book.md
+    - Cluster-B/vaknin-narcissism-notes.md
+    - Cluster-B/vaknin-references.md
   - authors.md
   - chatgpt-notes.md
   - cognitive-biases.md
