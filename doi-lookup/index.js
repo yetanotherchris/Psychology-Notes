@@ -42,6 +42,8 @@ async function fetchAndDisplayDOI(doi, targetElementId) {
         targetElement.appendChild(loadingElement);
 
         // Construct the API URL with the provided DOI
+        // https://api.crossref.org/swagger-ui/index.html#/Works/get_works
+        // https://api.crossref.org/works?query=richard+feynman
         const url = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
 
         // Make the API request
