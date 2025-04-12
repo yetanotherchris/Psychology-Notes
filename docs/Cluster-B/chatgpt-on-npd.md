@@ -1,6 +1,6 @@
 # ChatGPT on Narcissism
 
-v4 of ChatGPT, estimated at over 500 billion parameters, gives its thoughts on narcissistic behaviours.
+ChatGPT v4.0
 
 ## Apologies
 Narcissists may use a range of insincere apology tactics, including:

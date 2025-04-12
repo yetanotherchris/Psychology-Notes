@@ -1,5 +1,5 @@
 # Notes from Sam Vaknin on Narcissism
-https://www.youtube.com/@samvaknin
+(From 2023 - https://www.youtube.com/@samvaknin)
 
 ### Basic test for Narcissism (pathological or traits of)
 

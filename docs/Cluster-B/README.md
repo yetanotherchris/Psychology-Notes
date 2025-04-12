@@ -1,8 +1,4 @@
 # Cluster B
-Cluster B Personality disorder information.
+Cluster B Personality disorder notes, mostly from 2023-2024.
 
-### NPD & Narcissism
-
-- [Sam Vaknin References](vaknin-references.md)
-- [Sam Vaknin notes](vaknin-narcissism-notes.md)
-- [Sam Vaknin's 'Shared Fantasy' and the Middle Years book](the-middle-years-book.md)
+Kernberg described Borderline personality *organisation* to include both BPD/EUPD and NPD.
