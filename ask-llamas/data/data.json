@@ -6,7 +6,7 @@
         {
             "id": "loneliness-personality-disorders",
             "title": "Loneliness and isolation in working adults",
-            "subtitle": "Personality and behavioural aspects",
+            "subtitle": "Personality (disorders) and behavioural aspects",
             "models": {
                 "Claude": "3.7 Sonnet",
                 "Gemini": "2.0 Flash",
@@ -41,6 +41,19 @@
                 "Deepseek": "3"
             },
             "prompt": "Using academic citations and references, can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
+        },
+        {
+            "id": "autism-inheritence-maternal-factors",
+            "title": "Maternal and genetic factors in Autism",
+            "subtitle": "What is the current research on maternal and genetic factors correlating to Autism (2025)?",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Pro",
+                "Grok": "3 Beta",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Using academic research papers, references and citations, can you provide information about autism being correlated to mother’s health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
         }
     ]
 }
