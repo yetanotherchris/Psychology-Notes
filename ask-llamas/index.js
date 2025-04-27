@@ -21,7 +21,8 @@ async function loadMarkdown(filename)
     try {
         const response = await fetch(filename);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            console.error('Network response was not ok');
+            return "";
         }
         return await response.text();
     } catch (error) {
@@ -58,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         anchorElement.setAttribute("data-question-id", questionId);
         anchorElement.setAttribute("class", "dropdown-item");
         anchorElement.setAttribute("href", "#");
-        anchorElement.innerHTML = `${question.title} <span class="italic light-grey">(${question.subtitle})</span>`;
+        anchorElement.innerHTML = `${question.title}`;// <span class="italic light-grey">(${question.subtitle})</span>`;
         anchorElement.addEventListener("click", async function(event) {
             await renderContent(question);
         });
@@ -92,16 +93,19 @@ async function renderContent(question)
     let grokMarkdown = await loadMarkdown(`${questionPath}/grok.md`);
     let gptMarkdown = await loadMarkdown(`${questionPath}/gpt.md`);
     let deepseekMarkdown = await loadMarkdown(`${questionPath}/deepseek.md`);
+    let mergedMarkdown = await loadMarkdown(`${questionPath}/merged.md`);
     
     let claudeHtml = marked.parse(claudeMarkdown);
     let geminiHtml = marked.parse(geminiMarkdown);
     let grokHtml = marked.parse(grokMarkdown);
     let gptHtml = marked.parse(gptMarkdown);
     let deepseekHtml = marked.parse(deepseekMarkdown);
+    let mergedHtml = marked.parse(mergedMarkdown);
 
     document.getElementById("claude-body").innerHTML = claudeHtml;
     document.getElementById("gemini-body").innerHTML = geminiHtml;
     document.getElementById("grok-body").innerHTML = grokHtml;
     document.getElementById("gpt-body").innerHTML = gptHtml;
     document.getElementById("deepseek-body").innerHTML = deepseekHtml;
+    document.getElementById("merged-body").innerHTML = mergedHtml;
 }
