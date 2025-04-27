@@ -46,6 +46,10 @@
         .light-grey {
             color: rgb(165, 165, 165);
         }
+
+        #dropdownQuestions {
+            border: 2px solid darkgray;
+        }
     </style>
 </head>
 
@@ -67,7 +71,7 @@
             <div class="card-body">
                 <h5 class="card-title" style="font-weight:700;" id="question-title"></h5>
                 <h6 class="card-subtitle mb-2 text-muted" id="question-subtitle"></h6>
-                <p class="card-text"><span class=" italic light-grey">Prompt:</span>
+                <p class="card-text"><span class="smaller italic light-grey">Prompt:</span>
                     <span id="prompt-text"></span>
                 </p>
             </div>
@@ -180,7 +184,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Merged -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMerged">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseMerged" aria-expanded="false" aria-controls="collapseMerged">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="assets/claude.png" width="16" height="16" />
+                            </div>
+                            <div class="col" id="merged-title">
+                                <b>Merged response <span id="merged-version" style="font-weight: bold;"></span></b>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseMerged" class="accordion-collapse collapse" aria-labelledby="headingMerged" data-bs-parent="#accordionParent">
+                    <div class="accordion-body">
+                        <div id="merged-body" class="accordion-body"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <footer class="light-grey">
             <small><a href="../" >Home</a>&nbsp;|&nbsp;The multi-model answers were retrieved using <a href="https://www.openrouter.ai/chat" target="_blank">openrouter.ai</a>.</small>
             <br /><br />
@@ -189,6 +216,9 @@
                 <li style="display: inline-block;">&nbsp;|&nbsp;<a href="./?questionId=resilience-self-compassion-pity">Self compassion in resilience</a>
                 <li style="display: inline-block;">&nbsp;|&nbsp;<a href="./?questionId=loneliness-attachment">Loneliness and isolation in working adults</a>
                 <li style="display: inline-block;">&nbsp;|&nbsp;<a href="./?questionId=loneliness-personality-disorders">Personality (disorders) and behavioural aspects of loneliness</a>
+            </ul>
+            <ul style="font-size:8pt; list-style-type: none; padding:0; margin:0;">
+                <li style="display: inline-block;"><a href="./?questionId=behaviourist-experiments-authors">Noteable behaviourist experiments and authors</a>
             </ul>
         </footer>
     </div>
