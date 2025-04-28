@@ -98,9 +98,9 @@ async function fetchAndDisplayDOI(doi, targetElementId) {
         // Set DOI with link
         const doiElement = resultElement.querySelector('.data-doi');
         const doiLink = document.createElement('a');
-        doiLink.href = `https://doi.org/${metadata.DOI}`;
+        doiLink.href = `https://doi.org/${doi}`; // Use original DOI instead of metadata.DOI
         doiLink.target = '_blank';
-        doiLink.textContent = metadata.DOI;
+        doiLink.textContent = doi; // Use original DOI for display text as well
         doiElement.appendChild(doiLink);
 
         // Set publisher
@@ -238,12 +238,12 @@ async function displayDetailedView(item, expandedContent) {
             authorsElement.innerHTML = '<p class="text-muted">No author information available</p>';
         }
 
-        // Set DOI with link
+        // Set DOI with link - use original item DOI instead of metadata
         const doiElement = resultElement.querySelector('.data-doi');
         const doiLink = document.createElement('a');
-        doiLink.href = `https://doi.org/${metadata.DOI}`;
+        doiLink.href = `https://doi.org/${item.DOI}`; // Use item.DOI instead of metadata.DOI
         doiLink.target = '_blank';
-        doiLink.textContent = metadata.DOI;
+        doiLink.textContent = item.DOI; // Use item.DOI for display text as well
         doiElement.appendChild(doiLink);
 
         // Set other fields
