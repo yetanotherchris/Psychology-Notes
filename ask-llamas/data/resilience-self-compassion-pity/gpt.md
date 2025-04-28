@@ -26,26 +26,26 @@ Below are the cited articles and studies used in this overview, linked through t
 
 - American Psychological Association (APA). (2012). The Road to Resilience. APA. Retrieved from: https://www.apa.org/topics/resilience (No DOI available, accessed online).
 
-- Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? *American Psychologist, 59(1),* 20–28. [10.1037/0003-066X.59.1.20](.../doi-lookup/?doi=10.1037/0003-066X.59.1.20)
+- Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? *American Psychologist, 59(1),* 20–28. [10.1037/0003-066X.59.1.20](.../academic-search/?type=doi&q=10.1037/0003-066X.59.1.20)
 
-- Charmaz, K. (1983). Loss of self: a fundamental form of suffering in the chronically ill. *Sociology of Health & Illness, 5(2),* 168-195. [10.1111/1467-9566.ep10491512](.../doi-lookup/?doi=10.1111/1467-9566.ep10491512)
+- Charmaz, K. (1983). Loss of self: a fundamental form of suffering in the chronically ill. *Sociology of Health & Illness, 5(2),* 168-195. [10.1111/1467-9566.ep10491512](.../academic-search/?type=doi&q=10.1111/1467-9566.ep10491512)
 
-- Fletcher, D., & Sarkar, M. (2013). Psychological resilience: A review and critique of definitions, concepts, and theory. *European Psychologist, 18(1),* 12–23. [10.1027/1016-9040/a000124](.../doi-lookup/?doi=10.1027/1016-9040/a000124)
+- Fletcher, D., & Sarkar, M. (2013). Psychological resilience: A review and critique of definitions, concepts, and theory. *European Psychologist, 18(1),* 12–23. [10.1027/1016-9040/a000124](.../academic-search/?type=doi&q=10.1027/1016-9040/a000124)
 
 - Masten, A. S. (2014). Ordinary magic: Resilience in development. New York: Guilford Publications. ISBN: 1462523714 (Book, no DOI).
 
-- Neff, K. D. (2003). Self-compassion: An alternative conceptualization of a healthy attitude toward oneself. *Self and Identity, 2(2),* 85–101. [10.1080/15298860309032](.../doi-lookup/?doi=10.1080/15298860309032)
+- Neff, K. D. (2003). Self-compassion: An alternative conceptualization of a healthy attitude toward oneself. *Self and Identity, 2(2),* 85–101. [10.1080/15298860309032](.../academic-search/?type=doi&q=10.1080/15298860309032)
 
-- Neff, K. D., & McGehee, P. (2010). Self-compassion and Psychological Resilience among Adolescents and Young Adults. *Self and Identity, 9(3),* 225–240. [10.1080/15298860902979307](.../doi-lookup/?doi=10.1080/15298860902979307)
+- Neff, K. D., & McGehee, P. (2010). Self-compassion and Psychological Resilience among Adolescents and Young Adults. *Self and Identity, 9(3),* 225–240. [10.1080/15298860902979307](.../academic-search/?type=doi&q=10.1080/15298860902979307)
 
-- Richardson, G. E. (2002). The metatheory of resilience and resiliency. *Journal of Clinical Psychology, 58(3),* 307–321. [10.1002/jclp.10020](.../doi-lookup/?doi=10.1002/jclp.10020)
+- Richardson, G. E. (2002). The metatheory of resilience and resiliency. *Journal of Clinical Psychology, 58(3),* 307–321. [10.1002/jclp.10020](.../academic-search/?type=doi&q=10.1002/jclp.10020)
 
 - Southwick, S. M., & Charney, D. S. (2012). Resilience: The science of mastering life's greatest challenges. Cambridge University Press. ISBN: 9780521195638 (Book, no DOI).
 
-- Southwick, S. M., Bonanno, G. A., Masten, A. S., Panter-Brick, C., & Yehuda, R. (2014). Resilience definitions, theory, and challenges: interdisciplinary perspectives. *European Journal of Psychotraumatology, 5(1),* 25338. [10.3402/ejpt.v5.25338](.../doi-lookup/?doi=10.3402/ejpt.v5.25338)
+- Southwick, S. M., Bonanno, G. A., Masten, A. S., Panter-Brick, C., & Yehuda, R. (2014). Resilience definitions, theory, and challenges: interdisciplinary perspectives. *European Journal of Psychotraumatology, 5(1),* 25338. [10.3402/ejpt.v5.25338](.../academic-search/?type=doi&q=10.3402/ejpt.v5.25338)
 
-- Stoeber, J. (2003). Self-pity: Exploring the links to personality, control beliefs, and anger. *Journal of Personality, 71(2),* 183–220. [10.1111/1467-6494.7102004](.../doi-lookup/?doi=10.1111/1467-6494.7102004)
+- Stoeber, J. (2003). Self-pity: Exploring the links to personality, control beliefs, and anger. *Journal of Personality, 71(2),* 183–220. [10.1111/1467-6494.7102004](.../academic-search/?type=doi&q=10.1111/1467-6494.7102004)
 
 - Werner, E. E., & Smith, R. S. (2001). Journeys from Childhood to Midlife: Risk, Resilience, and Recovery. Cornell University Press, Ithaca, NY. ISBN: 9780801487388 (Book, no DOI).
 
-- Windle, G. (2011). What is resilience? A review and concept analysis. *Reviews in Clinical Gerontology, 21(2),* 152–169. [10.1017/S0959259810000420](.../doi-lookup/?doi=10.1017/S0959259810000420)
+- Windle, G. (2011). What is resilience? A review and concept analysis. *Reviews in Clinical Gerontology, 21(2),* 152–169. [10.1017/S0959259810000420](.../academic-search/?type=doi&q=10.1017/S0959259810000420)

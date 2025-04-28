@@ -1,6 +1,6 @@
 {
     "prompt-pretext": "Please use academic citations and references, and start researching without prompting me.",
-    "prompt-posttext": "In your response, can you link all citations, which includes the author and year in the link, to the url path '/doi-lookup/?doi='(so using the same server) and add the DOI to as part of this link, e.g. '/doi-lookup/?doi=10/23' if the DOI was 10/23",
+    "prompt-posttext": "In your response, can you link all citations, which includes the author and year in the link, to the url path '/doi-lookup/?doi='(so using the same server) and add the DOI to as part of this link, e.g. '/academic-search/?type=doi&q=10/23' if the DOI was 10/23",
     "questions" : 
     [
         {
