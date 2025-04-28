@@ -3,30 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOI Information Lookup</title>
+  <title>Academic Article Search & DOI Lookup</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .template {
       display: none; /* Hide the template */
     }
+    .search-result-button {
+      transition: background-color 0.2s;
+    }
+    .search-result-button:hover {
+      background-color: rgba(0, 0, 0, 0.03) !important;
+    }
+    .search-result-button::after {
+      content: '▼';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.2s;
+      font-size: 0.8em;
+      color: #6c757d;
+    }
+    .search-result-button.expanded::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
   </style>
 </head>
 <body>
   <div class="container mt-5">
-    <h1 class="mb-4">DOI Lookup</h1>
+    <h1 class="mb-4">Academic Article Search & DOI Lookup</h1>
     <p>
-      The lookup below uses the <a href="https://api.crossref.org/works/10.1016/S0749-3797(98)00017-8" target="_blank">crossref.org API</a> 
+      The lookup below uses the <a href="https://api.crossref.org/swagger-ui/index.html" target="_blank">crossref.org API</a> 
       and <a href="https://citation.doi.org/api-docs.html" target="_blank">citation.doi.org</a> to retrieve a citation (Harvard Cite It Right).
+      <br /><i>This page was built almost entirely by Copilot and Claude 3.5.</i>
     </p>
     
     <div class="row mb-4">
       <div class="col-md-8">
-        <div class="input-group">
-          <span class="input-group-text">DOI</span>
-          <input type="text" id="doiInput" class="form-control" placeholder="Enter DOI (e.g., 10.4236/psych.2023.147061)">
-          <button class="btn btn-primary" id="lookupButton">Lookup</button>
+        <div class="input-group mb-3">
+          <select class="form-select" id="searchType" style="max-width: 150px;">
+            <option value="doi" selected>DOI</option>
+            <option value="search">Search</option>
+            <option value="author">Author</option>
+            <option value="title">Title</option>
+          </select>
+          <input type="text" id="doiInput" class="form-control" value="10.1016/S0749-3797(98)00017-8" placeholder="Enter DOI">
+          <button class="btn btn-outline-secondary" type="button" id="clearButton" title="Clear search">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <select class="form-select" id="resultsPerPage" style="max-width: 110px;">
+            <option value="10">10 results</option>
+            <option value="25">25 results</option>
+            <option value="50">50 results</option>
+            <option value="100">100 results</option>
+          </select>
+          <button class="btn btn-primary" id="lookupButton">Search</button>
         </div>
+      </div>
+    </div>
+    
+    <!-- Search results template -->
+    <div id="searchResultsTemplate" class="template">
+      <div class="list-group mb-4">
+        <!-- Search results will be inserted here -->
       </div>
     </div>
     

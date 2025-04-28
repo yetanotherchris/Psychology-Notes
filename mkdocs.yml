@@ -13,7 +13,7 @@ nav:
   - Home: README.md
   - Tools:
     - Ask LLamas: ./ask-llamas/
-    - DOI Lookup: ./doi-lookup/
+    - Academic Search: ./academic-search/
     - Questionnaires: questionnaires-list.md
   - Cluster B:
     - Overview: Cluster-B/README.md
