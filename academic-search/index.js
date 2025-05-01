@@ -19,7 +19,6 @@ async function fetchCitation(doi) {
  * Fetches metadata for a DOI and displays it using HTML templates
  * @param {string} doi - The DOI to look up (e.g., "10.4236/psych.2023.147061")
  * @param {string} targetElementId - ID of the HTML element where results will be displayed
- * p.s. Claude 3.7 built this entire function for me 😱 - I just added a bit of string cleaning
  */
 async function fetchAndDisplayDOI(doi, targetElementId) {
 
@@ -97,6 +96,8 @@ async function fetchAndDisplayDOI(doi, targetElementId) {
 
         // Set DOI with link
         const doiElement = resultElement.querySelector('.data-doi');
+        doiElement.innerHTML = ''; // Clear any existing links
+
         const doiLink = document.createElement('a');
         doiLink.href = `https://doi.org/${doi}`; // Use original DOI instead of metadata.DOI
         doiLink.target = '_blank';
