@@ -4,6 +4,19 @@
     "questions" : 
     [
         {
+            "id": "ocean-traits-personality-disorders",
+            "title": "OCEAN traits that are linked or related to personality disorders",
+            "subtitle": "List the prominent factors from each OCEAN trait",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Pro",
+                "Grok": "3 Beta",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Using academic citations and research from Psychology, can you list the prominent factors from each OCEAN trait that are linked or related to personality disorders."
+        },
+        {
             "id": "loneliness-personality-disorders",
             "title": "Loneliness and isolation in working adults",
             "subtitle": "Personality (disorders) and behavioural aspects",
