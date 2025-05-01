@@ -244,9 +244,9 @@ async function displayDetailedView(item, expandedContent) {
         doiElement.innerHTML = ''; // Clear any existing links
 
         const doiLink = document.createElement('a');
-        doiLink.href = `https://doi.org/${doi}`; // Use original DOI instead of metadata.DOI
+        doiLink.href = `https://doi.org/${metadata.DOI}`; 
         doiLink.target = '_blank';
-        doiLink.textContent = doi; // Use original DOI for display text as well
+        doiLink.textContent = metadata.DOI;
         doiElement.appendChild(doiLink);
 
         // Set other fields
