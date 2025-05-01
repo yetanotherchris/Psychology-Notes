@@ -67,6 +67,19 @@
                 "Deepseek": "3"
             },
             "prompt": "Using Academic references and citations to books and papers, can you provide 10 main behaviourist experiments, 5 authors and behaviourist research since the 1990s."
+        },
+        {
+            "id": "ocean-personality-traits-ranked",
+            "title": "List the words that each OCEAN trait encompasses",
+            "subtitle": "Rank each by priority for a work environment & romantic relationship",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Pro",
+                "Grok": "3 Beta",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Using academic citations and research from Psychology, can you list the traits of each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible."
         }
     ]
 }
