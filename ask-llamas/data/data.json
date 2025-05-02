@@ -83,7 +83,7 @@
         },
         {
             "id": "ocean-personality-traits-ranked",
-            "title": "List the words that each OCEAN trait encompasses",
+            "title": "Words that encompass each OCEAN trait",
             "subtitle": "Rank each by priority for a work environment & romantic relationship",
             "models": {
                 "Claude": "3.7 Sonnet",
@@ -92,7 +92,7 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using academic citations and research from Psychology, can you list the traits of each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible."
+            "prompt": "Using academic citations and research from Psychology, can you list words associated with each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible"
         }
     ]
 }
