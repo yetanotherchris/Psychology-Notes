@@ -1,0 +1,53 @@
+# Experimentations Glossary
+
+Currently this is from Chat GPT'd from my own list, but with my own definitions slowly being filled in.
+
+| Concept                    | Definition                                                                                                                                                                       |
+|:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Alternative hypothesis     | What will happen according to the hypothesis. E.g., 'Students who sleep more perform better on tests.'                                                                           |
+| Averages                   | Central values of data. E.g., mean, median, mode.                                                                                                                                |
+| Between participants       | Dividing participants into groups for each condition of the experiment. E.g., Group A receives a drug, Group B receives a placebo.                                               |
+| Bimodal                    | Two peaks in data distribution. E.g., test scores with two common score ranges.                                                                                                  |
+| Categorical & ranking data | Non-numeric data grouped by category or order. e.g., blood type (categorical), race position (ranking).                                                                          |
+| Chi squared                | Test for relationship between categorical variables. E.g., testing if gender is related to voting preference.                                                                    |
+| Confounding variables      | Uncontrolled variables that affect the outcome. E.g., diet affecting weight loss in an exercise study.                                                                           |
+| Correlational              | A type of research design that examines the relationship between variables without manipulation. E.g., measuring the relationship between hours studied and exam scores.         |
+| Correlational co-efficient | Strength and direction of variable relationship. E.g., Pearson's r = 0.85 indicates strong positive correlation.  week13                                                         |
+| Dependent variable         | The measured outcome, e.g. heart rate change                                                                                                                                     |
+| Descriptive statistics     | Summarize data. E.g., a graph or table showing average test scores.                                                                                                              |
+| Distribution               | How data values are spread. E.g., normal, skewed, or bimodal.                                                                                                                    |
+| Experimental               | A research design involving manipulation of an independent variable. E.g., testing whether caffeine improves memory by assigning participants to caffeine or no caffeine groups. |
+| Falsification              | Concept that a hypothesis must be disprovable. E.g., 'All swans are white' can be falsified by finding one black swan.                                                           |
+| Frequency distribution     | Counts of values in intervals. E.g., histogram of age groups.                                                                                                                    |
+| Global Samples             | Diverse samples from various locations. E.g., participants from multiple countries.                                                                                              |
+| Graph types                | Scatter plot, histogram, bar chart.                                                                                                                                              |   
+| Hypothesis testing         | Statistical procedure to determine support for a hypothesis. E.g., testing if a new drug reduces symptoms more than a placebo.                                                   |
+| Independent Variable       | The manipulated variable. e.g., film category watched                                                                                                                            |
+| Inferential statistics     | Draw conclusions about a population from a sample. E.g., using t-tests or ANOVAs.                                                                                                |
+| Line of best fit           | Line approximating data trend in a scatterplot. E.g., average trend in exam scores vs. study time.                                                                               |
+| Local samples              | Samples from a specific location. E.g., one city or institution.                                                                                                                 |
+| Mean                       | Sum of values divided by number. E.g., average test score.                                                                                                                       |
+| Median                     | Middle value in an ordered dataset. E.g., the 5th value in a list of 9 scores.                                                                                                   |
+| Measures of central tendancy| Mode, median, mean                                                                                                                                                              |
+| Mode                       | The most common result, e.g. scores 1,3, 5, 6, 6, 7 it wold be 6. There also be no mode if they're all unique.                                                                   |
+| NHST                       | Null Hypothesis Significance Testing; tests if results are unlikely under the null hypothesis. E.g., using a t-test to check if two group means differ.                          |
+| Nominal                    | Labels with no order. E.g., types of fruit: apple, orange, banana.                                                                                                               |
+| Normal distribution        | Symmetrical bell-shaped curve. e.g., height distribution in a population, IQ.                                                                                                    |
+| Ordinal                    | Categorical ordered data & number, the interval between each value isn't always equal e.g. 1) agree...5) disagree (Likert), scariest horror films, GCSE, A Level, BSc, Ph.D.     |
+| Ordinal data               | Ordered data with unequal intervals. E.g., movie ratings: 1 to 5 stars.                                                                                                          |
+| P-Value                    | Probability of observing data under the null hypothesis. E.g., p = 0.03 suggests rejecting the null at 5% level.                                                                 |
+| Qualitative data           | Descriptive data. e.g., interviews.                                                                                                                                              |
+| Quantitative data          | Numerical data. e.g., height, temperature.                                                                                                                                       |
+| Quasi experimental         | An experimental design without random assignment. E.g., comparing student performance across two existing classes.                                                               |
+| Range                      | Difference between highest and lowest values. E.g., if scores range from 60 to 90, the range is 30.                                                                              |
+| Ratio                      | Numerical scale with true zero. E.g., weight in kilograms.                                                                                                                       |
+| Sampling                   | Selecting a subset of a population. E.g., choosing 100 students from a university.                                                                                               |
+| Sampling error             | Error from using a sample instead of the full population. E.g., survey results differ from actual population values.                                                             |
+| Scale                      | Measurement system classifying data. E.g., nominal, ordinal, interval, ratio scales.                                                                                             |
+| Scatterplot                | Graph showing two variable relationship. E.g., height vs. weight.                                                                                                                |
+| Standard deviation         | Spread of data around the mean. E.g., SD = 2 means most scores lie within 2 points of the mean.                                                                                  |
+| Statistical significance   | Result unlikely due to chance. E.g., p < 0.05.                                                                                                                                   |
+| Table                      | Organized data in rows and columns. E.g., list of participant ages by group.                                                                                                     |
+| Type 1                     | Rejecting a true null hypothesis. E.g., concluding a drug works when it doesn't.                                                                                                 |
+| Type 2                     | Failing to reject a false null hypothesis. E.g., missing the effect of a useful drug.                                                                                            |
+| Within participants        | The same group of people are affected by different conditions of the independent variable, e.g. juror's guilty verdict before and after deliberation                             |
