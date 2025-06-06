@@ -14,7 +14,7 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using academic citations and research from Psychology, can you list the prominent factors from each OCEAN trait that are linked or related to personality disorders."
+            "prompt": "Can you list the prominent factors from each OCEAN trait that are linked or related to personality disorders."
         },
         {
             "id": "loneliness-personality-disorders",
@@ -53,7 +53,7 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using academic citations and references, can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
+            "prompt": "Can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
         },
         {
             "id": "autism-inheritence-maternal-factors",
@@ -66,7 +66,7 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using academic research papers, references and citations, can you provide information about autism being correlated to mother’s health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
+            "prompt": "Can you provide information about autism being correlated to mother’s health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
         },
         {
             "id": "behaviourist-experiments-authors",
@@ -79,7 +79,7 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using Academic references and citations to books and papers, can you provide 10 main behaviourist experiments, 5 authors and behaviourist research since the 1990s."
+            "prompt": "Can you provide 10 main behaviourist experiments, 5 authors and behaviourist research since the 1990s."
         },
         {
             "id": "ocean-personality-traits-ranked",
@@ -92,7 +92,20 @@
                 "ChatGPT": "4.5",
                 "Deepseek": "3"
             },
-            "prompt": "Using academic citations and research from Psychology, can you list words associated with each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible"
+            "prompt": "Can you list words associated with each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible"
+        },
+        {
+            "id": "attention-bias-availability-heuristic",
+            "title": "What are the attention biases and the availability heuristic?",
+            "subtitle": "Are they linked to impulsive behaviour? For example having chocolate in the cupboard",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Flash",
+                "Grok": "3 Beta",
+                "ChatGPT": "4o",
+                "Deepseek": "r1-0528"
+            },
+            "prompt": "What are the attention biases and the availability heuristic? Are they linked to impulsive behaviour? For example having chocolate in the cupboard."
         }
     ]
 }
