@@ -106,6 +106,19 @@
                 "Deepseek": "r1-0528"
             },
             "prompt": "What are the attention biases and the availability heuristic? Are they linked to impulsive behaviour? For example having chocolate in the cupboard."
+        },
+        {
+            "id": "iams-involuntary-autobiographical-memories",
+            "title": "Involuntary Autobiographical Memories (IAMs) in Psychology and Psychiatry",
+            "subtitle": "Research into IAMs, rumination, and their links to conditions",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Flash",
+                "Grok": "3 Beta",
+                "ChatGPT": "4o",
+                "Deepseek": "3"
+            },
+            "prompt": "What research and information is there about involuntary autobiographical memories (IAMs) in psychology and psychiatry? Do IAMs tie into rumination? Are negative and sad IAMs linked to any conditions? Do people experience them throughout their day? What research or practical advice is there for managing IAMs?"
         }
     ]
 }
