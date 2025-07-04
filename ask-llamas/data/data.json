@@ -69,6 +69,19 @@
             "prompt": "Can you provide information about autism being correlated to mother’s health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
         },
         {
+            "id": "autism-inheritence-paternal-factors",
+            "title": "Paternal and genetic factors in Autism",
+            "subtitle": "What is the current research on paternal and genetic factors correlating to Autism (2025)?",
+            "models": {
+                "Claude": "3.7 Sonnet",
+                "Gemini": "2.5 Pro",
+                "Grok": "3 Beta",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Can you provide information about autism being genetically correlated to fathers or including health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
+        },
+        {
             "id": "behaviourist-experiments-authors",
             "title": "Noteable behaviourist experiments and authors",
             "subtitle": "What are ten behaviourist experiments and 5 authors?",
