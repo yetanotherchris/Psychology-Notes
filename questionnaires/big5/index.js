@@ -49,6 +49,15 @@ function surveyComplete (survey)
         }
     }
 
+    var chatGptTextarea = document.getElementById("chatgpt-prompt");
+    var promptText = chatGptTextarea.textContent;
+    promptText = promptText.replace("{{o-score}}", scores["O"]); 
+    promptText = promptText.replace("{{c-score}}", scores["C"]); 
+    promptText = promptText.replace("{{e-score}}", scores["E"]); 
+    promptText = promptText.replace("{{a-score}}", scores["A"]); 
+    promptText = promptText.replace("{{n-score}}", scores["N"]); 
+    chatGptTextarea.textContent = promptText;
+
     var finishedDiv = document.getElementById("finished");
     finishedDiv.style.display = "inline-block";
     document.getElementById("finished").remove();

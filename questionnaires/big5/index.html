@@ -15,8 +15,6 @@
     <style>
         #finished {
             display:none;
-            max-width: 500px;
-            width: 80%;
             padding: 20px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -77,6 +75,23 @@
                 <td style="{{n-style}}">{{n-score}}</td>
             </tr>
         </table>
+
+        <h4>Chat GPT prompt to create an OCEAN card image</h4>
+        <p>Use the following prompt to create an character card image based on your scores:</p>
+
+<p>
+<textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark wooden frame. At the top, display the character's name (e.g., 'YOUR NAME') in bold serif font. Below, show the five OCEAN personality traits: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Next to each trait, list a value from 1 to 50, and beneath each label, include a horizontal bar showing the percentage fill corresponding to the value. Use green bars for values over 25, and red bars for 25 or below. Ensure all five bars are clearly visible, properly colored, and scaled proportionally.
+
+The scores are the following:
+- Openness: {{o-score}}
+- Conscientiousness: {{c-score}}
+- Extraversion: {{e-score}}
+- Agreeableness: {{a-score}}
+- Neuroticism: {{n-score}}
+</textarea>
+</p>
+        <h4>Example</h4>
+        <img src="./example-avatar.png" alt="Avatar example">
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 
