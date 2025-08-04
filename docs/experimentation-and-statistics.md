@@ -64,3 +64,29 @@
 | Independent t-test         | |
 | Paired samples t-test      | |
 |Pearson correlation test|when the data are interval or ratio|
+
+## Sampling Error
+
+The group in the study is the sample. The wider group is the population, which depends on the research question.
+The sample is generalised to the population.
+
+Sampling error is the natural variability between a sample estimate and the true population value.
+
+Let’s say the true average IQ in a country is 100.
+
+- A small sample of 10 people might give you an average of 105 or 95 — lots of variation.
+- A large sample of 1,000 people might give you 99.8 or 100.2 — closer to the true value.
+- Both have sampling error, but the larger sample has less.
+
+### Formula
+Standard Error (SE) = s / sqrt(n)
+​ 
+Where:
+𝑠 = sample standard deviation
+𝑛 = sample size
+
+### Reducing error
+Reducing sampling error:
+- Larger sample size
+- Random sampling to reduce bias
+- Stratified sampling (key groups being represented)
