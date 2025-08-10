@@ -130,6 +130,43 @@ async function renderContent(question)
     document.getElementById("chatgpt-version").innerHTML = question.models["ChatGPT"];
     document.getElementById("deepseek-version").innerHTML = question.models["Deepseek"];
 
+    // Handle merged section dynamically
+    const mergedSection = document.querySelector('.accordion-item:last-child');
+    if (question.models.merged) {
+        // Show merged section and configure it
+        mergedSection.style.display = 'block';
+        
+        const mergedModel = question.models.merged;
+        const modelImageMap = {
+            "Claude": "claude.png",
+            "Gemini": "gemini.png", 
+            "Grok": "grok.png",
+            "ChatGPT": "openai.png",
+            "Deepseek": "deepseek.png"
+        };
+        
+        // Update the image
+        const mergedImage = document.querySelector('#headingMerged img');
+        mergedImage.src = `assets/${modelImageMap[mergedModel] || 'claude.png'}`;
+        
+        // Set background color for specific models
+        if (mergedModel === "Grok" || mergedModel === "ChatGPT") {
+            mergedImage.style.backgroundColor = "#000";
+        } else {
+            mergedImage.style.backgroundColor = "";
+        }
+        
+        // Update the title text
+        document.getElementById("merged-version").innerHTML = question.models[mergedModel] || '';
+        
+        // Update the model name in title
+        const mergedTitle = document.getElementById("merged-title");
+        mergedTitle.innerHTML = `<b>Merged response</b>`;
+    } else {
+        // Hide merged section if no merged model specified
+        mergedSection.style.display = 'none';
+    }
+
     let questionPath = DATA_ROOT + question.id;
 
     let claudeMarkdown = await loadMarkdown(`${questionPath}/claude.md`);
