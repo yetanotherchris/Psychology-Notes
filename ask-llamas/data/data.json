@@ -12,7 +12,8 @@
                 "Gemini": "2.5 Pro",
                 "Grok": "3 Beta",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "Can you list the prominent factors from each OCEAN trait that are linked or related to personality disorders."
         },
@@ -25,7 +26,8 @@
                 "Gemini": "2.0 Flash",
                 "Grok": "2",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know about personality changes including disorders, and also include other mental health changes such as depression if necessary, from loneliness and isolation in working adults."
         },
@@ -38,7 +40,8 @@
                 "Gemini": "2.0 Flash",
                 "Grok": "2",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know how attachment styles, and their knock on effects, might influence loneliness and isolation in working adults."
         },
@@ -51,7 +54,8 @@
                 "Gemini": "2.0 Flash",
                 "Grok": "3 Beta",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "Can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
         },
@@ -77,7 +81,8 @@
                 "Gemini": "2.5 Pro",
                 "Grok": "3 Beta",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "Can you provide information about autism being genetically correlated to fathers or including health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
         },
@@ -90,7 +95,8 @@
                 "Gemini": "2.5 Pro",
                 "Grok": "3 Beta",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "Can you provide 10 main behaviourist experiments, 5 authors and behaviourist research since the 1990s."
         },
@@ -103,7 +109,8 @@
                 "Gemini": "2.5 Pro",
                 "Grok": "3 Beta",
                 "ChatGPT": "4.5",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "Can you list words associated with each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible"
         },
@@ -129,7 +136,8 @@
                 "Gemini": "2.5 Flash",
                 "Grok": "3 Beta",
                 "ChatGPT": "4o",
-                "Deepseek": "3"
+                "Deepseek": "3",
+                "merged": "claude"
             },
             "prompt": "What research and information is there about involuntary autobiographical memories (IAMs) in psychology and psychiatry? Do IAMs tie into rumination? Are negative and sad IAMs linked to any conditions? Do people experience them throughout their day? What research or practical advice is there for managing IAMs?"
         },
