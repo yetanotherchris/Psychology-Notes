@@ -36,6 +36,47 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+function generateFooterLinks(questions) {
+    const footerContainer = document.getElementById("footer-links");
+    
+    // Clear any existing content
+    footerContainer.innerHTML = '';
+    
+    // Group questions into rows (roughly 4 items per row)
+    const itemsPerRow = 4;
+    
+    for (let i = 0; i < questions.length; i += itemsPerRow) {
+        const ul = document.createElement("ul");
+        ul.style.fontSize = "8pt";
+        ul.style.listStyleType = "none";
+        ul.style.padding = "0";
+        ul.style.margin = "0";
+        
+        // Get the chunk of questions for this row
+        const rowQuestions = questions.slice(i, i + itemsPerRow);
+        
+        rowQuestions.forEach((question, index) => {
+            const li = document.createElement("li");
+            li.style.display = "inline-block";
+            
+            const a = document.createElement("a");
+            a.href = `./?questionId=${question.id}`;
+            a.textContent = question.title;
+            
+            li.appendChild(a);
+            
+            // Add separator if not the last item in the row
+            if (index < rowQuestions.length - 1) {
+                li.appendChild(document.createTextNode("\u00A0|\u00A0"));
+            }
+            
+            ul.appendChild(li);
+        });
+        
+        footerContainer.appendChild(ul);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", async function() {
 
     let questionsJson = await loadJson(`${DATA_ROOT}/data.json`);
@@ -49,6 +90,9 @@ document.addEventListener("DOMContentLoaded", async function() {
     if (questionIndex && questionIndex < questionsJson.questions.length) {
         questionId = questionsJson.questions[questionIndex].id;
     } 
+    
+    // Generate footer links from data
+    generateFooterLinks(questionsJson.questions);
     
     // Fill the dropdown with questions
     for (let i = 0; i < questionsJson.questions.length; i++) {
