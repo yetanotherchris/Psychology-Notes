@@ -1,5 +1,5 @@
 site_name: Pyschology Notes
-site_url: https://yetanotherchris.github.io/Psychology-Notes/
+site_url: https://psychology-notes.fly.dev/
 repo_url: https://github.com/yetanotherchris/Psychology-Notes/
 repo_name: yetanotherchris/Psychology-Notes/
 docs_dir: docs
@@ -13,8 +13,8 @@ markdown_extensions:
 nav:
   - Home: README.md
   - Tools:
-    - Ask LLamas: ./ask-llamas/
-    - Academic Search: ./academic-search/
+    - Ask LLamas: /ask-llamas/
+    - Academic Search: /academic-search/
     - Questionnaires: questionnaires-list.md
   - Cluster B:
     - Overview: Cluster-B/README.md
