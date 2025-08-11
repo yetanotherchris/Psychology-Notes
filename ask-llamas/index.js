@@ -105,6 +105,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         anchorElement.setAttribute("href", "#");
         anchorElement.innerHTML = `${question.title}`;// <span class="italic light-grey">(${question.subtitle})</span>`;
         anchorElement.addEventListener("click", async function(event) {
+            // Update the dropdown button text
+            document.getElementById("dropdownButtonText").textContent = question.title;
             await renderContent(question);
         });
 
@@ -115,6 +117,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     // Render the first question by default
     let question = questionsJson.questions.find(q => q.id === questionId);
+    // Update the dropdown button text with the current question
+    document.getElementById("dropdownButtonText").textContent = question.title;
     renderContent(question);
 });
 
