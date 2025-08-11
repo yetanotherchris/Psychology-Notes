@@ -156,9 +156,6 @@ async function renderContent(question)
             mergedImage.style.backgroundColor = "";
         }
         
-        // Update the title text
-        document.getElementById("merged-version").innerHTML = question.models[mergedModel] || '';
-        
         // Update the model name in title
         const mergedTitle = document.getElementById("merged-title");
         mergedTitle.innerHTML = `<b>Merged response</b>`;
@@ -174,19 +171,23 @@ async function renderContent(question)
     let grokMarkdown = await loadMarkdown(`${questionPath}/grok.md`);
     let gptMarkdown = await loadMarkdown(`${questionPath}/gpt.md`);
     let deepseekMarkdown = await loadMarkdown(`${questionPath}/deepseek.md`);
-    let mergedMarkdown = await loadMarkdown(`${questionPath}/merged.md`);
     
     let claudeHtml = marked.parse(claudeMarkdown);
     let geminiHtml = marked.parse(geminiMarkdown);
     let grokHtml = marked.parse(grokMarkdown);
     let gptHtml = marked.parse(gptMarkdown);
     let deepseekHtml = marked.parse(deepseekMarkdown);
-    let mergedHtml = marked.parse(mergedMarkdown);
 
     document.getElementById("claude-body").innerHTML = claudeHtml;
     document.getElementById("gemini-body").innerHTML = geminiHtml;
     document.getElementById("grok-body").innerHTML = grokHtml;
     document.getElementById("gpt-body").innerHTML = gptHtml;
     document.getElementById("deepseek-body").innerHTML = deepseekHtml;
-    document.getElementById("merged-body").innerHTML = mergedHtml;
+    
+    // Only load and set merged content if merged field exists
+    if (question.models.merged) {
+        let mergedMarkdown = await loadMarkdown(`${questionPath}/merged.md`);
+        let mergedHtml = marked.parse(mergedMarkdown);
+        document.getElementById("merged-body").innerHTML = mergedHtml;
+    }
 }
