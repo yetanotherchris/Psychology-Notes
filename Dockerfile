@@ -1,5 +1,5 @@
-# Use Python 3.11 slim image as base
-FROM python:3.11-slim
+# Multi-stage build: Build stage
+FROM python:3.11-slim as builder
 
 # Set working directory
 WORKDIR /app
@@ -34,8 +34,17 @@ RUN cp -r ask-llamas docs/ && cp -r academic-search docs/
 # Build the MkDocs site
 RUN mkdocs build
 
-# Expose the port that MkDocs will serve on
-EXPOSE 8000
+# Production stage with nginx
+FROM nginx:alpine
 
-# Command to serve the built site
-CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
+# Copy built site from builder stage
+COPY --from=builder /app/site /usr/share/nginx/html
+
+# Copy nginx configuration with cache headers
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 8080 to match fly.toml
+EXPOSE 8080
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

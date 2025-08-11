@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- Cache control meta tags for weekly content updates -->
+  <meta http-equiv="Cache-Control" content="public, max-age=86400">
+  <meta http-equiv="Expires" content="{{ config.extra.cache_expires | default('1 day') }}">
+  <meta http-equiv="Pragma" content="cache">
+  
+  <!-- Additional performance meta tags -->
+  <meta name="theme-color" content="#2196f3">
+  <meta name="msapplication-TileColor" content="#2196f3">
+{% endblock %}

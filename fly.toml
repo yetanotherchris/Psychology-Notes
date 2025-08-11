@@ -20,7 +20,3 @@ primary_region = 'lhr'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
-
-[[statics]]
-  guest_path = "/app/site"
-  url_prefix = "/"
