@@ -28,6 +28,9 @@ RUN pip install --no-cache-dir \
 # Copy the entire project
 COPY . .
 
+# Copy additional folders into docs directory for MkDocs
+RUN cp -r ask-llamas docs/ && cp -r academic-search docs/
+
 # Build the MkDocs site
 RUN mkdocs build
 

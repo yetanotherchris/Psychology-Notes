@@ -7,14 +7,23 @@ docs_dir: docs
 theme:
   name: material
 
+plugins:
+  - search
+
+# Include additional static files
+extra:
+  static_templates:
+    - ask-llamas/index.html
+    - academic-search/index.html
+
 markdown_extensions:
   - attr_list
 
 nav:
   - Home: README.md
   - Tools:
-    - Ask LLamas: /ask-llamas/
-    - Academic Search: /academic-search/
+    - Ask LLamas: ask-llamas/
+    - Academic Search: academic-search/
     - Questionnaires: questionnaires-list.md
   - Cluster B:
     - Overview: Cluster-B/README.md
