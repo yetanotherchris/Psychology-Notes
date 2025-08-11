@@ -28,10 +28,7 @@ RUN pip install --no-cache-dir \
 # Copy the entire project
 COPY . .
 
-# Copy additional folders into docs directory for MkDocs
-RUN cp -r ask-llamas docs/ && cp -r academic-search docs/
-
-# Build the MkDocs site
+# Build the MkDocs site (this will only process the docs directory)
 RUN mkdocs build
 
 # Production stage with nginx
@@ -39,6 +36,11 @@ FROM nginx:alpine
 
 # Copy built site from builder stage
 COPY --from=builder /app/site /usr/share/nginx/html
+
+# Copy static applications directly to web root
+COPY --from=builder /app/ask-llamas /usr/share/nginx/html/ask-llamas
+COPY --from=builder /app/academic-search /usr/share/nginx/html/academic-search
+COPY --from=builder /app/questionnaires /usr/share/nginx/html/questionnaires
 
 # Copy nginx configuration with cache headers
 COPY nginx.conf /etc/nginx/nginx.conf
