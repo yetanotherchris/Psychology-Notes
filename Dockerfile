@@ -13,10 +13,8 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for better caching
-# If you have a requirements.txt, uncomment the next two lines:
-# COPY requirements.txt .
-# RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # If no requirements.txt exists, install common MkDocs dependencies
 RUN pip install --no-cache-dir \
