@@ -1,0 +1,8 @@
+User-agent: *
+
+# Disallow indexing of data folders and JSON files
+Disallow: /ask-llamas/data/
+Disallow: /*.json$
+
+# Allow everything else
+Allow: /
