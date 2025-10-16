@@ -1,6 +1,7 @@
 {
     "prompt-pretext": "Please use academic citations and references, and start researching without prompting me.",
     "prompt-posttext": "In your response, can you link all citations, which includes the author and year in the link, to the url path '../academic-search/?type=doi&q=the-doi'(so using the same server) and add the DOI to as part of this link, e.g. '../academic-search/?type=doi&q=10/23' if the DOI was 10/23",
+    "merge-prompt": "Attached are 5 answers from 5 LLMS (Claude, Deepseek, Gemini, Gpt, Grok) to the prompt below. Can you verify their answers, and create a final (merged) response based on their answers and which answer(s) seem to be the highest quality and most accurate. Please include a references section verbatim, using the Harvard Cite It Right citation system. You do not need to use references to the original documents such as [1],[2] as long as you have the primary source in your citation and reference.",
     "questions" : 
     [
         {
@@ -85,6 +86,19 @@
                 "merged": "claude"
             },
             "prompt": "Can you provide information about autism being genetically correlated to fathers or including health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
+        },
+        {
+            "id": "autism-link-to-paracetomol",
+            "title": "Links between paracetomol (acetaminophen) and Autism",
+            "subtitle": "What is the current evidence on links between paracetomol (acetaminophenm/Tylenol) and autism in 2025?",
+            "models": {
+                "Claude": "4.5 Sonnet",
+                "Gemini": "2.5 Pro",
+                "Grok": "4",
+                "ChatGPT": "4.5",
+                "Deepseek": "3"
+            },
+            "prompt": "Find research for links between paracetamol (acetaminophen) usage during pregnancy and autism."
         },
         {
             "id": "behaviourist-experiments-authors",
