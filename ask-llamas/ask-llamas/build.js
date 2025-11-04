@@ -61,20 +61,6 @@ function generateHTML(question, modelContents, allQuestions) {
             </div>`;
     }).join('\n');
 
-    // Generate footer links (grouped in rows of 4)
-    const footerRows = [];
-    for (let i = 0; i < allQuestions.length; i += 4) {
-        const row = allQuestions.slice(i, i + 4).map((q, idx) => {
-            const separator = idx < 3 && (i + idx + 1) < allQuestions.length ? '&nbsp;|&nbsp;' : '';
-            return `<li style="display: inline-block;"><a href="${q.id}.html">${q.title}</a>${separator}</li>`;
-        }).join('\n                    ');
-
-        footerRows.push(`
-                <ul style="font-size: 8pt; list-style-type: none; padding: 0; margin: 0;">
-                    ${row}
-                </ul>`);
-    }
-
     return `<!doctype html>
 <html lang="en">
 
@@ -148,14 +134,6 @@ function generateHTML(question, modelContents, allQuestions) {
         <div class="accordion" id="accordionParent">
 ${accordionItems}
         </div>
-
-        <footer class="light-grey">
-            <small><a href="../" >Home</a>&nbsp;|&nbsp;The multi-model answers were retrieved using <a href="https://www.openrouter.ai/chat" target="_blank">openrouter.ai</a>.</small>
-            <br /><br />
-            <div id="footer-links">
-${footerRows.join('\n')}
-            </div>
-        </footer>
     </div>
 </body>
 </html>`;
