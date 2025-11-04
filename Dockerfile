@@ -8,9 +8,12 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Install system dependencies
+# Install system dependencies including Node.js
 RUN apt-get update && apt-get install -y \
     git \
+    curl \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -30,6 +33,11 @@ COPY . .
 
 # Build the MkDocs site (this will only process the docs directory)
 RUN mkdocs build
+
+# Build ask-llamas static pages
+WORKDIR /app/ask-llamas
+RUN npm install && npm run build
+WORKDIR /app
 
 # Production stage with nginx
 FROM nginx:alpine
