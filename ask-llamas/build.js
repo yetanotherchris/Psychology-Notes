@@ -101,7 +101,7 @@ function generateHTML(question, modelContents, allQuestions) {
             font-style: normal;
         }
 
-        .card, .dropdown, .accordion {
+        .card, .accordion {
             margin-bottom:20px
         }
 
@@ -121,10 +121,6 @@ function generateHTML(question, modelContents, allQuestions) {
         .light-grey {
             color: rgb(165, 165, 165);
         }
-
-        #dropdownQuestions {
-            border: 2px solid darkgray;
-        }
     </style>
 </head>
 
@@ -135,14 +131,9 @@ function generateHTML(question, modelContents, allQuestions) {
 
     <div class="container" style="padding:20px;">
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <span id="dropdownButtonText">${question.title}</span>
-            </button>
-            <ul id="dropdownQuestions" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-${allQuestions.map(q => `                <li><a class="dropdown-item" href="${q.id}.html">${q.title}</a></li>`).join('\n')}
-            </ul>
-          </div>
+        <div style="margin-bottom: 20px;">
+            <a href="index.html">← Back to Ask LLamas</a>
+        </div>
 
         <div class="card">
             <div class="card-body">
@@ -203,11 +194,12 @@ function generateIndexHTML(allQuestions) {
             font-style: normal;
         }
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             padding: 60px 20px;
             border-radius: 10px;
             margin-bottom: 40px;
+        }
+        .list-group {
+            list-style-type: none;
         }
         .list-group-item {
             border: 1px solid rgb(165, 165, 165);
@@ -226,7 +218,7 @@ function generateIndexHTML(allQuestions) {
         crossorigin="anonymous"></script>
 
     <div class="container" style="padding:20px;">
-        <div class="hero text-center">
+        <div class="hero">
             <h1>Ask LLamas</h1>
             <p class="lead">Comparing answers from multiple AI models on Psychology-specific questions</p>
         </div>
