@@ -21,16 +21,16 @@
             font-weight: 500;
             font-style: normal;
         }
-        .hero {
-            padding: 60px 20px;
-            border-radius: 10px;
+        .card {
             margin-bottom: 40px;
+        }
+        .card, .list-group-item {
+            border: 1px solid rgb(165, 165, 165);
         }
         .list-group {
             list-style-type: none;
         }
         .list-group-item {
-            border: 1px solid rgb(165, 165, 165);
             margin-bottom: 10px;
             border-radius: 5px;
         }
@@ -46,9 +46,11 @@
         crossorigin="anonymous"></script>
 
     <div class="container" style="padding:20px;">
-        <div class="hero">
-            <h1>Ask LLamas</h1>
-            <p class="lead">Comparing answers from multiple AI models on Psychology-specific questions</p>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title" style="font-weight:700;">Ask LLamas</h1>
+                <p class="card-text lead">Comparing answers from multiple AI models on Psychology-specific questions</p>
+            </div>
         </div>
 
         <div class="row">
