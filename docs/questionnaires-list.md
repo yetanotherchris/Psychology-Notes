@@ -8,7 +8,7 @@ All questionnaires are publically reproduceable for education purposes, based on
 - [Children's Rejection Sensitivity Questionnaire (C-RSQ)](../questionnaires/c-rsq/index.html)
 - [Digit Symbol Substitution Test](../questionnaires/dsst/index.html)
 - [Friendship Questionnaire (FQ, used in ASD diagnosis)](../questionnaires/friendship-questionnaire/index.html)
-- [GAD-7 adapted for children aged 11-17](../questionnaires/gad-17-child/index.html)
+- [GAD-7 adapted for children aged 11-17](../questionnaires/gad-7-child/index.html)
 - [Generalized Anxiety Disorder 7-item Scale (GAD-7)](../questionnaires/gad-7/index.html)
 - [Perceived Stress Scale (PSS-10)](../questionnaires/pss-10/index.html)
 - [Ruminative Response Scale (RRS-10)](../questionnaires/rrs-10/index.html)
