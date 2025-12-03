@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generalized Anxiety Disorder 7-item Scale (GAD-7)</title>
+
+    <script src="../surveyjs/survey-core/survey.core.min.js"></script>
+    <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
+    <script src="../surveyjs/survey-core/themes/index.min.js"></script>
+    <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
+    <link rel="stylesheet" href="../common.css" />
+    <style>
+        #finished {
+            display: none;
+            width: 50%;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #finished .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #finished .centered-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #finished table tr td {
+            text-align: left;
+        }
+
+        #finished table tr td:nth-child(1) {
+            font-weight: bold;
+            width:60px;
+        }
+
+        #finished cite {
+            text-align: left;
+            display: block;
+            padding: 20px;
+            line-height: normal;
+            font-size: 8pt;
+        }
+
+        #finished #reset-survey {
+            margin-left: 40%;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../inter-font.css">
+</head>
+
+<body>
+    <div id="surveyElement"></div>
+    <div id="finished">
+        <h3>Your score was {{totalScore}}</h3>
+        <p><strong>Severity: {{severity}}</strong></p>
+        <div class="container">
+            <div class="centered-content">
+                <b>GAD-7 Scoring Interpretation</b>
+                <table>
+                    <tr>
+                        <td>0-4</td>
+                        <td>Minimal anxiety</td>
+                    </tr>
+                    <tr>
+                        <td>5-9</td>
+                        <td>Mild anxiety</td>
+                    </tr>
+                    <tr>
+                        <td>10-14</td>
+                        <td>Moderate anxiety</td>
+                    </tr>
+                    <tr>
+                        <td>15-21</td>
+                        <td>Severe anxiety</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <cite>
+            Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). A brief measure for assessing generalized anxiety disorder: The GAD-7.
+            <em>Archives of Internal Medicine</em>, <em>166</em>(10), 1092-1097.
+            <a href="https://doi.org/10.1001/archinte.166.10.1092" target="_blank">https://doi.org/10.1001/archinte.166.10.1092</a>
+        </cite>
+        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+    </div>
+
+    <script src="../common.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

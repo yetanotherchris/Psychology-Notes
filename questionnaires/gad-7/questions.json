@@ -1,0 +1,90 @@
+{
+  "likertChoices": [
+    { "value": 0, "text": "Not at all" },
+    { "value": 1, "text": "Several days" },
+    { "value": 2, "text": "More than half the days" },
+    { "value": 3, "text": "Nearly every day" }
+  ],
+  "title": "Generalized Anxiety Disorder 7-item Scale (GAD-7)",
+  "showQuestionNumbers": "on",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q1",
+      "title": "Feeling nervous, anxious, or on edge",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q2",
+      "title": "Not being able to stop or control worrying",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q3",
+      "title": "Worrying too much about different things",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q4",
+      "title": "Trouble relaxing",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q5",
+      "title": "Being so restless that it is hard to sit still",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q6",
+      "title": "Becoming easily annoyed or irritable",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "q7",
+      "title": "Feeling afraid, as if something awful might happen",
+      "description": "Over the last two weeks, how often have you been bothered by this problem?",
+      "isRequired": true,
+      "showNoneItem": false,
+      "showOtherItem": false
+    },
+    {
+      "type": "radiogroup",
+      "name": "functional_impairment",
+      "title": "If you checked any problems, how difficult have they made it for you to do your work, take care of things at home, or get along with other people?",
+      "isRequired": false,
+      "showNoneItem": false,
+      "showOtherItem": false,
+      "choices": [
+        { "value": 0, "text": "Not difficult at all" },
+        { "value": 1, "text": "Somewhat difficult" },
+        { "value": 2, "text": "Very difficult" },
+        { "value": 3, "text": "Extremely difficult" }
+      ],
+      "visibleIf": "{q1} notempty or {q2} notempty or {q3} notempty or {q4} notempty or {q5} notempty or {q6} notempty or {q7} notempty"
+    }
+  ]
+}
