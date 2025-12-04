@@ -1,0 +1,7 @@
+Please use academic citations and references. 
+Include a references list section at the end of the answer. In this reference list section, link the academic reference to the url 
+https://psychology-notes.fly.dev/academic-search/?type=doi&q={{ DOI HERE }}
+Replace {{ DOI HERE }} with the DOI, and url encode it.
+
+Question:
+Question goes here.
