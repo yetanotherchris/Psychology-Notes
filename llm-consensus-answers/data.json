@@ -1,0 +1,83 @@
+{
+    "questions" : 
+    [
+        {
+            "id": "ocean-traits-personality-disorders",
+            "subtitle": "List the prominent factors from each OCEAN trait",
+            "title": "OCEAN traits that are linked or related to personality disorders",                    
+            "prompt": "Can you list the prominent factors from each OCEAN trait that are linked or related to personality disorders."
+        },
+        {
+            "id": "loneliness-personality-disorders",
+            "subtitle": "Personality (disorders) and behavioural aspects",
+            "title": "Loneliness and isolation in working adults",                    
+            "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know about personality changes including disorders, and also include other mental health changes such as depression if necessary, from loneliness and isolation in working adults."
+        },
+        {
+            "id": "loneliness-attachment",
+            "subtitle": "Attachment style influence on loneliness and isolation in working adults",
+            "title": "Influence of attachment style on loneliness",                    
+            "prompt": "I'm interested in the personality and behavioural aspects, such as defense mechanisms and grandiosity, that may be deployed - if this is an aspect. I would like to know how attachment styles, and their knock on effects, might influence loneliness and isolation in working adults."
+        },
+        {
+            "id": "resilience-self-compassion-pity",
+            "subtitle": "Is self compassion a part of resilience?",
+            "title": "Self compassion in resilience",                    
+            "prompt": "Can you tell me about studies and research into resilience, particularly related to mental health, with descriptions of what is and isn't resiliency including self compassion vs feeling sorry for yourself or self-pity, in the context of resilience."
+        },
+        {
+            "id": "autism-inheritence-maternal-factors",
+            "subtitle": "What is the current research on maternal and genetic factors correlating to Autism (2025)?",
+            "title": "Maternal and genetic factors in Autism",
+            "prompt": "Can you provide information about autism being correlated to mother’s health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."                   
+        },
+        {
+            "id": "autism-inheritence-paternal-factors",
+            "subtitle": "What is the current research on paternal and genetic factors correlating to Autism (2025)?",
+            "title": "Paternal and genetic factors in Autism",                    
+            "prompt": "Can you provide information about autism being genetically correlated to fathers or including health, weight, age at birth and any genetic factors, and if possible include monozygotic twin studies."
+        },
+        {
+            "id": "autism-link-to-paracetomol",
+            "subtitle": "What is the current evidence on links between paracetomol (acetaminophenm/Tylenol) and autism in 2025?",
+            "title": "Links between paracetomol (acetaminophen) and Autism",
+            "prompt": "Find research for links between paracetamol (acetaminophen) usage during pregnancy and autism."              
+        },
+        {
+            "id": "behaviourist-experiments-authors",
+            "subtitle": "What are ten behaviourist experiments and 5 authors?",
+            "title": "Noteable behaviourist experiments and authors",                    
+            "prompt": "Can you provide 10 main behaviourist experiments, 5 authors and behaviourist research since the 1990s."
+        },
+        {
+            "id": "ocean-personality-traits-ranked",
+            "subtitle": "Rank each by priority for a work environment & romantic relationship",
+            "title": "Words that encompass each OCEAN trait",                    
+            "prompt": "Can you list words associated with each OCEAN trait. Can you provide a list of words that each trait encompasses? And can you provide this list ranked by priority, for a work environment and also romantic relationship combined if possible"
+        },
+        {
+            "id": "attention-bias-availability-heuristic",
+            "subtitle": "Are they linked to impulsive behaviour? For example having chocolate in the cupboard",
+            "title": "What are the attention biases and the availability heuristic?",
+            "prompt": "What are the attention biases and the availability heuristic? Are they linked to impulsive behaviour? For example having chocolate in the cupboard."               
+        },
+        {
+            "id": "iams-involuntary-autobiographical-memories",
+            "subtitle": "Research into IAMs, rumination, and their links to conditions",
+            "title": "Involuntary Autobiographical Memories (IAMs) in Psychology and Psychiatry",                    
+            "prompt": "What research and information is there about involuntary autobiographical memories (IAMs) in psychology and psychiatry? Do IAMs tie into rumination? Are negative and sad IAMs linked to any conditions? Do people experience them throughout their day? What research or practical advice is there for managing IAMs?"
+        },
+        {
+            "id": "cormordity-of-npd-aspd-bpd",
+            "subtitle": "Research into the co-morbididty of Cluster-B personality disorders",
+            "title": "Cormordity of Narcissism, ASPD, BPD",                    
+            "prompt": "Find research for the co-morbidity of narcissism and borderline personality traits, or personality disorders too. Include all forms of narcissism include ASPD and its traits, and discuss if ASPD is also co-morbid with narcissism and/or borderline personality disorder or borderline personality organisation. Furthermore, add to your response if narcissism/ASPD can be found to be co-morbid with borderline traits, but if there is research for this not being the case the other way round. That is, can someone with borderline personality disorder/traits not necessarily be co-morbid with ASPD and narcissistic traits. This video describes how ASPD + BPD are co-morbid: https://www.youtube.com/watch?v=QQLc5tBo5vc"
+        },
+        {
+            "id": "cormordity-of-npd-bpd-asd-adhd",
+            "subtitle": "Research into the co-morbididty of Cluster-B personality disorders with ASD/ADHD and other types of Neurodiversity",
+            "title": "Cormordity of Narcissism, BPD with ASD and ADHD",                    
+            "prompt": "Find research for the co-morbidity of narcissism and borderline personality traits, or personality disorders too with ASD, ADHD or other types of neurodiversity. Include all forms of narcissism include ASPD and its traits."
+        }
+    ]
+}

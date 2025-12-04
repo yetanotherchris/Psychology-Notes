@@ -15,8 +15,8 @@ markdown_extensions:
 
 nav:
   - Home: README.md
+  - llm-consensus-answers.md
   - Tools:
-    - Ask LLamas: ask-llamas.md
     - Academic Search: academic-search.md
     - Questionnaires: questionnaires-list.md
   - Cluster B:

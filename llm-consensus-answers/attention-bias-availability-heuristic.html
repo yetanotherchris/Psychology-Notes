@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consensus for: Please use academic citations and references. 
+...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f7f7f8;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 0 3px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #002147 0%, #0a2f5c 100%);
+            color: white;
+            padding: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .meta-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .meta-card .label {
+            font-size: 0.75em;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .meta-card .value {
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #002147;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #002147;
+        }
+        
+        .answer-box {
+            background: #f8f9fa;
+            border-left: 4px solid #002147;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .answer-box h3 {
+            color: #002147;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .answer-box p {
+            margin-bottom: 15px;
+        }
+        
+        .citation-list {
+            margin-top: 15px;
+        }
+        
+        .citation-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #0a2f5c;
+        }
+
+        .citation-item strong {
+            color: #0a2f5c;
+        }
+        
+        .agreement-grid {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .agreement-item {
+            background: #e7f3ff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+            display: flex;
+            align-items: center;
+        }
+        
+        .agreement-item::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        
+        .disagreement-note {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+        
+        .model-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .model-card:hover {
+            border-color: #002147;
+            box-shadow: 0 5px 15px rgba(0, 33, 71, 0.2);
+        }
+        
+        .model-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .model-name {
+            font-size: 1.4em;
+            color: #002147;
+            font-weight: 600;
+        }
+
+        .confidence-badge {
+            background: linear-gradient(135deg, #002147 0%, #0a2f5c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .model-content {
+            color: #333;
+        }
+        
+        .model-full-response {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .subsection {
+            margin: 25px 0;
+        }
+        
+        .subsection h4 {
+            color: #0a2f5c;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .subsection p, .subsection ul {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .subsection ul {
+            padding-left: 25px;
+        }
+        
+        .subsection li {
+            margin-bottom: 8px;
+        }
+        
+        ul, ol {
+            padding-left: 30px;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .context-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .context-note strong {
+            color: #856404;
+        }
+        
+        .expandable-toggle {
+            background: #002147;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: background 0.3s ease;
+        }
+
+        .expandable-toggle:hover {
+            background: #0a2f5c;
+        }
+        
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .expandable-content.expanded {
+            max-height: none;
+        }
+        
+        .reasoning-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #002147;
+        }
+        
+        .reasoning-box p {
+            margin-bottom: 15px;
+        }
+        
+        .reasoning-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .button-row {
+            margin-top: 15px;
+            display: block;
+        }
+        
+        .original-prompt-box {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 40px;
+            color: #666;
+        }
+        
+        .original-prompt-box h3 {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .original-prompt-box p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .meta-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .original-prompt-box {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>What are the attention biases and the availability heuristic?</h1>
+            <div class="meta-info">
+                <div class="meta-card">
+                    <div class="label"><a href="/llm-consensus-answers/" style="color: inherit; text-decoration: none;">← Back</a></div>
+                </div>
+                <div class="meta-card">
+                    <div class="label">Models Consulted</div>
+                    <div class="value">7 Models</div>
+                </div>
+                <div class="meta-card">
+                    <div class="label">Confidence</div>
+                    <div class="value">93%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="original-prompt-box">
+            <h2>Are they linked to impulsive behaviour? For example having chocolate in the cupboard</h2>
+            <div>What are the attention biases and the availability heuristic? Are they linked to impulsive behaviour? For example having chocolate in the cupboard.</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Synthesized Answer</h2>
+                
+                <div class="answer-box">
+                    <h1 id="attention-biases-and-availability-heuristic-links-to-impulsive-behavior">Attention Biases and Availability Heuristic: Links to Impulsive Behavior</h1>
+<h2 id="definitions">Definitions</h2>
+<p><strong>Attention Biases</strong> refer to the systematic tendency for perception to be differentially affected by selective factors in attention, causing individuals to preferentially process certain stimuli over others (Bar-Haim et al., 2007). In the context of food and consumption, attentional bias manifests when individuals automatically orient their attention toward specific food cues—such as chocolate in a cupboard—particularly when they have strong appetitive desires or are attempting dietary restriction (Kemps &amp; Tiggemann, 2009). This bias can be measured using tasks like the dot-probe task or eye-tracking studies, which demonstrate heightened attention to reward-related stimuli (Field &amp; Cox, 2008).</p>
+<p><strong>The Availability Heuristic</strong> is a cognitive shortcut wherein people estimate the likelihood, frequency, or importance of events based on how easily examples come to mind (retrieval fluency) rather than on actual probability or comprehensive analysis (Tversky &amp; Kahneman, 1973). This mental shortcut relies on the mental accessibility of information, leading to systematic biases when vivid, recent, or emotionally salient examples disproportionately influence judgment.</p>
+<h2 id="links-to-impulsive-behavior">Links to Impulsive Behavior</h2>
+<p>Both cognitive mechanisms are demonstrably linked to impulsive behavior, operating through distinct but complementary pathways within dual-process models of cognition (Hofmann et al., 2009). These models describe a conflict between automatic, affective processes (System 1) and controlled, reflective processes (System 2).</p>
+<p><strong>Attentional Bias and Impulsivity:</strong>
+Attentional bias toward rewarding stimuli, such as palatable foods, has been consistently associated with impulsive eating behaviors and difficulties in dietary self-regulation (Castellanos et al., 2009; Field et al., 2016). The bias operates primarily within the automatic system, capturing attention and triggering prepotent approach responses. Research based on Incentive Sensitization Theory shows that rewarding stimuli acquire &quot;incentive salience,&quot; making them intensely &quot;wanted&quot; and creating a feedback loop where attentional capture increases craving (Berridge, 2009). This heightened salience can overwhelm reflective self-control processes, particularly in individuals with lower inhibitory control (Werthmann et al., 2011).</p>
+<p><strong>Availability Heuristic and Impulsivity:</strong>
+The availability heuristic contributes to impulsivity by facilitating quick, experience-based judgments that favor immediate gratification (Kahneman, 2011). In the context of chocolate consumption, this operates through two mechanisms:</p>
+<ol>
+<li><p><strong>Immediacy of Reward:</strong> Vivid, easily retrievable memories of eating chocolate make the reward seem particularly attractive and probable, while abstract long-term consequences (health effects, weight gain) are less mentally accessible.</p>
+</li>
+<li><p><strong>Physical Availability Influencing Cognitive Availability:</strong> The physical presence of chocolate increases its salience and accessibility in memory, making consumption the most accessible &quot;solution&quot; to momentary desires, thereby crowding out less accessible alternatives like preparing healthy snacks.</p>
+</li>
+</ol>
+<h2 id="the-chocolate-in-the-cupboard-example">The Chocolate in the Cupboard Example</h2>
+<p>The chocolate cupboard example perfectly illustrates how these mechanisms interact synergistically to promote impulsivity:</p>
+<ol>
+<li><p><strong>Attentional Bias:</strong> Knowledge that chocolate is present creates a persistent attentional pull. Studies demonstrate that even without direct visual exposure, awareness of palatable food availability can maintain attentional focus on food-related thoughts, creating intrusive cognitions that interfere with other activities (May et al., 2012). The cupboard acts as a conditioned stimulus that repeatedly draws attention.</p>
+</li>
+<li><p><strong>Availability Heuristic:</strong> Pleasant memories of chocolate consumption are typically vivid and easily recalled. The physical proximity makes the option to eat it cognitively &quot;available,&quot; creating a low-effort decision pathway favored by the brain's tendency toward cognitive ease. This bypasses more deliberative, rational processing necessary for impulse control.</p>
+</li>
+<li><p><strong>Synergistic Effects:</strong> These processes create a feedback loop where attention biases heighten stimulus salience while the availability heuristic makes the rewarding outcome feel more attainable and immediate, reducing motivation to exert self-control. The environmental cue serves as both an attentional trigger and a prime for the availability heuristic, creating a &quot;hot&quot; decision-making context where impulsive choice becomes highly likely (Metcalfe &amp; Mischel, 1999).</p>
+</li>
+<li><p><strong>Neural Basis:</strong> Neuroimaging studies suggest these cognitive processes involve activity in brain regions associated with reward processing (ventral striatum) and cognitive control (prefrontal cortex), further supporting their mechanistic role in impulsive behavior (Hare et al., 2009).</p>
+</li>
+</ol>
+<h2 id="interventions">Interventions</h2>
+<p>Research demonstrates that reducing attentional bias through cognitive training or modifying environmental cues (such as removing tempting foods from sight or from the home entirely) can improve self-control and reduce impulsive consumption (Kemps et al., 2014; Wansink &amp; Chandon, 2014). Mindfulness training has also shown promise in mitigating these effects (Forman et al., 2007).</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Bar-Haim, Y., Lamy, D., Pergamin, L., Bakermans-Kranenburg, M. J., &amp; Van Ijzendoorn, M. H. (2007). Threat-related attentional bias in anxious and nonanxious individuals: A meta-analytic study. <em>Psychological Bulletin</em>, <em>133</em>(1), 1-24. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1</a></p>
+<p>Berridge, K. C. (2009). 'Wanting' and 'liking': Expanding the hedonic impact of pleasure. <em>Neuroscience &amp; Biobehavioral Reviews</em>, <em>33</em>(3), 307-307. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.neubiorev.2009.02.007">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.neubiorev.2009.02.007</a></p>
+<p>Castellanos, E. H., Charboneau, E., Dietrich, M. S., Park, S., Bradley, B. P., Mogg, K., &amp; Cowan, R. L. (2009). Obese adults have visual attention bias for food cue images: Evidence for altered reward system function. <em>International Journal of Obesity</em>, <em>33</em>(9), 1063-1073. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1038%2Fijo.2009.138">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1038%2Fijo.2009.138</a></p>
+<p>Field, M., &amp; Cox, W. M. (2008). Attentional bias in addictive behaviors: A review of its development, causes, and consequences. <em>Drug and Alcohol Dependence</em>, <em>97</em>(1-2), 1-20. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.03.030">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.03.030</a></p>
+<p>Field, M., Werthmann, J., Franken, I., Hofmann, W., Hogarth, L., &amp; Roefs, A. (2016). The role of attentional bias in obesity and addiction. <em>Health Psychology</em>, <em>35</em>(8), 767-780. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fhea0000405">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fhea0000405</a></p>
+<p>Forman, E. M., Hoffman, K. L., McGrath, K. B., Herbert, J. D., Brandsma, L. L., &amp; Lowe, M. R. (2007). A comparison of acceptance- and control-based strategies for coping with food cravings: An analog study. <em>Behaviour Research and Therapy</em>, <em>45</em>(10), 2372-2386. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.brat.2007.04.004">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.brat.2007.04.004</a></p>
+<p>Hare, T. A., Camerer, C. F., &amp; Rangel, A. (2009). Self-control in decision-making involves modulation of the vmPFC valuation system. <em>Science</em>, <em>324</em>(5927), 646-648. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1126%2Fscience.1168450">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1126%2Fscience.1168450</a></p>
+<p>Hofmann, W., Friese, M., &amp; Strack, F. (2009). Impulse and self-control from a dual-systems perspective. <em>Perspectives on Psychological Science</em>, <em>4</em>(2), 162-176. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x</a></p>
+<p>Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Macmillan.</p>
+<p>Kemps, E., &amp; Tiggemann, M. (2009). Attentional bias for craving-related (chocolate) food cues. <em>Experimental and Clinical Psychopharmacology</em>, <em>17</em>(6), 425-433. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0017796">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0017796</a></p>
+<p>Kemps, E., Tiggemann, M., Orr, J., &amp; Grear, J. (2014). Attentional retraining can reduce chocolate consumption. <em>Journal of Experimental Psychology: Applied</em>, <em>20</em>(1), 94-102. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fxap0000005">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fxap0000005</a></p>
+<p>May, J., Andrade, J., Kavanagh, D. J., &amp; Hetherington, M. (2012). Elaborated intrusion theory: A cognitive-emotional theory of food craving. <em>Current Obesity Reports</em>, <em>1</em>(2), 114-121. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1007%2Fs13679-012-0010-2">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1007%2Fs13679-012-0010-2</a></p>
+<p>Metcalfe, J., &amp; Mischel, W. (1999). A hot/cool-system analysis of delay of gratification: Dynamics of willpower. <em>Psychological Review</em>, <em>106</em>(1), 3-19. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-295X.106.1.3">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-295X.106.1.3</a></p>
+<p>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology</em>, <em>5</em>(2), 207-232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9</a></p>
+<p>Wansink, B., &amp; Chandon, P. (2014). Slim by design: Redirecting the accidental drivers of mindless overeating. <em>Journal of Consumer Psychology</em>, <em>24</em>(3), 413-431. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.jcps.2014.03.006">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.jcps.2014.03.006</a></p>
+<p>Werthmann, J., Roefs, A., Nederkoorn, C., Mogg, K., Bradley, B. P., &amp; Jansen, A. (2011). Can (not) take my eyes off it: Attention bias for food in overweight participants. <em>Health Psychology</em>, <em>30</em>(5), 561-569. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0024291">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0024291</a></p>
+
+                </div>
+            </div>
+            
+            
+            <div class="section">
+                <h2 class="section-title">Synthesis Reasoning</h2>
+                <div class="reasoning-box">
+                    <h2 id="synthesis-decisions">Synthesis Decisions</h2>
+<p><strong>1. Core Definitions:</strong>
+All models provided consistent definitions of attention biases and the availability heuristic, citing the same foundational sources (Tversky &amp; Kahneman, 1973 for availability heuristic; Bar-Haim et al., 2007 and Field &amp; Cox, 2008 for attention biases). I synthesized these into comprehensive definitions that capture the key elements from all responses.</p>
+<p><strong>2. Theoretical Framework:</strong>
+There was strong consensus on using dual-process theory (Hofmann et al., 2009) as the explanatory framework. Multiple models referenced System 1 (automatic/impulsive) vs. System 2 (reflective/controlled) processing. I incorporated this as the primary theoretical structure, as it effectively explains how both mechanisms contribute to impulsivity.</p>
+<p><strong>3. Mechanisms Linking to Impulsivity:</strong>
+All models agreed that both biases contribute to impulsive behavior but operate through different pathways:</p>
+<ul>
+<li>Attention bias: Captures and maintains focus on rewarding stimuli</li>
+<li>Availability heuristic: Makes immediate rewards more mentally accessible and probable</li>
+</ul>
+<p>I synthesized both pathways clearly while emphasizing their synergistic interaction.</p>
+<p><strong>4. Chocolate Example Application:</strong>
+All models successfully applied the concepts to the chocolate example. Claude-sonnet, Gemini, and Mistral provided the most detailed explanations. I integrated:</p>
+<ul>
+<li>The role of physical presence triggering both mechanisms</li>
+<li>How knowledge alone (without visual exposure) can maintain attention</li>
+<li>The feedback loop created by their interaction</li>
+<li>The concept of &quot;hot&quot; vs &quot;cold&quot; decision contexts</li>
+</ul>
+<p><strong>5. Additional Theoretical Contributions:</strong></p>
+<ul>
+<li>Gemini uniquely introduced Berridge's Incentive Sensitization Theory (wanting vs. liking), which adds depth to understanding attentional bias</li>
+<li>Mistral included neuroimaging evidence (Hare et al., 2009), providing biological validation</li>
+<li>Claude-sonnet mentioned Elaborated Intrusion Theory (May et al., 2012)</li>
+<li>All of these complementary insights were valuable and included</li>
+</ul>
+<p><strong>6. Intervention Strategies:</strong>
+Multiple models mentioned interventions (cognitive training, environmental modification, mindfulness). I included this practical application as it demonstrates the applied significance of understanding these mechanisms.</p>
+<p><strong>7. Reference Selection:</strong>
+I prioritized references cited by multiple models and those most directly relevant to the question. All DOI links were verified for proper URL encoding. The reference list includes foundational works (Tversky &amp; Kahneman, Hofmann et al.) and domain-specific applications (Kemps &amp; Tiggemann, Field et al.).</p>
+<p><strong>8. Minor Variations Addressed:</strong></p>
+<ul>
+<li>Some models emphasized different aspects (addiction vs. eating behavior), but these were complementary rather than contradictory</li>
+<li>Confidence levels were similar (90-95%), indicating high agreement</li>
+<li>All models demonstrated strong academic grounding with appropriate citations</li>
+</ul>
+<p>The synthesis represents the collective expertise of all models, prioritizing points with strongest empirical support and widest agreement while incorporating unique valuable insights.</p>
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="section">
+                <h2 class="section-title">Points of Agreement</h2>
+                <div class="agreement-grid">
+                    
+                    <div class="agreement-item">Attention biases involve selective allocation of attention toward certain stimuli, often reward-related or emotionally significant cues (Bar-Haim et al., 2007; Field & Cox, 2008)</div>
+                    
+                    <div class="agreement-item">The availability heuristic is a cognitive shortcut where judgments are based on how easily examples come to mind (Tversky & Kahneman, 1973)</div>
+                    
+                    <div class="agreement-item">Both mechanisms are linked to impulsive behavior through dual-process models involving automatic (System 1) versus controlled (System 2) processing (Hofmann et al., 2009)</div>
+                    
+                    <div class="agreement-item">Attentional bias increases the salience of rewarding stimuli, making them harder to ignore and increasing likelihood of impulsive actions</div>
+                    
+                    <div class="agreement-item">The availability heuristic makes immediate rewards seem more accessible and probable, reducing deliberative processing</div>
+                    
+                    <div class="agreement-item">In the chocolate example, physical presence triggers both mechanisms: attention is captured by the cue, and ease of recall makes consumption the most "available" option</div>
+                    
+                    <div class="agreement-item">These mechanisms can create a feedback loop or synergistic effect that overwhelms self-control</div>
+                    
+                    <div class="agreement-item">Research shows attentional bias training and environmental modifications can reduce impulsive consumption (Kemps et al., 2014; Wansink & Chandon, 2014)</div>
+                    
+                    <div class="agreement-item">The relationship is well-established in literature on eating behavior, addiction, and self-regulation</div>
+                    
+                </div>
+            </div>
+            
+            
+            <div class="section">
+                <h2 class="section-title">Points of Disagreement</h2>
+                
+                <div class="disagreement-note" style="background: #e7f3ff; border-left: 4px solid #4CAF50; color: #1a5f1a;">
+                    <strong>No Significant Disagreements</strong><br>
+                    <p style="margin-top: 10px; margin-bottom: 0;">All models reached strong consensus on this topic.</p>
+                </div>
+                
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Individual Model Responses</h2>
+                
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model0')">
+                        <div class="model-name">anthropic/claude-sonnet-4.5</div>
+                        <div class="confidence-badge">92% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention biases cause selective focus on salient stimuli like chocolate, while the availability heuristic leads to judgments based on easily recalled experiences, both promoting impulsive behavior by favoring immediate gratification over deliberate self-control. The example of chocolate in the cupboard demonstrates how these cognitive mechanisms interact with environmental cues to trigger automatic approach behaviors that can override goal-directed dietary intentions.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model0')">Show Full Response</button>
+                    </div>
+                    <div id="model0" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <h1 id="attention-biases-and-availability-heuristic-links-to-impulsive-behavior">Attention Biases and Availability Heuristic: Links to Impulsive Behavior</h1>
+<h2 id="answer">Answer</h2>
+<p><strong>Attention Biases</strong> refer to the tendency for an individual's perception to be systematically affected by selective factors in their attention, causing them to preferentially process certain stimuli over others (Bar-Haim et al., 2007). In the context of food and consumption, attentional bias manifests when individuals automatically orient their attention toward specific food cues—such as chocolate in a cupboard—particularly when they are trying to restrict their intake or have strong appetitive desires (Kemps &amp; Tiggemann, 2009).</p>
+<p><strong>The Availability Heuristic</strong> is a cognitive shortcut where people make judgments about the likelihood of events based on how easily examples come to mind, rather than on actual probability or comprehensive analysis (Tversky &amp; Kahneman, 1973). When applied to decision-making around food, if memories or images of chocolate (or the pleasure derived from it) are readily accessible in one's mind, the availability heuristic may lead to overestimating the benefits of immediate consumption and underestimating the long-term consequences.</p>
+<h3 id="link-to-impulsive-behavior">Link to Impulsive Behavior</h3>
+<p>Both cognitive mechanisms are indeed linked to impulsive behavior, particularly in the domain of food consumption and self-control. Attentional bias toward rewarding stimuli, such as palatable foods, has been consistently associated with impulsive eating behaviors and difficulties in dietary self-regulation (Castellanos et al., 2009). When chocolate is visible or known to be in the cupboard, individuals with strong attentional bias toward food cues experience heightened salience of these stimuli, which can trigger automatic approach behaviors and undermine controlled, goal-directed decision-making (Werthmann et al., 2011).</p>
+<p>The availability heuristic contributes to impulsivity by facilitating quick, experience-based judgments that favor immediate gratification. If positive experiences with chocolate are easily recalled, the availability heuristic may bias decision-making toward consumption by making the rewards seem more prominent and probable than they actually are, while simultaneously making negative consequences (weight gain, health effects) less mentally accessible (Kahneman, 2011). This cognitive shortcut bypasses more deliberative, rational processing that would be necessary for impulse control.</p>
+<p>Research on dual-process theories suggests that impulsive behavior results from an imbalance between automatic, affective processes (System 1) and controlled, reflective processes (System 2) (Hofmann et al., 2009). Attentional biases operate primarily within the automatic system, capturing attention and triggering prepotent responses, while the availability heuristic influences rapid, intuitive judgments that characterize System 1 processing. When these cognitive mechanisms are activated—for instance, by environmental cues like chocolate in the cupboard—they can overwhelm reflective self-control processes, leading to impulsive consumption.</p>
+<h3 id="the-chocolate-in-the-cupboard-example">The Chocolate in the Cupboard Example</h3>
+<p>Your example of having chocolate in the cupboard perfectly illustrates how these mechanisms interact to promote impulsivity:</p>
+<ol>
+<li><p><strong>Attentional Bias</strong>: Simply knowing the chocolate is there can create a persistent attentional pull. Studies show that even without direct visual exposure, knowledge of palatable food availability can maintain attentional focus on food-related thoughts, creating intrusive cognitions that interfere with other activities (May et al., 2012).</p>
+</li>
+<li><p><strong>Availability Heuristic</strong>: Pleasant memories of eating chocolate are typically vivid and easily recalled, making the reward seem particularly attractive and immediate. The ease with which one can imagine the taste and pleasure of chocolate influences the decision to consume it, often without thorough consideration of whether one is actually hungry or whether consumption aligns with dietary goals.</p>
+</li>
+<li><p><strong>Environmental Cueing</strong>: The mere presence of chocolate serves as an external cue that can trigger both attentional capture and availability-based judgments, creating a &quot;hot&quot; decision-making context where impulsive choice is more likely (Metcalfe &amp; Mischel, 1999).</p>
+</li>
+</ol>
+<p>Research on food-related impulsivity has demonstrated that reducing attentional bias through cognitive training or modifying environmental cues (such as removing tempting foods from sight or from the home entirely) can improve self-control and reduce impulsive consumption (Kemps et al., 2014; Wansink &amp; Chandon, 2014).</p>
+<hr />
+<h2 id="reasoning">REASONING:</h2>
+<p>I approached this question by first defining the two key cognitive concepts—attention biases and the availability heuristic—drawing on foundational cognitive and social psychology literature. I relied on Tversky and Kahneman's seminal work on heuristics and Bar-Haim et al.'s comprehensive review of attention biases to establish these definitions.</p>
+<p>Next, I examined the empirical evidence linking these cognitive mechanisms to impulsive behavior, particularly in the domain of food consumption, which directly relates to the chocolate example. I searched for research specifically addressing attentional bias in eating behavior (Kemps &amp; Tiggemann, Castellanos et al.) and incorporated dual-process theory (Hofmann et al.) to explain the cognitive architecture underlying impulsivity.</p>
+<p>I then connected these theoretical concepts to the practical example provided, demonstrating how both mechanisms would operate in the specific scenario of having chocolate in a cupboard. This required integrating research on environmental food cues and their effects on consumption behavior.</p>
+<p>Throughout my response, I prioritized peer-reviewed empirical research and theoretical frameworks from cognitive psychology, health psychology, and behavioral economics. I ensured that citations were from authoritative sources and formatted the DOI links as requested. My confidence in this answer is high because the relationship between attentional biases, heuristic processing, and impulsive behavior is well-established in the scientific literature, and the chocolate example is a straightforward application of these principles.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Bar-Haim, Y., Lamy, D., Pergamin, L., Bakermans-Kranenburg, M. J., &amp; Van Ijzendoorn, M. H. (2007). Threat-related attentional bias in anxious and nonanxious individuals: A meta-analytic study. <em>Psychological Bulletin</em>, <em>133</em>(1), 1-24. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1</a></p>
+<p>Castellanos, E. H., Charboneau, E., Dietrich, M. S., Park, S., Bradley, B. P., Mogg, K., &amp; Cowan, R. L. (2009). Obese adults have visual attention bias for food cue images: Evidence for altered reward system function. <em>International Journal of Obesity</em>, <em>33</em>(9), 1063-1073. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1038%2Fijo.2009.138">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1038%2Fijo.2009.138</a></p>
+<p>Hofmann, W., Friese, M., &amp; Wiers, R. W. (2008). Impulsive versus reflective influences on health behavior: A theoretical framework and empirical review. <em>Health Psychology Review</em>, <em>2</em>(2), 111-137. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1080%2F17437190802617668">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1080%2F17437190802617668</a></p>
+<p>Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Macmillan.</p>
+<p>Kemps, E., &amp; Tiggemann, M. (2009). Attentional bias for craving-related (chocolate) food cues. <em>Experimental and Clinical Psychopharmacology</em>, <em>17</em>(6), 425-433. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0017796">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0017796</a></p>
+<p>Kemps, E., Tiggemann, M., Orr, J., &amp; Grear, J. (2014). Attentional retraining can reduce chocolate consumption. <em>Journal of Experimental Psychology: Applied</em>, <em>20</em>(1), 94-102. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fxap0000005">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fxap0000005</a></p>
+<p>May, J., Andrade, J., Kavanagh, D. J., &amp; Hetherington, M. (2012). Elaborated intrusion theory: A cognitive-emotional theory of food craving. <em>Current Obesity Reports</em>, <em>1</em>(2), 114-121. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1007%2Fs13679-012-0010-2">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1007%2Fs13679-012-0010-2</a></p>
+<p>Metcalfe, J., &amp; Mischel, W. (1999). A hot/cool-system analysis of delay of gratification: Dynamics of willpower. <em>Psychological Review</em>, <em>106</em>(1), 3-19. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-295X.106.1.3">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-295X.106.1.3</a></p>
+<p>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology</em>, <em>5</em>(2), 207-232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9</a></p>
+<p>Wansink, B., &amp; Chandon, P. (2014). Slim by design: Redirecting the accidental drivers of mindless overeating. <em>Journal of Consumer Psychology</em>, <em>24</em>(3), 413-431. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.jcps.2014.03.006">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.jcps.2014.03.006</a></p>
+<p>Werthmann, J., Roefs, A., Nederkoorn, C., Mogg, K., Bradley, B. P., &amp; Jansen, A. (2011). Can (not) take my eyes off it: Attention bias for food in overweight participants. <em>Health Psychology</em>, <em>30</em>(5), 561-569. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0024291">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0024291</a></p>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <p>I approached this question by first defining the two key cognitive concepts—attention biases and the availability heuristic—drawing on foundational cognitive and social psychology literature. I relied on Tversky and Kahneman's seminal work on heuristics and Bar-Haim et al.'s comprehensive review of attention biases to establish these definitions.</p>
+<p>Next, I examined the empirical evidence linking these cognitive mechanisms to impulsive behavior, particularly in the domain of food consumption, which directly relates to the chocolate example. I searched for research specifically addressing attentional bias in eating behavior (Kemps &amp; Tiggemann, Castellanos et al.) and incorporated dual-process theory (Hofmann et al.) to explain the cognitive architecture underlying impulsivity.</p>
+<p>I then connected these theoretical concepts to the practical example provided, demonstrating how both mechanisms would operate in the specific scenario of having chocolate in a cupboard. This required integrating research on environmental food cues and their effects on consumption behavior.</p>
+<p>Throughout my response, I prioritized peer-reviewed empirical research and theoretical frameworks from cognitive psychology, health psychology, and behavioral economics. I ensured that citations were from authoritative sources and formatted the DOI links as requested. My</p>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model1')">
+                        <div class="model-name">x-ai/grok-4</div>
+                        <div class="confidence-badge">92% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention biases involve preferential focus on certain stimuli like rewards, and the availability heuristic judges likelihood based on mental ease of recall; both link to impulsivity by heightening temptation salience, as in impulsively eating cupboard chocolate. This response draws from key psychological literature, using citations to explain definitions and connections step-by-step for thoroughness.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model1')">Show Full Response</button>
+                    </div>
+                    <div id="model1" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <ol>
+<li><strong>Answer to the Question</strong></li>
+</ol>
+<p>Attention biases refer to systematic tendencies in how individuals allocate their attentional resources, often favoring certain stimuli over others based on emotional, motivational, or contextual factors. For instance, in the context of impulsivity, attentional biases can manifest as heightened focus on rewarding or tempting cues, such as food items, which may increase the likelihood of impulsive actions (Field &amp; Cox, 2008). This bias is commonly studied in areas like addiction and eating behaviors, where individuals show preferential attention to drug-related or food-related stimuli, making it harder to resist impulses.</p>
+<p>The availability heuristic is a cognitive shortcut identified in decision-making psychology, where people estimate the probability or frequency of an event based on how easily examples come to mind (Tversky &amp; Kahneman, 1973). It relies on the mental accessibility of information rather than objective data, leading to overestimations of vivid or recent events (e.g., judging shark attacks as more common after seeing a news story).</p>
+<p>These concepts are indeed linked to impulsive behavior. Attentional biases can exacerbate impulsivity by directing focus toward immediate rewards, reducing self-control, as seen in studies on substance use and overeating (Sharma et al., 2014). The availability heuristic contributes by making recent or salient temptations more mentally prominent, thus influencing snap decisions without thorough evaluation. For example, having chocolate in the cupboard can create an attentional bias where the individual repeatedly notices or thinks about the chocolate due to its proximity, making it more &quot;available&quot; in memory via the heuristic. This heightened mental availability increases the impulse to consume it impulsively, even if long-term goals (e.g., dieting) suggest otherwise. Research shows that such environmental cues enhance impulsive choices through these mechanisms, with interventions like mindfulness training helping to mitigate them (Forman et al., 2007).</p>
+<p><strong>References</strong></p>
+<ul>
+<li>Field, M., &amp; Cox, W. M. (2008). Attentional bias in addictive behaviors: A review of its development, causes, and consequences. <em>Drug and Alcohol Dependence</em>, 97(1-2), 1-20. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.03.030">Link</a></li>
+<li>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology</em>, 5(2), 207-232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">Link</a></li>
+<li>Sharma, L., Markon, K. E., &amp; Clark, L. A. (2014). Toward a theory of distinct types of &quot;impulsive&quot; behaviors: A meta-analysis of self-report and behavioral measures. <em>Psychological Bulletin</em>, 140(2), 374-408. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fa0034418">Link</a></li>
+<li>Forman, E. M., Hoffman, K. L., McGrath, K. B., Herbert, J. D., Brandsma, L. L., &amp; Lowe, M. R. (2007). A comparison of acceptance- and control-based strategies for coping with food cravings: An analog study. <em>Behaviour Research and Therapy</em>, 45(10), 2372-2386. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.brat.2007.04.004">Link</a></li>
+</ul>
+<ol start="2">
+<li><p><strong>Reasoning Process</strong><br />
+REASONING: First, I broke down the question into its components: defining attention biases, defining the availability heuristic, and exploring their links to impulsive behavior with the chocolate example. Next, I recalled key psychological concepts—attention biases from addiction and impulsivity literature, and the availability heuristic from Tversky and Kahneman's foundational work on cognitive biases. Then, I considered empirical links: attentional biases heighten focus on cues like chocolate, increasing impulsivity, while the availability heuristic makes such cues mentally salient, amplifying the effect; I drew on studies showing this in eating and addiction contexts. After that, I selected relevant academic references with DOIs, ensuring they are peer-reviewed and directly applicable (e.g., Field &amp; Cox for attention bias in rewards, Sharma et al. for impulsivity meta-analysis). Finally, I structured the answer to be thorough, integrated the example, and formatted the references with URL-encoded DOI links as instructed, while assessing my confidence based on familiarity with the topics.</p>
+</li>
+<li><p><strong>Confidence Level</strong></p>
+</li>
+</ol>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <p>First, I broke down the question into its components: defining attention biases, defining the availability heuristic, and exploring their links to impulsive behavior with the chocolate example. Next, I recalled key psychological concepts—attention biases from addiction and impulsivity literature, and the availability heuristic from Tversky and Kahneman's foundational work on cognitive biases. Then, I considered empirical links: attentional biases heighten focus on cues like chocolate, increasing impulsivity, while the availability heuristic makes such cues mentally salient, amplifying the effect; I drew on studies showing this in eating and addiction contexts. After that, I selected relevant academic references with DOIs, ensuring they are peer-reviewed and directly applicable (e.g., Field &amp; Cox for attention bias in rewards, Sharma et al. for impulsivity meta-analysis). Finally, I structured the answer to be thorough, integrated the example, and formatted the references with URL-encoded DOI links as instructed, while assessing my</p>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model2')">
+                        <div class="model-name">deepseek/deepseek-chat-v3.1</div>
+                        <div class="confidence-badge">90% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention bias, which focuses on salient rewards like chocolate, and the availability heuristic, which makes easily recalled actions seem more probable, are both linked to impulsive behaviour. These biases work together by making a rewarding stimulus more prominent and the action of consumption seem like an easier, more likely decision, thereby undermining self-control.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model2')">Show Full Response</button>
+                    </div>
+                    <div id="model2" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <ol>
+<li>Your answer to the question</li>
+</ol>
+<p>Attention bias and the availability heuristic are two distinct but related cognitive biases that significantly influence decision-making and can be linked to impulsive behaviour, such as consuming chocolate readily available in a cupboard.</p>
+<p><strong>Attention Bias</strong> refers to the tendency for our perception to be selectively focused on certain aspects of our environment while ignoring others. This bias is driven by salience, where emotionally significant, threatening, or reward-related stimuli capture our attention more readily (Cisler &amp; Koster, 2010). In the context of impulsive behaviour, an attention bias towards rewarding cues (like the thought or sight of chocolate) can make those cues more prominent in one's mind, increasing the likelihood of an impulsive approach behaviour and making self-control more difficult.</p>
+<p><strong>Availability Heuristic</strong> is a mental shortcut where people estimate the likelihood or frequency of an event based on how easily examples come to mind (Tversky &amp; Kahneman, 1973). Events that are more vivid, recent, or emotionally charged are typically easier to recall and are therefore perceived as more common or probable. If chocolate is constantly &quot;available&quot; in the cupboard—both physically and cognitively (because you see it often and easily recall the pleasure of eating it)—the availability heuristic would lead you to overestimate the ease and benefits of eating it. This readily accessible &quot;solution&quot; for a craving or a brief reward can precipitate an impulsive action.</p>
+<p>These two biases are linked and can act in concert to promote impulsive behaviour. An attention bias ensures that the rewarding stimulus (chocolate) is prominently noticed, while the availability heuristic makes the act of obtaining and consuming it seem like a highly probable and easy course of action. This combination can override more deliberative cognitive processes that would consider long-term goals, such as healthy eating, thereby facilitating impulsivity (Hofmann et al., 2009).</p>
+<p><strong>References</strong></p>
+<p>Cisler, J. M., &amp; Koster, E. H. (2010). Mechanisms of attentional biases towards threat in anxiety disorders: An integrative review. <em>Clinical Psychology Review, 30</em>(2), 203–216. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.cpr.2009.11.003">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.cpr.2009.11.003</a></p>
+<p>Hofmann, W., Friese, M., &amp; Strack, F. (2009). Impulse and Self-Control From a Dual-Systems Perspective. <em>Perspectives on Psychological Science, 4</em>(2), 162–176. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x</a></p>
+<p>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology, 5</em>(2), 207–232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9</a></p>
+<ol start="2">
+<li>Your reasoning process (step-by-step)</li>
+</ol>
+<p>REASONING:</p>
+<ol>
+<li><p><strong>Define the Core Concepts:</strong> First, I need to clearly define the two requested cognitive biases: attention bias and the availability heuristic, using established academic definitions.</p>
+</li>
+<li><p><strong>Apply Concepts to the Example:</strong> Next, I will apply each concept to the specific example provided: &quot;having chocolate in the cupboard&quot; and how it relates to impulsive behaviour.</p>
+<ul>
+<li>For <strong>attention bias</strong>, I will explain how the salience of the chocolate draws focus, making it a constant cognitive target and weakening inhibitory control.</li>
+<li>For the <strong>availability heuristic</strong>, I will explain how the constant physical presence and easy recall of the chocolate makes the act of eating it seem more frequent and likely, favouring an impulsive decision.</li>
+</ul>
+</li>
+<li><p><strong>Establish the Link:</strong> The question asks if these biases are &quot;linked&quot; to impulsive behaviour. I need to explicitly state this link for each bias and then explore how they might interact. I reason that they are synergistic: attention bias amplifies the salience of the stimulus, which in turn makes it more &quot;available&quot; mentally, creating a potent combination that promotes impulsivity.</p>
+</li>
+<li><p><strong>Support with Academic Citations:</strong> I will identify key, highly-cited papers that define these concepts and discuss their role in decision-making and self-control. I will ensure the DOIs are correctly formatted and URL-encoded for the reference links.</p>
+</li>
+<li><p><strong>Structure the Response:</strong> I will follow the required format precisely: answer, reasoning section (with the exact prefix), confidence score, and summary.</p>
+</li>
+<li><p>Your confidence level as a decimal between 0.0 and 1.0</p>
+</li>
+</ol>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <ol>
+<li><strong>Define the Core Concepts:</strong> First, I need to clearly define the two requested cognitive biases: attention bias and the availability heuristic, using established academic definitions.</li>
+<li><strong>Apply Concepts to the Example:</strong> Next, I will apply each concept to the specific example provided: &quot;having chocolate in the cupboard&quot; and how it relates to impulsive behaviour.
+<ul>
+<li>For <strong>attention bias</strong>, I will explain how the salience of the chocolate draws focus, making it a constant cognitive target and weakening inhibitory control.</li>
+<li>For the <strong>availability heuristic</strong>, I will explain how the constant physical presence and easy recall of the chocolate makes the act of eating it seem more frequent and likely, favouring an impulsive decision.</li>
+</ul>
+</li>
+<li><strong>Establish the Link:</strong> The question asks if these biases are &quot;linked&quot; to impulsive behaviour. I need to explicitly state this link for each bias and then explore how they might interact. I reason that they are synergistic: attention bias amplifies the salience of the stimulus, which in turn makes it more &quot;available&quot; mentally, creating a potent combination that promotes impulsivity.</li>
+<li><strong>Support with Academic Citations:</strong> I will identify key, highly-cited papers that define these concepts and discuss their role in decision-making and self-control. I will ensure the DOIs are correctly formatted and URL-encoded for the reference links.</li>
+<li><strong>Structure the Response:</strong> I will follow the required format precisely: answer, reasoning section (with the exact prefix),</li>
+</ol>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model3')">
+                        <div class="model-name">microsoft/phi-4</div>
+                        <div class="confidence-badge">90% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention biases and the availability heuristic are cognitive processes that affect decision-making and can contribute to impulsive actions, such as consuming readily available chocolate. These cognitive shortcuts can lead to judgments based on immediate cues and accessible memories, often bypassing rational evaluation.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model3')">Show Full Response</button>
+                    </div>
+                    <div id="model3" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <ol>
+<li><strong>Your Answer to the Question</strong></li>
+</ol>
+<p>Attention biases and the availability heuristic are cognitive processes that influence how individuals process information and make decisions. Attention biases direct our focus toward certain stimuli or information over others, often without conscious awareness, while the availability heuristic is a mental shortcut that relies on immediate examples that come to mind when evaluating a topic, concept, or decision. Both can indeed be linked to impulsive behavior, as they can lead to snap judgments or choices based on immediate gratification rather than rational deliberation. For instance, the presence of chocolate in the cupboard might trigger attention toward it, making it more available in memory due to visual cues, subsequently leading to impulsive consumption.</p>
+<ol start="2">
+<li><strong>Your Reasoning Process</strong></li>
+</ol>
+<p>REASONING: Attention biases are cognitive processes where certain stimuli are prioritized over others based on their salience, relevance, or emotional impact (Bar-Haim et al., 2007). This prioritization is often automatic and unconscious. The availability heuristic, as proposed by Tversky and Kahneman (1973), suggests that people assess the probability of events based on how easily they can recall examples of them, which often leads to cognitive biases in judgment and decision-making. Importantly, both concepts highlight the role of subconscious processing in influencing behavior, which is central to understanding impulsive actions. When it comes to impulsive behavior, such as reaching for chocolate because it is available, attention biases could direct one’s focus toward the chocolate due to its conspicuous presence, making it the most accessible item in memory (i.e., the availability heuristic). This frequent alignment between attention biases and availability heuristic can culminate in impulsive behavior, as immediate stimuli or thoughts are more readily acted upon without thorough consideration (Cyders &amp; Coskunpinar, 2011).</p>
+<ol start="3">
+<li><strong>Your Confidence Level</strong></li>
+</ol>
+<references>
+- Bar-Haim, Y., Lamy, D., Pergamin, L., Bakermans-Kranenburg, M. J., & Van IJzendoorn, M. H. (2007). Threat-related attentional bias in anxious and nonanxious individuals: A meta-analytic comparison. Psychological Bulletin, 133(1), 1-24. [https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%2F10.1037%2F0033-2909.133.1.1](https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%2F10.1037%2F0033-2909.133.1.1)
+- Tversky, A., & Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. Cognitive Psychology, 5(2), 207-232. [https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%2F10.1016%2F0010-0285%2883%2990002-2](https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%10.1016%2F0010-0285%2883%2990002-2)
+- Cyders, M. A., & Coskunpinar, A. (2011). Approach impulsivity: Personality, psychopathology, and substance use. Annual Review of Clinical Psychology, 7, 375-405. [https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%2F10.1146%2Fannurev-clinpsy-032210-104509](https://psychology-notes.fly.dev/academic-search/?type=doi&q=https%3A%2F%2Fdoi.org%2F10.1146%2Fannurev-clinpsy-032210-104509)
+</references>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <p>Attention biases are cognitive processes where certain stimuli are prioritized over others based on their salience, relevance, or emotional impact (Bar-Haim et al., 2007). This prioritization is often automatic and unconscious. The availability heuristic, as proposed by Tversky and Kahneman (1973), suggests that people assess the probability of events based on how easily they can recall examples of them, which often leads to cognitive biases in judgment and decision-making. Importantly, both concepts highlight the role of subconscious processing in influencing behavior, which is central to understanding impulsive actions. When it comes to impulsive behavior, such as reaching for chocolate because it is available, attention biases could direct one’s focus toward the chocolate due to its conspicuous presence, making it the most accessible item in memory (i.e., the availability heuristic). This frequent alignment between attention biases and availability heuristic can culminate in impulsive behavior, as immediate stimuli or thoughts are more readily acted upon without thorough consideration (Cyders &amp; Coskunpinar, 2011).</p>
+<ol start="3">
+<li>**Your</li>
+</ol>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model4')">
+                        <div class="model-name">google/gemini-3-pro-preview</div>
+                        <div class="confidence-badge">95% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attentional bias creates a fixation on reward cues like chocolate, while the availability heuristic biases decision-making toward easily recallable immediate gratification, both contributing to impulsive behavior. This response synthesizes these cognitive mechanisms through the dual-process model of self-control to explain why physical proximity to food overrides inhibitory control.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model4')">Show Full Response</button>
+                    </div>
+                    <div id="model4" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <p><strong>1. Answer</strong></p>
+<p>Attention biases and the availability heuristic are distinct cognitive mechanisms that significantly contribute to impulsive behavior, such as eating chocolate found in a cupboard, though they operate through different pathways of processing and evaluation.</p>
+<p><strong>Attentional Bias</strong>
+Attentional bias refers to the differential allocation of attentional resources toward specific stimuli over others. In the context of impulsive behavior and substance dependence (including food), this manifests as an automatic, often unconscious tendency to fixate on cues related to a reward (Field et al., 2016). When an individual has chocolate in the cupboard, an attentional bias ensures that their cognitive focus is disproportionately drawn to the knowledge of its presence or sensory cues associated with it (e.g., seeing the wrapper).</p>
+<p>This bias creates a feedback loop described by the <strong>Incentive Sensitization Theory</strong>. The stimuli (chocolate) acquire &quot;incentive salience,&quot; making them not only liked but intensely &quot;wanted&quot; (Berridge, 2009). This &quot;wanting&quot; captures attention, which in turn increases craving. Research indicates that individuals with lower inhibitory control are more susceptible to these biases, leading to impulsive consumption because the attentional system is hijacked by the reward cue, overriding the reflective system responsible for long-term health goals (Hofmann et al., 2009).</p>
+<p><strong>The Availability Heuristic</strong>
+The availability heuristic is a cognitive shortcut wherein individuals evaluate the frequency, likelihood, or value of an event based on how easily examples come to mind (retrieval fluency) (Tversky &amp; Kahneman, 1973). While often applied to probability judgments, it influences impulsive behavior by skewing risk/reward analysis.</p>
+<p>In the chocolate example, the heuristic operates in two ways:</p>
+<ol>
+<li><strong>Immediacy of Reward:</strong> The pleasure of eating chocolate is a vivid, easily retrievable memory. Conversely, the long-term health consequences (e.g., weight gain) are abstract and harder to mentally simulate. Because the reward is cognitively &quot;available,&quot; the individual overestimates the value of immediate consumption.</li>
+<li><strong>Visual Availability:</strong> The physical presence of the chocolate influences cognitive availability. By seeing the chocolate in the cupboard, the option to eat it becomes the most accessible (&quot;available&quot;) solution to a momentary desire or hunger pang, crowding out less accessible alternatives like preparing a healthy snack.</li>
+</ol>
+<p><strong>The Link to Impulsive Behavior</strong>
+Both phenomena are intrinsically linked to impulsive behavior through <strong>Dual-Process Models</strong> of cognition. These models posit a struggle between the struggle between the impulsive system (automatic, associative) and the reflective system (controlled, deliberate).</p>
+<ul>
+<li><strong>Attentional Bias</strong> strengthens the impulsive system by increasing the salience of the temptation.</li>
+<li><strong>The Availability Heuristic</strong> weakens the reflective system by offering a quick, low-effort decision pathway favored by the brain's tendency toward cognitive ease (Hofmann et al., 2009).</li>
+</ul>
+<p>Therefore, having chocolate in the cupboard triggers an attentional bias (locking focus on the cue) and utilizes the availability heuristic (making the decision to eat the path of least cognitive resistance), resulting in impulsive consumption.</p>
+<hr />
+<p><strong>References</strong></p>
+<p>Berridge, K. C. (2009). 'Wanting' and 'liking': Expanding the hedonic impact of pleasure. <em>Neuroscience &amp; Biobehavioral Reviews</em>, 33(3), 307–307. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.neubiorev.2009.02.007">Link</a></p>
+<p>Field, M., Werthmann, J., Franken, I., Hofmann, W., Hogarth, L., &amp; Roefs, A. (2016). The role of attentional bias in obesity and addiction. <em>Health Psychology</em>, 35(8), 767–780. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fhea0000405">Link</a></p>
+<p>Hofmann, W., Friese, M., &amp; Strack, F. (2009). Impulse and self-control from a dual-systems perspective. <em>Perspectives on Psychological Science</em>, 4(2), 162–176. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x">Link</a></p>
+<p>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology</em>, 5(2), 207–232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">Link</a></p>
+<hr />
+<p><strong>2. Reasoning process</strong></p>
+<p>REASONING:</p>
+<ol>
+<li><p><strong>Deconstruction of the Prompt:</strong></p>
+<ul>
+<li><strong>Core Concepts:</strong> Attention biases, availability heuristic, impulsive behavior.</li>
+<li><strong>Specific Scenario:</strong> &quot;Having chocolate in the cupboard.&quot;</li>
+<li><strong>Goal:</strong> Define the concepts, explain their mechanisms, and explicitly link them to the scenario and impulsivity using academic theory.</li>
+</ul>
+</li>
+<li><p><strong>Defining Attentional Bias (AB):</strong></p>
+<ul>
+<li><em>Concept:</em> AB is the automatic orientation of attention toward specific cues.</li>
+<li><em>Review of Literature:</em> Field et al. (2016) are seminal in linking AB to addiction and obesity.</li>
+<li><em>Application:</em> In the chocolate scenario, the &quot;cupboard&quot; acts as a conditioned stimulus. The bias isn't just seeing the cupboard; it's the inability to look away or stop thinking about the contents. This links to Berridge's (2009) &quot;Incentive Salience&quot; (wanting vs. liking).</li>
+</ul>
+</li>
+<li><p><strong>Defining Availability Heuristic (AH):</strong></p>
+<ul>
+<li><em>Concept:</em> Tversky &amp; Kahneman (1973) defined this as judging probability/frequency by ease of mental retrieval.</li>
+<li><em>Addressing Ambiguity:</em> There is a risk of confusing &quot;physical availability&quot; (convenience) with cognitive &quot;availability heuristic.&quot;</li>
+<li><em>Resolution:</em> I bridged this by explaining that physical proximity (cupboard) primes the <em>cognitive</em> availability. The decision to eat is impulsive because the memory of the taste (gratification) is more &quot;available&quot; to the mind than the abstract statistic of long-term health risks.</li>
+</ul>
+</li>
+<li><p><strong>Synthesizing the Link to Impulsivity:</strong></p>
+<ul>
+<li><em>Theoretical Framework:</em> The Dual-Process Model (Hofmann et al., 2009) is the standard academic framework for explaining the conflict between impulse (eating) and control (dieting).</li>
+<li><em>Integration:</em> I positioned AB as the trigger for the <em>Impulsive System</em> and AH as a flaw in the <em>Reflective System</em> (or a shortcut that bypasses reflection).</li>
+</ul>
+</li>
+<li><p><strong>Selecting and Formatting Citations:</strong></p>
+<ul>
+<li><em>Field et al. (2016):</em> Chosen for the direct link between AB and Obesity/Food.
+<ul>
+<li>DOI: 10.1037/hea0000405</li>
+</ul>
+</li>
+<li><em>Tversky &amp; Kahneman (1973):</em> Chosen as the origin of Availability Heuristic.
+<ul>
+<li>DOI: 10.1016/0010-0285(73)90033-9</li>
+</ul>
+</li>
+<li><em>Hofmann et al. (2009):</em> Chosen to provide the structural link (Dual Systems) between bias and behavior.
+<ul>
+<li>DOI: 10.1111/j.1745-6924.2009.01116.x</li>
+</ul>
+</li>
+<li><em>Berridge (2009):</em> Chosen to explain the &quot;craving&quot; aspect of AB.
+<ul>
+<li>DOI: 10.1016/j.neubiorev.2009.02.007</li>
+</ul>
+</li>
+<li><em>URL Encoding:</em> DOIs were URL-encoded (e.g., <code>/</code> becomes <code>%2F</code>) and appended to the required string.</li>
+</ul>
+</li>
+<li><p><strong>Final Review:</strong> Verified the text specifically addresses the &quot;chocolate in the cupboard&quot; example, illustrating how conceptual biases manifest in this concrete physical reality.</p>
+</li>
+</ol>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <ol>
+<li><p><strong>Deconstruction of the Prompt:</strong></p>
+<ul>
+<li><strong>Core Concepts:</strong> Attention biases, availability heuristic, impulsive behavior.</li>
+<li><strong>Specific Scenario:</strong> &quot;Having chocolate in the cupboard.&quot;</li>
+<li><strong>Goal:</strong> Define the concepts, explain their mechanisms, and explicitly link them to the scenario and impulsivity using academic theory.</li>
+</ul>
+</li>
+<li><p><strong>Defining Attentional Bias (AB):</strong></p>
+<ul>
+<li><em>Concept:</em> AB is the automatic orientation of attention toward specific cues.</li>
+<li><em>Review of Literature:</em> Field et al. (2016) are seminal in linking AB to addiction and obesity.</li>
+<li><em>Application:</em> In the chocolate scenario, the &quot;cupboard&quot; acts as a conditioned stimulus. The bias isn't just seeing the cupboard; it's the inability to look away or stop thinking about the contents. This links to Berridge's (2009) &quot;Incentive Salience&quot; (wanting vs. liking).</li>
+</ul>
+</li>
+<li><p><strong>Defining Availability Heuristic (AH):</strong></p>
+<ul>
+<li><em>Concept:</em> Tversky &amp; Kahneman (1973) defined this as judging probability/frequency by ease of mental retrieval.</li>
+<li><em>Addressing Ambiguity:</em> There is a risk of confusing &quot;physical availability&quot; (convenience) with cognitive &quot;availability heuristic.&quot;</li>
+<li><em>Resolution:</em> I bridged this by explaining that physical proximity (cupboard) primes the <em>cognitive</em> availability. The decision to eat is impulsive because the memory of the taste (gratification) is more &quot;available&quot; to the mind than the abstract statistic of long-term health risks.</li>
+</ul>
+</li>
+<li><p><strong>Synthesizing the Link to Impulsivity:</strong></p>
+<ul>
+<li><em>Theoretical Framework:</em> The Dual-Process Model (Hofmann et al., 2009) is the standard academic framework for explaining the conflict between impulse (eating) and control (dieting).</li>
+<li><em>Integration:</em> I positioned AB as the trigger for the <em>Impulsive System</em> and AH as a flaw in the <em>Reflective System</em> (or a shortcut that bypasses reflection).</li>
+</ul>
+</li>
+<li><p><strong>Selecting and Formatting Citations:</strong></p>
+<ul>
+<li><em>Field et al. (2016):</em> Chosen for the direct link between AB and Obesity/Food.
+<ul>
+<li>DOI: 10.1037/hea0000405</li>
+</ul>
+</li>
+<li><em>Tversky &amp; Kahneman (1973):</em> Chosen as the origin of Availability Heuristic.
+<ul>
+<li>DOI: 10.1016/0010-0285(73)90033-9</li>
+</ul>
+</li>
+<li><em>Hofmann et al. (2009):</em> Chosen to provide the structural link (Dual Systems) between bias and behavior.
+<ul>
+<li>DOI: 10.1111/j.1745-6924.2009.01116.x</li>
+</ul>
+</li>
+<li><em>Berridge (2009):</em> Chosen to explain the &quot;craving&quot; aspect of AB.
+<ul>
+<li>DOI: 10.1016/j.neubiorev.2009.02.007</li>
+</ul>
+</li>
+<li><em>URL Encoding:</em> DOIs were URL-encoded (e.g., <code>/</code> becomes <code>%2F</code>) and appended to the required string.</li>
+</ul>
+</li>
+<li><p><strong>Final Review:</strong> Verified the text specifically addresses the &quot;chocolate in the cupboard&quot; example, illustrating how conceptual biases manifest in this concrete physical reality.</p>
+</li>
+</ol>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model5')">
+                        <div class="model-name">openai/gpt-4.1</div>
+                        <div class="confidence-badge">92% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention biases and the availability heuristic are cognitive shortcuts that make people more likely to act impulsively when certain stimuli, like chocolate in the cupboard, are noticeable or easily recalled. Academic evidence supports that these biases can override self-control, increasing the likelihood of impulsive behaviors in familiar or salient contexts.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model5')">Show Full Response</button>
+                    </div>
+                    <div id="model5" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <ol>
+<li>Your answer to the question</li>
+</ol>
+<p>Attention biases are cognitive processes where certain stimuli in the environment capture an individual’s focus more readily than others, often leading to preferential processing of these stimuli. The availability heuristic, meanwhile, is a mental shortcut where people evaluate the likelihood or frequency of events based on how easily relevant examples come to mind. Both attention biases and the availability heuristic can contribute to impulsive behavior, such as choosing to eat chocolate simply because it is visible in the cupboard (attention bias) or because it is the most readily available snack option remembered (availability heuristic). These cognitive tendencies can override rational, goal-directed self-control, making impulsive acts more likely in salient or familiar contexts.</p>
+<ol start="2">
+<li>Your reasoning process (step-by-step)</li>
+</ol>
+<p>REASONING:</p>
+<ol>
+<li><p>I defined &quot;attention biases&quot; as predilections in perceptual focus, directing attention to specific stimuli (e.g., food items in one's field of view).</p>
+</li>
+<li><p>I explained the &quot;availability heuristic&quot; as a shortcut that makes judgment easier by relying on immediate examples that come to mind, often those most recently experienced or most salient.</p>
+</li>
+<li><p>I consulted the academic literature indicating strong links between attention biases, the availability heuristic, and impulsivity, particularly in the domains of eating behavior and self-control lapses (Brockmeyer et al., 2016; Kahneman &amp; Tversky, 1973; Field et al., 2009).</p>
+</li>
+<li><p>I related these concepts to the example of chocolate in the cupboard: the salience (attention bias) and ease of recall (availability heuristic) of chocolate can promote impulsive consumption by increasing the likelihood of acting on immediate desires, even in the face of contrary longer-term goals.</p>
+</li>
+<li><p>I synthesized findings from research on cognitive psychology, heuristics, and impulse control to support the connection between these biases and impulsive actions in everyday contexts.</p>
+</li>
+<li><p>Your confidence level as a decimal between 0.0 and 1.0</p>
+</li>
+</ol>
+<p>References list:</p>
+<ul>
+<li>Brockmeyer, T., Hahn, C., Reetz, C., Schmidt, U., &amp; Friederich, H.-C. (2016). &quot;Test–retest reliability and validity of attentional bias measures in eating disorders.&quot; <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.appet.2015.11.021">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016/j.appet.2015.11.021</a></li>
+<li>Kahneman, D., &amp; Tversky, A. (1973). &quot;Availability: A heuristic for judging frequency and probability.&quot; <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2Fh0034747">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037/h0034747</a></li>
+<li>Field, M., Munafò, M. R., &amp; Franken, I. H. (2009). &quot;A meta-analytic investigation of the relationship between attentional bias and subjective craving in substance abuse.&quot; <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.12.004">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016/j.drugalcdep.2008.12.004</a></li>
+</ul>
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <ol>
+<li><p>I defined &quot;attention biases&quot; as predilections in perceptual focus, directing attention to specific stimuli (e.g., food items in one's field of view).</p>
+</li>
+<li><p>I explained the &quot;availability heuristic&quot; as a shortcut that makes judgment easier by relying on immediate examples that come to mind, often those most recently experienced or most salient.</p>
+</li>
+<li><p>I consulted the academic literature indicating strong links between attention biases, the availability heuristic, and impulsivity, particularly in the domains of eating behavior and self-control lapses (Brockmeyer et al., 2016; Kahneman &amp; Tversky, 1973; Field et al., 2009).</p>
+</li>
+<li><p>I related these concepts to the example of chocolate in the cupboard: the salience (attention bias) and ease of recall (availability heuristic) of chocolate can promote impulsive consumption by increasing the likelihood of acting on immediate desires, even in the face of contrary longer-term goals.</p>
+</li>
+<li><p>I synthesized findings from research on cognitive psychology, heuristics, and impulse control to support the connection between these biases and impulsive actions in everyday contexts.</p>
+</li>
+<li><p>Your</p>
+</li>
+</ol>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-header" onclick="toggleExpand('model6')">
+                        <div class="model-name">mistralai/mistral-large-2512</div>
+                        <div class="confidence-badge">90% Confidence</div>
+                    </div>
+                    <div class="model-content">
+                        Attention biases and the availability heuristic contribute to impulsive behavior by amplifying the salience and perceived accessibility of rewarding stimuli, such as chocolate in the cupboard. These cognitive processes interact to reduce self-control, as demonstrated by empirical research on addiction, food cravings, and decision-making.
+                    </div>
+                    <div class="button-row">
+                        <button class="expandable-toggle" onclick="toggleExpand('model6')">Show Full Response</button>
+                    </div>
+                    <div id="model6" class="expandable-content">
+                        <div class="model-full-response">
+                            <div class="subsection">
+                                <h4>Answer</h4>
+                                <h3 id="your-answer-to-the-question">1. Your answer to the question</h3>
+<p><strong>Attention biases</strong> refer to the systematic tendency of individuals to preferentially allocate their attention toward certain types of stimuli over others, often based on their emotional, motivational, or personal relevance. These biases can manifest in various forms, such as <strong>attentional bias toward threat</strong> (e.g., focusing on negative or anxiety-provoking stimuli) or <strong>attentional bias toward reward</strong> (e.g., prioritizing stimuli associated with pleasure or reinforcement) (Bar-Haim et al., 2007; Field &amp; Cox, 2008). For example, a person trying to reduce chocolate consumption may find their attention repeatedly drawn to chocolate in the cupboard, even when attempting to ignore it.</p>
+<p>The <strong>availability heuristic</strong> is a cognitive shortcut wherein individuals judge the likelihood or importance of an event based on how easily examples of it come to mind (Tversky &amp; Kahneman, 1973). This heuristic can lead to overestimating the frequency or significance of events that are vivid, recent, or emotionally salient. For instance, if someone frequently thinks about chocolate because it is readily available in their cupboard, they may overestimate how often they consume it or how difficult it is to resist.</p>
+<p>Both attention biases and the availability heuristic are linked to <strong>impulsive behavior</strong>, particularly in contexts involving temptation or reward. Attention biases can amplify the salience of rewarding stimuli (e.g., chocolate), making them harder to ignore and increasing the likelihood of impulsive actions (Field et al., 2016). Similarly, the availability heuristic can reinforce impulsive tendencies by making the desired outcome (e.g., eating chocolate) feel more immediate or probable, thereby reducing self-control (Morewedge &amp; Kahneman, 2010). In the example of having chocolate in the cupboard, these cognitive processes may interact to heighten the temptation to consume it impulsively, especially if the individual has a history of succumbing to such urges.</p>
+<hr />
+<h3 id="your-reasoning-process">2. Your reasoning process</h3>
+<p><strong>REASONING:</strong></p>
+<ol>
+<li><p><strong>Defining Attention Biases:</strong></p>
+<ul>
+<li>Attention biases are well-documented in cognitive and clinical psychology, particularly in the context of anxiety, addiction, and reward processing (Bar-Haim et al., 2007).</li>
+<li>These biases can be measured using tasks like the <strong>dot-probe task</strong> or <strong>eye-tracking studies</strong>, which demonstrate that individuals with certain traits (e.g., high anxiety, addiction) show heightened attention to relevant stimuli (Field &amp; Cox, 2008).</li>
+<li>In the context of impulsive behavior, <strong>attentional bias toward reward</strong> is particularly relevant. For example, individuals with substance use disorders or binge-eating tendencies often exhibit heightened attention to drug-related or food-related cues (Field et al., 2016).</li>
+</ul>
+</li>
+<li><p><strong>Defining the Availability Heuristic:</strong></p>
+<ul>
+<li>The availability heuristic was first described by Tversky and Kahneman (1973) as a mental shortcut that relies on immediate examples that come to mind when evaluating a topic or decision.</li>
+<li>This heuristic can lead to systematic errors in judgment, such as overestimating the likelihood of rare but memorable events (e.g., plane crashes) or underestimating common but mundane risks (e.g., car accidents) (Morewedge &amp; Kahneman, 2010).</li>
+<li>In the context of impulsive behavior, the availability heuristic can make tempting options (e.g., chocolate) feel more accessible or probable, thereby increasing the likelihood of acting on impulse.</li>
+</ul>
+</li>
+<li><p><strong>Linking Attention Biases and the Availability Heuristic to Impulsive Behavior:</strong></p>
+<ul>
+<li><strong>Attention biases</strong> increase the salience of rewarding stimuli, making them harder to ignore. For example, a person trying to avoid chocolate may find their attention repeatedly drawn to it, increasing the cognitive load required to resist (Field et al., 2016).</li>
+<li>The <strong>availability heuristic</strong> exacerbates this effect by making the rewarding outcome (e.g., eating chocolate) feel more immediate or likely. If chocolate is physically present (e.g., in the cupboard), it becomes more &quot;available&quot; in memory, reinforcing the temptation (Morewedge &amp; Kahneman, 2010).</li>
+<li>Together, these processes can create a <strong>feedback loop</strong>: attention biases heighten the salience of the stimulus, while the availability heuristic makes the desired outcome feel more attainable, reducing the motivation to exert self-control (Hofmann et al., 2009).</li>
+</ul>
+</li>
+<li><p><strong>Empirical Evidence:</strong></p>
+<ul>
+<li>Studies on <strong>food cravings</strong> and <strong>addictive behaviors</strong> demonstrate that attention biases toward rewarding stimuli predict impulsive consumption. For example, individuals with stronger attentional biases toward food cues are more likely to overeat (Werthmann et al., 2015).</li>
+<li>The availability heuristic has been linked to <strong>impulsive decision-making</strong> in domains such as gambling, where the ease of recalling wins (vs. losses) leads to overestimation of success (Kahneman &amp; Tversky, 1979).</li>
+<li>Neuroimaging studies suggest that these cognitive processes are associated with activity in brain regions involved in reward processing (e.g., the ventral striatum) and cognitive control (e.g., the prefrontal cortex), further supporting their role in impulsive behavior (Hare et al., 2009).</li>
+</ul>
+</li>
+<li><p><strong>Example of Chocolate in the Cupboard:</strong></p>
+<ul>
+<li>Having chocolate in the cupboard makes it <strong>physically available</strong>, which increases its salience and accessibility in memory (availability heuristic).</li>
+<li>The visual presence of chocolate may trigger <strong>attentional bias</strong>, making it harder to ignore and increasing the likelihood of impulsive consumption.</li>
+<li>Over time, repeated exposure to such cues can reinforce habitual impulsive behavior, as the brain learns to associate the cue (chocolate) with the reward (consumption) (Strack &amp; Deutsch, 2004).</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="your-confidence-level">3. Your confidence level</h3>
+<hr />
+<h3 id="references">References</h3>
+<ul>
+<li>Bar-Haim, Y., Lamy, D., Pergamin, L., Bakermans-Kranenburg, M. J., &amp; van IJzendoorn, M. H. (2007). Threat-related attentional bias in anxious and nonanxious individuals: A meta-analytic study. <em>Psychological Bulletin, 133</em>(1), 1–24. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1037%2F0033-2909.133.1.1</a></li>
+<li>Field, M., &amp; Cox, W. M. (2008). Attentional bias in addictive behaviors: A review of its development, causes, and consequences. <em>Drug and Alcohol Dependence, 97</em>(1-2), 1–20. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.03.030">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.drugalcdep.2008.03.030</a></li>
+<li>Field, M., Werthmann, J., Franken, I. H. A., Hofmann, W., Hogarth, L., &amp; Roefs, A. (2016). The role of attentional bias in obesity and addiction. <em>Health Psychology Review, 10</em>(3), 325–340. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1080%2F17437199.2016.1196477">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1080%2F17437199.2016.1196477</a></li>
+<li>Hare, T. A., Camerer, C. F., &amp; Rangel, A. (2009). Self-control in decision-making involves modulation of the vmPFC valuation system. <em>Science, 324</em>(5927), 646–648. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1126%2Fscience.1168450">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1126%2Fscience.1168450</a></li>
+<li>Hofmann, W., Friese, M., &amp; Strack, F. (2009). Impulse and self-control from a dual-systems perspective. <em>Perspectives on Psychological Science, 4</em>(2), 162–176. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fj.1745-6924.2009.01116.x</a></li>
+<li>Kahneman, D., &amp; Tversky, A. (1979). Prospect theory: An analysis of decision under risk. <em>Econometrica, 47</em>(2), 263–291. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.2307%2F1914185">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.2307%2F1914185</a></li>
+<li>Morewedge, C. K., &amp; Kahneman, D. (2010). Associative processes in intuitive judgment. <em>Trends in Cognitive Sciences, 14</em>(10), 435–440. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.tics.2010.07.003">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2Fj.tics.2010.07.003</a></li>
+<li>Strack, F., &amp; Deutsch, R. (2004). Reflective and impulsive determinants of social behavior. <em>Personality and Social Psychology Review, 8</em>(3), 220–247. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1207%2Fs15327957pspr0803_1">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1207%2Fs15327957pspr0803_1</a></li>
+<li>Tversky, A., &amp; Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology, 5</em>(2), 207–232. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1016%2F0010-0285%2873%2990033-9</a></li>
+<li>Werthmann, J., Jansen, A., &amp; Roefs, A. (2015). Attention bias for food cues in obese individuals: A systematic review. <em>Obesity Reviews, 16</em>(1), 38–50. <a href="https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fobr.12219">https://psychology-notes.fly.dev/academic-search/?type=doi&amp;q=10.1111%2Fobr.12219</a></li>
+</ul>
+<hr />
+
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>Reasoning</h4>
+                                <p>**</p>
+<ol>
+<li><p><strong>Defining Attention Biases:</strong></p>
+<ul>
+<li>Attention biases are well-documented in cognitive and clinical psychology, particularly in the context of anxiety, addiction, and reward processing (Bar-Haim et al., 2007).</li>
+<li>These biases can be measured using tasks like the <strong>dot-probe task</strong> or <strong>eye-tracking studies</strong>, which demonstrate that individuals with certain traits (e.g., high anxiety, addiction) show heightened attention to relevant stimuli (Field &amp; Cox, 2008).</li>
+<li>In the context of impulsive behavior, <strong>attentional bias toward reward</strong> is particularly relevant. For example, individuals with substance use disorders or binge-eating tendencies often exhibit heightened attention to drug-related or food-related cues (Field et al., 2016).</li>
+</ul>
+</li>
+<li><p><strong>Defining the Availability Heuristic:</strong></p>
+<ul>
+<li>The availability heuristic was first described by Tversky and Kahneman (1973) as a mental shortcut that relies on immediate examples that come to mind when evaluating a topic or decision.</li>
+<li>This heuristic can lead to systematic errors in judgment, such as overestimating the likelihood of rare but memorable events (e.g., plane crashes) or underestimating common but mundane risks (e.g., car accidents) (Morewedge &amp; Kahneman, 2010).</li>
+<li>In the context of impulsive behavior, the availability heuristic can make tempting options (e.g., chocolate) feel more accessible or probable, thereby increasing the likelihood of acting on impulse.</li>
+</ul>
+</li>
+<li><p><strong>Linking Attention Biases and the Availability Heuristic to Impulsive Behavior:</strong></p>
+<ul>
+<li><strong>Attention biases</strong> increase the salience of rewarding stimuli, making them harder to ignore. For example, a person trying to avoid chocolate may find their attention repeatedly drawn to it, increasing the cognitive load required to resist (Field et al., 2016).</li>
+<li>The <strong>availability heuristic</strong> exacerbates this effect by making the rewarding outcome (e.g., eating chocolate) feel more immediate or likely. If chocolate is physically present (e.g., in the cupboard), it becomes more &quot;available&quot; in memory, reinforcing the temptation (Morewedge &amp; Kahneman, 2010).</li>
+<li>Together, these processes can create a <strong>feedback loop</strong>: attention biases heighten the salience of the stimulus, while the availability heuristic makes the desired outcome feel more attainable, reducing the motivation to exert self-control (Hofmann et al., 2009).</li>
+</ul>
+</li>
+<li><p><strong>Empirical Evidence:</strong></p>
+<ul>
+<li>Studies on <strong>food cravings</strong> and <strong>addictive behaviors</strong> demonstrate that attention biases toward rewarding stimuli predict impulsive consumption. For example, individuals with stronger attentional biases toward food cues are more likely to overeat (Werthmann et al., 2015).</li>
+<li>The availability heuristic has been linked to <strong>impulsive decision-making</strong> in domains such as gambling, where the ease of recalling wins (vs. losses) leads to overestimation of success (Kahneman &amp; Tversky, 1979).</li>
+<li>Neuroimaging studies suggest that these cognitive processes are associated with activity in brain regions involved in reward processing (e.g., the ventral striatum) and cognitive control (e.g., the prefrontal cortex), further supporting their role in impulsive behavior (Hare et al., 2009).</li>
+</ul>
+</li>
+<li><p><strong>Example of Chocolate in the Cupboard:</strong></p>
+<ul>
+<li>Having chocolate in the cupboard makes it <strong>physically available</strong>, which increases its salience and accessibility in memory (availability heuristic).</li>
+<li>The visual presence of chocolate may trigger <strong>attentional bias</strong>, making it harder to ignore and increasing the likelihood of impulsive consumption.</li>
+<li>Over time, repeated exposure to such cues can reinforce habitual impulsive behavior, as the brain learns to associate the cue (chocolate) with the reward (consumption) (Strack &amp; Deutsch, 2004).</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="your">3. Your</h3>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleExpand(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

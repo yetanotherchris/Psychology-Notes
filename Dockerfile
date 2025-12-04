@@ -34,11 +34,6 @@ COPY . .
 # Build the MkDocs site (this will only process the docs directory)
 RUN mkdocs build
 
-# Build ask-llamas static pages
-WORKDIR /app/ask-llamas
-RUN npm install && npm run build
-WORKDIR /app
-
 # Production stage with nginx
 FROM nginx:alpine
 
@@ -46,9 +41,9 @@ FROM nginx:alpine
 COPY --from=builder /app/site /usr/share/nginx/html
 
 # Copy static applications directly to web root
-COPY --from=builder /app/ask-llamas /usr/share/nginx/html/ask-llamas
 COPY --from=builder /app/academic-search /usr/share/nginx/html/academic-search
 COPY --from=builder /app/questionnaires /usr/share/nginx/html/questionnaires
+COPY --from=builder /app/llm-consensus-answers /usr/share/nginx/html/llm-consensus-answers
 
 # Copy nginx configuration with cache headers
 COPY nginx.conf /etc/nginx/nginx.conf
