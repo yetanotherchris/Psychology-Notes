@@ -1,7 +1,7 @@
 User-agent: *
 
 # Disallow indexing of data folders and JSON files
-Disallow: /ask-llamas/data/
+Disallow: /llm-consensus-answers/data/
 
 # Allow everything else
 Allow: /

@@ -34,7 +34,7 @@ jobs:
       - name: Copy extra HTML folders to the site
         run: |
           cp -r questionnaires/ site/questionnaires/
-          cp -r ask-llamas/ site/ask-llamas/
+          cp -r llm-consensus-answers/ site/llm-consensus-answers/
           cp -r academic-search/ site/academic-search/
 
       - name: Deploy to GitHub Pages
