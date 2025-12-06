@@ -7,12 +7,14 @@ You may spot a trend with the list below and licensing. Even with the Open Scien
 
 Open Source software is typically free to use and improve, but then licensed for commercial use and support. With Psychology inventories, questionnaires you can use them clinically and for educational purposes, but can't make derivitives or reproduce many of them. So SurveyJS and JSON format is a derivative and is a reproduction - which are the ones that have been removed.
 
+**Note - the questionnaires below are NOT the original validated versions, the scoring is performed in Javascript. Full creditation and referencing is available on each questionnaire's final (scoring) page.**
+
 - [Adult Rejection Sensitivity Questionnaire (A-RSQ)](../questionnaires/a-rsq/index.html)
 - [Adverse Childhood Events Questionnaire (ACE)](../questionnaires/ace/index.html)
 - [Big5 (OCEAN/IPIP) personality test](../questionnaires/big5/index.html) - *n.b. NEO-PI is commerical*
 - Children's Rejection Sensitivity Questionnaire (C-RSQ) - *Removed as it's commercial*
-- Digit Symbol Substitution Test - *Removed as it's commericial*
-- Friendship Questionnaire (FQ, used in ASD diagnosis) - *Removed as it's commercial*
+- [Digit Symbol Substitution Test (Not the WAIS version)](../questionnaires/dsst/index.html)
+- [Friendship Questionnaire (FQ, used in ASD diagnosis)](../questionnaires/friendship-questionnaire/index.html).
 - GAD-7 adapted for children aged 11-17 - *Removed as it's commercial*
 - [Generalized Anxiety Disorder 7-item Scale (GAD-7)](../questionnaires/gad-7/index.html)
 - [Perceived Stress Scale (PSS-10)](../questionnaires/pss-10/index.html)
