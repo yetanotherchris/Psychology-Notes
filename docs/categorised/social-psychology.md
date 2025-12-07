@@ -1,5 +1,8 @@
 # Social Psychology
 
+### "Vicarious"
+
+
 #### TODO: move: Shared Fantasy as Co-Idealising
 This concept, rooted in psychoanalytic theory, refers to a psychological dynamic where two individuals, often in a close relationship, mutually project idealized qualities onto each other. This "shared fantasy" helps them maintain an illusion of perfection or superiority, reinforcing each other's self-image and avoiding the anxiety of confronting flaws or insecurities.
 

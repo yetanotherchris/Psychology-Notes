@@ -1,5 +1,8 @@
 # Memory & Cognition
 
+## TODO
+- new area on learning theory
+
 #### Semantic Memory vs Episodic Memory
 Semantic memory is focused on facts, ideas, and concepts. Episodic memory, on the other hand, refers to the recalling of particular and subjective life experiences.
 
