@@ -1,5 +1,8 @@
 # Psychology Terms Index
 
+# Kohut mirroring
+# Hypergraphia, Autodidacticism
+# Empathy theories
 
 
 ### Assessment Tools & Scales

@@ -90,3 +90,16 @@ Reducing sampling error:
 - Larger sample size
 - Random sampling to reduce bias
 - Stratified sampling (key groups being represented)
+
+
+### Pearson's R values
+
+You can be negative values, so -1 is a perfect negative linear relationship.
+
+| **r value** | **Interpretation / Strength** |
+| ----------- | ----------------------------- |
+| 0.00 – 0.10 | **Negligible / Very weak**    |
+| 0.10 – 0.39 | **Weak**                      |
+| 0.40 – 0.69 | **Moderate**                  |
+| 0.70 – 0.89 | **Strong**                    |
+| 0.90 – 1.00 | **Very strong / Excellent**   |
