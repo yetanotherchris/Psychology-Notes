@@ -1,0 +1,38 @@
+:root {
+  --md-text-font: "Inter";
+  --md-code-font: "JetBrains Mono";
+}
+
+/* Remove only the continue reading button in blog posts */
+nav.md-post__action {
+  display: none;
+}
+
+/* More vertical spacing */
+.md-typeset h1 {
+  margin-top: 2em;
+}
+
+.md-typeset h2 {
+  margin-top: 1.5em;
+}
+
+.md-typeset p {
+  margin-bottom: 1.2em;
+  line-height: 1.8;  /* More line spacing */
+}
+
+/* Wider content area */
+.md-grid {
+  max-width: 80rem;  /* Default is 61rem */
+}
+
+/* Less dense navigation */
+.md-nav__item {
+  padding: 0.3em 0;
+}
+
+/* Lighter borders */
+.md-typeset hr {
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
