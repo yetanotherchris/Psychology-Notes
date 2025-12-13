@@ -4,17 +4,54 @@ repo_url: https://github.com/yetanotherchris/Psychology-Notes/
 repo_name: yetanotherchris/Psychology-Notes/
 docs_dir: docs
 
+
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Inter      # Clean, modern sans-serif
+    code: JetBrains Mono
+  
+  features:
+    #- navigation.tabs        # Horizontal top nav
+    #- navigation.sections    # More breathing room
+    #- navigation.expand      # Show all sections
+    #- toc.integrate          # Keep TOC visible
+    #- content.code.copy
+
+extra_css:
+  - stylesheets/custom.css
 
 plugins:
   - search
+  - blog:
+      post_excerpt: optional
+      post_readtime: false
+      post_date_format: short
+      archive: false
+      categories: false
 
 markdown_extensions:
   - attr_list
 
 nav:
   - Home: README.md
+  - Blog: blog/index.md
+  - Glossary of Terms: categorised/index.md
   - llm-consensus-answers.md
   - Tools:
     - Academic Search: academic-search.md
@@ -35,4 +72,3 @@ nav:
   - stress.md
   - youtube-videos.md
   - experimentation-and-statistics.md
-
