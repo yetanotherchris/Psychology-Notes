@@ -41,6 +41,8 @@ People change their behavior simply because they know they are being observed. E
 #### Social desirability Bias
 A phenomena in research where people tend to respond to questions or behave in ways that they think will be viewed favorably by others, rather than providing completely truthful or accurate answers. For example overstating how much you exercise, underreport something people would frown upon
 
+Erving Goffman's The Presentation of Self in Everyday Life (1959) frames all social interaction as performance. Empathic displays serve to maintain one's identity as a caring person regardless of internal states.
+
 > Fisher, R. J. (1993) "Social desirability bias and the validity of indirect questioning", Journal of Consumer Research, 20(2), pp. 303–315. doi: 10.1086/209351.
 
 #### Folkways
