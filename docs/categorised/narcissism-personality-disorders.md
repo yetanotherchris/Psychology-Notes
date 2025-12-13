@@ -1,5 +1,7 @@
 # Narcissism & Personality Disorders
 
+#### duplicitousness
+
 #### Dichotomous Thinking
 Black and white thinking. Good or bad, perfect or useless. Acting impulsively based on how you see someone. Also known as "black or white thinking". When people engage in dichotomous thinking, they see things in extremes - it's all or nothing; black or white; this or that. Use absolute language like "always" and "never" to describe things. Shifting between seeing things as good or bad.
 

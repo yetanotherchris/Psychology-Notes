@@ -10,6 +10,7 @@ Developed by Jack Brehm in 1966. When people feel their freedom or autonomy is t
 - Pathological Demand Avoidance
 
 #### Propinquity
+Piaget
 
 #### Gaming
 It's shifted from "cheating" to "optimisation" in the minds of many players. The culture has accepted it as normal

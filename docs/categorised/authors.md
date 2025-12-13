@@ -65,3 +65,10 @@ NPD is a disorder because it's dysfunctional as there are negative outcomes to t
 
 #### William Glaser Psychiatrist
 *Definition to be added*
+
+#### kahneman and tversky
+
+#### Edward Bernays - PR
+
+#### Martin E. P. Seligman
+Learned helplessness
