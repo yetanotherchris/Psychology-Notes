@@ -29,7 +29,7 @@ A form of ostracizing, including one word answers, looking away and so on. It do
 - [Silent treatment video](https://www.youtube.com/watch?v=oyux-0NfBAc)
 
 #### Emotional Incest
-Enmeshment, surrogate spouse.
+Aka Enmeshment, surrogate spouse.
 
 #### Othello Syndrome
 Pathological jealousy, pre-occupied with the thoughts their spouse is cheating on them.

@@ -10,8 +10,8 @@ Contemporary researchers often differentiate between two types of empathy: "Affe
 
 Attentiveness: eye contact, nod while you're talking. But as the relationship goes on they show no empathy for your concerns. Data mining your empathy - lots of interest in you? No that didn't happen.
 
-[Cognitive vs. Affective Empathy video](https://www.youtube.com/watch?v=DL18TrssF9Y)
-[Cognitive vs. Affective Empathy explained](https://youtu.be/LK3zFkqInzE?si=F88GIFU01t1eFIOA)
+- [Cognitive vs. Affective Empathy video](https://www.youtube.com/watch?v=DL18TrssF9Y)
+- [Cognitive vs. Affective Empathy explained](https://youtu.be/LK3zFkqInzE?si=F88GIFU01t1eFIOA)
 
 #### Emotional Empathy
 Genuinely feeling the emotion of the other person. How to tell the difference: consistency. Genuine understanding, even when it's inconvenient. It turns on and off with a Narcissist.

@@ -1,9 +1,13 @@
 # Psychology Terms Index
 
 # Kohut mirroring
-# Hypergraphia, Autodidacticism
-# Empathy theories
+*Definitions to be added*
 
+# Hypergraphia, Autodidacticism
+*Definitions to be added*
+
+# Empathy theories
+*Definitions to be added*
 
 ### Assessment Tools & Scales
 - [10-item Ruminative Response Scale (RRS)](assessment-tools-scales.md#10-item-ruminative-response-scale-rrs)

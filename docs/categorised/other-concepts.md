@@ -1,7 +1,7 @@
 # Other Concepts
 
 #### The psychologist's fallacy
-todo
+*Definition to be added*
 
 #### Bad Faith
 Jean Paul Sartre - when we act in a way that isn't true to ourselves.
