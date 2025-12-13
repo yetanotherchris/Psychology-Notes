@@ -4,8 +4,6 @@
 Alfred Adler introduced the concept of the inferiority complex, which refers to a deep feeling of inadequacy and insecurity that arises from perceived physical or psychological deficiencies. This complex often drives individuals to overcompensate by striving for superiority and success.
 
 #### Bessel van der Kolk (Body Keeps Score)
-
-
 > "It is so much easier for traumatized patients to talk about what has been done to them - to tell a story of victimization and revenge - than to notice, feel, and put into words the reality of their internal experience"
 — Bessel van der Kolk, The Body Keeps the Score
 
@@ -13,8 +11,11 @@ Alfred Adler introduced the concept of the inferiority complex, which refers to 
 > 
 > It breaks my heart that we have "therapists" whose approach to trauma reinforces the former instead of helping patients work toward the latter.
 
-#### Dead Mother Complex (André Green)
+#### André Green - Dead Mother Complex
 Introduced by psychoanalyst André Green, the Dead Mother Complex describes a psychological state in which an individual, usually a child, experiences emotional abandonment by a primary caregiver, often the mother. The "dead mother" is not physically dead but is emotionally unavailable, leading to profound feelings of loss, emptiness, and a struggle to connect with others later in life.
+
+#### Edward Bernays - PR
+
 
 #### George Loewenstein's "Hot-Cold Empathy Gap"
 *Definition to be added*
@@ -42,6 +43,8 @@ Defines 23 mental health signs:
 #### Judy Singer (Neurodiversity)
 *Definition to be added*
 
+#### Kahneman and Tversky
+
 #### Kohut Mirroring
 Heinz Kohut introduced the concept of mirroring as part of his Self Psychology theory. Mirroring refers to the process by which parents (or others) reflect back a child's feelings, thoughts, and actions, validating their experience and helping to build a healthy sense of self. A lack of adequate mirroring can lead to issues with self-esteem and identity.
 
@@ -54,7 +57,10 @@ Heinz Kohut, a psychoanalyst, developed the concept of the "tragic man" as part 
 #### Marsha Linehan DBT
 *Definition to be added*
 
-#### Socratic Questioning and Psychotherapy, and Cognitive Therapy Judith Beck
+#### Martin E. P. Seligman
+Learned helplessness
+
+#### Judith Beck - Socratic Questioning and Psychotherapy, and Cognitive Therapy Judith Beck
 *Definition to be added*
 
 #### Theodore Millon, Personality Disorders and Narcissism Traits
@@ -65,11 +71,3 @@ NPD is a disorder because it's dysfunctional as there are negative outcomes to t
 
 #### William Glaser Psychiatrist
 *Definition to be added*
-
-#### kahneman and tversky
-
-#### Edward Bernays - PR
-
-#### Martin E. P. Seligman
-Learned helplessness
-

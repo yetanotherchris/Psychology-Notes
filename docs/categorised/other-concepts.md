@@ -125,20 +125,3 @@ Example: "Don't you think this plan is great?" (Encourages agreement.)
 
 #### Kohlberg's Levels of Morality
 *Definition to be added*
-
-#### William Glaser Psychiatrist
-*Definition to be added*
-
-#### Jaak Panksepp
-*Definition to be added*
-
-#### Judy Singer (Neurodiversity)
-*Definition to be added*
-
-#### Bessel van der Kolk (Body Keeps Score)
-"It is so much easier for traumatized patients to talk about what has been done to them - to tell a story of victimization and revenge - than to notice, feel, and put into words the reality of their internal experience"
-—Bessel van der Kolk, The Body Keeps the Score
-
-I'll add it's often fairly easy to tell who has benefited from meaningful psychotherapy and who has not. Those caught in what vdK calls the "story of victimization and revenge" have not. Those able to reflect on their experience in more complex and nuanced ways, in the context of a larger integrated narrative of the arc of their lives, have.
-
-It breaks my heart that we have "therapists" whose approach to trauma reinforces the former instead of helping patients work toward the latter.
