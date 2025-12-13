@@ -72,3 +72,16 @@ NPD is a disorder because it's dysfunctional as there are negative outcomes to t
 
 #### Martin E. P. Seligman
 Learned helplessness
+
+#### Nancy Eisenberg
+Produced extensive research on empathy, sympathy, and prosocial behaviour since the 1980s, including The Caring Child (1992) and numerous journal articles on emotional regulation and empathy development.
+
+#### C. Daniel Batson 
+Shaped experimental empathy research with his empathy-altruism hypothesis, summarised in Altruism in Humans (2011, Oxford University Press).
+
+#### Simon Baron-Cohen
+Primarily work on Autism:
+- Empathising-Systemising (E-S) Theory
+- The Empathy Quotient (EQ)
+- Zero Degrees of Empathy (2011), the science of evil
+- Theory of Mind research, with Uta Frith and Alan Leslie on false-belief tasks (the "Sally-Anne test")
