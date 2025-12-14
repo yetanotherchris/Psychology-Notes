@@ -124,3 +124,9 @@ A social-psychological phenomenon in which people associate themselves with the 
 A social psychological phenomenon where individuals feel less personal responsibility to act in a situation when others are present, e.g. lots of people are present for someone being attacked or injured then people feel less obliged to act. So accountability is diluated.
 
 > Darley, J.M. and Latané, B. (1968) "Bystander intervention in emergencies: Diffusion of responsibility", Journal of Personality and Social Psychology, 8(4), pp. 377–383. doi: 10.1037/h0025589.
+
+
+#### Reciprocal Determinism
+Proposed by Albert Bandura in Social Cognitive Theory, it states a person's behavior, personal factors (cognitive/biological), and environment all influence each other bi-directionally. In Buddhism this is roughly equivalent to "dependent co arising".
+
+In psychotherapy, an approximate equivalent is Systems Theory (family therapy).
