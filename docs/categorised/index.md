@@ -299,6 +299,5 @@ These are fairly rough & disorganised notes for definitions of concepts, authors
 - [PTSD night terrors](trauma-attachment.md#ptsd-night-terrors)
 - [Vicarious trauma](trauma-attachment.md#vicarious-trauma)
 
-
 ### Empathy theories
-*Definitions to be added*
+- [Empathy](empathy.md)
