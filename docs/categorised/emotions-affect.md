@@ -32,3 +32,8 @@ Paradoxical thinking brings about a light bulb moment. Dissonant thinking preser
 In therapy the therapist encourages undesirable behaviour to show the client he has control over it. Paradoxical intervention. Magnify the fear and exaggerate it.
 
 Narcissist does the same - people are criticising me for my actions? I'm going to double down. Defiant, in your face - prolonged shame. These are the pillars of grandiosity. The narcissist administers therapy to himself this way. It's disguised psychosis, reversed psychosis, you are coping with their psychosis as their partner.
+
+#### Théodule Ribot
+French psychologist who studied affective memory, the idea that emotions leave traces that can be reactivated. 
+
+He influenced The Stanislavski System, a systematic approach to acting developed by Russian theatre director Konstantin Stanislavsk (actors should experience genuine thoughts and emotions). Examples include what would I do in this situation, what are the character's objectives in the scene.
