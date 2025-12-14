@@ -235,7 +235,7 @@
         }
 
         function extractCitations(text) {
-            const citationRegex = /\([A-Z][a-zA-Z\s.,'&-]+,\s*\d{4}[a-z]?\)/g;
+            const citationRegex = /\([A-Z][a-zA-Z\s.,'&-]+,\s*\d{4}[a-z]?(?:,\s*cited in\s+[A-Z][a-zA-Z\s.,'&-]+,\s*\d{4}[a-z]?)?(?:,\s*p{1,2}\.\s*\d+(?:-\d+)?)?\)/g;
             const matches = text.match(citationRegex);
 
             if (!matches) return [];
