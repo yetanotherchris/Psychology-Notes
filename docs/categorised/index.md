@@ -1,5 +1,8 @@
 # Authors and concepts
 
+These are fairly rough & disorganised notes for definitions of concepts, authors and theories in Psychology.
+
+
 ### Assessment Tools & Scales
 - [10-item Ruminative Response Scale (RRS)](assessment-tools-scales.md#10-item-ruminative-response-scale-rrs)
 - [Childhood Narcissism Scale](assessment-tools-scales.md#childhood-narcissism-scale)
