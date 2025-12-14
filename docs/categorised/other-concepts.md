@@ -111,7 +111,7 @@ Example: "Don't you think this plan is great?" (Encourages agreement.)
 #### Mood Congruence
 *Definition to be added*
 
-#### Ocean vs DISC
+#### Ocean vs DISC vs HEXACO
 *Definition to be added*
 
 #### Theodore Reich
