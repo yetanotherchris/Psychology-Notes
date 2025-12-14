@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Reader - Psychology Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .home-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #1976d2;
+            font-size: 2rem;
+        }
+
+        .control-panel {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .control-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        #wpmInput {
+            width: 80px;
+            padding: 0.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1565c0;
+        }
+
+        .btn-secondary {
+            background-color: #666;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #555;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .editor-panel {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .panel-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        #textInput {
+            width: 100%;
+            min-height: 300px;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        #textInput:focus {
+            border-color: #1976d2;
+        }
+
+        .reader-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .reader-overlay.active {
+            display: flex;
+        }
+
+        .word-display {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #fff;
+            min-height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 90%;
+        }
+
+        .reader-controls {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #1976d2;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .word-count-display {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .word-display {
+                font-size: 2.5rem;
+            }
+
+            .control-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-group {
+                justify-content: space-between;
+            }
+
+            .progress-bar {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../../" class="home-link">Home</a>
+    </div>
+
+    <div class="container">
+        <h1>Speed Reader</h1>
+
+        <div class="control-panel">
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="wpmInput">Words per minute:</label>
+                    <input type="number" id="wpmInput" value="250" min="50" max="1000" step="10">
+                </div>
+                <button class="btn btn-primary" id="startBtn">Speed Read</button>
+            </div>
+        </div>
+
+        <div class="editor-panel">
+            <div class="panel-title">Enter your text</div>
+            <textarea id="textInput" placeholder="Paste or type the text you want to speed read..."></textarea>
+        </div>
+    </div>
+
+    <div class="reader-overlay" id="readerOverlay">
+        <div class="word-display" id="wordDisplay"></div>
+        <div class="word-count-display" id="wordCountDisplay"></div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="reader-controls">
+            <button class="btn btn-secondary" id="pauseBtn">Pause</button>
+            <button class="btn btn-secondary" id="resumeBtn" style="display: none;">Resume</button>
+            <button class="btn btn-secondary" id="stopBtn">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const wpmInput = document.getElementById('wpmInput');
+        const startBtn = document.getElementById('startBtn');
+        const readerOverlay = document.getElementById('readerOverlay');
+        const wordDisplay = document.getElementById('wordDisplay');
+        const wordCountDisplay = document.getElementById('wordCountDisplay');
+        const progressFill = document.getElementById('progressFill');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resumeBtn = document.getElementById('resumeBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        let words = [];
+        let currentIndex = 0;
+        let intervalId = null;
+        let isPaused = false;
+
+        function getWords(text) {
+            return text.trim().split(/\s+/).filter(word => word.length > 0);
+        }
+
+        function startReading() {
+            const text = textInput.value.trim();
+            if (!text) {
+                alert('Please enter some text to read');
+                return;
+            }
+
+            words = getWords(text);
+            currentIndex = 0;
+            isPaused = false;
+
+            readerOverlay.classList.add('active');
+            pauseBtn.style.display = 'inline-block';
+            resumeBtn.style.display = 'none';
+
+            displayWord();
+            startInterval();
+        }
+
+        function startInterval() {
+            const wpm = parseInt(wpmInput.value) || 250;
+            const msPerWord = 60000 / wpm;
+
+            intervalId = setInterval(() => {
+                currentIndex++;
+                if (currentIndex >= words.length) {
+                    stopReading();
+                } else {
+                    displayWord();
+                }
+            }, msPerWord);
+        }
+
+        function displayWord() {
+            if (currentIndex < words.length) {
+                wordDisplay.textContent = words[currentIndex];
+                wordCountDisplay.textContent = `${currentIndex + 1} / ${words.length}`;
+                const progress = ((currentIndex + 1) / words.length) * 100;
+                progressFill.style.width = `${progress}%`;
+            }
+        }
+
+        function pauseReading() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+            isPaused = true;
+            pauseBtn.style.display = 'none';
+            resumeBtn.style.display = 'inline-block';
+        }
+
+        function resumeReading() {
+            isPaused = false;
+            pauseBtn.style.display = 'inline-block';
+            resumeBtn.style.display = 'none';
+            startInterval();
+        }
+
+        function stopReading() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+            readerOverlay.classList.remove('active');
+            wordDisplay.textContent = '';
+            wordCountDisplay.textContent = '';
+            progressFill.style.width = '0%';
+            currentIndex = 0;
+            isPaused = false;
+            pauseBtn.style.display = 'inline-block';
+            resumeBtn.style.display = 'none';
+        }
+
+        startBtn.addEventListener('click', startReading);
+        pauseBtn.addEventListener('click', pauseReading);
+        resumeBtn.addEventListener('click', resumeReading);
+        stopBtn.addEventListener('click', stopReading);
+
+        document.addEventListener('keydown', (e) => {
+            if (!readerOverlay.classList.contains('active')) return;
+
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (isPaused) {
+                    resumeReading();
+                } else {
+                    pauseReading();
+                }
+            } else if (e.code === 'Escape') {
+                stopReading();
+            }
+        });
+    </script>
+</body>
+</html>
