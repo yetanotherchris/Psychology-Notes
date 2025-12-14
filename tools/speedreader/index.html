@@ -402,6 +402,12 @@
         resumeBtn.addEventListener('click', resumeReading);
         stopBtn.addEventListener('click', stopReading);
 
+        textInput.addEventListener('paste', (e) => {
+            setTimeout(() => {
+                textInput.setSelectionRange(0, 0);
+            }, 0);
+        });
+
         document.addEventListener('keydown', (e) => {
             if (!readerOverlay.classList.contains('active')) return;
 
