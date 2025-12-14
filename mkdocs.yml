@@ -47,7 +47,7 @@ nav:
   - Authors and concepts: categorised/index.md
   - llm-consensus-answers.md
   - Tools:
-    - Academic Search: /tools/academic-search/
+    - Academic Search: questionnaires-list.md
     - Questionnaires: /tools/questionnaires/
     - Speedreader: /tools/speedreader/
     - Word Counter: /tools/wordcounter/
