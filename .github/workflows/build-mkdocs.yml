@@ -36,6 +36,7 @@ jobs:
           cp -r questionnaires/ site/questionnaires/
           cp -r llm-consensus-answers/ site/llm-consensus-answers/
           cp -r academic-search/ site/academic-search/
+          cp -r tools/ site/tools/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
