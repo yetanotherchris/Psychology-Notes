@@ -3,7 +3,7 @@
 #### Disorganised memories and IAMs
 Disorganised memory is a symptom of trauma and PTSD, where memories aren't "assembled" in the right order but appear randomly for the victim and can appear as if they occurred recently. Research suggests that this is to do with emotions and hippocampus at the time (TODO). 
 
-[What research and information is there about involuntary autobiographical memories (IAMs)](/llm-consensus-answers/iams-involuntary-autobiographical-memories.html).
+[What research and information is there about involuntary autobiographical memories (IAMs)](/tools/llm-consensus-answers/iams-involuntary-autobiographical-memories.html).
 
 #### Vicarious Trauma
 Vicarious trauma, first developed by McCann and Pearlman (Branson, D. C., 2019), relates to compassion fatigue and workers (nurses, counsellors etc.) who experience trauma from interactions with trauma victims.

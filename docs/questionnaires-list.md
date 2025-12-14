@@ -27,15 +27,15 @@ Unless otherwise noted, this work is licensed under CC BY-NC-SA 4.0. Some instru
 
 **Note - the questionnaires below are NOT the original validated versions, the scoring is performed in Javascript. Full citation and referencing is available on each questionnaire's final (scoring) page.**
 
-- [Adult Rejection Sensitivity Questionnaire (A-RSQ)](../questionnaires/a-rsq/index.html)
-- [Adverse Childhood Events Questionnaire (ACE)](../questionnaires/ace/index.html)
-- [Big5 (OCEAN/IPIP) personality test](../questionnaires/big5/index.html) - *n.b. NEO-PI is commerical*
+- [Adult Rejection Sensitivity Questionnaire (A-RSQ)](../tools/questionnaires/a-rsq/index.html)
+- [Adverse Childhood Events Questionnaire (ACE)](../tools/questionnaires/ace/index.html)
+- [Big5 (OCEAN/IPIP) personality test](../tools/questionnaires/big5/index.html) - *n.b. NEO-PI is commerical*
 - Children's Rejection Sensitivity Questionnaire (C-RSQ) - *Removed as it's commercial*
-- [Digit Symbol Substitution Test (Not the WAIS version)](../questionnaires/dsst/index.html)
+- [Digit Symbol Substitution Test (Not the WAIS version)](../tools/questionnaires/dsst/index.html)
 - Friendship Questionnaire (FQ, used to aid ASD diagnoses)  - *[Available here](https://doi.org/10.1023/A:1025879411971)*
 - GAD-7 adapted for children aged 11-17 - *[Available here](https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures)*
-- [Generalized Anxiety Disorder 7-item Scale (GAD-7)](../questionnaires/gad-7/index.html)
-- [Perceived Stress Scale (PSS-10)](../questionnaires/pss-10/index.html)
+- [Generalized Anxiety Disorder 7-item Scale (GAD-7)](../tools/questionnaires/gad-7/index.html)
+- [Perceived Stress Scale (PSS-10)](../tools/questionnaires/pss-10/index.html)
 - Ruminative Response Scale (RRS-10) - *Removed as it's commercial*
 - [MACH-IV](https://github.com/yetanotherchris/openpsychometrics/blob/main/MACH_data/codebook.txt)
 - Rosenberg Self-esteem inventory

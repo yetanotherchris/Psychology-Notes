@@ -41,9 +41,6 @@ FROM nginx:alpine
 COPY --from=builder /app/site /usr/share/nginx/html
 
 # Copy static applications directly to web root
-COPY --from=builder /app/academic-search /usr/share/nginx/html/academic-search
-COPY --from=builder /app/questionnaires /usr/share/nginx/html/questionnaires
-COPY --from=builder /app/llm-consensus-answers /usr/share/nginx/html/llm-consensus-answers
 COPY --from=builder /app/tools /usr/share/nginx/html/tools
 
 # Copy nginx configuration with cache headers

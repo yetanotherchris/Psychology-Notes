@@ -2,7 +2,7 @@
 
 This tool provides academic search functionality for psychology research.
 
-**[Launch Academic Search Application](../academic-search/){:target="_blank"}**
+**[Launch Academic Search Application](../tools/academic-search/){:target="_blank"}**
 
 ## Features
 

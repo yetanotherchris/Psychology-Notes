@@ -56,6 +56,8 @@ nav:
   - Tools:
     - Academic Search: academic-search.md
     - Questionnaires: questionnaires-list.md
+    - Speedreader: speedreader.md
+    - Word Counter: wordcounter.md
   - Cluster B:
     - Overview: Cluster-B/README.md
     - Cluster-B/narcissism-authors.md
