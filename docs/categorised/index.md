@@ -1,14 +1,5 @@
 # Psychology Terms Index
 
-# Kohut mirroring
-*Definitions to be added*
-
-# Hypergraphia, Autodidacticism
-*Definitions to be added*
-
-# Empathy theories
-*Definitions to be added*
-
 ### Assessment Tools & Scales
 - [10-item Ruminative Response Scale (RRS)](assessment-tools-scales.md#10-item-ruminative-response-scale-rrs)
 - [Childhood Narcissism Scale](assessment-tools-scales.md#childhood-narcissism-scale)
@@ -304,3 +295,7 @@
 - [Intrusion Trauma](trauma-attachment.md#intrusion-trauma)
 - [PTSD night terrors](trauma-attachment.md#ptsd-night-terrors)
 - [Vicarious trauma](trauma-attachment.md#vicarious-trauma)
+
+
+### Empathy theories
+*Definitions to be added*

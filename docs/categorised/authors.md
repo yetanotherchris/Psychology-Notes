@@ -44,6 +44,7 @@ Defines 23 mental health signs:
 *Definition to be added*
 
 #### Kahneman and Tversky
+*Definition to be added*
 
 #### Kohut Mirroring
 Heinz Kohut introduced the concept of mirroring as part of his Self Psychology theory. Mirroring refers to the process by which parents (or others) reflect back a child's feelings, thoughts, and actions, validating their experience and helping to build a healthy sense of self. A lack of adequate mirroring can lead to issues with self-esteem and identity.
