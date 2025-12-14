@@ -51,7 +51,7 @@ markdown_extensions:
 nav:
   - Home: README.md
   - Blog: blog/index.md
-  - Glossary of Terms: categorised/index.md
+  - Authors and concepts: categorised/index.md
   - llm-consensus-answers.md
   - Tools:
     - Academic Search: academic-search.md

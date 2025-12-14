@@ -1,4 +1,4 @@
-# Psychology Terms Index
+# Authors and concepts
 
 ### Assessment Tools & Scales
 - [10-item Ruminative Response Scale (RRS)](assessment-tools-scales.md#10-item-ruminative-response-scale-rrs)
