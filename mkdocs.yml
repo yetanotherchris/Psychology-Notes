@@ -47,10 +47,10 @@ nav:
   - Authors and concepts: categorised/index.md
   - llm-consensus-answers.md
   - Tools:
-    - Academic Search: /tools/academic-search
-    - Questionnaires: /tools/questionnaires
-    - Speedreader: /tools/speedreader
-    - Word Counter: /tools/wordcounter
+    - Academic Search: /tools/academic-search/
+    - Questionnaires: /tools/questionnaires/
+    - Speedreader: /tools/speedreader/
+    - Word Counter: /tools/wordcounter/
   - Cluster B:
     - Overview: Cluster-B/README.md
     - Cluster-B/narcissism-authors.md
