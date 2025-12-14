@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Counter - Psychology Notes</title>
+    <title>Academic Essay Word Counter - Psychology Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f5f5f5;
             color: #333;
         }
@@ -104,19 +107,33 @@
         #textInput {
             width: 100%;
             min-height: 500px;
+            max-height: 700px;
             padding: 1rem;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
             font-family: inherit;
             font-size: 1rem;
             line-height: 1.6;
-            resize: vertical;
+            overflow-y: auto;
             outline: none;
             transition: border-color 0.2s;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         #textInput:focus {
             border-color: #1976d2;
+        }
+
+        #textInput:empty:before {
+            content: attr(data-placeholder);
+            color: #999;
+        }
+
+        .highlight {
+            background-color: #c8e6c9;
+            padding: 2px 0;
+            border-radius: 2px;
         }
 
         .citations-list {
@@ -130,6 +147,12 @@
             border-radius: 4px;
             border-left: 3px solid #1976d2;
             font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .citation-item:hover {
+            background-color: #e3f2fd;
         }
 
         .no-citations {
@@ -157,7 +180,7 @@
     </div>
 
     <div class="container">
-        <h1>Word Counter</h1>
+        <h1>Academic Essay Word Counter</h1>
 
         <div class="stats-bar">
             <div class="stat">
@@ -169,10 +192,6 @@
                 <div class="stat-value" id="paragraphCount">0</div>
             </div>
             <div class="stat">
-                <div class="stat-label">Characters</div>
-                <div class="stat-value" id="charCount">0</div>
-            </div>
-            <div class="stat">
                 <div class="stat-label">Citations</div>
                 <div class="stat-value" id="citationCount">0</div>
             </div>
@@ -181,7 +200,7 @@
         <div class="main-content">
             <div class="editor-panel">
                 <div class="panel-title">Enter your text</div>
-                <textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+                <div id="textInput" contenteditable="true" data-placeholder="Start typing or paste your text here..."></div>
             </div>
 
             <div class="citations-panel">
@@ -197,9 +216,12 @@
         const textInput = document.getElementById('textInput');
         const wordCountEl = document.getElementById('wordCount');
         const paragraphCountEl = document.getElementById('paragraphCount');
-        const charCountEl = document.getElementById('charCount');
         const citationCountEl = document.getElementById('citationCount');
         const citationsListEl = document.getElementById('citationsList');
+
+        function getPlainText() {
+            return textInput.textContent || '';
+        }
 
         function countWords(text) {
             if (!text.trim()) return 0;
@@ -222,6 +244,30 @@
             return uniqueCitations.sort();
         }
 
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function highlightCitation(citation) {
+            const plainText = getPlainText();
+            const escapedCitation = escapeRegex(citation);
+            const regex = new RegExp(escapedCitation, 'g');
+
+            const highlightedText = plainText.replace(regex, `<mark class="highlight">${citation}</mark>`);
+
+            textInput.innerHTML = highlightedText;
+
+            const firstHighlight = textInput.querySelector('.highlight');
+            if (firstHighlight) {
+                firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function clearHighlights() {
+            const plainText = getPlainText();
+            textInput.textContent = plainText;
+        }
+
         function updateCitationsList(citations) {
             if (citations.length === 0) {
                 citationsListEl.innerHTML = '<li class="no-citations">No citations found</li>';
@@ -229,27 +275,39 @@
             }
 
             citationsListEl.innerHTML = citations
-                .map(citation => `<li class="citation-item">${citation}</li>`)
+                .map(citation => `<li class="citation-item" data-citation="${citation}">${citation}</li>`)
                 .join('');
+
+            document.querySelectorAll('.citation-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const citation = item.getAttribute('data-citation');
+                    clearHighlights();
+                    highlightCitation(citation);
+                });
+            });
         }
 
         function updateCounts() {
-            const text = textInput.value;
+            const text = getPlainText();
 
             const wordCount = countWords(text);
             const paragraphCount = countParagraphs(text);
-            const charCount = text.length;
             const citations = extractCitations(text);
 
             wordCountEl.textContent = wordCount.toLocaleString();
             paragraphCountEl.textContent = paragraphCount.toLocaleString();
-            charCountEl.textContent = charCount.toLocaleString();
             citationCountEl.textContent = citations.length.toLocaleString();
 
             updateCitationsList(citations);
         }
 
         textInput.addEventListener('input', updateCounts);
+
+        textInput.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const text = e.clipboardData.getData('text/plain');
+            document.execCommand('insertText', false, text);
+        });
 
         updateCounts();
     </script>
