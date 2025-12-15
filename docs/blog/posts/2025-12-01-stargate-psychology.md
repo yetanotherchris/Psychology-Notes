@@ -12,7 +12,7 @@ Watching the Stargate seasons, Stargate had themese of BPD
 
 <!-- more -->
 Stargate ran from x to x. It has 9 seasons. It featured 4 main characters
-
+https://en.wikipedia.org/wiki/List_of_Stargate_SG-1_episodes#Season_4_(2000%E2%80%9301)
 #### S1E14 - "Hathor"
 In this episode, Jack O'Neil is seduced by Hathor via a pink mist she breaths. She's a Goa'uld queen and wants to use the seduction in order to get the men to join her cause. The women in the army base have to stop her.
 
@@ -38,7 +38,16 @@ He is desperate for her to love him in the episode, and curates her world. This 
 - https://stargate.fandom.com/wiki/Fifth
 
 
+#### S4E17 - "AbsolutePower"
+
+
+https://stargate.fandom.com/wiki/Absolute_Power
+
 #### S4E3 - "Upgrades"
+
+
+legacy
+https://stargate.fandom.com/wiki/Legacy
 
 
 Content
