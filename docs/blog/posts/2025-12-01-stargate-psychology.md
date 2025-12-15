@@ -12,12 +12,31 @@ Watching the Stargate seasons, Stargate had themese of BPD
 
 <!-- more -->
 Stargate ran from x to x. It has 9 seasons. It featured 4 main characters
+
+#### S1E14 - "Hathor"
+In this episode, Jack O'Neil is seduced by Hathor via a pink mist she breaths. She's a Goa'uld queen and wants to use the seduction in order to get the men to join her cause. The women in the army base have to stop her.
+
+This looks like a tale similar to the Greek mythology Sirens, where men are lured in on a promise - and it is on the face of it. However the Hathor actress is more sophisticated than this as she is quite child-like as a character, and appeals to the mens' need to help her. She has strong emotional outbursts as well and appears like the writers did have Borderline Personality Disorder or another Cluster B personality in mind for the show, as these characters repeatedly appear in SG1.
+
+https://stargate.fandom.com/wiki/Hathor_(episode)
+
+
+#### S2E4 - "The GameKeeper"
+The GameKeeper is, on the surface, about a cult-like leader who pacifies people using virtual reality they're stuck inside. However the script and acting of the Keeper's character makes it clear that it could be a metaphor for a relationship in which one person (the Keeper) feels responsible for curating the other person's reality. This is shown at the end of the episode when they go into the garden which he's worried they'll ruin. So in psychoanalytic terms this would be The Keeper being afraid of what happens if he doesn't control the reality. 
+
+Dwight Schultz (Murdoc in the original A Team) play the Keeper.
+https://stargate.fandom.com/wiki/The_Gamekeeper 
+
+
+
+https://stargate.fandom.com/wiki/Keeper
+
+
 Content
 
 | Show | Episode | My Description | Your Summary |
 |------|---------|----------------|--------------|
-| Stargate SG-1 | S1E4 - "The Keeper" | The first feature "the keeper", about a cult leader | The SG-1 team discovers a civilization living in an underground sanctuary ruled by a man called "The Keeper" who keeps his people pacified through addictive virtual reality entertainment. They must help the inhabitants break free from their technological dependence and reclaim their lives on the surface world. |
-| Stargate SG-1 | S1E14 - "Hathor" | Woman walks through gate, very high emotions, acting childlike | The Goa'uld Hathor emerges from a sarcophagus and comes through the Stargate to SGC, using her pheromone powers to seduce and control the men while behaving in a somewhat childlike, overly emotional manner. Sam Carter and the other women at the base must stop her before she can create a new army of Jaffa. |
+
 | Stargate SG-1 | S8E1-2 - "New Order" | Carter kept by swarm robot man in fantasy world where they're married, he's angry she lied | Fifth, the human-form Replicator who was previously betrayed by Carter, captures her and creates an idyllic fantasy world where they're in a romantic relationship together, but he's deeply hurt and angry about her past deception. Carter must navigate his emotional instability and find a way to escape while the Replicators pose a massive threat to the galaxy. |
 | Stargate SG-1 | S4E3 - "Upgrades" | Cast trapped by mind control on Earth, acting narcissistically/gaslighting | The team (except Teal'c) receives alien armbands that give them superhuman abilities, making O'Neill, Carter, and Daniel become increasingly reckless, aggressive, and dismissive of normal protocols as the devices affect their judgment. They must be stopped before the enhanced abilities and personality changes lead to disaster at SGC. |
 | Stargate SG-1 | S8E7 - "Affinity" | Teal'c on Earth with neighbor who has abusive boyfriend | Teal'c is living off-base in his own apartment and befriends his neighbor Krista who is being abused by her boyfriend. When Teal'c intervenes to protect her, he becomes entangled in both the domestic situation and a Trust operative's attempt to frame him for murder. |
@@ -28,4 +47,7 @@ Content
 | Stargate SG-1 | S1E11 - "The Torment of Tantalus" | One man trapped on technologically advanced planet, lonely, doesn't want to leave, others died | They find Ernest Littlefield, who's been trapped alone on a planet with an Ancient repository of knowledge for decades after everyone else from his expedition died. He's reluctant to leave because he's obsessed with deciphering the alien knowledge. |
 | Stargate SG-1 | S7E9 - "Avenger 2.0" | small scientist, who has confidence issues, in the lab - he's invented something | Scientist Dr. Jay Felger creates a computer virus, Avenger, intended to disable a single enemy Stargate, but it accidentally shuts down the entire Stargate network, stranding SG teams. He must work with Carter to fix his mistake. |
 
-https://en.wikipedia.org/wiki/Stargate_SG-1_season_4
+https://en.wikipedia.org/wiki/List_of_Stargate_SG-1_episodes#Season_1_(1997%E2%80%9398)
+https://en.wikipedia.org/wiki/List_of_Stargate_SG-1_episodes#Season_2_(1998%E2%80%9399)
+https://en.wikipedia.org/wiki/List_of_Stargate_SG-1_episodes#Season_3_(1999%E2%80%932000)
+https://en.wikipedia.org/wiki/List_of_Stargate_SG-1_episodes#Season_4_(2000%E2%80%9301)
