@@ -18,18 +18,26 @@ In this episode, Jack O'Neil is seduced by Hathor via a pink mist she breaths. S
 
 This looks like a tale similar to the Greek mythology Sirens, where men are lured in on a promise - and it is on the face of it. However the Hathor actress is more sophisticated than this as she is quite child-like as a character, and appeals to the mens' need to help her. She has strong emotional outbursts as well and appears like the writers did have Borderline Personality Disorder or another Cluster B personality in mind for the show, as these characters repeatedly appear in SG1.
 
-https://stargate.fandom.com/wiki/Hathor_(episode)
+- https://stargate.fandom.com/wiki/Hathor_(episode)
 
 
 #### S2E4 - "The GameKeeper"
 The GameKeeper is, on the surface, about a cult-like leader who pacifies people using virtual reality they're stuck inside. However the script and acting of the Keeper's character makes it clear that it could be a metaphor for a relationship in which one person (the Keeper) feels responsible for curating the other person's reality. This is shown at the end of the episode when they go into the garden which he's worried they'll ruin. So in psychoanalytic terms this would be The Keeper being afraid of what happens if he doesn't control the reality. 
 
-Dwight Schultz (Murdoc in the original A Team) play the Keeper.
-https://stargate.fandom.com/wiki/The_Gamekeeper 
+- Dwight Schultz (Murdoc in the original A Team) play the Keeper.
+- https://stargate.fandom.com/wiki/The_Gamekeeper 
 
 
+#### S8E2 - "New Order Part 2"
 
-https://stargate.fandom.com/wiki/Keeper
+The episode has many story threads running in it, one of which Major Samantha Carter wakes up in a bed and it turns out that she is in a large farmhouse in Montana. She is greeted by Pete Shanahan, her husband in this reality. She eventually doesn't believe its real and it is infact Fifth who has created what he believes is an idealised reality for them both.
+
+He is desperate for her to love him in the episode, and curates her world. This can once again be seen through the lens of the Cluster B categories of personality disorders. In this case, it seems quite apparent he has BPD and the curated reality described in narcisistic relationships. He could just be missing the experience of love - unconditional positive regard as Carl Rogers described it. He isn't human, but a sort of Android. The theme of control of reality in a relationship appears again in SG1.
+
+- https://stargate.fandom.com/wiki/New_Order,_Part_2
+- https://stargate.fandom.com/wiki/Fifth
+
+
 
 
 Content
