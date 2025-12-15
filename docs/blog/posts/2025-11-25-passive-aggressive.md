@@ -1,5 +1,5 @@
 ---
-date: 2025-12-15
+date: 2025-11-25
 categories:
   - dsm
   - passive-aggressive
@@ -27,6 +27,10 @@ Should PAPD have been removed from the DSM? Quite a few studies don't think so. 
   - *"DSM-IV PAPD is a unidimensional construct with adequate internal consistency (K-R 20 = .85)"*
 - [Passive-aggressive personality disorder: the demise of a syndrome (2016)](https://pubmed.ncbi.nlm.nih.gov/10224623/)
   - *"PAPD is no less valid than other personality disorders"*
+- [The Construct Validity of Passive-Aggressive Personality Disorder](https://www.academia.edu/33739668/The_Construct_Validity_of_Passive_Aggressive_Personality_Disorder)
+  - *"Research indicates a heritability estimate of .50 for PAPD... internal consistency of PAPD was measured at .69 suggesting adequate reliability"*
+
+There are studies arguing for less consistency in PAPD. One of the core reasons for its removal was the idea passive aggressiveness is situational, not a personality trait.
 
 The five types George Bach described in Creative Aggression: The Art of Assertive Living (1974) were:
 
