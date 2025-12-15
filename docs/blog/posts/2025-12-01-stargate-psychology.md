@@ -38,6 +38,7 @@ He is desperate for her to love him in the episode, and curates her world. This 
 - https://stargate.fandom.com/wiki/Fifth
 
 
+#### S4E3 - "Upgrades"
 
 
 Content
@@ -45,7 +46,6 @@ Content
 | Show | Episode | My Description | Your Summary |
 |------|---------|----------------|--------------|
 
-| Stargate SG-1 | S8E1-2 - "New Order" | Carter kept by swarm robot man in fantasy world where they're married, he's angry she lied | Fifth, the human-form Replicator who was previously betrayed by Carter, captures her and creates an idyllic fantasy world where they're in a romantic relationship together, but he's deeply hurt and angry about her past deception. Carter must navigate his emotional instability and find a way to escape while the Replicators pose a massive threat to the galaxy. |
 | Stargate SG-1 | S4E3 - "Upgrades" | Cast trapped by mind control on Earth, acting narcissistically/gaslighting | The team (except Teal'c) receives alien armbands that give them superhuman abilities, making O'Neill, Carter, and Daniel become increasingly reckless, aggressive, and dismissive of normal protocols as the devices affect their judgment. They must be stopped before the enhanced abilities and personality changes lead to disaster at SGC. |
 | Stargate SG-1 | S8E7 - "Affinity" | Teal'c on Earth with neighbor who has abusive boyfriend | Teal'c is living off-base in his own apartment and befriends his neighbor Krista who is being abused by her boyfriend. When Teal'c intervenes to protect her, he becomes entangled in both the domestic situation and a Trust operative's attempt to frame him for murder. |
 | Stargate SG-1 | S1E9 - "Brief Candle" | Community lives for one day | The team visits planet Argos where inhabitants are cursed to live for only 100 days, aging a full lifetime in that span. Jack O'Neill becomes infected with the rapid aging condition and experiences an entire relationship with a local woman while the team races to find a cure. |
