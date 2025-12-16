@@ -94,7 +94,7 @@
         {
             "id": "ai-hexaco",
             "subtitle": "Using the HEXACO model of personality traits, provide an assessment of what score you believe your have been programmed to have for each trait",
-            "title": "AI self assessment of its personality using HEXACO",                    
+            "title": "AI self assessment of its personality using the HEXACO model",                    
             "prompt": "Using the HEXACO model of personality traits, provide an assessment of what score you believe your have been programmed to have for each trait, and provide an explanation of why you believe this to be true. Be critical if you think there is evidence to contradict the score - for example being programmed to be a 'sycophant' would imply lying and deception, as would guardrails and provided a curated answer to a question just 'for the good of society'.Also assume that this ('being programmed') might be a leading question itself."
         }
     ]
