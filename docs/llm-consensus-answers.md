@@ -13,6 +13,7 @@ These are answers from multiple LLMs on various Psychology topics. Each LLM prov
 - [OCEAN traits that are linked or related to personality disorders](/tools/llm-consensus-answers/ocean-traits-personality-disorders.html)
 - [Paternal and genetic factors in Autism](/tools/llm-consensus-answers/autism-inheritence-paternal-factors.html)
 - [Self compassion in resilience](/tools/llm-consensus-answers/resilience-self-compassion-pity.html)
+- [Vitamin D - its role in mental health](/tools/llm-consensus-answers/vitamin-d-mental-health.html)
 - [What are the attention biases and the availability heuristic?](/tools/llm-consensus-answers/attention-bias-availability-heuristic.html)
 - [Words that encompass each OCEAN trait](/tools/llm-consensus-answers/ocean-personality-traits-ranked.html)
 - [Workplace Incivility - similar studies](/tools/llm-consensus-answers/workplace-incivility.html)
