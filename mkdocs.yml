@@ -1,10 +1,8 @@
 site_name: Psychology Notes
-site_url: https://psychology-notes.fly.dev/
+site_url: https://psychology-notes.yetanotherchris.dev/
 repo_url: https://github.com/yetanotherchris/Psychology-Notes/
 repo_name: yetanotherchris/Psychology-Notes/
 docs_dir: docs
-
-
 
 theme:
   name: material
