@@ -1,5 +1,5 @@
 ---
-date: 2025-11-25
+date: 2025-12-14
 categories:
   - freud
   - cathexis
