@@ -34,23 +34,23 @@ There are studies arguing for less consistency in PAPD. One of the core reasons 
 
 The five types George Bach described in Creative Aggression: The Art of Assertive Living (1974) were:
 
-##### 1. Pseudoaccommodators
+#### 1. Pseudoaccommodators
 Pretend to agree or accommodate to others' needs while secretly planning not to follow through.
 Example: Saying "Sure, I'll do that!" but having no intention of actually doing it.
 
-##### 2. Guiltmakers
+#### 2. Guiltmakers
 Intentionally make others feel guilty or responsible for hardship.  
 Agreeing to do something but then making the other person feel responsible for any burden: "Well, I did it, but now I'm exhausted and my back hurts".
 
-##### 3. Jokers
+#### 3. Jokers
 Use humor as a disguise to say hurtful things.
 Examples: making cutting remarks dressed up as jokes, then claiming "I was just kidding!" when confronted, singing provactive song lyrics then acting like it's "just a song I like".
 
-##### 4. Trivial Tyrannizers (Subtle Saboteurs)
+#### 4. Trivial Tyrannizers (Subtle Saboteurs)
 Intentionally do small things to annoy others.  
 Examples: leaving dishes in the sink, "forgetting" important dates, being chronically late.
 
-##### 5. Withholders
+#### 5. Withholders
 Punish others by withholding something valuable (affection, information, cooperation, approval).  
 Examples: silent treatment, refusing to share important information, emotional withdrawal.
 
@@ -62,22 +62,22 @@ Studies and research relating to passive aggressive behaviour:
 
 Signe Whitson (co-author of *The Angry Smile*) describes five levels of escalating passive aggression:
 
-##### Level 1: Temporary Compliance
+#### Level 1: Temporary Compliance
 - Verbally agrees but behaviorally delays
 - Example: "I'm coming!" (but never actually comes)
 
-##### Level 2: Intentional Inefficiency
+#### Level 2: Intentional Inefficiency
 - Complies but does it poorly/incorrectly on purpose
 - Does the task "wrong" so they won't be asked again
 
-##### Level 3: Letting a Problem Escalate
+#### Level 3: Letting a Problem Escalate
 - Uses inaction to allow foreseeable problems to worsen
 - Takes pleasure in the resulting distress
 
-##### Level 4: Hidden but Conscious Revenge
+#### Level 4: Hidden but Conscious Revenge
 - Deliberately sabotages or undermines
 - More calculated and vindictive
 
-##### Level 5: Self-Deprecation
+#### Level 5: Self-Deprecation
 - Uses apparent self-punishment to manipulate others
 - "I'm so worthless, I can't do anything right" (to avoid responsibility)
