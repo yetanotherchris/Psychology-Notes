@@ -28,3 +28,19 @@ Described a similar system to Jay Hayley, naming it the "Rigid Triad".
 The "Destabilizing Triangulation" was published in Journal of Family Psychology. 
 
 They studied triangulation effects on children and adolescents and found that triangulated youth experience increased anxiety, self-blame, torn between parents.
+
+### Triangulation in humour 
+
+#### Plato's Superiority Theory
+In *Philebus*, Plato viewed laughter as rooted in malice, arising when we feel superior to others' misfortunes or ignorance. The triangulation involves the laugher, the object of ridicule, and the social standard against which the target falls short.
+
+#### Aristotle
+In *Poetics* and *Nicomachean Ethics*, Aristotle softened Plato's theory and suggesting comedy represents people as worse than average but without causing pain. The triangle involves the comedian, the audience, and the degraded representation of humanity.
+
+#### Thomas Hobbes' Superiority Variant
+In *Leviathan* (1651) and *Human Nature* (1650), Hobbes described laughter as "sudden glory" arising from perceiving our superiority over others or our former selves.
+
+The triangulation involves the self, the inferior other, and the comparative judgement between them.
+
+#### Freud's Relief Theory
+In *Jokes and Their Relation to the Unconscious* (1905), Freud proposed jokes allow release of psychic energy. The triangular structure is explicit: the joke-teller, the listener, and the absent target.
