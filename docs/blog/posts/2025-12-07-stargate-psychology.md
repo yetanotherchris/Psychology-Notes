@@ -6,9 +6,9 @@ categories:
   - stargate-psychology
 ---
 
-# A Psychoanalysis and the Psychology of Stargate
+# A Psychoanalysis and the Psychology of Stargate SG-1
 
-Stargate ran from 1997 until 2007 with 10 seasons and 214 episodes plus the original movie and subsequent movies. The show has many recurring themes in its characters around emotional regulational, trauma and themes relating to maladaptive personality, especially themes on what is now commonly called "gaslighting" and what is real. If you haven't seen the show, it's worth watching the Kurt Russell movie first, and then starting from episode 1.
+Stargate SG-1 ran from 1997 until 2007 with 10 seasons and 214 episodes plus the original movie and subsequent movies. The show has many recurring themes in its characters around emotional regulational, trauma and themes relating to maladaptive personality, especially themes on what is now commonly called "gaslighting" and what is real. If you haven't seen the show, it's worth watching the Kurt Russell movie first, and then starting from episode 1.
 
 <!-- more -->
 All the episodes can be found at <https://stargate.fandom.com/wiki/Category:SG-1_episodes>
