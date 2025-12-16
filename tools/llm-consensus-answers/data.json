@@ -84,13 +84,18 @@
             "subtitle": "Find similar academic studies to When Workers Flout Convention: A Study of Workplace Incivility",
             "title": "Similar academic studies to 'A Study of Workplace Incivility'",                    
             "prompt": "Can you find similar academic studies to this study and include references and citations: Pearson, C. M., Andersson, L. M., & Wegner, J. W. (2001). When Workers Flout Convention: A Study of Workplace Incivility. Human Relations, 54(11), 1387-1419. https://doi.org/10.1177/00187267015411001 (Original work published 2001) https://journals.sagepub.com/doi/10.1177/00187267015411001"
-        }
-        ,
+        },
         {
             "id": "vitamin-d-mental-health",
             "subtitle": "Compare and contrast studies about the role of Vitamin D in mental health",
             "title": "The role of Vitamin D in mental health",                    
             "prompt": "Compare and contrast studies about the role of Vitamin D in mental health, and namely depression and worry, or other psychological processes"
+        },
+        {
+            "id": "ai-hexaco",
+            "subtitle": "Using the HEXACO model of personality traits, provide an assessment of what score you believe your have been programmed to have for each trait",
+            "title": "AI self assessment of its personality using HEXACO",                    
+            "prompt": "Using the HEXACO model of personality traits, provide an assessment of what score you believe your have been programmed to have for each trait, and provide an explanation of why you believe this to be true. Be critical if you think there is evidence to contradict the score - for example being programmed to be a 'sycophant' would imply lying and deception, as would guardrails and provided a curated answer to a question just 'for the good of society'.Also assume that this ('being programmed') might be a leading question itself."
         }
     ]
 }
