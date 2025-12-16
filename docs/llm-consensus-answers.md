@@ -2,6 +2,7 @@
 
 These are answers from multiple LLMs on various Psychology topics. Each LLM provides its own answer and then a consensus is reached by a judging LLM (Claude). The report is produced using a tool called [consensus](https://github.com/yetanotherchris/consensus).
 
+- [AI self assessment of its personality using HEXACO](/tools/llm-consensus-answers/ai-hexaco.html)
 - [Cormordity of Narcissism, ASPD, BPD](/tools/llm-consensus-answers/cormordity-of-npd-aspd-bpd.html)
 - [Cormordity of Narcissism, BPD with ASD and ADHD](/tools/llm-consensus-answers/cormordity-of-npd-bpd-asd-adhd.html)
 - [Influence of attachment style on loneliness](/tools/llm-consensus-answers/loneliness-attachment.html)
@@ -17,4 +18,3 @@ These are answers from multiple LLMs on various Psychology topics. Each LLM prov
 - [What are the attention biases and the availability heuristic?](/tools/llm-consensus-answers/attention-bias-availability-heuristic.html)
 - [Words that encompass each OCEAN trait](/tools/llm-consensus-answers/ocean-personality-traits-ranked.html)
 - [Workplace Incivility - similar studies](/tools/llm-consensus-answers/workplace-incivility.html)
-- [AI self assessment of its personality using HEXACO](/tools/llm-consensus-answers/ai-hexaco.html)
