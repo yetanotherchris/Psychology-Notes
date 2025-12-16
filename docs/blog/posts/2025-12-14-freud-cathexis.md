@@ -22,4 +22,4 @@ Freud used the term in his 1917 essay Mourning and Melancholia, to represent the
 In Melancholia (what we would today call clinical depression), the hypercathexis goes wrong. In the DSM this is known as Prolonged Grief Disorder - where a person is 'stuck'
 
 #### Decathexis
-Withdrawal of your emotional and mental energy from something, e.g. removing your investment. This is the final step of mourning, which could also apply to a relationship (once you're "over" them).
+Withdrawal of your emotional and mental energy from something, e.g. removing your investment. This is the final step of mourning, which could also apply to a relationship - someone unconsciously begins to detach emotionally.
