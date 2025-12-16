@@ -17,3 +17,4 @@ These are answers from multiple LLMs on various Psychology topics. Each LLM prov
 - [What are the attention biases and the availability heuristic?](/tools/llm-consensus-answers/attention-bias-availability-heuristic.html)
 - [Words that encompass each OCEAN trait](/tools/llm-consensus-answers/ocean-personality-traits-ranked.html)
 - [Workplace Incivility - similar studies](/tools/llm-consensus-answers/workplace-incivility.html)
+- [AI self assessment of its personality using HEXACO](/tools/llm-consensus-answers/ai-hexaco.html)
