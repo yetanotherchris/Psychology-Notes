@@ -1,12 +1,12 @@
 ---
-date: 2025-11-16
+date: 2025-11-17
 categories:
   - psychology
   - definitions
   - encylopedias
 ---
 
-# Pyschotherapy meta-analysis
+# Psychology encylopedias & dictionaries
 
 A couple of Psychology encylopedias/dictionaries online.
 
