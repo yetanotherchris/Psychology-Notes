@@ -103,3 +103,30 @@ You can be negative values, so -1 is a perfect negative linear relationship.
 | 0.40 – 0.69 | **Moderate**                  |
 | 0.70 – 0.89 | **Strong**                    |
 | 0.90 – 1.00 | **Very strong / Excellent**   |
+
+
+### Measures of the magnitude of an effect
+
+- Standardised mean difference measures (d, g, Δ) — quantify how far apart two groups are in SD units
+- Correlation coefficients (r, ρ) — quantify the strength of association between two continuous variables
+- Variance-accounted-for measures (R², η², ω²) — quantify proportion of variance explained
+- Association measures for categorical data (odds ratio, φ, Cramér's V, Cohen's w) — quantify relationships in contingency tables
+
+| Effect Size | Type | Range | Small | Medium | Large | Notes |
+|-------------|------|-------|-------|--------|-------|-------|
+| Cohen's d | Mean difference | -∞ to +∞ | 0.2 | 0.5 | 0.8 | t-tests, group comparisons |
+| Hedges' g | Mean difference | -∞ to +∞ | 0.2 | 0.5 | 0.8 | Bias-corrected d; preferred in meta-analysis |
+| Glass's Δ | Mean difference | -∞ to +∞ | 0.2 | 0.5 | 0.8 | Uses only control group SD; useful when variances unequal |
+| Pearson's r | Correlation | -1 to +1 | 0.1 | 0.3 | 0.5 | Continuous variables |
+| Spearman's ρ | Correlation | -1 to +1 | 0.1 | 0.3 | 0.5 | Rank-order; non-parametric |
+| R² | Variance explained | 0 to 1 | 0.01 | 0.09 | 0.25 | Squared correlation; regression |
+| η² (eta-squared) | Variance explained | 0 to 1 | 0.01 | 0.06 | 0.14 | ANOVA; tends to overestimate |
+| Partial η² | Variance explained | 0 to 1 | 0.01 | 0.06 | 0.14 | ANOVA; controls for other factors |
+| ω² (omega-squared) | Variance explained | 0 to 1 | 0.01 | 0.06 | 0.14 | Less biased than η² |
+| Cohen's f | ANOVA effect | 0 to +∞ | 0.1 | 0.25 | 0.4 | Related to η²; used in power analysis |
+| Odds ratio | Association | 0 to +∞ | 1.5 | 2.5 | 4.0 | Categorical outcomes; 1 = no effect |
+| Cohen's w | Chi-square | 0 to +∞ | 0.1 | 0.3 | 0.5 | Categorical data |
+| φ (phi) | Association | -1 to +1 | 0.1 | 0.3 | 0.5 | 2×2 contingency tables |
+| Cramér's V | Association | 0 to 1 | 0.1 | 0.3 | 0.5 | Larger contingency tables |
+
+The benchmarks come from Cohen (1988).
