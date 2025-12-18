@@ -3,6 +3,7 @@ date: 2025-12-01
 categories:
   - triangulation
   - narcissism
+  - authors
 ---
 
 # Triangulation
