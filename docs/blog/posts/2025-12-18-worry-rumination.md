@@ -17,6 +17,8 @@ Worry is future-oriented anxious thinking, typically focused on potential threat
 
 Worry is synonymous with anxiety and in excess is a key feature of [Generalised Anxiety Disorder (GAD)](https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/)
 
+- [Toward a definition of intolerance of uncertainty: A review of factor analytical studies of the Intolerance of Uncertainty Scale](https://www.sciencedirect.com/science/article/abs/pii/S0272735811001334)
+
 ### Rumination
 
 Rumination is past-oriented repetitive thinking, characterised by dwelling on things that have already happened. For example why mistakes were made, perceived failures, or trying to understand why something occurred.
