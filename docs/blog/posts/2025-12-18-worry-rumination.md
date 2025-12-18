@@ -28,3 +28,4 @@ Rumination is past-oriented repetitive thinking, characterised by dwelling on th
 - Co-rumination which is more common in female social structures, can actually accentuate problems.
 - "Reflective pondering" may serve analytical purposes: brooding (self-critical) vs reflection. [Treynor, W., Gonzalez, R., & Nolen-Hoeksema, S. (2003)](https://doi.org/10.1023/A:1023910315561)
 - Rumination impairs problem-solving rather than enhancing it, interferes with instrumental behaviour, and prolongs negative mood states [Nolen-Hoeksema, S., Wisco, B. E., & Lyubomirsky, S. (2008)](https://doi.org/10.1111/j.1745-6924.2008.00088.x)
+- [Reflecting on rumination: Consequences, causes, mechanisms and treatment of rumination](https://doi.org/10.1016/j.brat.2020.103573). Differentiates between "Why did this happen to me?" vs "What specifically went wrong and what steps could change it" in rumination.
