@@ -44,19 +44,20 @@ Working memory and attention problems will lead to misplacing items. However for
 But you can learn to manage it with ASD - TODO lists, putting systems in place to help yourself as with other ASD problems like Dyspraxia.
 
 ### Stimming
-Stimming comes in many forms in ASD, I find myself employing it in stressful situations especially social ones; I can remember rocking when I was younger during a meltdown albeit privately. 
+Stimming comes in many forms in ASD, I can find myself employing it in stressful situations (especially social ones) and I have memories as a child of meltdowns followed by rocking.
 
 [Displacement behaviours emerge in stressful situations](https://pubmed.ncbi.nlm.nih.gov/12171766/) defines displacement behaviours (stimming) in non-human primates, e.g. hair stroking. It's a behaviour humans and non-humans deploy for stress, for example foot twirling and foot tapping.
 
-So stimming in ASD is clearly related, to regulate. But the type, function and quantity is what differentiates ASD - for example hand flapping or emotional regulation through a stim.
+Stimming in ASD is clearly related, used to regulate. But the type, function and quantity is what differentiates ASD - for example hand flapping, emotional regulation via a stim.
 
-What you find on Tiktok are behaviours such as nail picking, nail biting, even ice eating which are essentially general human behaviours not ASD-specific.
-[Restricted and repetitive behaviors in autism spectrum disorders: a review of research in the last decade](https://pubmed.ncbi.nlm.nih.gov/21574682/) goes into detail, and also [Evidence-based behavioral interventions for repetitive behaviors in autism](https://pubmed.ncbi.nlm.nih.gov/21584849/)
+What you find on TikTok are behaviours such as nail picking, nail biting, even ice eating being describe but these are essentially displacement behaviours or just preferences, not necessarily ASD-specific.  
+
+[Restricted and repetitive behaviors in autism spectrum disorders: a review of research in the last decade](https://pubmed.ncbi.nlm.nih.gov/21574682/) goes into detail, and also [evidence-based behavioral interventions for repetitive behaviors in autism](https://pubmed.ncbi.nlm.nih.gov/21584849/)
 
 ### Defiance
-In ASD Tiktok you will hear a lot about Pathological Demand Avoidance. I've experienced it first hand but it's worth noting there are similar observed phenomena in Psychology.
+In ASD TikTok you will hear a lot about Pathological Demand Avoidance. I've experienced it first hand but it's worth noting there are similar observed phenomena in Psychology.
 
-Austism behaviours can look like [Oppositional Defiance Disorder (ODD) ](https://icd.who.int/browse/2025-01/mms/en#1487528823), although ODD is vindictive.
+Autism behaviours can look like [Oppositional Defiance Disorder (ODD) ](https://icd.who.int/browse/2025-01/mms/en#1487528823), although ODD is vindictive.
 
 In Social Psychology there is also Reactance Theory, Brehm (1966), when people perceive their freedom is being threatened or eliminated, they experience reactance and are motivated to restore their freedom. Also the Backfire effect, although this is more recent and is about having beliefs contradicted and doubling down on the beliefs. And this one has failed to replicate - DOIs 10.1007/s11109-010-9112-2 and 10.1007/s11109-018-9443-y
 
@@ -77,7 +78,7 @@ But wound is the important part, it's something that doesn't heal without help, 
 
 Whether you have previously experienced trauma is a big risk factor for future trauma & mental health problems, and with ASD you experience a lot of "small t" traumas. But not everyone who experiences a traumatic event will develop problematic reactions.
 
-On Tiktok, I've seen trauma reactions conflated with ASD in a few videos. It's understandable given the life experience of ASD but being hyper-vigilant, for example, is not necessarily part of ASD.
+On TikTok, I've seen trauma reactions conflated with ASD in a few videos. It's understandable given the life experience of ASD but being hyper-vigilant, for example, is not necessarily part of ASD.
 
 ### Bonus: attachment theory and "anxious avoidants"
 This is not ASD related but something you find on ASD TikTok - the "anxious avoidant" is the new demon. Everyone's ex's are anxious avoidants. Attachment styles have been shown to only last 15 years after being formed and can also be changed, with the right person, at anytime.
