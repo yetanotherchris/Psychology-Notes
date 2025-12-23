@@ -72,7 +72,7 @@ Isolation and loneliness and slightly different concepts in Psychology, with lon
 ### Trauma 
 Trauma can be described as an existential crisis that threatens your understanding of yourself and the world you live in. And the reality and truth once believed in are erased.
 
-With ASD you're very likely to be bullied at some point, and there's lots [of evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC7841334/) linking bullying to trauma. Cathy Caruth described trauma as "a wound of the mind", and an area exists known as trauma studies. It was also first described by Freud and refers to how you respond to stressful event - the intensity of the response not the event, if the intensity of your response causes difficulties.
+With ASD you're very likely to be bullied at some point, and there's lots [of evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC7841334/) linking bullying to trauma. Cathy Caruth described trauma as "a wound of the mind", and an area exists known as trauma studies. It was also first described by Freud and refers to how you respond to a stressful event - the intensity of the response not the event, if the intensity of your response causes difficulties.
 
 But wound is the important part, it's something that doesn't heal without help, with PTSD being best known.
 
