@@ -19,7 +19,7 @@ Relevant paper: [The Reach and Accuracy of Information on Autism on TikTok](http
 
 In 1963, Erving Goffman's book "Stigma: Notes on the Management of Spoiled Identity" talked about your diagnosis becoming part of your identity, the "discredited" hiding their identity or alternatively it being revealed and then you are discredited - similar in ways to masking in ASD. Thomas Scheff (1974) advocated for Labelling Theory and talked about a mentally ill person having to fulfil their role as the mentally ill persona in society, creating a self-fulfilling prophecy.
 
-Fulfilling a role seems similar, minus the obviously negative "mentally-ill" label to ASD and ADHD in 2025. TikTok and other social media present ASD as a number of "quirky" traits and see this is as fulfilling the role of an ASD person in society. [O’Connor, C. et al. (2018) 'How does psychiatric diagnosis affect young people’s self-concept and social identity? A systematic review and synthesis of the qualitative literature', Social science & medicine (1982), 212, pp. 94–119.](https://doi.org/10.1016/j.socscimed.2018.07.011) discusses how ASD and ADHD are less stigmatising.
+Fulfilling a role seems similar, minus the obviously negative "mentally-ill" label, to ASD and ADHD in 2025. TikTok and other social media present ASD as a number of "quirky" traits and see this is as fulfilling the role of an ASD person in society. [O’Connor, C. et al. (2018) 'How does psychiatric diagnosis affect young people’s self-concept and social identity? A systematic review and synthesis of the qualitative literature', Social science & medicine (1982), 212, pp. 94–119.](https://doi.org/10.1016/j.socscimed.2018.07.011) discusses how ASD and ADHD are less stigmatising.
 
 
 ### Openness and honesty
