@@ -39,9 +39,9 @@ Baddeley, A.D., & Hitch, G. (1974) made it an influential term in their [Working
 
 Forgetting where you put your keys, or finding yourself forgetting why you're in a room is something you might find occurring a lot with ADHD and ASD (the ADHD part of it). This differs from "forgetfulness" which is long term memory and encoding.
 
-Working memory and attention problems are the former. However forgetting where you put your keys for example, can be from many other factors including fatigue, stress, high cognitive load, anxiety, trauma, medication.
+Working memory and attention problems will lead to misplacing items. However forgetting where you put your keys can be from many other factors including fatigue, stress, high cognitive load, anxiety, trauma, medication.
 
-But you can learn to manage it with ASD - TODO lists, putting systems in place to help just like Dyspraxia.
+But you can learn to manage it with ASD - TODO lists, putting systems in place to help yourself as with other ASD problems like Dyspraxia.
 
 ### Stimming
 Stimming comes in many forms in ASD, I find myself employing it in stressful situations especially social ones; I can remember rocking when I was younger during a meltdown albeit privately. 
