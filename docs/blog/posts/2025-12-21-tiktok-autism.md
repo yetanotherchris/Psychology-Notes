@@ -55,11 +55,11 @@ What you find on TikTok are behaviours such as nail picking, nail biting, even i
 [Restricted and repetitive behaviors in autism spectrum disorders: a review of research in the last decade](https://pubmed.ncbi.nlm.nih.gov/21574682/) goes into detail, and also [evidence-based behavioral interventions for repetitive behaviors in autism](https://pubmed.ncbi.nlm.nih.gov/21584849/)
 
 ### Defiance
-In ASD TikTok you will hear a lot about Pathological Demand Avoidance. I've experienced it first hand but it's worth noting there are similar observed phenomena in Psychology.
+In ASD TikTok you will hear a lot about Pathological Demand Avoidance. There are similar observed phenomena in Psychology (this is not to diminish PDA, if you experience it, it is definitely a distinct set of reactions).
 
-Autism behaviours can look like [Oppositional Defiance Disorder (ODD) ](https://icd.who.int/browse/2025-01/mms/en#1487528823), although ODD is vindictive.
+Autism behaviours can look like [Oppositional Defiance Disorder (ODD)](https://icd.who.int/browse/2025-01/mms/en#1487528823), but ODD lists vindictiveness.
 
-In Social Psychology there is also Reactance Theory, Brehm (1966), when people perceive their freedom is being threatened or eliminated, they experience reactance and are motivated to restore their freedom. Also the Backfire effect, although this is more recent and is about having beliefs contradicted and doubling down on the beliefs. And this one has failed to replicate - DOIs 10.1007/s11109-010-9112-2 and 10.1007/s11109-018-9443-y
+In Social Psychology there is also Reactance Theory, Brehm (1966), when people perceive their freedom as being threatened or eliminated, they experience reactance and are motivated to restore their freedom. Also the Backfire effect, although this is more recent and is about having beliefs contradicted and doubling down on the beliefs. And this one has failed to replicate - DOIs 10.1007/s11109-010-9112-2 and 10.1007/s11109-018-9443-y
 
 ### Being alone
 
