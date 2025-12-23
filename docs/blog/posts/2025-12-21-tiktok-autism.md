@@ -60,20 +60,26 @@ Austism behaviours can look like [Oppositional Defiance Disorder (ODD) ](https:/
 
 In Social Psychology there is also Reactance Theory, Brehm (1966), when people perceive their freedom is being threatened or eliminated, they experience reactance and are motivated to restore their freedom. Also the Backfire effect, although this is more recent and is about having beliefs contradicted and doubling down on the beliefs. And this one has failed to replicate - DOIs 10.1007/s11109-010-9112-2 and 10.1007/s11109-018-9443-y
 
-# Trauma 
+### Being alone
 
+ASD TikTok does its best to reinforce this as the ASD experience. What it misses it a cross over with other research and also social psychology research as well.
+
+Schizoid personality disorder and Schizotypal Personality Disorder are schizophrenia spectrum traits. This paper discusses the [overlap of autistic and schizotypal traits ](https://pubmed.ncbi.nlm.nih.gov/20933368/).
+
+Isolation and loneliness and slightly different concepts in Psychology, with loneliness being the quality of your relationships with others - for example the idea of being lonely even if you're famous. You can be isolated as a product of your environment as well, "Propinquity" is the social psychology term which describes the proximity to people both in distance but also similarity of values etc, which plays an important role in friendship numbers.
+
+### Trauma 
 Trauma can be described as an existential crisis that threatens your understanding of yourself and the world you live in. And the reality and truth once believed in are erased.
 
 With ASD you're very likely to be bullied at some point, and there's lots [of evidence](https://pmc.ncbi.nlm.nih.gov/articles/PMC7841334/) linking bullying to trauma. Cathy Caruth described trauma as "a wound of the mind", and an area exists known as trauma studies. It was also first described by Freud and refers to how you respond to stressful event - the intensity of the response not the event, if the intensity of your response causes difficulties.
 
 But wound is the important part, it's something that doesn't heal without help, with PTSD being best known.
 
-Whether you have previously experienced trauma is a big risk factor for future trauma, and with ASD you experience a lot of "small t" traumas. But not everyone who experiences a traumatic event will develop problematic reactions.
+Whether you have previously experienced trauma is a big risk factor for future trauma & mental health problems, and with ASD you experience a lot of "small t" traumas. But not everyone who experiences a traumatic event will develop problematic reactions.
 
 On Tiktok, I've seen trauma reactions conflated with ASD in a few videos. It's understandable given the life experience of ASD but being hyper-vigilant, for example, is not necessarily part of ASD.
 
-# Bonus: attachment theory and "anxious avoidants"
-
+### Bonus: attachment theory and "anxious avoidants"
 This is not ASD related but something you find on ASD TikTok - the "anxious avoidant" is the new demon. Everyone's ex's are anxious avoidants. Attachment styles have been shown to only last 15 years after being formed and can also be changed, with the right person, at anytime.
 
 There is evidence that [Adverse Childhood Events - ACE scores](/tools/questionnaires/ace/index.html) are bidirectional with attachment styles. This [paper](https://pubmed.ncbi.nlm.nih.gov/28641134/) is about adult attachment styles and ACE scores. 
