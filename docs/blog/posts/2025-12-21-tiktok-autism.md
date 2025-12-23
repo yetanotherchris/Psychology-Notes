@@ -13,7 +13,7 @@ TikTok has a lot of videos about ASD and also other Psychology ideas such as "av
 
 <!-- more -->
 
-To caveat: I have an ASD diagnosis so I've got knowledge about the traits in the list below. They're definitely very relatable but they're not exclusive to autism nor define it as a diagnosis. I have ASD "level 1" which is what the Autism traits are about.
+To caveat: I have an ASD diagnosis so I've got knowledge about the traits in the list below. They're definitely very relatable but they're not exclusive to autism nor define it as a diagnosis. I have "level 1" ASD which is what the TikTok videos are about.
 
 Relevant paper: [The Reach and Accuracy of Information on Autism on TikTok](https://pubmed.ncbi.nlm.nih.gov/37544970/).
 
