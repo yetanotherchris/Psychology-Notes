@@ -23,9 +23,9 @@ Fulfilling a role seems similar, minus the obviously negative "mentally-ill" lab
 
 
 ### Openness and honesty
-ASD people are portrayed as brutally honest, which is true at a younger age - you are (before you realise what you're doing). Alongside this is the notion of ASD people are open to new things, new experiences.
+ASD people are portrayed as brutally honest, which is true at a younger age - you are (before you realise you're doing it, then it's watered down). Alongside this is the notion of ASD people are open to new things, new experiences.
 
-But what the ASD Tiktoks don't mention is openness they can describe is the "O" in the OCEAN (NEO-PI) personality traits is often isn't restricted to ASD.
+But what the ASD Tiktoks don't mention is openness they can describe is the "O" in the [OCEAN (NEO-PI)](/tools/questionnaires/big5/index.html) personality traits is often isn't restricted to ASD.
 
 ### Working memory & Forgetfulness
 
