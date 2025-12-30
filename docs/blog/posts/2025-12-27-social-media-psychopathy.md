@@ -31,4 +31,9 @@ and
 
 > *"...those high in narcissism presented an authentic self-online and believed that online environments are not beneficial to self-presentation"*
 
-The study was  322 people, with a survey so self-report.
+The study was 322 people, with a survey so self-report.
+
+A few other recent studies:
+
+- [Signaling virtuous victimhood as indicators of Dark Triad personalities](https://pubmed.ncbi.nlm.nih.gov/32614222/)
+- [Preempting the Development of Antisocial Behavior and Psychopathic Traits](https://jaapl.org/content/early/2021/01/06/jaapl.200060-20)
