@@ -29,3 +29,8 @@ The DSM AMPD model papers:
 - [2025: The validity, reliability and clinical utility of the Alternative DSM-5 Model for Personality Disorders (AMPD) according to DSM-5 revision criteria](https://doi.org/10.1002/wps.21339)
 - [2017: Psychological Assessment with the DSM-5 Alternative Model for Personality Disorders: Tradition and Innovation](https://pmc.ncbi.nlm.nih.gov/articles/PMC5403154/)]
 
+And looking at how personality changes from life events:
+- [Life events and personality trait change: A coordinated data analysis, 195,000k individuals](https://journals.sagepub.com/doi/10.1177/08902070251356148)
+  - Marriage predicted a decrease in openness
+  - Starting a new job predicted increases in people’s conscientiousness and emotional stability,
+  - OCEAN changes were less pronounced than changes in life satisfaction
