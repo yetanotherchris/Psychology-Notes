@@ -35,5 +35,6 @@ The study was 322 people, with a survey so self-report.
 
 A few other recent studies:
 
+- [Dark personalities in the digital arena: how psychopathy and narcissism shape online political participation](https://www.nature.com/articles/s41599-025-05195-y)
 - [Signaling virtuous victimhood as indicators of Dark Triad personalities](https://pubmed.ncbi.nlm.nih.gov/32614222/)
 - [Preempting the Development of Antisocial Behavior and Psychopathic Traits](https://jaapl.org/content/early/2021/01/06/jaapl.200060-20)
