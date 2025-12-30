@@ -3,7 +3,7 @@
   --md-code-font: "JetBrains Mono";
 }
 
-/* Remove only the continue reading button in blog posts */
+/* Remove only the continue reading button in entries */
 nav.md-post__action {
   display: none;
 }

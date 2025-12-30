@@ -30,6 +30,7 @@ extra_css:
 plugins:
   - search
   - blog:
+      blog_dir: entries
       post_excerpt: optional
       post_readtime: false
       post_date_format: short
@@ -41,7 +42,7 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Blog: blog/index.md
+  - Entries: entries/index.md
   - Authors and concepts: categorised/index.md
   - llm-consensus-answers.md
   - Tools:
