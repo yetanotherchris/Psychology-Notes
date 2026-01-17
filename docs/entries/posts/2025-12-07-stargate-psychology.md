@@ -84,3 +84,15 @@ In Redemption, Part 2, we're provided with a charicature of a vulnerable narciss
 In this episode we meet scientist Dr. Jay Felger who creates a computer virus called Avenger. Jay's character is self-demeaning, lacking confident. The character portrayed also points heavily to having an enmeshed relationship with his mother, in the opening scenes, where he's clearly worried about his mother's approval and her being happy.
 
 - <https://stargate.fandom.com/wiki/Avenger_2.0>
+
+#### S9E12 - "Collateral Damage"
+
+The Galarans have the technology to implant memories into people's minds, and a murder takes place with a memory being displaced. The accuracy of memories is brought into question in the episode, with quite a clear parallel with Elizabeth Loftus's experiments with memory and eye witness information, for example Loftus & Palmer (1974), and also Bartlett, 1932 (memory is reconstructed).
+
+- <https://stargate.fandom.com/wiki/Collateral_Damage>
+
+#### S10E8 - "Memento Mori"
+
+Vala Mal Doran loses her memory, and there's a parallel in the episode with her experience and PTSD or a traumatic event, where she slowly recovers it.
+
+- <https://stargate.fandom.com/wiki/Memento_Mori>
