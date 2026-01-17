@@ -6,7 +6,7 @@ categories:
   - personality
 ---
 
-# Does social media reveal pre-existing personality traits (e.g. sociopathy) - or create them?
+# Does social media reveal pre-existing personality traits (e.g. dark triad) - or create them?
 
 Has social media, with the ability to comment anonymously without legal or social penalties, created functional psychopathic tendencies in people, or simply revealed existing personality issues?
 
