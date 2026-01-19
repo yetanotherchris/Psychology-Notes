@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Decision Task — Emotional Word Processing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Outfit', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        'ink': '#1a1a2e',
+                        'paper': '#fafafa',
+                        'accent': '#e63946',
+                        'positive': '#059669',
+                        'negative': '#dc2626',
+                        'neutral': '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { box-sizing: border-box; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+        
+        .stimulus-word {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: wordAppear 0.15s ease-out;
+        }
+        
+        @keyframes wordAppear {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .fixation-cross {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4rem;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+        
+        .key-indicator {
+            transition: all 0.1s ease;
+        }
+        
+        .key-indicator.pressed {
+            transform: scale(0.95);
+            box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .progress-segment {
+            transition: background-color 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-bar {
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 40px rgba(230, 57, 70, 0.3);
+        }
+    </style>
+</head>
+<body class="text-ink antialiased">
+    <div class="grain-overlay"></div>
+    
+    <!-- Instructions Screen -->
+    <div id="instructions-screen" class="min-h-screen flex items-center justify-center p-8">
+        <div class="max-w-2xl w-full fade-in">
+            <div class="mb-12">
+                <h1 class="font-display text-5xl md:text-6xl font-light tracking-tight mb-4">
+                    Lexical Decision<br>
+                    <span class="text-accent font-semibold">Task</span>
+                </h1>
+                <p class="text-ink/50 font-mono text-sm tracking-wider uppercase">Emotional Word Processing Assessment</p>
+            </div>
+            
+            <div class="space-y-6 text-ink/70 text-lg leading-relaxed mb-12">
+                <p>You will see a series of letter strings appear on screen. Your task is to decide as <strong class="text-ink">quickly</strong> and <strong class="text-ink">accurately</strong> as possible whether each string is a <strong class="text-positive">real English word</strong> or a <strong class="text-negative">non-word</strong>.</p>
+                
+                <p class="text-ink/50 text-base">The lexical decision task, developed by Meyer and Schvaneveldt in 1971, measures how quickly we access words in memory. Adding emotional words reveals whether affective content speeds or slows lexical processing — a window into how emotion and cognition interact.</p>
+                
+                <div class="flex gap-8 py-8">
+                    <div class="flex-1 bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                        <div class="font-mono text-3xl text-positive mb-3">R</div>
+                        <p class="text-sm text-ink/60">Press for<br><strong class="text-ink">REAL WORD</strong></p>
+                    </div>
+                    <div class="flex-1 bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                        <div class="font-mono text-3xl text-negative mb-3">F</div>
+                        <p class="text-sm text-ink/60">Press for<br><strong class="text-ink">FAKE WORD</strong></p>
+                    </div>
+                </div>
+                
+                <p class="text-ink/50 text-base">The task includes words with different emotional valences (positive, negative, neutral). Response times are measured in milliseconds.</p>
+            </div>
+            
+            <!-- Trial count selection -->
+            <div class="mb-8">
+                <p class="text-ink/60 text-sm font-mono uppercase tracking-wider mb-3">Select trial count</p>
+                <div class="flex gap-2">
+                    <button data-trials="60" class="trial-btn selected bg-accent text-white border-2 border-accent rounded-lg px-4 py-2 transition-all hover:scale-[1.02] active:scale-100">
+                        <div class="font-display text-lg font-semibold">60</div>
+                        <div class="text-xs opacity-80">~3 min · Default</div>
+                    </button>
+                    <button data-trials="120" class="trial-btn bg-ink/5 text-ink border-2 border-ink/20 rounded-lg px-4 py-2 transition-all hover:scale-[1.02] hover:border-ink/40 active:scale-100">
+                        <div class="font-display text-lg font-semibold">120</div>
+                        <div class="text-xs opacity-60">~6 min · Recommended</div>
+                    </button>
+                    <button data-trials="180" class="trial-btn bg-ink/5 text-ink border-2 border-ink/20 rounded-lg px-4 py-2 transition-all hover:scale-[1.02] hover:border-ink/40 active:scale-100">
+                        <div class="font-display text-lg font-semibold">180</div>
+                        <div class="text-xs opacity-60">~9 min · Research</div>
+                    </button>
+                </div>
+                <p class="text-ink/40 text-xs mt-2">More trials = more reliable valence effect estimates</p>
+            </div>
+            
+            <button id="start-btn" class="group relative bg-accent hover:bg-accent/90 text-white px-10 py-4 rounded-full font-display font-medium text-lg tracking-wide transition-all hover:scale-105 active:scale-100">
+                <span>Begin Task</span>
+                <span class="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Task Screen -->
+    <div id="task-screen" class="min-h-screen flex flex-col items-center justify-center p-8 hidden">
+        <!-- Progress bar -->
+        <div class="fixed top-0 left-0 right-0 h-1 bg-ink/10 flex">
+            <div id="progress-bar" class="h-full bg-accent transition-all duration-300" style="width: 0%"></div>
+        </div>
+        
+        <!-- Trial counter -->
+        <div class="fixed top-8 right-8 font-mono text-ink/40 text-sm">
+            <span id="trial-current">0</span>/<span id="trial-total">60</span>
+        </div>
+        
+        <!-- Stimulus area -->
+        <div id="stimulus-area" class="flex-1 flex items-center justify-center w-full">
+            <div id="fixation" class="fixation-cross text-ink/60">+</div>
+            <div id="stimulus" class="stimulus-word text-ink hidden"></div>
+            <div id="feedback" class="text-2xl font-mono hidden"></div>
+        </div>
+        
+        <!-- Key indicators -->
+        <div class="fixed bottom-12 left-1/2 -translate-x-1/2 flex gap-24">
+            <div class="text-center">
+                <div id="key-r" class="key-indicator w-20 h-20 bg-ink/5 border-2 border-positive/50 rounded-xl flex items-center justify-center font-mono text-3xl text-positive mb-3">R</div>
+                <span class="text-positive/70 text-sm font-medium uppercase tracking-wider">Real</span>
+            </div>
+            <div class="text-center">
+                <div id="key-f" class="key-indicator w-20 h-20 bg-ink/5 border-2 border-negative/50 rounded-xl flex items-center justify-center font-mono text-3xl text-negative mb-3">F</div>
+                <span class="text-negative/70 text-sm font-medium uppercase tracking-wider">Fake</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Results Screen -->
+    <div id="results-screen" class="min-h-screen flex items-center justify-center p-8 hidden">
+        <div class="max-w-3xl w-full fade-in">
+            <div class="mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-light tracking-tight mb-2">Task Complete</h2>
+                <p class="text-ink/50 font-mono text-sm tracking-wider uppercase">Performance Analysis</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- Overall Accuracy -->
+                <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                    <p class="text-ink/50 text-sm font-mono uppercase tracking-wider mb-2">Overall Accuracy</p>
+                    <p id="overall-accuracy" class="text-5xl font-display font-semibold text-ink">—%</p>
+                </div>
+                
+                <!-- Mean RT -->
+                <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                    <p class="text-ink/50 text-sm font-mono uppercase tracking-wider mb-2">Mean Response Time</p>
+                    <p id="mean-rt" class="text-5xl font-display font-semibold text-ink">—<span class="text-2xl text-ink/50 ml-1">ms</span></p>
+                </div>
+            </div>
+            
+            <!-- Emotional Valence Breakdown -->
+            <div class="bg-ink/5 rounded-2xl p-8 border border-ink/10 mb-8">
+                <h3 class="font-display text-xl font-medium mb-6">Response Time by Emotional Valence</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-positive font-medium">Positive Words</span>
+                            <span id="positive-rt" class="font-mono text-ink/70">—ms</span>
+                        </div>
+                        <div class="h-3 bg-ink/10 rounded-full overflow-hidden">
+                            <div id="positive-bar" class="result-bar h-full bg-positive rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-neutral font-medium">Neutral Words</span>
+                            <span id="neutral-rt" class="font-mono text-ink/70">—ms</span>
+                        </div>
+                        <div class="h-3 bg-ink/10 rounded-full overflow-hidden">
+                            <div id="neutral-bar" class="result-bar h-full bg-neutral rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-negative font-medium">Negative Words</span>
+                            <span id="negative-rt" class="font-mono text-ink/70">—ms</span>
+                        </div>
+                        <div class="h-3 bg-ink/10 rounded-full overflow-hidden">
+                            <div id="negative-bar" class="result-bar h-full bg-negative rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Word vs Non-word Accuracy -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                    <p class="text-ink/50 text-sm font-mono uppercase tracking-wider mb-2">Word Accuracy</p>
+                    <p id="word-accuracy" class="text-3xl font-display font-semibold text-positive">—%</p>
+                    <p id="word-rt" class="text-ink/50 font-mono text-sm mt-1">—ms mean RT</p>
+                </div>
+                <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10">
+                    <p class="text-ink/50 text-sm font-mono uppercase tracking-wider mb-2">Fake Word Accuracy</p>
+                    <p id="nonword-accuracy" class="text-3xl font-display font-semibold text-negative">—%</p>
+                    <p id="nonword-rt" class="text-ink/50 font-mono text-sm mt-1">—ms mean RT</p>
+                </div>
+            </div>
+            
+            <!-- Detailed Stats -->
+            <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10 mb-8">
+                <h3 class="font-display text-lg font-medium mb-4">Detailed Statistics</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <p class="text-ink/50 text-xs font-mono uppercase mb-1">SD (RT)</p>
+                        <p id="sd-rt" class="font-mono text-lg">—</p>
+                    </div>
+                    <div>
+                        <p class="text-ink/50 text-xs font-mono uppercase mb-1">Median RT</p>
+                        <p id="median-rt" class="font-mono text-lg">—</p>
+                    </div>
+                    <div>
+                        <p class="text-ink/50 text-xs font-mono uppercase mb-1">Fastest</p>
+                        <p id="min-rt" class="font-mono text-lg">—</p>
+                    </div>
+                    <div>
+                        <p class="text-ink/50 text-xs font-mono uppercase mb-1">Slowest</p>
+                        <p id="max-rt" class="font-mono text-lg">—</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interpretation -->
+            <div id="interpretation" class="bg-gradient-to-br from-accent/10 to-transparent rounded-2xl p-6 border border-accent/20 mb-8">
+                <h3 class="font-display text-lg font-medium mb-3 text-accent">Interpretation</h3>
+                <p id="interpretation-text" class="text-ink/70 leading-relaxed"></p>
+            </div>
+            
+            <!-- Reference Values -->
+            <div class="bg-ink/5 rounded-2xl p-6 border border-ink/10 mb-8">
+                <h3 class="font-display text-lg font-medium mb-3">Reference Values</h3>
+                <div class="text-ink/60 text-sm space-y-2">
+                    <p><strong class="text-ink">Typical RT range:</strong> 500-900ms for correct responses. Faster than 300ms may indicate anticipatory responding; slower than 1500ms suggests hesitation or distraction.</p>
+                    <p><strong class="text-ink">Accuracy:</strong> Adults typically achieve 90-98%. Below 85% may indicate rushing, fatigue, or language processing difficulties.</p>
+                    <p><strong class="text-ink">Valence effects:</strong> Differences of 20-50ms between emotional categories are commonly observed. Larger negative-word delays may reflect threat-related attentional capture; faster positive-word responses suggest facilitated processing of rewarding stimuli.</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <button id="restart-btn" class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-display font-medium transition-all hover:scale-105 active:scale-100">
+                    Run Again
+                </button>
+                <button id="export-btn" class="bg-ink/10 hover:bg-ink/20 text-ink px-8 py-3 rounded-full font-display font-medium transition-all">
+                    Export Data (CSV)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Word lists with emotional valence
+        const wordLists = {
+            positive: [
+                'happy', 'love', 'joy', 'peace', 'hope', 'kind', 'warm', 'calm',
+                'bright', 'gentle', 'success', 'friend', 'smile', 'trust', 'safe',
+                'free', 'gift', 'laugh', 'paradise', 'treasure', 'delight', 'bliss',
+                'comfort', 'harmony', 'victory', 'proud', 'cheer', 'grace', 'fortune', 'pleasure'
+            ],
+            negative: [
+                'fear', 'hate', 'pain', 'death', 'sick', 'angry', 'sad', 'lost',
+                'grief', 'alone', 'failure', 'enemy', 'threat', 'danger', 'wound',
+                'trauma', 'despair', 'agony', 'terror', 'murder', 'suffer', 'panic',
+                'dread', 'misery', 'horror', 'shame', 'guilt', 'sorrow', 'anguish', 'torment'
+            ],
+            neutral: [
+                'table', 'chair', 'paper', 'clock', 'door', 'floor', 'wall', 'lamp',
+                'desk', 'shelf', 'window', 'carpet', 'ceiling', 'corner', 'handle',
+                'button', 'folder', 'number', 'context', 'method', 'square', 'circle',
+                'metal', 'plastic', 'fabric', 'pattern', 'segment', 'volume', 'surface', 'object'
+            ]
+        };
+
+        // Non-words (pronounceable pseudowords) - expanded list
+        const nonWords = [
+            'flirp', 'blunk', 'snorp', 'clomb', 'grish', 'thwap', 'spling', 'droft',
+            'blinx', 'crunt', 'flonk', 'glirm', 'prunt', 'skelf', 'tronk', 'whelm',
+            'blorp', 'clunk', 'drint', 'flunk', 'glimp', 'plonk', 'shrim', 'splonk',
+            'thunk', 'trinx', 'vronk', 'wrunt', 'splim', 'blonx', 'frunt', 'glonk',
+            'phlim', 'skrint', 'throb', 'cleft', 'brunt', 'shrift', 'plinth', 'grift',
+            'smelt', 'creft', 'blint', 'drunt', 'flisk', 'grolt', 'plerb', 'snilk',
+            'trelm', 'vrint', 'whelk', 'zrint', 'broft', 'clunt', 'drisk', 'frelm',
+            'glisk', 'prolt', 'skunt', 'threlm', 'bloft', 'crink', 'drelm', 'flont',
+            'grint', 'ploft', 'shrelm', 'trint', 'vroft', 'wrint', 'zroft', 'brelm',
+            'cloft', 'drint', 'froft', 'gloft', 'proft', 'skroft', 'throft', 'blerm',
+            'crolt', 'drolt', 'frolt', 'grelt', 'prelt', 'skelt', 'threlt', 'vrelm', 'wrolt'
+        ];
+
+        // Task state
+        let trials = [];
+        let currentTrial = 0;
+        let trialStartTime = 0;
+        let results = [];
+        let awaitingResponse = false;
+        let selectedTrialCount = 60;
+
+        // DOM elements
+        const instructionsScreen = document.getElementById('instructions-screen');
+        const taskScreen = document.getElementById('task-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const startBtn = document.getElementById('start-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const exportBtn = document.getElementById('export-btn');
+        const fixation = document.getElementById('fixation');
+        const stimulus = document.getElementById('stimulus');
+        const feedback = document.getElementById('feedback');
+        const progressBar = document.getElementById('progress-bar');
+        const trialCurrentEl = document.getElementById('trial-current');
+        const trialTotalEl = document.getElementById('trial-total');
+        const keyR = document.getElementById('key-r');
+        const keyF = document.getElementById('key-f');
+        const trialBtns = document.querySelectorAll('.trial-btn');
+
+        // Trial count selection
+        trialBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                trialBtns.forEach(b => {
+                    b.classList.remove('selected', 'bg-accent', 'text-white', 'border-accent');
+                    b.classList.add('bg-ink/5', 'text-ink', 'border-ink/20');
+                });
+                btn.classList.add('selected', 'bg-accent', 'text-white', 'border-accent');
+                btn.classList.remove('bg-ink/5', 'text-ink', 'border-ink/20');
+                selectedTrialCount = parseInt(btn.dataset.trials);
+            });
+        });
+
+        // Generate trial list
+        function generateTrials() {
+            trials = [];
+            
+            // Calculate words per valence category (half of total are words, split into 3 categories)
+            const wordsPerValence = selectedTrialCount / 6; // e.g., 60/6 = 10, 120/6 = 20, 180/6 = 30
+            const totalNonwords = selectedTrialCount / 2;   // Half are non-words
+            
+            // Add words from each valence category
+            ['positive', 'negative', 'neutral'].forEach(valence => {
+                const words = [...wordLists[valence]];
+                shuffleArray(words);
+                words.slice(0, wordsPerValence).forEach(word => {
+                    trials.push({ stimulus: word, isWord: true, valence });
+                });
+            });
+            
+            // Add non-words
+            const nw = [...nonWords];
+            shuffleArray(nw);
+            nw.slice(0, totalNonwords).forEach(word => {
+                trials.push({ stimulus: word, isWord: false, valence: 'nonword' });
+            });
+            
+            // Shuffle all trials
+            shuffleArray(trials);
+            
+            trialTotalEl.textContent = trials.length;
+        }
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+        }
+
+        // Start task
+        function startTask() {
+            generateTrials();
+            results = [];
+            currentTrial = 0;
+            
+            instructionsScreen.classList.add('hidden');
+            resultsScreen.classList.add('hidden');
+            taskScreen.classList.remove('hidden');
+            
+            runTrial();
+        }
+
+        // Run a single trial
+        function runTrial() {
+            if (currentTrial >= trials.length) {
+                endTask();
+                return;
+            }
+            
+            // Update progress
+            progressBar.style.width = `${(currentTrial / trials.length) * 100}%`;
+            trialCurrentEl.textContent = currentTrial + 1;
+            
+            // Show fixation
+            stimulus.classList.add('hidden');
+            feedback.classList.add('hidden');
+            fixation.classList.remove('hidden');
+            awaitingResponse = false;
+            
+            // After fixation interval (500-800ms), show stimulus
+            const fixationDuration = 500 + Math.random() * 300;
+            setTimeout(() => {
+                fixation.classList.add('hidden');
+                stimulus.textContent = trials[currentTrial].stimulus;
+                stimulus.classList.remove('hidden');
+                trialStartTime = performance.now();
+                awaitingResponse = true;
+            }, fixationDuration);
+        }
+
+        // Handle response
+        function handleResponse(responseIsWord) {
+            if (!awaitingResponse) return;
+            
+            const rt = performance.now() - trialStartTime;
+            const trial = trials[currentTrial];
+            const correct = responseIsWord === trial.isWord;
+            
+            results.push({
+                trial: currentTrial + 1,
+                stimulus: trial.stimulus,
+                isWord: trial.isWord,
+                valence: trial.valence,
+                response: responseIsWord ? 'word' : 'nonword',
+                correct,
+                rt: Math.round(rt)
+            });
+            
+            awaitingResponse = false;
+            
+            // Brief feedback
+            stimulus.classList.add('hidden');
+            feedback.textContent = correct ? '✓' : '✗';
+            feedback.className = `text-4xl font-mono ${correct ? 'text-positive' : 'text-negative'}`;
+            feedback.classList.remove('hidden');
+            
+            // Next trial
+            currentTrial++;
+            setTimeout(runTrial, 300);
+        }
+
+        // Key handling
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'r') {
+                keyR.classList.add('pressed');
+                handleResponse(true);
+            } else if (e.key.toLowerCase() === 'f') {
+                keyF.classList.add('pressed');
+                handleResponse(false);
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (e.key.toLowerCase() === 'r') {
+                keyR.classList.remove('pressed');
+            } else if (e.key.toLowerCase() === 'f') {
+                keyF.classList.remove('pressed');
+            }
+        });
+
+        // End task and show results
+        function endTask() {
+            taskScreen.classList.add('hidden');
+            resultsScreen.classList.remove('hidden');
+            
+            calculateAndDisplayResults();
+        }
+
+        function calculateAndDisplayResults() {
+            // Overall accuracy
+            const correctTrials = results.filter(r => r.correct);
+            const accuracy = (correctTrials.length / results.length) * 100;
+            document.getElementById('overall-accuracy').textContent = `${accuracy.toFixed(1)}%`;
+            
+            // Mean RT (correct trials only)
+            const correctRTs = correctTrials.map(r => r.rt);
+            const meanRT = correctRTs.reduce((a, b) => a + b, 0) / correctRTs.length;
+            document.getElementById('mean-rt').innerHTML = `${Math.round(meanRT)}<span class="text-2xl text-paper/50 ml-1">ms</span>`;
+            
+            // RT by valence (correct word trials only)
+            const valenceRTs = {};
+            ['positive', 'negative', 'neutral'].forEach(v => {
+                const vTrials = results.filter(r => r.valence === v && r.correct && r.isWord);
+                if (vTrials.length > 0) {
+                    valenceRTs[v] = vTrials.reduce((a, b) => a + b.rt, 0) / vTrials.length;
+                } else {
+                    valenceRTs[v] = 0;
+                }
+            });
+            
+            // Find max RT for scaling bars
+            const maxValenceRT = Math.max(...Object.values(valenceRTs));
+            
+            document.getElementById('positive-rt').textContent = `${Math.round(valenceRTs.positive)}ms`;
+            document.getElementById('neutral-rt').textContent = `${Math.round(valenceRTs.neutral)}ms`;
+            document.getElementById('negative-rt').textContent = `${Math.round(valenceRTs.negative)}ms`;
+            
+            // Animate bars
+            setTimeout(() => {
+                document.getElementById('positive-bar').style.width = `${(valenceRTs.positive / maxValenceRT) * 100}%`;
+                document.getElementById('neutral-bar').style.width = `${(valenceRTs.neutral / maxValenceRT) * 100}%`;
+                document.getElementById('negative-bar').style.width = `${(valenceRTs.negative / maxValenceRT) * 100}%`;
+            }, 100);
+            
+            // Word vs Non-word stats
+            const wordTrials = results.filter(r => r.isWord);
+            const nonwordTrials = results.filter(r => !r.isWord);
+            
+            const wordCorrect = wordTrials.filter(r => r.correct);
+            const nonwordCorrect = nonwordTrials.filter(r => r.correct);
+            
+            document.getElementById('word-accuracy').textContent = `${((wordCorrect.length / wordTrials.length) * 100).toFixed(1)}%`;
+            document.getElementById('nonword-accuracy').textContent = `${((nonwordCorrect.length / nonwordTrials.length) * 100).toFixed(1)}%`;
+            
+            const wordMeanRT = wordCorrect.length > 0 ? wordCorrect.reduce((a, b) => a + b.rt, 0) / wordCorrect.length : 0;
+            const nonwordMeanRT = nonwordCorrect.length > 0 ? nonwordCorrect.reduce((a, b) => a + b.rt, 0) / nonwordCorrect.length : 0;
+            
+            document.getElementById('word-rt').textContent = `${Math.round(wordMeanRT)}ms mean RT`;
+            document.getElementById('nonword-rt').textContent = `${Math.round(nonwordMeanRT)}ms mean RT`;
+            
+            // Detailed stats
+            const sortedRTs = [...correctRTs].sort((a, b) => a - b);
+            const medianRT = sortedRTs[Math.floor(sortedRTs.length / 2)];
+            const variance = correctRTs.reduce((sum, rt) => sum + Math.pow(rt - meanRT, 2), 0) / correctRTs.length;
+            const sdRT = Math.sqrt(variance);
+            
+            document.getElementById('sd-rt').textContent = `${Math.round(sdRT)}ms`;
+            document.getElementById('median-rt').textContent = `${Math.round(medianRT)}ms`;
+            document.getElementById('min-rt').textContent = `${Math.round(Math.min(...correctRTs))}ms`;
+            document.getElementById('max-rt').textContent = `${Math.round(Math.max(...correctRTs))}ms`;
+            
+            // Generate interpretation
+            generateInterpretation(accuracy, meanRT, valenceRTs, wordMeanRT, nonwordMeanRT);
+        }
+
+        function generateInterpretation(accuracy, meanRT, valenceRTs, wordRT, nonwordRT) {
+            let text = '';
+            
+            // Accuracy interpretation
+            if (accuracy >= 95) {
+                text += 'Excellent accuracy indicates careful attention to the task. ';
+            } else if (accuracy >= 85) {
+                text += 'Good accuracy with some errors, which is typical for this task. ';
+            } else {
+                text += 'Lower accuracy may indicate rushing or difficulty with word recognition. ';
+            }
+            
+            // Speed interpretation
+            if (meanRT < 600) {
+                text += 'Response times are quite fast, suggesting efficient lexical access. ';
+            } else if (meanRT < 900) {
+                text += 'Response times fall within the typical range for this task. ';
+            } else {
+                text += 'Slower response times may indicate more deliberate processing. ';
+            }
+            
+            // Emotional valence effects
+            const posDiff = valenceRTs.positive - valenceRTs.neutral;
+            const negDiff = valenceRTs.negative - valenceRTs.neutral;
+            
+            if (Math.abs(negDiff) > 30 && negDiff > 0) {
+                text += 'Notably slower responses to negative words may reflect attentional capture by threat-related stimuli (negativity bias). ';
+            } else if (Math.abs(posDiff) > 30 && posDiff < 0) {
+                text += 'Faster responses to positive words suggest facilitated processing of positive emotional content. ';
+            } else {
+                text += 'Similar response times across emotional categories suggest balanced emotional word processing. ';
+            }
+            
+            // Word vs non-word
+            if (nonwordRT > wordRT + 50) {
+                text += 'The longer latencies for fake words reflect the additional processing needed to reject unfamiliar letter strings.';
+            }
+            
+            document.getElementById('interpretation-text').textContent = text;
+        }
+
+        // Export data
+        function exportData() {
+            let csv = 'trial,stimulus,is_word,valence,response,correct,rt_ms\n';
+            results.forEach(r => {
+                csv += `${r.trial},${r.stimulus},${r.isWord},${r.valence},${r.response},${r.correct},${r.rt}\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `lexical_decision_task_${new Date().toISOString().slice(0,10)}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Event listeners
+        startBtn.addEventListener('click', startTask);
+        restartBtn.addEventListener('click', startTask);
+        exportBtn.addEventListener('click', exportData);
+    </script>
+</body>
+</html>

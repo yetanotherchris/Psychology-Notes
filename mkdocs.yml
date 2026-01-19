@@ -50,6 +50,7 @@ nav:
     - Questionnaires: questionnaires-list.md
     - Speedreader: /tools/speedreader/
     - Word Counter: /tools/wordcounter/
+    - Lexical Decision Task: /tools/lexical-decision-task/
   - Cluster B:
     - Overview: Cluster-B/README.md
     - Cluster-B/narcissism-authors.md
