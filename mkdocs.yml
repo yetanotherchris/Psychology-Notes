@@ -29,6 +29,10 @@ extra_css:
 
 plugins:
   - search
+  # NOTE (zensical-migration branch): Zensical's blog plugin is NOT yet implemented
+  # as of early 2026 (alpha). The Rust codebase only supports 'search' and 'offline'
+  # plugins. The entries listing page will be empty until Zensical adds blog support.
+  # Track progress: https://zensical.org/about/roadmap/
   - blog:
       blog_dir: entries
       post_excerpt: optional
