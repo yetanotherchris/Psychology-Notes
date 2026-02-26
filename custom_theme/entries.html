@@ -2,20 +2,19 @@
 
 {% block content %}
 <h1>Entries</h1>
-{% for section in nav.items %}
-  {% if section.active and not section.url and section.children %}
-    <div class="entries-list">
-      {% for child in section.children %}
-        {% if child.url and not child.is_index %}
-          <div class="entry-item" style="display:flex; gap:1rem; align-items:baseline; margin-bottom:0.6rem;">
-            {% if child.meta and child.meta.date %}
-              <span class="entry-date" style="color:var(--md-default-fg-color--light); font-size:0.85em; white-space:nowrap; min-width:6.5rem;">{{ child.meta.date }}</span>
-            {% endif %}
-            <a href="{{ child.url | url }}" class="entry-title">{{ child.title }}</a>
-          </div>
+{% if page.meta and page.meta.posts %}
+  <div class="entries-list">
+    {% for post in page.meta.posts %}
+      <article class="md-post" style="margin-bottom:2rem;">
+        <h2 style="margin-bottom:0.3rem;">
+          <a href="{{ post.url | url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.description and post.description != post.title %}
+          <p>{{ post.description }}</p>
         {% endif %}
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endfor %}
+        <p><a href="{{ post.url | url }}">Continue reading</a></p>
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}
 {% endblock %}
