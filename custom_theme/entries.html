@@ -6,13 +6,15 @@
   <div class="entries-list">
     {% for post in page.meta.posts %}
       <article class="md-post" style="margin-bottom:2rem;">
-        <h2 style="margin-bottom:0.3rem;">
+        <h2 style="margin-bottom:0.2rem;">
           <a href="{{ post.url | url }}">{{ post.title }}</a>
         </h2>
+        {% if post.date %}
+          <p style="color:var(--md-default-fg-color--light); font-size:0.85em; margin-top:0; margin-bottom:0.5rem;">{{ post.date }}</p>
+        {% endif %}
         {% if post.description and post.description != post.title %}
           <p>{{ post.description }}</p>
         {% endif %}
-        <p><a href="{{ post.url | url }}">Continue reading</a></p>
       </article>
     {% endfor %}
   </div>
