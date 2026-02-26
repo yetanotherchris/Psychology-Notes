@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Entries</h1>
+{% for section in nav.items %}
+  {% if section.active and not section.url and section.children %}
+    <div class="entries-list">
+      {% for child in section.children %}
+        {% if child.url and not child.is_index %}
+          <div class="entry-item" style="display:flex; gap:1rem; align-items:baseline; margin-bottom:0.6rem;">
+            {% if child.meta and child.meta.date %}
+              <span class="entry-date" style="color:var(--md-default-fg-color--light); font-size:0.85em; white-space:nowrap; min-width:6.5rem;">{{ child.meta.date }}</span>
+            {% endif %}
+            <a href="{{ child.url | url }}" class="entry-title">{{ child.title }}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endfor %}
+{% endblock %}

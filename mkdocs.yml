@@ -6,6 +6,7 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: custom_theme
   palette:
     - scheme: default
       primary: indigo
@@ -19,34 +20,51 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  
+
   font:
-    text: Inter      # Clean, modern sans-serif
+    text: Inter
     code: JetBrains Mono
-  
+
 extra_css:
   - stylesheets/custom.css
 
 plugins:
   - search
-  # NOTE (zensical-migration branch): Zensical's blog plugin is NOT yet implemented
-  # as of early 2026 (alpha). The Rust codebase only supports 'search' and 'offline'
-  # plugins. The entries listing page will be empty until Zensical adds blog support.
-  # Track progress: https://zensical.org/about/roadmap/
-  - blog:
-      blog_dir: entries
-      post_excerpt: optional
-      post_readtime: false
-      post_date_format: short
-      archive: false
-      categories: false
 
 markdown_extensions:
   - attr_list
 
 nav:
   - Home: README.md
-  - Entries: entries/index.md
+  - Entries:
+    - entries/index.md
+    - entries/posts/2026-01-22-npd-asd-comparison.md
+    - entries/posts/2026-01-22-language-spread.md
+    - "entries/posts/2026-01-21-psychopathy-videos copy.md"
+    - entries/posts/2026-01-20-types-of-mirroring.md
+    - entries/posts/2026-01-19-language.md
+    - entries/posts/2026-01-18-social-stuff.md
+    - entries/posts/2026-01-16-asd-anxiety.md
+    - entries/posts/2026-01-15-asd-suicide.md
+    - entries/posts/2025-12-27-social-media-psychopathy.md
+    - entries/posts/2025-12-26-dead-father-syndrome.md
+    - entries/posts/2025-12-23-personality-traits-and-disorders.md
+    - entries/posts/2025-12-22-if-you-really-cared.md
+    - entries/posts/2025-12-21-tiktok-autism.md
+    - entries/posts/2025-12-18-worry-rumination.md
+    - entries/posts/2025-12-18-anxiety-breathing.md
+    - entries/posts/2025-12-14-freud-cathexis.md
+    - entries/posts/2025-12-07-stargate-psychology.md
+    - entries/posts/2025-12-01-triangulation.md
+    - entries/posts/2025-11-25-passive-aggressive.md
+    - entries/posts/2025-11-18-socratic.md
+    - entries/posts/2025-11-17-psychology-definitions.md
+    - entries/posts/2025-11-16-apis.md
+    - entries/posts/2025-11-15-psychotherapy.md
+    - entries/posts/2025-11-14-attachment.md
+    - entries/posts/2025-11-11-dark.md
+    - entries/posts/2025-11-09-personality.md
+    - entries/posts/2025-11-01-autism.md
   - Authors and concepts: categorised/index.md
   - llm-consensus-answers.md
   - Tools:

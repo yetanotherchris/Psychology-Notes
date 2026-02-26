@@ -1,2 +1,4 @@
-# Entries
+---
+template: entries.html
+---
 
