@@ -38,18 +38,19 @@ nav.md-post__action {
   margin-bottom: 2rem;
 }
 
-.entry-post__title {
+.md-typeset .entry-post__title {
+  margin-top: 0;
   margin-bottom: 0.2rem;
 }
 
-.entry-post__date {
+.md-typeset .entry-post__date {
   color: var(--md-default-fg-color--light);
   font-size: 0.85em;
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   padding: 0;
 }
 
-.entry-post__description {
+.md-typeset .entry-post__description {
   margin-top: 0;
+  padding: 0;
 }
