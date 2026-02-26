@@ -6,6 +6,7 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: custom_theme
   palette:
     - scheme: default
       primary: indigo
@@ -19,23 +20,16 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  
+
   font:
-    text: Inter      # Clean, modern sans-serif
+    text: Inter
     code: JetBrains Mono
-  
+
 extra_css:
   - stylesheets/custom.css
 
 plugins:
   - search
-  - blog:
-      blog_dir: entries
-      post_excerpt: optional
-      post_readtime: false
-      post_date_format: short
-      archive: false
-      categories: false
 
 markdown_extensions:
   - attr_list

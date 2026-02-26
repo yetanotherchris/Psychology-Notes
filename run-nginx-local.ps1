@@ -5,4 +5,6 @@ if ($existing) {
     docker stop $existing | Out-Null
 }
 
-docker run --rm -it -p 8123:8000 -v ${PWD}:/docs zensical/zensical
+Write-Host "Building full nginx image (includes /tools)..."
+docker build -t psychology-notes-local .
+docker run --rm -p 8123:8080 psychology-notes-local
