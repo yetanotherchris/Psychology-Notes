@@ -20,6 +20,7 @@ nav.md-post__action {
 .md-typeset p {
   margin-bottom: 1.2em;
   line-height: 1.8;  /* More line spacing */
+  margin: 0px;
 }
 
 /* Wider content area */
@@ -32,7 +33,23 @@ nav.md-post__action {
   padding: 0.3em 0;
 }
 
-/* Lighter borders */
-.md-typeset hr {
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+/* Entries listing page */
+.entry-post {
+  margin-bottom: 2rem;
+}
+
+.entry-post__title {
+  margin-bottom: 0.2rem;
+}
+
+.entry-post__date {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.entry-post__description {
+  margin-top: 0;
 }

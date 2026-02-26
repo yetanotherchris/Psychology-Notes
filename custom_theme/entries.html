@@ -5,15 +5,15 @@
 {% if page.meta and page.meta.posts %}
   <div class="entries-list">
     {% for post in page.meta.posts %}
-      <article class="md-post" style="margin-bottom:2rem;">
-        <h2 style="margin-bottom:0.2rem;">
+      <article class="entry-post">
+        <h2 class="entry-post__title">
           <a href="{{ post.url | url }}">{{ post.title }}</a>
         </h2>
         {% if post.date %}
-          <p style="color:var(--md-default-fg-color--light); font-size:0.85em; margin-top:0; margin-bottom:5px; padding:0;">{{ post.date }}</p>
+          <p class="entry-post__date">{{ post.date }}</p>
         {% endif %}
         {% if post.description and post.description != post.title %}
-          <p>{{ post.description }}</p>
+          <p class="entry-post__description">{{ post.description }}</p>
         {% endif %}
       </article>
     {% endfor %}
