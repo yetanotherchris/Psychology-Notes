@@ -1,1 +1,1 @@
-docker run --rm -it -p 8123:8000 -v ${PWD}:/docs squidfunk/mkdocs-material serve --dev-addr=0.0.0.0:8000
+docker run --rm -it -p 8123:8000 -v ${PWD}:/docs zensical/zensical
