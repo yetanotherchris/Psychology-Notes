@@ -10,7 +10,7 @@
           <a href="{{ post.url | url }}">{{ post.title }}</a>
         </h2>
         {% if post.date %}
-          <p style="color:var(--md-default-fg-color--light); font-size:0.85em; margin-top:0; margin-bottom:5px;">{{ post.date }}</p>
+          <p style="color:var(--md-default-fg-color--light); font-size:0.85em; margin-top:0; margin-bottom:5px; padding:0;">{{ post.date }}</p>
         {% endif %}
         {% if post.description and post.description != post.title %}
           <p>{{ post.description }}</p>
