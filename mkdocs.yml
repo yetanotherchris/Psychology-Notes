@@ -37,7 +37,7 @@ markdown_extensions:
 nav:
   - Home: README.md
   - Entries: entries/index.md
-  - Authors and concepts: categorised/index.md
+  - Authors and concepts: authors-and-concepts/index.md
   - llm-consensus-answers.md
   - Tools:
     - Academic Search: /tools/academic-search/
