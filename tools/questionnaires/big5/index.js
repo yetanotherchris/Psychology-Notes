@@ -28,8 +28,6 @@ function renderStatBar(label, score) {
     const pct = Math.round((score / 50) * 100);
     const colourClass = score > 25 ? "cc-bar-green" : "cc-bar-low";
     // 10 tick marks
-    const ticks = '<span></span>'.repeat(10);
-
     return `
         <div class="cc-stat">
             <div class="cc-stat-header">
@@ -38,7 +36,6 @@ function renderStatBar(label, score) {
             </div>
             <div class="${colourClass}">
                 <div class="cc-bar-track">
-                    <div class="cc-bar-ticks">${ticks}</div>
                     <div class="cc-bar-fill" style="width:${pct}%"></div>
                 </div>
             </div>
@@ -75,7 +72,7 @@ function renderCharacterCard(scores) {
                 <div class="cc-content">
                     <div class="cc-divider">\u2B25 \u2B25 \u2B25</div>
                     <h1 class="cc-name">${CHARACTER_NAME}</h1>
-                    <p class="cc-subtitle">Adventurer</p>
+                    <p class="cc-subtitle">~~~~~~~</p>
                     <div class="cc-section-title">Personality Traits</div>
                     ${bars}
                     <div class="cc-flourish">\u2E3B \u2726 \u2E3B</div>
