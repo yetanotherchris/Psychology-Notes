@@ -10,77 +10,274 @@
     <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
     <script src="../surveyjs/survey-core/themes/index.min.js"></script>
     <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
     <link rel="stylesheet" href="../common.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../inter-font.css">
+
     <style>
+        /* ── existing finished panel ── */
         #finished {
             display:none;
             padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             background-color: white;
             text-align: center;
         }
-        #finished h3,p  { margin:0px; padding:0px; }
-        #finished table {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            margin-bottom:10px;
-            padding:10px;
+        #finished h3, p { margin:0px; padding:0px; }
+#finished #reset-survey { margin-left: 30%; }
+
+        /* ═══════════════════════════════════════════════
+           CHARACTER CARD STYLES
+           ═══════════════════════════════════════════════ */
+
+        /* ── wooden frame ── */
+        .cc-frame {
+            position: relative;
+            display: inline-block;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 16px auto;
+            background:
+                linear-gradient(170deg, #3b2816 0%, #2a1b0e 30%, #4a3220 55%, #2e1e12 80%, #3b2816 100%);
+            box-shadow:
+                0 0 0 3px #1a0f06,
+                0 8px 24px rgba(0,0,0,.5);
         }
-        #finished table td { border-bottom: 1px solid #b0afaf; }
-        #finished table td:nth-child(1) {
-            font-weight: bold;
-            width: 80%;
-            text-align: left;
+        /* corner nails */
+        .cc-nail {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 35%, #8a7a60, #4a3d2a 70%, #2a2015);
+            box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 1px 1px rgba(255,230,170,.15);
+            z-index: 3;
         }
-        #finished table td:nth-child(2) {
-            font-weight: bold;
-            width: 20%;
+        .cc-nail-tl { top: 8px; left: 8px; }
+        .cc-nail-tr { top: 8px; right: 8px; }
+        .cc-nail-bl { bottom: 8px; left: 8px; }
+        .cc-nail-br { bottom: 8px; right: 8px; }
+
+        /* ── parchment ── */
+        .cc-parchment {
+            position: relative;
+            width: 340px;
+            max-width: 100%;
+            padding: 24px 24px 20px;
+            border-radius: 4px;
+            background:
+                linear-gradient(168deg, #f4e4c1 0%, #e8d4a6 25%, #f0dfb8 50%, #e2cfa0 75%, #ecdab2 100%);
+            overflow: visible;
+            font-family: 'IM Fell English', serif;
+        }
+        .cc-content { position: relative; z-index: 1; }
+
+        /* ornament divider */
+        .cc-divider {
             text-align: center;
+            margin: 6px 0 18px;
+            color: #8a6d3b;
+            font-size: 18px;
+            letter-spacing: 8px;
+            opacity: .5;
         }
 
-        #finished #reset-survey { margin-left: 30%; }
+        /* character name */
+        .cc-name {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: #2e1e0f;
+            text-shadow: 0 1px 0 rgba(255,230,170,.4), 0 2px 4px rgba(60,30,0,.15);
+            letter-spacing: 3px;
+            margin: 0 0 4px;
+            padding: 0;
+        }
+
+        .cc-subtitle {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #8a6d3b;
+            margin: 0 0 18px;
+            padding: 0;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+        }
+
+        /* section title with horizontal rules */
+        .cc-section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #6b4f2e;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 0 16px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cc-section-title::before,
+        .cc-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b8975a, transparent);
+        }
+
+        /* individual stat row */
+        .cc-stat { margin-bottom: 14px; }
+        .cc-stat:last-child { margin-bottom: 0; }
+
+        .cc-stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .cc-stat-label {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #3d2a14;
+            letter-spacing: 1.5px;
+        }
+        .cc-stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: #5a3f20;
+        }
+
+        /* bar track (background) */
+        .cc-bar-track {
+            height: 22px;
+            border-radius: 3px;
+            background: rgba(120,90,50,.15);
+        }
+
+        /* bar fill */
+        .cc-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        /* GREEN fill */
+        .cc-bar-green .cc-bar-fill {
+            background: linear-gradient(90deg, #2ebd4e, #3dd65a, #30c94e);
+        }
+
+        /* LOW fill (muted light green) */
+        .cc-bar-low .cc-bar-fill {
+            background: linear-gradient(90deg, #a4d4a4, #b8e2b8, #a8d8a8);
+        }
+
+        /* tick marks inside track */
+
+        /* bottom flourish */
+        .cc-flourish {
+            text-align: center;
+            margin-top: 22px;
+            color: #8a6d3b;
+            font-size: 14px;
+            letter-spacing: 6px;
+            opacity: .4;
+        }
+
+        /* ── name input ── */
+        .cc-name-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .cc-name-row label {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #3d2a14;
+            letter-spacing: 2px;
+        }
+        .cc-name-row input {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            padding: 6px 14px;
+            border: 1px solid #b8975a;
+            border-radius: 4px;
+            background: #fdf6e0;
+            color: #2e1e0f;
+            width: 240px;
+        }
+
+        /* ── download button ── */
+        .cc-download-btn {
+            display: block;
+            margin: 16px auto 0;
+            padding: 10px 28px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #ecdab2;
+            background: linear-gradient(170deg, #3b2816, #2a1b0e 50%, #4a3220);
+            border: 2px solid rgba(255,200,100,.12);
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,.4);
+            transition: background .2s, box-shadow .2s;
+        }
+        .cc-download-btn:hover {
+            background: linear-gradient(170deg, #4a3220, #3b2816 50%, #5a422a);
+            box-shadow: 0 6px 18px rgba(0,0,0,.5);
+        }
+
+        /* ── font overrides: inter-font.css sets #finished * { font-family: Inter }
+              which beats .cc-* class rules — re-apply with higher specificity ── */
+        #finished .cc-name { font-family: 'Cinzel', serif; font-weight: 700;font-size:32px; }
+        #finished .cc-subtitle { font-family: 'Cinzel', serif; font-weight: 400; }
+        #finished .cc-section-title,
+        #finished .cc-stat-label,
+        #finished .cc-name-row label,
+        #finished .cc-download-btn { font-family: 'Cinzel', serif; font-weight: 700; }
+        #finished .cc-stat-value { font-family: 'Cinzel', serif; font-weight: 700; }
+        #finished .cc-name-row input { font-family: 'Cinzel', serif; }
+        #finished .cc-parchment,
+        #finished .cc-divider,
+        #finished .cc-flourish { font-family: 'IM Fell English', serif; font-weight: 400; }
+
+        /* ── prompt section (now secondary) ── */
+        .cc-prompt-section {
+            margin-top: 24px;
+            text-align: left;
+        }
+        .cc-prompt-section h4 { margin: 0 0 6px; }
+        .cc-prompt-section p  { margin: 0 0 8px; text-align: left; }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../inter-font.css">
 </head>
 
 <body>
     <div id="surveyElement"></div>
     <div id="finished">
-        <h3>Your scores</h3>
-        <p>Scores are 0-50.</p>
-        <table class="sd-table">
-            <tr>
-                <td>Openness</td>
-                <td style="{{o-style}}">{{o-score}}</td>
-            </tr>
-            <tr>
-                <td>Conscientiousness</td>
-                <td style="{{c-style}}">{{c-score}}</td>
-            </tr>
-            <tr>
-                <td>Extraversion</td>
-                <td style="{{e-style}}">{{e-score}}</td>
-            </tr>
-            <tr>
-                <td>Agreeableness</td>
-                <td style="{{a-style}}">{{a-score}}</td>
-            </tr>
-            <tr>
-                <td>Neuroticism</td>
-                <td style="{{n-style}}">{{n-score}}</td>
-            </tr>
-        </table>
+        {{character-card}}
 
-        <h4>Chat GPT prompt to create an OCEAN card image</h4>
-        <p>Use the following prompt to create an character card image based on your scores:</p>
-
-<p>
-<textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
+        <div class="cc-prompt-section">
+            <h4>Or use this prompt with an image generator</h4>
+            <p>Copy the following into ChatGPT, Midjourney, etc.:</p>
+            <p>
+                <textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
 wooden frame. At the top, display the character's name (e.g.,
 'YOUR NAME') in bold serif font. Below, show five OCEAN personality
 traits as horizontal stat bars, each labelled with its name and
@@ -98,9 +295,9 @@ Display the traits exactly as follows:
 Use bright green for GREEN bars and muted red for RED bars. Ensure
 all five bars are clearly visible, distinctly coloured, and
 proportionally scaled. Do not swap any colours.</textarea>
-</p>
-        <h4>Example</h4>
-        <img src="./example-avatar.png" alt="Avatar example">
+            </p>
+        </div>
+
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 
