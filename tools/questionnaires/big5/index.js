@@ -51,11 +51,11 @@ function surveyComplete (survey)
 
     var chatGptTextarea = document.getElementById("chatgpt-prompt");
     var promptText = chatGptTextarea.textContent;
-    promptText = promptText.replace("{{o-score}}", scores["O"]); 
-    promptText = promptText.replace("{{c-score}}", scores["C"]); 
-    promptText = promptText.replace("{{e-score}}", scores["E"]); 
-    promptText = promptText.replace("{{a-score}}", scores["A"]); 
-    promptText = promptText.replace("{{n-score}}", scores["N"]); 
+    promptText = promptText.replace("{{o-score}}", describeBar(scores["O"]));
+    promptText = promptText.replace("{{c-score}}", describeBar(scores["C"]));
+    promptText = promptText.replace("{{e-score}}", describeBar(scores["E"]));
+    promptText = promptText.replace("{{a-score}}", describeBar(scores["A"]));
+    promptText = promptText.replace("{{n-score}}", describeBar(scores["N"]));
     chatGptTextarea.textContent = promptText;
 
     var finishedDiv = document.getElementById("finished");
@@ -76,6 +76,18 @@ function surveyComplete (survey)
     html = html.replace("{{n-style}}", "background-color:rgb(20 149 20 / "+scores["N"] *2+"%);"); 
 
     survey.completedHtml = html;
+}
+
+function describeBar(score) {
+    const colour = score > 25 ? "GREEN" : "RED";
+    const pct = Math.round((score / 50) * 100);
+    let fill;
+    if (pct >= 90) fill = "nearly full";
+    else if (pct >= 70) fill = "about three-quarters full";
+    else if (pct >= 45) fill = "about half full";
+    else if (pct >= 20) fill = "about one-quarter full";
+    else fill = "barely filled";
+    return `${score}/50 — ${colour} bar, ${fill}`;
 }
 
 document.addEventListener("DOMContentLoaded", async function() {

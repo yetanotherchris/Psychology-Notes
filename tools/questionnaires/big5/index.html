@@ -80,15 +80,24 @@
         <p>Use the following prompt to create an character card image based on your scores:</p>
 
 <p>
-<textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark wooden frame. At the top, display the character's name (e.g., 'YOUR NAME') in bold serif font. Below, show the five OCEAN personality traits: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Next to each trait, list a value from 1 to 50, and beneath each label, include a horizontal bar showing the percentage fill corresponding to the value. Use green bars for values over 25, and red bars for 25 or below. Ensure all five bars are clearly visible, properly colored, and scaled proportionally.
+<textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
+wooden frame. At the top, display the character's name (e.g.,
+'YOUR NAME') in bold serif font. Below, show five OCEAN personality
+traits as horizontal stat bars, each labelled with its name and
+numeric value out of 50. Each bar's fill width should be proportional
+to its value.
 
-The scores are the following:
+Display the traits exactly as follows:
+
 - Openness: {{o-score}}
 - Conscientiousness: {{c-score}}
 - Extraversion: {{e-score}}
 - Agreeableness: {{a-score}}
 - Neuroticism: {{n-score}}
-</textarea>
+
+Use bright green for GREEN bars and muted red for RED bars. Ensure
+all five bars are clearly visible, distinctly coloured, and
+proportionally scaled. Do not swap any colours.</textarea>
 </p>
         <h4>Example</h4>
         <img src="./example-avatar.png" alt="Avatar example">
