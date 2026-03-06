@@ -24,6 +24,8 @@
         #finished {
             display:none;
             padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             background-color: white;
@@ -345,6 +347,20 @@
             background: linear-gradient(170deg, #4a3220, #3b2816 50%, #5a422a);
             box-shadow: 0 6px 18px rgba(0,0,0,.5);
         }
+
+        /* ── font overrides: inter-font.css sets #finished * { font-family: Inter }
+              which beats .cc-* class rules — re-apply with higher specificity ── */
+        #finished .cc-name { font-family: 'Cinzel', serif; font-weight: 900; }
+        #finished .cc-subtitle { font-family: 'Cinzel', serif; font-weight: 400; }
+        #finished .cc-section-title,
+        #finished .cc-stat-label,
+        #finished .cc-name-row label,
+        #finished .cc-download-btn { font-family: 'Cinzel', serif; font-weight: 700; }
+        #finished .cc-stat-value,
+        #finished .cc-name-row input { font-family: 'Cinzel', serif; }
+        #finished .cc-parchment,
+        #finished .cc-divider,
+        #finished .cc-flourish { font-family: 'IM Fell English', serif; font-weight: 400; }
 
         /* ── prompt section (now secondary) ── */
         .cc-prompt-section {

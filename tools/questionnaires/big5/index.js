@@ -3,7 +3,7 @@
 
 const STORAGE_ITEM_KEY = "big5-survey-v1";
 const ELEMENTS_PER_PAGE = 10;
-const CHARACTER_NAME = "Your Character";
+const CHARACTER_NAME = "Your name";
 
 function getIntroPage(){
     return {
@@ -154,7 +154,7 @@ function surveyComplete(survey)
 
     // Build the finished panel HTML
     var finishedDiv = document.getElementById("finished");
-    finishedDiv.style.display = "inline-block";
+    finishedDiv.style.display = "block";
     document.getElementById("finished").remove();
 
     var html = finishedDiv.outerHTML;
