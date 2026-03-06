@@ -41,10 +41,123 @@
         }
 
         #finished #reset-survey { margin-left: 30%; }
+
+        /* Character Card */
+        .character-card {
+            font-family: 'IM Fell English', serif;
+            text-align: left;
+            margin: 24px auto;
+            max-width: 500px;
+            background: linear-gradient(170deg, #1c0e04 0%, #3a1e08 20%, #1a0c03 40%, #301808 60%, #1c0e04 80%, #2a1406 100%);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow:
+                inset 0 0 20px rgba(0,0,0,0.5),
+                0 6px 20px rgba(0,0,0,0.35);
+            border: 1px solid #5a3010;
+            position: relative;
+        }
+        .character-card::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: 1px solid rgba(180, 130, 50, 0.35);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        .card-inner {
+            background:
+                radial-gradient(ellipse 70px 50px at 10% 15%, rgba(150, 100, 20, 0.12) 0%, transparent 100%),
+                radial-gradient(ellipse 90px 60px at 90% 80%, rgba(130, 80, 10, 0.10) 0%, transparent 100%),
+                radial-gradient(ellipse 50px 35px at 65% 8%, rgba(160, 110, 30, 0.08) 0%, transparent 100%),
+                linear-gradient(155deg, #f6eacc 0%, #edd89a 35%, #f0e2b2 65%, #e5cf88 100%);
+            border-radius: 4px;
+            padding: 20px 22px;
+        }
+        .card-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            color: #2e1500;
+            letter-spacing: 0.06em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.12);
+            margin: 0 0 4px;
+        }
+        .card-subtitle {
+            text-align: center;
+            color: #7a5020;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin: 0 0 12px;
+        }
+        .card-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #8a6030, transparent);
+            margin: 0 0 16px;
+        }
+        .card-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            color: #2e1500;
+            width: 132px;
+            flex-shrink: 0;
+            letter-spacing: 0.03em;
+        }
+        .stat-bar-track {
+            flex: 1;
+            height: 14px;
+            background: rgba(0,0,0,0.18);
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
+            overflow: hidden;
+            position: relative;
+        }
+        .stat-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            position: relative;
+        }
+        .stat-bar-fill.bar-green {
+            background: linear-gradient(to bottom, #4fd470 0%, #2ebd4e 55%, #1f9a3c 100%);
+        }
+        .stat-bar-fill.bar-red {
+            background: linear-gradient(to bottom, #d06060 0%, #b04040 55%, #8c3232 100%);
+        }
+        .stat-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            right: 6px;
+            height: 3px;
+            background: rgba(255,255,255,0.28);
+            border-radius: 2px;
+        }
+        .stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            color: #2e1500;
+            width: 38px;
+            text-align: right;
+            flex-shrink: 0;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../inter-font.css">
 </head>
 
@@ -76,8 +189,10 @@
             </tr>
         </table>
 
-        <h4>Chat GPT prompt to create an OCEAN card image</h4>
-        <p>Use the following prompt to create an character card image based on your scores:</p>
+        {{character-card}}
+
+        <h4>Or use this prompt with an image generator</h4>
+        <p>Use the following prompt to create a character card image based on your scores:</p>
 
 <p>
 <textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
@@ -99,8 +214,6 @@ Use bright green for GREEN bars and muted red for RED bars. Ensure
 all five bars are clearly visible, distinctly coloured, and
 proportionally scaled. Do not swap any colours.</textarea>
 </p>
-        <h4>Example</h4>
-        <img src="./example-avatar.png" alt="Avatar example">
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 

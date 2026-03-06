@@ -3,6 +3,7 @@
 
 const STORAGE_ITEM_KEY = "big5-survey-v1";
 const ELEMENTS_PER_PAGE = 10;
+const CHARACTER_NAME = "Your Character";
 
 function getIntroPage(){
     return {
@@ -73,9 +74,45 @@ function surveyComplete (survey)
     html = html.replace("{{c-style}}", "background-color:rgb(20 149 20 / "+scores["C"] *2+"%);"); 
     html = html.replace("{{e-style}}", "background-color:rgb(20 149 20 / "+scores["E"] *2+"%);"); 
     html = html.replace("{{a-style}}", "background-color:rgb(20 149 20 / "+scores["A"] *2+"%);"); 
-    html = html.replace("{{n-style}}", "background-color:rgb(20 149 20 / "+scores["N"] *2+"%);"); 
+    html = html.replace("{{n-style}}", "background-color:rgb(20 149 20 / "+scores["N"] *2+"%);");
+
+    html = html.replace("{{character-card}}", renderCharacterCard(scores));
 
     survey.completedHtml = html;
+}
+
+function renderCharacterCard(scores) {
+    const traits = [
+        { key: 'O', label: 'Openness' },
+        { key: 'C', label: 'Conscientiousness' },
+        { key: 'E', label: 'Extraversion' },
+        { key: 'A', label: 'Agreeableness' },
+        { key: 'N', label: 'Neuroticism' }
+    ];
+
+    const barsHtml = traits.map(({ key, label }) => {
+        const score = scores[key];
+        const pct = Math.round((score / 50) * 100);
+        const colourClass = score > 25 ? 'bar-green' : 'bar-red';
+        return `<div class="stat-row">
+                <span class="stat-label">${label}</span>
+                <div class="stat-bar-track">
+                    <div class="stat-bar-fill ${colourClass}" style="width:${pct}%"></div>
+                </div>
+                <span class="stat-value">${score}/50</span>
+            </div>`;
+    }).join('');
+
+    return `<div class="character-card">
+        <div class="card-inner">
+            <div class="card-name">${CHARACTER_NAME}</div>
+            <div class="card-subtitle">OCEAN Personality Profile</div>
+            <hr class="card-divider">
+            <div class="card-stats">
+                ${barsHtml}
+            </div>
+        </div>
+    </div>`;
 }
 
 function describeBar(score) {
