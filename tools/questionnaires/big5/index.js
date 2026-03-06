@@ -103,7 +103,11 @@ function renderCharacterCard(scores) {
             </div>`;
     }).join('');
 
-    return `<div class="character-card">
+    return `<div class="card-name-row">
+        <label for="card-name-input">Name</label>
+        <input id="card-name-input" type="text" value="${CHARACTER_NAME}" oninput="updateCardName(this.value)" maxlength="40">
+    </div>
+    <div class="character-card">
         <div class="card-inner">
             <div class="card-name">${CHARACTER_NAME}</div>
             <div class="card-subtitle">OCEAN Personality Profile</div>
@@ -114,6 +118,11 @@ function renderCharacterCard(scores) {
         </div>
     </div>
     <button class="card-download-btn" onclick="downloadCardAsPng()">Download as PNG</button>`;
+}
+
+function updateCardName(value) {
+    const nameEl = document.querySelector('.card-name');
+    if (nameEl) nameEl.textContent = value;
 }
 
 function downloadCardAsPng() {
