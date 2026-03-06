@@ -174,7 +174,7 @@ function describeBar(score) {
     else if (pct >= 45) fill = "about half full";
     else if (pct >= 20) fill = "about one-quarter full";
     else fill = "barely filled";
-    return `${score}/50 — ${colour} bar, ${fill}`;
+    return `${score}/50 - ${colour} bar, ${fill}`;
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
