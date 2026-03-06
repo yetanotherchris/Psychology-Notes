@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Big 5 Questionnaire</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="../surveyjs/survey-core/survey.core.min.js"></script>
     <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
     <script src="../surveyjs/survey-core/themes/index.min.js"></script>
     <script src="../surveyjs/survey-js-ui/survey-js-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="../surveyjs/survey-core/defaultV2.min.css" />
     <link rel="stylesheet" href="../common.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../inter-font.css">
+
     <style>
+        /* ── existing finished panel ── */
         #finished {
             display:none;
             padding: 20px;
@@ -22,7 +29,7 @@
             background-color: white;
             text-align: center;
         }
-        #finished h3,p  { margin:0px; padding:0px; }
+        #finished h3, p { margin:0px; padding:0px; }
         #finished table {
             border: 1px solid #ccc;
             border-radius: 10px;
@@ -40,164 +47,329 @@
             width: 20%;
             text-align: center;
         }
-
         #finished #reset-survey { margin-left: 30%; }
 
-        /* Character Card */
-        .character-card {
-            font-family: 'IM Fell English', serif;
-            text-align: left;
-            margin: 24px auto;
-            max-width: 500px;
-            background: linear-gradient(170deg, #1c0e04 0%, #3a1e08 20%, #1a0c03 40%, #301808 60%, #1c0e04 80%, #2a1406 100%);
-            padding: 12px;
-            border-radius: 8px;
-            box-shadow:
-                inset 0 0 20px rgba(0,0,0,0.5),
-                0 6px 20px rgba(0,0,0,0.35);
-            border: 1px solid #5a3010;
+        /* ═══════════════════════════════════════════════
+           CHARACTER CARD STYLES
+           ═══════════════════════════════════════════════ */
+
+        /* ── wooden frame ── */
+        .cc-frame {
             position: relative;
+            display: inline-block;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 24px auto;
+            background:
+                linear-gradient(170deg, #3b2816 0%, #2a1b0e 30%, #4a3220 55%, #2e1e12 80%, #3b2816 100%);
+            box-shadow:
+                0 0 0 3px #1a0f06,
+                inset 0 0 0 2px rgba(255,220,160,.08),
+                0 12px 40px rgba(0,0,0,.7),
+                0 2px 8px rgba(0,0,0,.5);
         }
-        .character-card::before {
+        /* inner bevel */
+        .cc-frame::before {
             content: '';
             position: absolute;
-            inset: 5px;
-            border: 1px solid rgba(180, 130, 50, 0.35);
-            border-radius: 4px;
+            inset: 4px;
+            border-radius: 5px;
             pointer-events: none;
+            border: 2px solid rgba(255,200,100,.07);
+            box-shadow: inset 0 0 12px rgba(0,0,0,.4);
         }
-        .card-inner {
-            background:
-                radial-gradient(ellipse 70px 50px at 10% 15%, rgba(150, 100, 20, 0.12) 0%, transparent 100%),
-                radial-gradient(ellipse 90px 60px at 90% 80%, rgba(130, 80, 10, 0.10) 0%, transparent 100%),
-                radial-gradient(ellipse 50px 35px at 65% 8%, rgba(160, 110, 30, 0.08) 0%, transparent 100%),
-                linear-gradient(155deg, #f6eacc 0%, #edd89a 35%, #f0e2b2 65%, #e5cf88 100%);
+        /* wood grain lines */
+        .cc-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: .12;
+            background: repeating-linear-gradient(
+                95deg,
+                transparent 0px, transparent 6px,
+                rgba(255,200,120,.15) 6px, rgba(255,200,120,.15) 7px,
+                transparent 7px, transparent 18px
+            );
+        }
+
+        /* corner nails */
+        .cc-nail {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 35%, #8a7a60, #4a3d2a 70%, #2a2015);
+            box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 1px 1px rgba(255,230,170,.15);
+            z-index: 3;
+        }
+        .cc-nail-tl { top: 8px; left: 8px; }
+        .cc-nail-tr { top: 8px; right: 8px; }
+        .cc-nail-bl { bottom: 8px; left: 8px; }
+        .cc-nail-br { bottom: 8px; right: 8px; }
+
+        /* ── parchment ── */
+        .cc-parchment {
+            position: relative;
+            width: 420px;
+            max-width: 100%;
+            padding: 38px 34px 34px;
             border-radius: 4px;
-            padding: 20px 22px;
+            background:
+                linear-gradient(168deg, #f4e4c1 0%, #e8d4a6 25%, #f0dfb8 50%, #e2cfa0 75%, #ecdab2 100%);
+            box-shadow:
+                inset 0 0 50px rgba(160,120,60,.18),
+                inset 0 0 8px rgba(120,80,30,.12);
+            overflow: hidden;
+            font-family: 'IM Fell English', serif;
         }
-        .card-name {
+        /* parchment texture — CSS gradients only for html2canvas compatibility */
+        .cc-parchment::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: .08;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0px, transparent 2px,
+                    rgba(120,80,30,.3) 2px, rgba(120,80,30,.3) 3px,
+                    transparent 3px, transparent 8px
+                ),
+                repeating-linear-gradient(
+                    135deg,
+                    transparent 0px, transparent 3px,
+                    rgba(100,70,20,.2) 3px, rgba(100,70,20,.2) 4px,
+                    transparent 4px, transparent 11px
+                );
+            mix-blend-mode: multiply;
+        }
+        /* burnt / aged edges */
+        .cc-parchment::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: 4px;
+            box-shadow:
+                inset 6px 6px 18px rgba(100,60,20,.18),
+                inset -6px -6px 18px rgba(100,60,20,.14),
+                inset 0 0 40px rgba(130,90,40,.08);
+        }
+
+        .cc-content { position: relative; z-index: 1; }
+
+        /* ornament divider */
+        .cc-divider {
+            text-align: center;
+            margin: 6px 0 18px;
+            color: #8a6d3b;
+            font-size: 18px;
+            letter-spacing: 8px;
+            opacity: .5;
+        }
+
+        /* character name */
+        .cc-name {
+            text-align: center;
             font-family: 'Cinzel', serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            text-align: center;
-            color: #2e1500;
-            letter-spacing: 0.06em;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.12);
+            font-weight: 900;
+            font-size: 32px;
+            color: #2e1e0f;
+            text-shadow: 0 1px 0 rgba(255,230,170,.4), 0 2px 4px rgba(60,30,0,.15);
+            letter-spacing: 3px;
             margin: 0 0 4px;
+            padding: 0;
         }
-        .card-subtitle {
+
+        .cc-subtitle {
             text-align: center;
-            color: #7a5020;
-            font-style: italic;
-            font-size: 0.85rem;
-            margin: 0 0 12px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #8a6d3b;
+            margin: 0 0 18px;
+            padding: 0;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
         }
-        .card-divider {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #8a6030, transparent);
+
+        /* section title with horizontal rules */
+        .cc-section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #6b4f2e;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
             margin: 0 0 16px;
-        }
-        .card-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .stat-row {
+            padding: 0;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .stat-label {
-            font-family: 'Cinzel', serif;
-            font-size: 0.72rem;
-            color: #2e1500;
-            width: 132px;
-            flex-shrink: 0;
-            letter-spacing: 0.03em;
-        }
-        .stat-bar-track {
+        .cc-section-title::before,
+        .cc-section-title::after {
+            content: '';
             flex: 1;
-            height: 14px;
-            background: rgba(0,0,0,0.18);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b8975a, transparent);
+        }
+
+        /* individual stat row */
+        .cc-stat { margin-bottom: 14px; }
+        .cc-stat:last-child { margin-bottom: 0; }
+
+        .cc-stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .cc-stat-label {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #3d2a14;
+            letter-spacing: 1.5px;
+        }
+        .cc-stat-value {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 14px;
+            color: #5a3f20;
+        }
+
+        /* bar track (background) */
+        .cc-bar-track {
+            position: relative;
+            height: 22px;
             border-radius: 3px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
+            background: linear-gradient(180deg, rgba(120,90,50,.18) 0%, rgba(180,150,100,.12) 100%);
+            border: 1px solid rgba(100,70,30,.25);
             overflow: hidden;
-            position: relative;
+            box-shadow: inset 0 2px 4px rgba(80,50,20,.12);
         }
-        .stat-bar-fill {
+
+        /* bar fill */
+        .cc-bar-fill {
             height: 100%;
-            border-radius: 3px;
+            border-radius: 2px;
             position: relative;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 3px rgba(0,0,0,.15);
         }
-        .stat-bar-fill.bar-green {
-            background: linear-gradient(to bottom, #4fd470 0%, #2ebd4e 55%, #1f9a3c 100%);
-        }
-        .stat-bar-fill.bar-red {
-            background: linear-gradient(to bottom, #d06060 0%, #b04040 55%, #8c3232 100%);
-        }
-        .stat-bar-fill::after {
+        /* shine overlay on fill */
+        .cc-bar-fill::after {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 6px;
-            right: 6px;
-            height: 3px;
-            background: rgba(255,255,255,0.28);
+            inset: 0;
             border-radius: 2px;
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,.22) 0%,
+                rgba(255,255,255,.05) 40%,
+                transparent 60%,
+                rgba(0,0,0,.06) 100%
+            );
         }
-        .stat-value {
-            font-family: 'Cinzel', serif;
-            font-size: 0.72rem;
-            color: #2e1500;
-            width: 38px;
-            text-align: right;
-            flex-shrink: 0;
+
+        /* GREEN fill */
+        .cc-bar-green .cc-bar-fill {
+            background: linear-gradient(90deg, #2ebd4e, #3dd65a, #30c94e);
         }
-        .card-name-row {
+        .cc-bar-green .cc-bar-track {
+            box-shadow: inset 0 2px 4px rgba(20,80,30,.10);
+        }
+
+        /* RED fill */
+        .cc-bar-red .cc-bar-fill {
+            background: linear-gradient(90deg, #b04040, #c24848, #a83a3a);
+        }
+        .cc-bar-red .cc-bar-track {
+            box-shadow: inset 0 2px 4px rgba(80,20,20,.10);
+        }
+
+        /* tick marks inside track */
+        .cc-bar-ticks {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .cc-bar-ticks span {
+            flex: 1;
+            border-right: 1px solid rgba(80,50,20,.1);
+        }
+        .cc-bar-ticks span:last-child { border-right: none; }
+
+        /* bottom flourish */
+        .cc-flourish {
+            text-align: center;
+            margin-top: 22px;
+            color: #8a6d3b;
+            font-size: 14px;
+            letter-spacing: 6px;
+            opacity: .4;
+        }
+
+        /* ── name input ── */
+        .cc-name-row {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        .card-name-row label {
+        .cc-name-row label {
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            color: #2e1500;
+            font-size: 13px;
+            color: #3d2a14;
+            letter-spacing: 1px;
         }
-        .card-name-row input {
+        .cc-name-row input {
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border: 1px solid #8a6020;
+            font-size: 13px;
+            padding: 5px 12px;
+            border: 1px solid #b8975a;
             border-radius: 4px;
             background: #fdf6e0;
-            color: #2e1500;
-            width: 200px;
+            color: #2e1e0f;
+            width: 220px;
         }
-        .card-download-btn {
-            display: block;
-            margin: 8px auto 0;
-            padding: 6px 18px;
+
+        /* ── download button ── */
+        .cc-download-btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 28px;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            color: #2e1500;
-            background: linear-gradient(to bottom, #f0d980, #c8a840);
-            border: 1px solid #8a6020;
-            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #ecdab2;
+            background: linear-gradient(170deg, #3b2816, #2a1b0e 50%, #4a3220);
+            border: 2px solid rgba(255,200,100,.12);
+            border-radius: 6px;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 12px rgba(0,0,0,.4);
+            transition: background .2s, box-shadow .2s;
         }
-        .card-download-btn:hover {
-            background: linear-gradient(to bottom, #f5e494, #d4b44a);
+        .cc-download-btn:hover {
+            background: linear-gradient(170deg, #4a3220, #3b2816 50%, #5a422a);
+            box-shadow: 0 6px 18px rgba(0,0,0,.5);
         }
+
+        /* ── prompt section (now secondary) ── */
+        .cc-prompt-section {
+            margin-top: 24px;
+            text-align: left;
+        }
+        .cc-prompt-section h4 { margin: 0 0 6px; }
+        .cc-prompt-section p  { margin: 0 0 8px; text-align: left; }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../inter-font.css">
 </head>
 
 <body>
@@ -205,7 +377,7 @@
     <div id="finished">
         <h3>Your scores</h3>
         <p>Scores are 0-50.</p>
-        <table class="sd-table">
+        <table>
             <tr>
                 <td>Openness</td>
                 <td style="{{o-style}}">{{o-score}}</td>
@@ -230,11 +402,11 @@
 
         {{character-card}}
 
-        <h4>Or use this prompt with an image generator</h4>
-        <p>Use the following prompt to create a character card image based on your scores:</p>
-
-<p>
-<textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
+        <div class="cc-prompt-section">
+            <h4>Or use this prompt with an image generator</h4>
+            <p>Copy the following into ChatGPT, Midjourney, etc.:</p>
+            <p>
+                <textarea id="chatgpt-prompt" style="width:100%;" rows="10">Create a digital RPG-style character card on parchment with a dark
 wooden frame. At the top, display the character's name (e.g.,
 'YOUR NAME') in bold serif font. Below, show five OCEAN personality
 traits as horizontal stat bars, each labelled with its name and
@@ -252,7 +424,9 @@ Display the traits exactly as follows:
 Use bright green for GREEN bars and muted red for RED bars. Ensure
 all five bars are clearly visible, distinctly coloured, and
 proportionally scaled. Do not swap any colours.</textarea>
-</p>
+            </p>
+        </div>
+
         <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
     </div>
 
