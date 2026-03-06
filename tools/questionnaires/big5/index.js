@@ -159,20 +159,6 @@ function surveyComplete(survey)
 
     var html = finishedDiv.outerHTML;
 
-    // Score table values
-    html = html.replace("{{o-score}}", scores["O"]);
-    html = html.replace("{{c-score}}", scores["C"]);
-    html = html.replace("{{e-score}}", scores["E"]);
-    html = html.replace("{{a-score}}", scores["A"]);
-    html = html.replace("{{n-score}}", scores["N"]);
-
-    // Score table background colours
-    html = html.replace("{{o-style}}", "background-color:rgb(20 149 20 / "+scores["O"] *2+"%);");
-    html = html.replace("{{c-style}}", "background-color:rgb(20 149 20 / "+scores["C"] *2+"%);");
-    html = html.replace("{{e-style}}", "background-color:rgb(20 149 20 / "+scores["E"] *2+"%);");
-    html = html.replace("{{a-style}}", "background-color:rgb(20 149 20 / "+scores["A"] *2+"%);");
-    html = html.replace("{{n-style}}", "background-color:rgb(20 149 20 / "+scores["N"] *2+"%);");
-
     // Inject the character card
     html = html.replace("{{character-card}}", renderCharacterCard(scores));
 
