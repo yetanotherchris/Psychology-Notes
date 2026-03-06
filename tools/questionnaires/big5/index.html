@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Big 5 Questionnaire</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="../surveyjs/survey-core/survey.core.min.js"></script>
     <script src="../surveyjs/survey-core/survey.i18n.min.js"></script>
     <script src="../surveyjs/survey-core/themes/index.min.js"></script>
@@ -152,6 +153,22 @@
             width: 38px;
             text-align: right;
             flex-shrink: 0;
+        }
+        .card-download-btn {
+            display: block;
+            margin: 8px auto 0;
+            padding: 6px 18px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: #2e1500;
+            background: linear-gradient(to bottom, #f0d980, #c8a840);
+            border: 1px solid #8a6020;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        }
+        .card-download-btn:hover {
+            background: linear-gradient(to bottom, #f5e494, #d4b44a);
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -112,7 +112,18 @@ function renderCharacterCard(scores) {
                 ${barsHtml}
             </div>
         </div>
-    </div>`;
+    </div>
+    <button class="card-download-btn" onclick="downloadCardAsPng()">Download as PNG</button>`;
+}
+
+function downloadCardAsPng() {
+    const card = document.querySelector('.character-card');
+    html2canvas(card, { backgroundColor: null, scale: 2 }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'ocean-profile.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
 }
 
 function describeBar(score) {
