@@ -26,7 +26,7 @@ function getIntroPage(){
  */
 function renderStatBar(label, score) {
     const pct = Math.round((score / 50) * 100);
-    const colourClass = score > 25 ? "cc-bar-green" : "cc-bar-red";
+    const colourClass = score > 25 ? "cc-bar-green" : "cc-bar-low";
     // 10 tick marks
     const ticks = '<span></span>'.repeat(10);
 
