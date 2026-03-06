@@ -83,40 +83,6 @@
             overflow: hidden;
             font-family: 'IM Fell English', serif;
         }
-        /* parchment texture — CSS gradients only for html2canvas compatibility */
-        .cc-parchment::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            opacity: .06;
-            background:
-                repeating-linear-gradient(
-                    45deg,
-                    transparent 0px, transparent 2px,
-                    rgba(120,80,30,.3) 2px, rgba(120,80,30,.3) 3px,
-                    transparent 3px, transparent 8px
-                ),
-                repeating-linear-gradient(
-                    135deg,
-                    transparent 0px, transparent 3px,
-                    rgba(100,70,20,.2) 3px, rgba(100,70,20,.2) 4px,
-                    transparent 4px, transparent 11px
-                );
-        }
-        /* burnt / aged edges */
-        .cc-parchment::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            border-radius: 4px;
-            box-shadow:
-                inset 6px 6px 18px rgba(100,60,20,.18),
-                inset -6px -6px 18px rgba(100,60,20,.14),
-                inset 0 0 40px rgba(130,90,40,.08);
-        }
-
         .cc-content { position: relative; z-index: 1; }
 
         /* ornament divider */
