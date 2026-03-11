@@ -13,7 +13,7 @@ Alloy and Abramson (1979) found that depressed people sometimes produce more acc
 ## Actor-Observer Asymmetry
 We tend to explain other people's behaviour by pointing to their character ("she's careless"), while explaining our own behaviour by pointing to circumstances ("I was under pressure"). The direction flips depending on whose actions we're judging.
 
-*Jones, E.E., & Nisbett, R.E. (1971). No DOI — book/book chapter.*
+*Jones, E.E., & Nisbett, R.E. (1971). No DOI - book/book chapter.*
 
 
 ## Authority Bias
@@ -57,7 +57,7 @@ People appear more attractive when seen as part of a group than when viewed indi
 ## Cinderella Effect ⟨Psychology Effect⟩
 Stepchildren face statistically elevated risk of abuse and neglect compared to children living with both biological parents. The effect is interpreted through parental investment theory - genetic relatedness predicts caregiving investment across species, and humans are no exception.
 
-*Daly, M., & Wilson, M. (1998). No DOI — book/book chapter.*
+*Daly, M., & Wilson, M. (1998). No DOI - book/book chapter.*
 
 
 ## Confirmation Bias
@@ -83,6 +83,10 @@ We overestimate how many other people share our beliefs, values, and behaviours.
 
 *Ross, L., Greene, D., & House, P. (1977). [https://doi.org/10.1016/0022-1031(77)90049-X](https://doi.org/10.1016/0022-1031(77)90049-X)*
 
+## Fading Affect Bias
+The emotional charge attached to negative memories fades faster than the emotional charge attached to positive ones. Bad memories don't disappear - but the unpleasant feeling connected to them weakens more quickly over time than the good feeling connected to good memories.
+
+*Walker, W.R., Vogl, R.J., & Thompson, C.P. (1997). [https://doi.org/10.1080/741941423](https://doi.org/10.1080/741941423)*
 
 ## Fundamental Attribution Error
 When explaining others' behaviour, we overemphasise personal traits and underestimate situational factors. We assume people act as they do because of who they are, not because of the context they're in.
@@ -133,13 +137,13 @@ More broadly: we perceive and evaluate ourselves in ways that protect and enhanc
 ## Source Confusion *(also: Source Monitoring Error)*
 We misremember where a piece of information came from - confusing something we read with something we witnessed, or something we imagined with something that actually happened.
 
-*Schacter, D.L. (1996). No DOI — book/book chapter.*
+*Schacter, D.L. (1996). No DOI - book/book chapter.*
 
 
 ## Spacing Effect
 Information is retained better when study is spread across multiple sessions rather than concentrated in one. Distributed practice consistently outperforms massed practice.
 
-*Ebbinghaus, H. (1885). No DOI — book/book chapter.*
+*Ebbinghaus, H. (1885). No DOI - book/book chapter.*
 
 
 ## Suggestibility
@@ -169,7 +173,7 @@ An extension of the fundamental attribution error to entire groups. Negative beh
 ## Von Restorff Effect *(also: Isolation Effect)*
 An item that stands out from its surroundings - by colour, size, position, or novelty - is remembered significantly better than comparable items that blend in.
 
-*Von Restorff, H. (1933). No DOI — predates DOIs.*
+*Von Restorff, H. (1933). No DOI - predates DOIs.*
 
 
 ## Women are Wonderful Effect ⟨Psychology Effect⟩
