@@ -1,5 +1,5 @@
 # Authors
-This is a bit of random list right now, and doesn't include authors like Freud etc. yet.
+This is a very random list right now - predating the degree and based on authors mentioned in podcasts and in Psychology & Psychiatry Youtube videos.
 
 #### Lorna Smith Benjamin
 Lorna Smith Benjamin is an American psychologist and psychoanalyst renowned for her contributions to the field of interpersonal psychotherapy, particularly in understanding personality disorders. She is best known for developing the Structural Analysis of Social Behavior (SASB) model, which provides a framework for analyzing interpersonal relationships and understanding personality disorders through the lens of these relationships.
