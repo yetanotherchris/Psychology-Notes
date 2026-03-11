@@ -86,7 +86,7 @@ We overestimate how many other people share our beliefs, values, and behaviours.
 ## Fading Affect Bias
 The emotional charge attached to negative memories fades faster than the emotional charge attached to positive ones. Bad memories don't disappear - but the unpleasant feeling connected to them weakens more quickly over time than the good feeling connected to good memories.
 
-*Walker, W.R., Vogl, R.J., & Thompson, C.P. (1997). [https://doi.org/10.1080/741941423](https://doi.org/10.1080/741941423)*
+*Walker, W.R., Vogl, R.J., & Thompson, C.P. (1997). [https://doi.org/10.1002/(SICI)...](https://doi.org/10.1002/(SICI)1099-0720(199710)11:5<399::AID-ACP462>3.0.CO;2-E)*
 
 ## Fundamental Attribution Error
 When explaining others' behaviour, we overemphasise personal traits and underestimate situational factors. We assume people act as they do because of who they are, not because of the context they're in.
