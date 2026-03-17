@@ -149,17 +149,17 @@ function surveyComplete(survey)
     promptText = promptText.replace("{{n-score}}", describeBar(scores["N"]));
     chatGptTextarea.textContent = promptText;
 
-    // Build the finished panel HTML
-    var finishedDiv = document.getElementById("finished");
-    finishedDiv.style.display = "block";
-    document.getElementById("finished").remove();
+    // Inject the character card directly into the DOM placeholder
+    document.getElementById("cc-card-placeholder").innerHTML = renderCharacterCard(scores);
 
-    var html = finishedDiv.outerHTML;
-
-    // Inject the character card
-    html = html.replace("{{character-card}}", renderCharacterCard(scores));
-
-    survey.completedHtml = html;
+    // Use an empty completedHtml to suppress SurveyJS's default completion panel,
+    // then swap visibility so #finished (with its working event handlers) is shown.
+    survey.completedHtml = "";
+    setTimeout(function() {
+        document.getElementById("surveyElement").style.display = "none";
+        document.getElementById("finished").style.display = "block";
+        window.scrollTo(0, 0);
+    }, 50);
 }
 
 function describeBar(score) {
