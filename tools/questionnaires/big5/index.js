@@ -163,6 +163,14 @@ function surveyComplete(survey)
     // its completion page, so we can swap visibility immediately with no timeout.
     document.getElementById("surveyElement").style.display = "none";
     document.getElementById("finished").style.display = "block";
+
+    // SurveyJS may have set overflow:hidden / height:100% on body/html for its
+    // full-page layout. Reset those so the results panel is scrollable on iOS.
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.height = '';
+
     window.scrollTo(0, 0);
 }
 

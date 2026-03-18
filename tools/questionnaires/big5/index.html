@@ -52,6 +52,7 @@
             padding: 12px;
             border-radius: 8px;
             margin: 16px auto;
+            width: -webkit-fit-content;
             width: fit-content;
             max-width: 100%;
             box-sizing: border-box;
@@ -80,7 +81,7 @@
         .cc-parchment {
             position: relative;
             width: 340px;
-            max-width: calc(100vw - 56px);
+            max-width: 100%;
             padding: 24px 24px 20px;
             border-radius: 4px;
             background:
@@ -231,7 +232,7 @@
             background: #fdf6e0;
             color: #2e1e0f;
             width: 240px;
-            max-width: calc(100vw - 48px);
+            max-width: 100%;
             box-sizing: border-box;
         }
 
@@ -239,7 +240,7 @@
         .cc-download-btn {
             display: block;
             margin: 16px auto 0;
-            max-width: calc(100vw - 48px);
+            max-width: 100%;
             padding: 10px 28px;
             font-family: 'Cinzel', serif;
             font-weight: 700;
@@ -312,7 +313,7 @@ proportionally scaled. Do not swap any colours.</textarea>
             </p>
         </div>
 
-        <button id="reset-survey" onclick="resetSurvey()">Reset survey</button>
+        <button id="reset-survey" onclick="resetSurvey(STORAGE_ITEM_KEY)">Reset survey</button>
     </div>
 
     <script src="../common.js"></script>
