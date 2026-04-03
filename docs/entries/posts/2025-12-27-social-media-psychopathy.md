@@ -33,9 +33,15 @@ and
 
 The study was 322 people, with a survey so self-report.
 
+The Online Disinhibition Effect was something that was coined [in 2004](https://pubmed.ncbi.nlm.nih.gov/15257832/):
+
+> While online, some people self-disclose or act out more frequently or intensely than they would in person  
+
+And more recently [Measure of Online Disinhibition (MOD)](https://www.sciencedirect.com/science/article/abs/pii/S0747563220302867) has attempted to measure it.
+
 A few other recent studies:
 
 - [Dark personalities in the digital arena: how psychopathy and narcissism shape online political participation](https://www.nature.com/articles/s41599-025-05195-y)
 - [How accurate are popular personality test frameworks at predicting life outcomes](https://www.clearerthinking.org/post/how-accurate-are-popular-personality-test-frameworks-at-predicting-life-outcomes-a-detailed-investi) (R=0.30 for OCEAN, which is modest so has a practical application)
-- [Signaling virtuous victimhood as indicators of Dark Triad personalities](https://pubmed.ncbi.nlm.nih.gov/32614222/)
-- [Preempting the Development of Antisocial Behavior and Psychopathic Traits](https://jaapl.org/content/early/2021/01/06/jaapl.200060-20)
+- [Signalling virtuous victimhood as indicators of Dark Triad personalities](https://pubmed.ncbi.nlm.nih.gov/32614222/)
+- [Pre-empting the Development of Antisocial Behaviour and Psychopathic Traits](https://jaapl.org/content/early/2021/01/06/jaapl.200060-20)
