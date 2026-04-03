@@ -100,10 +100,17 @@ function downloadCard() {
         useCORS: true,
         backgroundColor: null
     }).then(function(canvas) {
-        var link = document.createElement("a");
-        link.download = "ocean-character-card.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
+        var dataUrl = canvas.toDataURL("image/png");
+        // iOS Safari ignores link.download; open the image in a new tab so
+        // the user can long-press → Save Image.
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            window.open(dataUrl, "_blank");
+        } else {
+            var link = document.createElement("a");
+            link.download = "ocean-character-card.png";
+            link.href = dataUrl;
+            link.click();
+        }
     });
 }
 
@@ -141,25 +148,30 @@ function surveyComplete(survey)
 
     // Populate the image-generator prompt textarea
     var chatGptTextarea = document.getElementById("chatgpt-prompt");
-    var promptText = chatGptTextarea.textContent;
+    var promptText = chatGptTextarea.value;
     promptText = promptText.replace("{{o-score}}", describeBar(scores["O"]));
     promptText = promptText.replace("{{c-score}}", describeBar(scores["C"]));
     promptText = promptText.replace("{{e-score}}", describeBar(scores["E"]));
     promptText = promptText.replace("{{a-score}}", describeBar(scores["A"]));
     promptText = promptText.replace("{{n-score}}", describeBar(scores["N"]));
-    chatGptTextarea.textContent = promptText;
+    chatGptTextarea.value = promptText;
 
-    // Build the finished panel HTML
-    var finishedDiv = document.getElementById("finished");
-    finishedDiv.style.display = "block";
-    document.getElementById("finished").remove();
+    // Inject the character card directly into the DOM placeholder
+    document.getElementById("cc-card-placeholder").innerHTML = renderCharacterCard(scores);
 
-    var html = finishedDiv.outerHTML;
+    // survey.showCompletedPage = false (set at init) stops SurveyJS navigating to
+    // its completion page, so we can swap visibility immediately with no timeout.
+    document.getElementById("surveyElement").style.display = "none";
+    document.getElementById("finished").style.display = "block";
 
-    // Inject the character card
-    html = html.replace("{{character-card}}", renderCharacterCard(scores));
+    // SurveyJS may have set overflow:hidden / height:100% on body/html for its
+    // full-page layout. Reset those so the results panel is scrollable on iOS.
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.height = '';
 
-    survey.completedHtml = html;
+    window.scrollTo(0, 0);
 }
 
 function describeBar(score) {
@@ -187,6 +199,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     survey.progressBarShowPageNumbers =  true;
     survey.progressBarShowPageTitles =  true;
     survey.focusFirstQuestionAutomatic = true;
+    survey.showCompletedPage = false;
 
     survey.onComplete.add(surveyComplete);
     survey.onValueChanged.add(survey => saveSurveyData(survey, STORAGE_ITEM_KEY));
