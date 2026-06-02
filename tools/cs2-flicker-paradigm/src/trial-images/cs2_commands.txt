@@ -1,0 +1,8 @@
+sv_cheats 1;mp_autoteambalance 0;bot_stop 1;bot_quota 1;bot_mimic 0;
+
+bind f8 bot_place
+bind f7 bot_add ct
+bind f6 bot_kick
+
+bot_crouch 1;
+ent_fire chicken kill

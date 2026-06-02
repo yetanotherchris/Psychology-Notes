@@ -45,6 +45,7 @@ nav:
     - Speedreader: /tools/speedreader/
     - Word Counter: /tools/wordcounter/
     - Lexical Decision Task: /tools/lexical-decision-task/
+    - Flicker Test using CS2: /tools/cs2-flicker-paradigm/
   - authors.md
   - cognitive-biases.md
   - Emotions simplified: emotions-duncan-trussell.md

@@ -42,3 +42,7 @@ fly.toml
 
 # GitHub
 .github/
+
+# Node
+node_modules
+**/node_modules
