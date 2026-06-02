@@ -1,71 +1,73 @@
 # Logical fallacies
-_(Created using ChatGPT 4o)_
 
 #### Ad hominem
-This fallacy occurs when someone attacks the person making an argument rather than the argument itself. The term originates from Latin, meaning "to the person," and was systematically described by Aristotle, a foundational figure in philosophy and logic.
+Attacking the person making an argument instead of the argument itself. *"You'd say that — you've never held down a job."*
 
 #### Ambiguity
-Exploiting ambiguous language to mislead or misrepresent the truth. This fallacy was discussed by Aristotle in his *Organon*. Aristotle is known for his contributions to philosophy and the study of logic.
+Using a word or phrase with more than one meaning to mislead, often by shifting the meaning partway through. *"I have a right to free speech, so this platform is obliged to publish me"* — trades on two senses of "right."
 
 #### Anecdotal
-Relying on personal experience or an isolated example instead of sound evidence. While no single originator is tied to it, it has been critiqued in scientific skepticism by figures like Carl Sagan, a renowned astrophysicist and science communicator.
+Using a personal story or single case in place of representative evidence. *"My grandfather smoked all his life and lived to 95, so it can't be that harmful."*
 
 #### Appeal to authority
-Asserting that a claim is true simply because an authority figure endorses it. This concept was also analyzed by Aristotle, who explored appeals and rhetoric.
+Claiming something is true because an authority endorses it. Only fallacious when the authority is irrelevant to the claim, or the claim is genuinely contested among the relevant experts — citing real experts on their own subject is not a fallacy. *"A Nobel laureate in physics backs this diet, so it works."*
 
 #### Appeal to emotion
-Manipulating emotions to win an argument rather than relying on logical reasoning. Aristotle touched on the role of emotion in persuasion in his work *Rhetoric*.
+Substituting an emotional reaction for evidence. *"Think of the children"* deployed to end a policy debate rather than inform it.
 
 #### Appeal to nature
-Arguing something is good or right because it is "natural." Jean-Jacques Rousseau, a philosopher known for his views on human nature, is often associated with early critiques of this reasoning.
+Arguing something is good because it is "natural," or bad because it is "unnatural." *"It's a natural remedy, so it's safer than the prescription."*
 
 #### Bandwagon
-Suggesting something is true or right because it is popular. This fallacy relates to social conformity, a concept studied in depth by social psychologists like Solomon Asch.
+Treating popularity as proof. *"Millions of people can't be wrong."*
 
 #### Begging the question
-A circular argument where the conclusion is included in the premise. Aristotle first categorized this in his *Organon*.
+Assuming the conclusion inside the premise, so the argument establishes nothing. *"This text is true because it is the word of God, which we know because the text says so."* (The phrase means this — not "raising the question.")
 
 #### Black or white
-Presenting only two alternatives when more exist. This false dichotomy was critiqued by John Stuart Mill, a philosopher known for his work on logic and reasoning.
+Presenting two options as the only possibilities when others exist. *"You're either with us or against us."*
 
 #### Burden of proof
-Placing the onus of disproving a claim on others rather than providing evidence for it. This principle was discussed in legal contexts by Cicero, a Roman lawyer and philosopher.
+Asserting a claim and demanding others disprove it, rather than supporting it yourself. *"Prove there isn't a teapot orbiting the sun."*
 
 #### Composition/division
-Assuming what is true of the part is true of the whole, or vice versa. This fallacy was explored by Aristotle in his logical works.
+Assuming what is true of the parts is true of the whole (composition), or what is true of the whole is true of each part (division). *"Every player is excellent, so the team must be."*
 
 #### False cause
-Presuming a relationship between two events implies causation. David Hume, a philosopher known for his work on causation, critiqued this reasoning in *A Treatise of Human Nature*.
+Treating correlation or mere sequence as proof of causation. *"I wore my lucky socks and we won, so the socks did it."*
 
 #### Gambler's fallacy
-Believing that past events affect the likelihood of independent future events. Studied by psychologists and mathematicians like Amos Tversky and Daniel Kahneman, pioneers in cognitive bias research.
+Believing independent events influence one another, so a run of one outcome makes the other "due." *"Red has come up five times — black is bound to be next."*
 
 #### Loaded question
-Asking a question with a presupposition built in, making it unanswerable without appearing guilty. This technique was critiqued by early philosophers such as Socrates.
+A question with a contested assumption built in, so any direct answer concedes it. *"Have you stopped lying to your colleagues?"*
 
 #### Middle ground
-Assuming the middle position between two extremes is always correct. This reasoning has been critiqued in ethical and political discussions by figures like Immanuel Kant, a philosopher known for his work on morality.
+Assuming the compromise between two positions must be the truth. *"One side says it's safe, the other says it's lethal, so the truth is in between."*
 
 #### No true Scotsman
-Arbitrarily redefining a group to exclude counterexamples to a claim. The term was coined by philosopher Antony Flew, known for his work on logic and philosophy of religion.
+Redefining a category to exclude any counterexample. *"No real supporter would leave early." "I'm a supporter and I left." "No true supporter would."*
 
 #### Personal incredulity
-Dismissing something as untrue because it is difficult to understand. Richard Dawkins, an evolutionary biologist and science advocate, often critiques this in discussions of science denial.
+Treating your own inability to understand or imagine something as evidence it's false. *"I can't see how the eye could evolve, so it must have been designed."*
 
 #### Slippery slope
-Asserting that one action will inevitably lead to a chain of events without evidence for such inevitability. This reasoning was criticized in modern logic by figures like Bertrand Russell.
+Claiming one step leads inevitably to an extreme outcome, without showing the links between them. *"If we allow this exception, soon anything goes."*
 
 #### Special pleading
-Creating exceptions when a claim is shown to be false. Often discussed in the context of cognitive biases, especially by modern philosophers and psychologists like Daniel Kahneman.
+Inventing an exception to a rule the moment it's turned on your own claim. *"The psychic's powers just don't work when sceptics are present."*
 
 #### Strawman
-Misrepresenting someone's argument to make it easier to attack. This concept has roots in Aristotle's work on rhetoric and dialectic.
+Replacing someone's argument with a weaker, distorted version, then attacking that. *"You want better public transport, so you want to ban all cars."*
 
 #### Texas sharpshooter
-Cherry-picking data to support a conclusion while ignoring contradictory evidence. The name was popularized in modern discussions on statistical fallacies.
+Selecting data after the fact to fit a pattern while ignoring the rest. Named for firing at a barn, then painting the target around the tightest cluster of holes.
 
 #### The fallacy fallacy
-Assuming that just because an argument contains a fallacy, its conclusion must be false. This error is discussed in contemporary logic and critical thinking texts.
+Concluding a claim is false simply because it was argued for badly. A flawed argument for a true conclusion does not make the conclusion false.
 
 #### Tu quoque
-Responding to criticism by accusing the accuser of similar faults. This form of ad hominem argument was analyzed in ancient Greek rhetoric.
+Deflecting criticism by pointing to the critic's own inconsistency instead of addressing the point. *"You're telling me to quit smoking when you smoke yourself?"*
+
+
+*(Created using Claude v4.8 2026)*

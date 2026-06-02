@@ -36,29 +36,18 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Entries: entries/index.md
   - Authors and concepts: authors-and-concepts/index.md
+  - cognitive-biases.md
+  - experimentation-and-statistics.md
+  - logical-fallacies.md
   - llm-consensus-answers.md
+  - psychotherapy-modalities.md
+  - Research notes: research-notes/index.md
+  - stress.md
   - Tools:
     - Academic Search: /tools/academic-search/
+    - Flicker Test using CS2: /tools/cs2-flicker-paradigm/
+    - Lexical Decision Task: /tools/lexical-decision-task/
     - Questionnaires: questionnaires-list.md
     - Speedreader: /tools/speedreader/
     - Word Counter: /tools/wordcounter/
-    - Lexical Decision Task: /tools/lexical-decision-task/
-    - Flicker Test using CS2: /tools/cs2-flicker-paradigm/
-  - authors.md
-  - cognitive-biases.md
-  - Emotions simplified: emotions-duncan-trussell.md
-  - experimentation-and-statistics.md
-  - logical-fallacies.md
-  - stress.md
-  - Youtube Cluster B:
-    - Overview: Cluster-B/README.md
-    - Cluster-B/narcissism-authors.md
-    - Cluster-B/chatgpt-on-npd.md
-    - Cluster-B/the-middle-years-book.md
-    - Cluster-B/vaknin-narcissism-notes.md
-    - Cluster-B/vaknin-references.md
-  - Psychotherapy-Based Modalities: psychotherapy_modalities_rooted_list.md
-  - youtube-videos.md
-  - emotions-reddit.md

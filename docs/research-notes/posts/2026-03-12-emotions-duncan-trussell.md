@@ -1,6 +1,14 @@
+---
+date: 2026-03-12
+categories:
+  - emotions
+---
+
 # On Feeling Down - Duncan Trussell
 
 Taken from his [Nightstream 13](https://www.youtube.com/live/xLbUBWMYu0E?si=TREJOZ8IQKyuUP8R&t=2264) these are some of the best descriptions I've heard or seen of emotions and feelings. 
+
+<!-- more -->
 
 ## Knowing you're feeling it
 

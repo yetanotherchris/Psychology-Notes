@@ -182,5 +182,4 @@ Both men and women tend to evaluate women more positively than men on measures o
 *Eagly, A.H., & Mladinic, A. (1994). [https://doi.org/10.1080/14792779543000002](https://doi.org/10.1080/14792779543000002)*
 
 
-
-*Written with Claude 4.6 Opus*
+*Created using Claude 4.6 Opus 2025*
