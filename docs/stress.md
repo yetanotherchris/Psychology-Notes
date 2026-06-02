@@ -1,15 +1,15 @@
 # Stress
-This is the updated (2023) version of the Holmes–Rahe Social Readjustment Rating Scale — a list of stressful life events, each scored by how much readjustment it tends to take. The 1967 original was refreshed by Wallace, Cooper, Sel & Russo: the same 43 events (12 reworded) plus one new one, *"Single person, living alone"*. Marriage is the fixed reference point at 50.
+This is the updated (2023) version of the Holmes–Rahe Social Readjustment Rating Scale: a list of stressful life events, each scored by how much readjustment it tends to take. The 1967 original was refreshed by Wallace, Cooper, Sel & Russo: the same 43 events (12 reworded) plus one new one, *"Single person, living alone"*. Marriage is the fixed reference point at 50.
 
 ## How to read your score
 
 Add up the points (Life Change Units) for everything you've been through in roughly the last year:
 
-- **Under 150** — low; you'd likely stay healthy over the next year.
-- **150–299** — moderate; a higher chance (~50%) of a stress-related health problem soon.
-- **300+** — high; people who got ill usually scored around here (~80% chance).
+- **Under 150**: low; you'd likely stay healthy over the next year.
+- **150–299**: moderate; a higher chance (~50%) of a stress-related health problem soon.
+- **300+**: high; people who got ill usually scored around here (~80% chance).
 
-> **Note:** the updated scores run about 28% higher than the 1967 ones, so totals are bigger now — treat the 150 / 300 cut-offs as a rough guide, not a hard line.
+> **Note:** the updated scores run about 28% higher than the 1967 ones, so totals are bigger now, so treat the 150 / 300 cut-offs as a rough guide, not a hard line.
 
 ## Updated Social Readjustment Rating Scale (2023)
 
