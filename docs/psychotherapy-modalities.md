@@ -1,4 +1,4 @@
-# Comprehensive List of Psychology and Psychotherapy-Based Modalities
+# Psychotherapy modalities
 
 Update: Claude v4.8 (2026) version of an attempt to list 500 Psychotherapy modalities.
 
