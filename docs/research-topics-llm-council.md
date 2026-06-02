@@ -1,4 +1,4 @@
-# LLM Consensus Answers
+# Researching topics using an LLM Council
 
 These are answers from multiple LLMs on various Psychology topics. Each LLM provides its own answer and then a consensus is reached by a judging LLM (Claude). The report is produced using a tool called [consensus](https://github.com/yetanotherchris/consensus).
 
