@@ -37,29 +37,12 @@ const easyCs2B = import.meta.glob('../trial-images/easy/trial*_b.png', {
   query: '?url',
 }) as ImageMap;
 
-const nonCs2A = import.meta.glob('../trial-images/callibration/trial*_a.png', {
-  eager: true,
-  import: 'default',
-  query: '?url',
-}) as ImageMap;
-const nonCs2B = import.meta.glob('../trial-images/callibration/trial*_b.png', {
-  eager: true,
-  import: 'default',
-  query: '?url',
-}) as ImageMap;
-
 const calibrationA = import.meta.glob('../trial-images/callibration/trial*_a.png', {
   eager: true,
   import: 'default',
   query: '?url',
 }) as ImageMap;
 const calibrationB = import.meta.glob('../trial-images/callibration/trial*_b.png', {
-  eager: true,
-  import: 'default',
-  query: '?url',
-}) as ImageMap;
-
-const catchA = import.meta.glob('../trial-images/callibration/trial*_a.png', {
   eager: true,
   import: 'default',
   query: '?url',
@@ -102,18 +85,6 @@ const buildPairs = (
     }));
 };
 
-const buildCatch = (aMap: ImageMap): Trial[] =>
-  Object.entries(aMap)
-    .map(([path, url]) => ({ n: numberFromPath(path), url }))
-    .sort((x, y) => x.n - y.n)
-    .map(({ n, url }) => ({
-      id: `catch-${n}`,
-      name: `Catch trial ${n}`,
-      category: 'catch' as const,
-      expectedChange: false,
-      imageA: url,
-      imageB: url,
-    }));
 
 export const CALIBRATION_TRIALS: Trial[] = buildPairs(
   calibrationA,
@@ -124,14 +95,10 @@ export const CALIBRATION_TRIALS: Trial[] = buildPairs(
 
 export const EASY_TRIALS: Trial[] = [
   ...buildPairs(easyCs2A, easyCs2B, 'cs2-presence', 'CS2'),
-  ...buildPairs(nonCs2A, nonCs2B, 'non-cs2', 'Non-CS2'),
-  ...buildCatch(catchA),
 ];
 
 export const HARD_TRIALS: Trial[] = [
   ...buildPairs(cs2A, cs2B, 'cs2-presence', 'CS2'),
-  ...buildPairs(nonCs2A, nonCs2B, 'non-cs2', 'Non-CS2'),
-  ...buildCatch(catchA),
 ];
 
 export const TRIALS = EASY_TRIALS;
