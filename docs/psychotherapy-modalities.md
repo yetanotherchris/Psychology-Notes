@@ -1,6 +1,6 @@
 # Psychotherapy modalities
 
-Update: Claude v4.8 (2026) version of an attempt to list 500 Psychotherapy modalities.
+Update: Claude v4.8 (2026) version of an attempt to list 500 psychotherapy modalities - it managed to list 229.
 
 ## 1. Psychodynamic Therapies
 
