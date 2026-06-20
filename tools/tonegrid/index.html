@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tone Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-2:#0e131c;
+    --line:rgba(120,140,170,0.10);
+    --cell:rgba(150,170,200,0.05);
+    --cell-edge:rgba(150,170,200,0.12);
+    --ink:#f4f8ff;
+    --ink-dim:#b2c0d8;
+    --accent:#5ad1cd;
+  }
+  *{box-sizing:border-box;}
+  html{height:100%;}
+  body{
+    margin:0;
+    background:radial-gradient(140% 90% at 50% -10%, var(--bg-2), var(--bg) 60%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button,select,input{touch-action:manipulation;}
+  [hidden]{display:none !important;}  /* beat the display:flex on .fx / .share */
+  .stage{
+    width:min(92vw,560px);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .title h1{
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-0.02em;
+  }
+  .title p{
+    margin:2px 0 0;
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+  }
+  .voice{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    align-items:flex-end;
+  }
+  .voice label{
+    font-family:"JetBrains Mono",monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+  }
+  select{
+    appearance:none;
+    background:var(--bg-2);
+    color:var(--ink);
+    border:1px solid var(--cell-edge);
+    border-radius:8px;
+    padding:7px 30px 7px 12px;
+    font-family:"JetBrains Mono",monospace;
+    font-size:13px;
+    cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'><path d='M1 1l4 4 4-4' stroke='%237d8aa0' stroke-width='1.5'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 11px center;
+  }
+  select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .grid-wrap{position:relative;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(16,1fr);
+    grid-template-rows:repeat(16,1fr);
+    gap:3px;
+    aspect-ratio:1/1;
+    padding:10px;
+    border-radius:14px;
+    background:rgba(0,0,0,0.25);
+    border:1px solid var(--line);
+    touch-action:none;      /* let us drag-paint without the page scrolling */
+    user-select:none;
+  }
+  .cell{
+    border:1px solid var(--cell-edge);
+    background:var(--cell);
+    border-radius:4px;
+    padding:0;
+    cursor:pointer;
+    transition:background .12s ease, box-shadow .12s ease, transform .08s ease;
+  }
+  .cell:hover{background:rgba(150,170,200,0.12);}
+  .cell:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+  .cell.on{
+    background:hsl(var(--hue) 80% 58%);
+    border-color:hsl(var(--hue) 80% 70%);
+    box-shadow:0 0 10px 1px hsl(var(--hue) 85% 55% / .55);
+  }
+  /* the playhead column */
+  .cell.beam{background:rgba(150,170,200,0.14);}
+  .cell.beam.on{
+    transform:scale(1.12);
+    box-shadow:0 0 18px 3px hsl(var(--hue) 90% 60% / .9);
+    background:hsl(var(--hue) 90% 66%);
+  }
+
+  .hint{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    color:var(--ink-dim);
+    transition:opacity .3s ease;
+  }
+  .hint.gone{opacity:0;}
+
+  .transport{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .play{
+    width:46px;height:46px;
+    flex:0 0 auto;
+    border-radius:50%;
+    border:1px solid var(--accent);
+    background:rgba(90,209,205,0.10);
+    color:var(--accent);
+    cursor:pointer;
+    display:grid;place-items:center;
+    transition:background .15s ease;
+  }
+  .play:hover{background:rgba(90,209,205,0.2);}
+  .play:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .play svg{display:block;}
+
+  .dials{flex:1;display:flex;flex-direction:column;gap:12px;}
+  .tempo{flex:1;display:flex;align-items:center;gap:12px;}
+  .tempo input[type=range],
+  .fx-ctrl input[type=range]{
+    -webkit-appearance:none;appearance:none;
+    flex:1;height:3px;border-radius:3px;
+    background:var(--cell-edge);
+    cursor:pointer;
+  }
+  .tempo input[type=range]::-webkit-slider-thumb,
+  .fx-ctrl input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:15px;height:15px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 8px hsl(178 60% 50% / .6);
+  }
+  .tempo input[type=range]::-moz-range-thumb,
+  .fx-ctrl input[type=range]::-moz-range-thumb{
+    width:15px;height:15px;border:none;border-radius:50%;background:var(--accent);
+  }
+  .tempo input[type=range]:focus-visible,
+  .fx-ctrl input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6px;}
+
+  .fx{display:flex;gap:24px;flex-wrap:wrap;}
+  .fx-ctrl{flex:1;min-width:180px;display:flex;align-items:center;gap:12px;}
+  .fx-ctrl input[type=range]{min-width:64px;}
+  .fx-ctrl label{
+    font-family:"JetBrains Mono",monospace;
+    font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--ink-dim);width:48px;flex:0 0 auto;
+  }
+  .fx-val{
+    font-family:"JetBrains Mono",monospace;font-size:12px;
+    color:var(--ink-dim);width:24px;text-align:right;flex:0 0 auto;
+  }
+  .bpm{
+    font-family:"JetBrains Mono",monospace;
+    font-size:13px;
+    color:var(--ink-dim);
+    white-space:nowrap;
+    min-width:62px;
+  }
+  .bpm b{color:var(--ink);font-weight:500;}
+  .btn{
+    background:var(--bg-2);
+    border:1px solid var(--cell-edge);
+    border-radius:8px;
+    cursor:pointer;
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-dim);
+    padding:9px 16px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .btn:hover{color:var(--ink);border-color:var(--ink-dim);}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .actions{display:flex;gap:12px;justify-content:flex-end;}
+
+  .more{
+    align-self:flex-start;
+    background:none;border:none;cursor:pointer;
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-dim);
+    padding:2px 0;margin-top:-6px;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .more:hover{color:var(--ink);}
+  .more:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+  .more .caret{font-size:9px;transition:transform .2s ease;}
+  .more[aria-expanded="true"] .caret{transform:rotate(180deg);}
+
+  .chords{display:flex;flex-direction:column;gap:12px;}
+  .chord-group{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .chord-label{
+    font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);
+    width:40px;flex:0 0 auto;
+  }
+  .chip{
+    background:var(--bg-2);border:1px solid var(--cell-edge);border-radius:8px;cursor:pointer;
+    font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;color:var(--ink);
+    padding:7px 13px;transition:border-color .15s ease, background .15s ease;
+  }
+  .chip:hover{border-color:var(--accent);background:rgba(90,209,205,0.08);}
+  .chip:active{background:rgba(90,209,205,0.18);}
+  .chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  @media (max-width:480px){
+    body{padding:14px;}
+    .stage{gap:16px;}
+    .title h1{font-size:24px;}
+    .fx{gap:14px;}
+    .fx-ctrl{min-width:100%;}
+  }
+
+  .share{display:flex;align-items:center;gap:12px;}
+  .share-url{
+    flex:1;min-width:0;
+    background:var(--bg-2);
+    border:1px solid var(--cell-edge);
+    border-radius:8px;
+    color:var(--ink);
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    padding:9px 12px;
+  }
+  .share-url:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+  .share-msg{
+    font-family:"JetBrains Mono",monospace;font-size:10px;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);
+    white-space:nowrap;flex:0 0 auto;
+  }
+
+  /* clearer, bolder labels */
+  .title p, .voice label, select, .fx-ctrl label, .fx-val, .bpm,
+  .btn, .more, .share-url, .share-msg{ font-weight:600; }
+  .voice label, .fx-ctrl label{ font-size:11px; }
+  .bpm b{ font-weight:700; }
+
+  @media (prefers-reduced-motion:reduce){
+    .cell,.cell.beam.on{transition:none;transform:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <header>
+      <div class="title">
+        <h1>Tone Grid</h1>
+        <p>pentatonic step sequencer</p>
+      </div>
+      <div class="voice">
+        <label for="voice">voice</label>
+        <select id="voice">
+          <option value="am">AM hollow</option>
+          <option value="bell" selected>Bell</option>
+          <option value="drum">Drum bass</option>
+          <option value="duo">Duo (fat)</option>
+          <option value="fm">FM electric</option>
+          <option value="glass">Glass FM</option>
+          <option value="mono">Mono lead</option>
+          <option value="pad">Pad</option>
+          <option value="pluck">Pluck</option>
+          <option value="pulse">Pulse</option>
+          <option value="pwm">PWM</option>
+          <option value="square">Square lead</option>
+          <option value="supersaw">Supersaw</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="grid-wrap">
+      <div class="grid" id="grid"></div>
+      <div class="hint" id="hint">click cells &middot; press play</div>
+    </div>
+
+    <div class="fx">
+      <div class="fx-ctrl">
+        <label for="reverb">reverb</label>
+        <input type="range" id="reverb" min="0" max="100" value="35" aria-label="Reverb mix">
+        <span class="fx-val" id="reverbVal">35</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="delay">delay</label>
+        <input type="range" id="delay" min="0" max="100" value="0" aria-label="Delay mix">
+        <span class="fx-val" id="delayVal">0</span>
+      </div>
+    </div>
+
+    <button class="more" id="more" aria-expanded="false" aria-controls="moreFx">more effects <span class="caret" aria-hidden="true">&#9662;</span></button>
+
+    <div class="fx fx-more" id="moreFx" hidden>
+      <div class="fx-ctrl">
+        <label for="chorus">chorus</label>
+        <input type="range" id="chorus" min="0" max="100" value="0" aria-label="Chorus mix">
+        <span class="fx-val" id="chorusVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="autofilter">filter</label>
+        <input type="range" id="autofilter" min="0" max="100" value="0" aria-label="Auto-filter mix">
+        <span class="fx-val" id="autofilterVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="dist">drive</label>
+        <input type="range" id="dist" min="0" max="100" value="0" aria-label="Distortion mix">
+        <span class="fx-val" id="distVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="crusher">crush</label>
+        <input type="range" id="crusher" min="0" max="100" value="0" aria-label="Bitcrusher mix">
+        <span class="fx-val" id="crusherVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="ping">ping</label>
+        <input type="range" id="ping" min="0" max="100" value="0" aria-label="Ping-pong delay mix">
+        <span class="fx-val" id="pingVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="phaser">phase</label>
+        <input type="range" id="phaser" min="0" max="100" value="0" aria-label="Phaser mix">
+        <span class="fx-val" id="phaserVal">0</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="cutoff">cutoff</label>
+        <input type="range" id="cutoff" min="0" max="100" value="100" aria-label="Filter cutoff">
+        <span class="fx-val" id="cutoffVal">100</span>
+      </div>
+      <div class="fx-ctrl">
+        <label for="reso">reso</label>
+        <input type="range" id="reso" min="0" max="100" value="0" aria-label="Filter resonance">
+        <span class="fx-val" id="resoVal">0</span>
+      </div>
+    </div>
+
+    <button class="more" id="chordsToggle" aria-expanded="false" aria-controls="chordPanel">chords <span class="caret" aria-hidden="true">&#9662;</span></button>
+
+    <div class="chords" id="chordPanel" hidden>
+      <div class="chord-group">
+        <span class="chord-label">maj7</span>
+        <button class="chip" data-chord="Cmaj7">Cmaj7</button>
+      </div>
+      <div class="chord-group">
+        <span class="chord-label">min7</span>
+        <button class="chip" data-chord="Am7">Am7</button>
+        <button class="chip" data-chord="Dm7">Dm7</button>
+        <button class="chip" data-chord="Em7">Em7</button>
+      </div>
+    </div>
+
+    <div class="transport">
+      <button class="play" id="play" aria-label="Play">
+        <svg id="playIcon" width="16" height="18" viewBox="0 0 16 18"><path d="M1 1l14 8-14 8z" fill="currentColor"/></svg>
+      </button>
+      <div class="dials">
+        <div class="tempo">
+          <input type="range" id="tempo" min="50" max="220" value="118" aria-label="Tempo">
+          <span class="bpm"><b id="bpmVal">118</b> BPM</span>
+        </div>
+        <div class="tempo">
+          <input type="range" id="volume" min="0" max="100" value="85" aria-label="Volume">
+          <span class="bpm"><b id="volVal">85</b> VOL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="save">copy link</button>
+      <button class="btn" id="clear">clear</button>
+    </div>
+  </div>
+
+<script>
+const STEPS = 16;
+const ROWS = 16;
+
+// Major pentatonic, low -> high. Any pattern stays consonant — that's the ToneMatrix trick.
+const SCALE = ['C3','D3','E3','G3','A3','C4','D4','E4','G4','A4','C5','D5','E5','G5','A5','C6'];
+// visual row 0 is the top = highest pitch
+const noteForRow = r => SCALE[ROWS - 1 - r];
+
+// each voice carries its synth engine, a level (for headroom), and the
+// reverb/delay mix it sounds best with. switching voice restores these
+// defaults; the sliders then let you push them anywhere.
+const VOICES = {
+  // the original four — unchanged
+  pluck:  { synth:Tone.Synth, opts:{oscillator:{type:'triangle'}, envelope:{attack:0.005,decay:0.30,sustain:0.0,release:0.9}}, level:-9, reverb:0.35, delay:0.0 },
+  bell:   { synth:Tone.Synth, opts:{oscillator:{type:'sine'},     envelope:{attack:0.002,decay:1.20,sustain:0.0,release:1.8}}, level:-9, reverb:0.60, delay:0.0 },
+  square: { synth:Tone.Synth, opts:{oscillator:{type:'square'},   envelope:{attack:0.010,decay:0.20,sustain:0.2,release:0.2}}, level:-9, reverb:0.12, delay:0.0 },
+  pad:    { synth:Tone.Synth, opts:{oscillator:{type:'sawtooth'}, envelope:{attack:0.40,decay:0.30,sustain:0.6,release:1.4}},  level:-9, reverb:0.55, delay:0.0 },
+
+  // new engines — not just different oscillators
+  fm:   { synth:Tone.FMSynth,      opts:{harmonicity:3, modulationIndex:10, envelope:{attack:0.01,decay:0.4,sustain:0.1,release:0.9}, modulationEnvelope:{attack:0.01,decay:0.6,sustain:0.2,release:0.6}}, level:-12, reverb:0.30, delay:0.18 },
+  am:   { synth:Tone.AMSynth,      opts:{harmonicity:2, envelope:{attack:0.01,decay:0.5,sustain:0.2,release:0.9}, modulation:{type:'square'}}, level:-11, reverb:0.35, delay:0.12 },
+  mono: { synth:Tone.MonoSynth,    opts:{oscillator:{type:'sawtooth'}, filter:{Q:3,type:'lowpass'}, envelope:{attack:0.02,decay:0.2,sustain:0.3,release:0.6}, filterEnvelope:{attack:0.03,decay:0.3,sustain:0.4,release:0.8,baseFrequency:220,octaves:3.5}}, level:-12, reverb:0.20, delay:0.15 },
+  duo:  { synth:Tone.DuoSynth,     opts:{vibratoAmount:0.3, harmonicity:1.5, voice0:{oscillator:{type:'sawtooth'},envelope:{attack:0.05,decay:0.3,sustain:0.4,release:0.9}}, voice1:{oscillator:{type:'sawtooth'},envelope:{attack:0.05,decay:0.3,sustain:0.4,release:0.9}}}, level:-16, reverb:0.30, delay:0.20 },
+  drum: { synth:Tone.MembraneSynth, opts:{pitchDecay:0.05, octaves:5, envelope:{attack:0.001,decay:0.4,sustain:0.0,release:0.3}}, level:-8, reverb:0.10, delay:0.0 },
+
+  // more oscillator types — same Synth engine, so still PolySynth-friendly
+  supersaw: { synth:Tone.Synth, opts:{oscillator:{type:'fatsawtooth', count:3, spread:32}, envelope:{attack:0.03,decay:0.3,sustain:0.5,release:1.0}}, level:-15, reverb:0.35, delay:0.0 },
+  pwm:      { synth:Tone.Synth, opts:{oscillator:{type:'pwm', modulationFrequency:0.6}, envelope:{attack:0.02,decay:0.25,sustain:0.5,release:0.6}}, level:-12, reverb:0.25, delay:0.10 },
+  pulse:    { synth:Tone.Synth, opts:{oscillator:{type:'pulse', width:0.35}, envelope:{attack:0.005,decay:0.2,sustain:0.3,release:0.3}}, level:-13, reverb:0.20, delay:0.08 },
+  glass:    { synth:Tone.Synth, opts:{oscillator:{type:'fmsine', harmonicity:2, modulationIndex:3}, envelope:{attack:0.004,decay:0.8,sustain:0.0,release:1.2}}, level:-12, reverb:0.45, delay:0.10 },
+};
+
+const grid = Array.from({length:STEPS}, () => Array(ROWS).fill(false));
+const cells = [];          // cells[step][row] -> DOM node
+let started = false;       // AudioContext begun?
+let poly, reverb, delay, limiter, seq;
+let chorus, autoFilter, dist, crusher, pingpong, phaser, compressor, filt;
+let pendingShare = null;
+
+// --- build the grid (row-major in the DOM, but stored step-major) ---
+const gridEl = document.getElementById('grid');
+for (let r = 0; r < ROWS; r++){
+  const hue = Math.round(30 + ((ROWS - 1 - r) / (ROWS - 1)) * 170); // low=amber, high=cyan
+  for (let s = 0; s < STEPS; s++){
+    const cell = document.createElement('button');
+    cell.className = 'cell';
+    cell.style.setProperty('--hue', hue);
+    cell.setAttribute('aria-label', `step ${s+1} note ${noteForRow(r)}`);
+    cell.setAttribute('aria-pressed', 'false');
+    cell.dataset.s = s;
+    cell.dataset.r = r;
+    cell.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setCell(s, r, !grid[s][r]); }
+    });
+    gridEl.appendChild(cell);
+    (cells[s] ||= [])[r] = cell;
+  }
+}
+
+const hintEl = document.getElementById('hint');
+function setCell(s, r, on){
+  grid[s][r] = on;
+  const cell = cells[s][r];
+  cell.classList.toggle('on', on);
+  cell.setAttribute('aria-pressed', String(on));
+  if (on) hintEl.classList.add('gone');
+}
+
+// click-and-drag painting. the first cell of a stroke decides the mode:
+// land on an empty cell and you're drawing, land on a lit one and you're
+// erasing — the rest of the stroke just follows that value (so re-crossing
+// a cell doesn't flicker it back).
+let painting = false;
+let paintValue = true;
+
+function cellFromPoint(x, y){
+  const el = document.elementFromPoint(x, y);
+  if (!el || !el.classList.contains('cell')) return null;
+  return { s:+el.dataset.s, r:+el.dataset.r };
+}
+
+gridEl.addEventListener('pointerdown', (e) => {
+  const c = cellFromPoint(e.clientX, e.clientY);
+  if (!c) return;
+  e.preventDefault();
+  painting = true;
+  paintValue = !grid[c.s][c.r];
+  setCell(c.s, c.r, paintValue);
+});
+gridEl.addEventListener('pointermove', (e) => {
+  if (!painting) return;
+  const c = cellFromPoint(e.clientX, e.clientY);
+  if (c) setCell(c.s, c.r, paintValue);
+});
+window.addEventListener('pointerup', () => { painting = false; });
+window.addEventListener('pointercancel', () => { painting = false; });
+
+// --- audio graph: poly synth -> reverb -> limiter -> out ---
+// audio graph: poly -> drive -> crush -> chorus -> auto-filter -> delay -> reverb -> limiter -> out
+// dirt and modulation sit before the time-based effects; reverb stays last.
+function buildAudio(){
+  limiter    = new Tone.Limiter(-2).toDestination();
+  compressor = new Tone.Compressor({threshold:-6, ratio:3, attack:0.003, release:0.18, knee:8}).connect(limiter);
+  reverb     = new Tone.Reverb({decay:3, wet:0}).connect(compressor);
+  pingpong   = new Tone.PingPongDelay({delayTime:'8n', feedback:0.30, wet:0}).connect(reverb);
+  delay      = new Tone.FeedbackDelay({delayTime:'8n', feedback:0.32, wet:0}).connect(pingpong);
+  autoFilter = new Tone.AutoFilter({
+    frequency:'8n', type:'sine', depth:0.8,
+    baseFrequency:400, octaves:2.6,
+    filter:{type:'lowpass', rolloff:-12, Q:2}, wet:0
+  }).connect(delay);
+  autoFilter.start();
+  phaser     = new Tone.Phaser({frequency:0.5, octaves:3, baseFrequency:350, wet:0}).connect(autoFilter);
+  chorus     = new Tone.Chorus({frequency:1.5, delayTime:3.5, depth:0.7, wet:0}).connect(phaser);
+  chorus.start();
+  crusher    = new Tone.BitCrusher({bits:4}).connect(chorus);
+  crusher.wet.value = 0;
+  // "drive" sets the distortion amount; wet follows so it's fully bypassed at 0.
+  // (the waveshaper hard-clips a hot, many-note signal even at 0 distortion, so
+  // it must be out of circuit when drive is off.)
+  dist       = new Tone.Distortion({distortion:0, oversample:'2x'}).connect(crusher);
+  dist.wet.value = 0;
+  // manual lowpass at the head: cutoff open (transparent) + resonance off by default
+  filt       = new Tone.Filter({type:'lowpass', frequency:20000, Q:0.7, rolloff:-12}).connect(dist);
+  applyVoice(document.getElementById('voice').value); // connects the synth to the chain head (dist)
+  syncExtraFx();                                       // honour any extra slider moved before play
+}
+
+// different voices use different synth engines, so we rebuild the PolySynth
+// rather than just re-setting an oscillator type.
+function applyVoice(name){
+  const v = VOICES[name];
+  const next = new Tone.PolySynth(v.synth);
+  next.set(v.opts);
+  next.volume.value = v.level;
+  next.connect(filt);    // manual filter is the head of the effects chain
+  if (poly){ poly.disconnect(); poly.dispose(); }
+  poly = next;
+  setReverb(v.reverb);   // restore this voice's signature mix...
+  setDelay(v.delay);     // ...which the sliders can then override
+}
+
+function setReverb(amount){
+  if (reverb) reverb.wet.value = amount;
+  reverbSlider.value = Math.round(amount * 100);
+  reverbVal.textContent = reverbSlider.value;
+}
+function setDelay(amount){
+  if (delay) delay.wet.value = amount;
+  delaySlider.value = Math.round(amount * 100);
+  delayVal.textContent = delaySlider.value;
+}
+
+function buildSequence(){
+  seq = new Tone.Sequence((time, step) => {
+    Tone.Draw.schedule(() => beam(step), time);
+    const notes = [];
+    for (let r = 0; r < ROWS; r++) if (grid[step][r]) notes.push(noteForRow(r));
+    if (notes.length) poly.triggerAttackRelease(notes, '8n', time);
+  }, [...Array(STEPS).keys()], '8n');
+  seq.start(0);
+}
+
+let lastBeam = -1;
+function beam(step){
+  if (lastBeam >= 0) for (let r=0;r<ROWS;r++) cells[lastBeam][r].classList.remove('beam');
+  for (let r=0;r<ROWS;r++) cells[step][r].classList.add('beam');
+  lastBeam = step;
+}
+function clearBeam(){
+  if (lastBeam >= 0) for (let r=0;r<ROWS;r++) cells[lastBeam][r].classList.remove('beam');
+  lastBeam = -1;
+}
+
+// --- transport ---
+const playBtn = document.getElementById('play');
+const playIcon = document.getElementById('playIcon');
+let playing = false;
+
+playBtn.addEventListener('click', async () => {
+  if (!started){
+    await Tone.start();
+    buildAudio();
+    buildSequence();
+    if (pendingShare){ applyShareFx(pendingShare); pendingShare = null; }
+    started = true;
+  }
+  playing = !playing;
+  if (playing){
+    Tone.Transport.start();
+    playIcon.innerHTML = '<rect x="2" y="1" width="4" height="16" fill="currentColor"/><rect x="10" y="1" width="4" height="16" fill="currentColor"/>';
+    playBtn.setAttribute('aria-label','Pause');
+  } else {
+    Tone.Transport.pause();
+    clearBeam();
+    playIcon.innerHTML = '<path d="M1 1l14 8-14 8z" fill="currentColor"/>';
+    playBtn.setAttribute('aria-label','Play');
+  }
+});
+
+// fx sliders
+const reverbSlider = document.getElementById('reverb');
+const reverbVal    = document.getElementById('reverbVal');
+const delaySlider  = document.getElementById('delay');
+const delayVal     = document.getElementById('delayVal');
+
+reverbSlider.addEventListener('input', () => {
+  reverbVal.textContent = reverbSlider.value;
+  if (reverb) reverb.wet.value = reverbSlider.value / 100;
+});
+delaySlider.addEventListener('input', () => {
+  delayVal.textContent = delaySlider.value;
+  if (delay) delay.wet.value = delaySlider.value / 100;
+});
+
+document.getElementById('voice').addEventListener('change', e => {
+  if (started){
+    applyVoice(e.target.value);     // rebuilds the synth + restores its fx mix
+  } else {
+    const v = VOICES[e.target.value]; // not playing yet — just reflect the mix on the sliders
+    setReverb(v.reverb);
+    setDelay(v.delay);
+  }
+});
+
+// extra effects (the "more effects" panel). most are a wet-mix; "drive" is the
+// exception — it sets the distortion amount (the node stays fully wet), so the
+// slider reads as clean -> driven rather than a dry/wet blend.
+function wireFx(sliderId, valId, apply){
+  const slider = document.getElementById(sliderId);
+  const val = document.getElementById(valId);
+  const update = () => { val.textContent = slider.value; apply(+slider.value / 100); };
+  slider.addEventListener('input', update);
+  return update;
+}
+const fxUpdaters = [
+  wireFx('chorus',     'chorusVal',     f => { if (chorus)     chorus.wet.value     = f; }),
+  wireFx('autofilter', 'autofilterVal', f => { if (autoFilter) autoFilter.wet.value = f; }),
+  wireFx('dist',       'distVal',       f => { if (dist){ dist.distortion = f; dist.wet.value = f > 0 ? 1 : 0; } }),
+  wireFx('crusher',    'crusherVal',    f => { if (crusher)    crusher.wet.value    = f; }),
+  wireFx('ping',       'pingVal',       f => { if (pingpong){ pingpong.wet.value = f; pingpong.feedback.value = 0.2 + f * 0.65; } }),
+  wireFx('phaser',     'phaserVal',     f => { if (phaser)     phaser.wet.value     = f; }),
+  wireFx('cutoff',     'cutoffVal',     f => { if (filt)       filt.frequency.value = 20 * Math.pow(1000, f); }),
+  wireFx('reso',       'resoVal',       f => { if (filt)       filt.Q.value         = 0.7 + f * 18; }),
+];
+// re-apply every slider to the (possibly just-built) nodes
+function syncExtraFx(){ fxUpdaters.forEach(u => u()); }
+
+// more / fewer effects disclosure
+const moreBtn = document.getElementById('more');
+const moreFx  = document.getElementById('moreFx');
+moreBtn.addEventListener('click', () => {
+  const opening = moreFx.hidden;
+  moreFx.hidden = !opening;
+  moreBtn.setAttribute('aria-expanded', String(opening));
+  moreBtn.firstChild.textContent = opening ? 'fewer effects ' : 'more effects ';
+});
+
+const tempo = document.getElementById('tempo');
+const bpmVal = document.getElementById('bpmVal');
+Tone.Transport.bpm.value = +tempo.value;
+tempo.addEventListener('input', () => {
+  bpmVal.textContent = tempo.value;
+  Tone.Transport.bpm.value = +tempo.value;
+});
+
+// master volume — the slider reads as amplitude, applied in dB to the output
+const volSlider = document.getElementById('volume');
+const volVal = document.getElementById('volVal');
+function setVolume(){
+  volVal.textContent = volSlider.value;
+  const pct = +volSlider.value;
+  Tone.getDestination().volume.value = pct <= 0 ? -Infinity : 20 * Math.log10(pct / 100);
+}
+volSlider.addEventListener('input', setVolume);
+setVolume();
+
+function clearGrid(){
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++){
+    grid[s][r] = false;
+    cells[s][r].classList.remove('on');
+    cells[s][r].setAttribute('aria-pressed','false');
+  }
+  chordCol = 0;
+}
+document.getElementById('clear').addEventListener('click', clearGrid);
+
+// --- chords: stamp a chord into the next free column. the grid is major-
+// pentatonic (no B, no accidentals), so any chord tone the scale can't host is
+// skipped — "if possible". Am7 lands complete; the rest draw what fits.
+const ROW_OF = {};
+SCALE.forEach((n, i) => { ROW_OF[n] = ROWS - 1 - i; });
+const CHORDS = {
+  'Cmaj7': ['C4','E4','G4'],       // B (the maj 7th) isn't on the grid
+  'Am7':   ['A3','C4','E4','G4'],  // complete
+  'Dm7':   ['D4','A4','C5'],       // F (the min 3rd) isn't on the grid
+  'Em7':   ['E4','G4','D5'],       // B (the 5th) isn't on the grid
+};
+let chordCol = 0;
+function drawChord(name){
+  const notes = CHORDS[name]; if (!notes) return;
+  let col = chordCol;
+  for (let k=0;k<STEPS;k++){ const s=(chordCol+k)%STEPS; if (grid[s].every(v=>!v)){ col=s; break; } }
+  for (let r=0;r<ROWS;r++) setCell(col, r, false);              // clear that column first
+  for (const n of notes){ const r=ROW_OF[n]; if (r!=null) setCell(col, r, true); }
+  chordCol = (col + 1) % STEPS;
+}
+document.querySelectorAll('#chordPanel .chip').forEach(b => b.addEventListener('click', () => drawChord(b.dataset.chord)));
+const chordsToggle = document.getElementById('chordsToggle');
+const chordPanel = document.getElementById('chordPanel');
+chordsToggle.addEventListener('click', () => {
+  const opening = chordPanel.hidden;
+  chordPanel.hidden = !opening;
+  chordsToggle.setAttribute('aria-expanded', String(opening));
+});
+
+// --- share: the whole patch goes in the URL hash as key=value pairs plus the
+// grid notes, e.g. #v=pad&t=140&rev=35&dly=10&cho=0&fil=0&drv=0&cru=0&png=0&n=a1,b2,g4
+// grid codes: column = letter a–p (left to right), row = number 1–16 (top to bottom) ---
+function gridToCodes(){
+  const out = [];
+  for (let s=0;s<STEPS;s++)
+    for (let r=0;r<ROWS;r++)
+      if (grid[s][r]) out.push(String.fromCharCode(97+s) + (r+1));
+  return out.join(',');
+}
+function applyCodes(str){
+  clearGrid();
+  const tokens = String(str).toLowerCase().match(/[a-p]\d{1,2}/g) || [];
+  for (const t of tokens){
+    const s = t.charCodeAt(0) - 97;
+    const r = parseInt(t.slice(1), 10) - 1;
+    if (s>=0 && s<STEPS && r>=0 && r<ROWS) setCell(s, r, true);
+  }
+}
+
+const val = id => document.getElementById(id).value;
+function buildShareHash(){
+  return [
+    'v='   + val('voice'),
+    't='   + val('tempo'),
+    'rev=' + val('reverb'),
+    'dly=' + val('delay'),
+    'cho=' + val('chorus'),
+    'fil=' + val('autofilter'),
+    'drv=' + val('dist'),
+    'cru=' + val('crusher'),
+    'png=' + val('ping'),
+    'phs=' + val('phaser'),
+    'cut=' + val('cutoff'),
+    'res=' + val('reso'),
+    'n='   + gridToCodes(),
+  ].join('&');
+}
+
+// set a slider's value and its readout (clamped); used when loading a share
+function setSliderUI(id, valId, raw){
+  if (raw == null || raw === '') return;
+  const n = Math.max(0, Math.min(100, parseInt(raw, 10) || 0));
+  document.getElementById(id).value = n;
+  document.getElementById(valId).textContent = n;
+}
+
+function applyShareHash(hash){
+  if (!hash) return;
+  if (!hash.includes('=')){ applyCodes(hash); return; }   // legacy: notes only
+  const p = {};
+  for (const part of hash.split('&')){ const i = part.indexOf('='); if (i > 0) p[part.slice(0,i)] = part.slice(i+1); }
+
+  if (p.v && VOICES[p.v]) document.getElementById('voice').value = p.v;
+  if (p.t){
+    const t = Math.max(50, Math.min(220, parseInt(p.t, 10) || 118));
+    document.getElementById('tempo').value = t;
+    document.getElementById('bpmVal').textContent = t;
+    Tone.Transport.bpm.value = t;
+  }
+  setSliderUI('reverb','reverbVal', p.rev);
+  setSliderUI('delay','delayVal', p.dly);
+  setSliderUI('chorus','chorusVal', p.cho);
+  setSliderUI('autofilter','autofilterVal', p.fil);
+  setSliderUI('dist','distVal', p.drv);
+  setSliderUI('crusher','crusherVal', p.cru);
+  setSliderUI('ping','pingVal', p.png);
+  setSliderUI('phaser','phaserVal', p.phs);
+  setSliderUI('cutoff','cutoffVal', p.cut);
+  setSliderUI('reso','resoVal', p.res);
+  if (p.n != null) applyCodes(p.n);
+
+  // remember the fx so they survive applyVoice restoring the voice's own
+  // defaults when audio is first built
+  pendingShare = {
+    rev:+val('reverb'), dly:+val('delay'), cho:+val('chorus'), fil:+val('autofilter'),
+    drv:+val('dist'), cru:+val('crusher'), png:+val('ping'), phs:+val('phaser'),
+    cut:+val('cutoff'), res:+val('reso'),
+  };
+}
+
+// re-apply shared fx to the live nodes after the graph is built
+function applyShareFx(s){
+  setReverb(s.rev / 100);
+  setDelay(s.dly / 100);
+  document.getElementById('chorus').value     = s.cho;
+  document.getElementById('autofilter').value = s.fil;
+  document.getElementById('dist').value       = s.drv;
+  document.getElementById('crusher').value    = s.cru;
+  document.getElementById('ping').value       = s.png;
+  document.getElementById('phaser').value     = s.phs;
+  document.getElementById('cutoff').value     = s.cut;
+  document.getElementById('reso').value       = s.res;
+  syncExtraFx();
+}
+
+const saveBtn = document.getElementById('save');
+saveBtn.addEventListener('click', async () => {
+  const hash = buildShareHash();
+  try { location.hash = hash; } catch (e) {}
+  const url = location.href.split('#')[0] + '#' + hash;
+  const orig = saveBtn.textContent;
+  try { await navigator.clipboard.writeText(url); saveBtn.textContent = 'copied'; }
+  catch (e) { saveBtn.textContent = 'copy failed'; }
+  setTimeout(() => { saveBtn.textContent = orig; }, 1400);
+});
+
+// load a shared patch on startup, or seed the fx sliders from the default voice
+{
+  const h = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (h){
+    applyShareHash(h);
+  } else {
+    const dv = VOICES[document.getElementById('voice').value];
+    if (dv){ setReverb(dv.reverb); setDelay(dv.delay); }
+  }
+}
+</script>
+</body>
+</html>
