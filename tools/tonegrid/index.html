@@ -285,6 +285,98 @@
   .voice label, .fx-ctrl label{ font-size:11px; }
   .bpm b{ font-weight:700; }
 
+  /* view toggle + track (overview) view */
+  .head-right{display:flex;align-items:flex-end;gap:12px;}
+  .view-toggle{
+    width:38px;height:38px;flex:0 0 auto;
+    border-radius:8px;
+    background:var(--bg-2);
+    border:1px solid var(--cell-edge);
+    color:var(--ink-dim);
+    cursor:pointer;
+    display:grid;place-items:center;
+    transition:color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .view-toggle:hover{color:var(--ink);border-color:var(--ink-dim);}
+  .view-toggle[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);background:rgba(90,209,205,0.10);}
+  .view-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .view-toggle svg{display:block;}
+
+  .viewpane{display:flex;flex-direction:column;gap:20px;}
+
+  .track-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(116px,1fr));
+    gap:12px;
+  }
+  .track-card{
+    position:relative;
+    background:var(--bg-2);
+    border:1px solid var(--cell-edge);
+    border-radius:12px;
+    padding:10px;
+    cursor:pointer;
+    display:flex;flex-direction:column;gap:8px;
+    transition:border-color .15s ease, box-shadow .15s ease;
+    user-select:none;
+  }
+  .track-card:hover{border-color:var(--ink-dim);}
+  .track-card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+  .track-card.muted{opacity:0.45;}
+  .track-thumb{
+    width:100%;aspect-ratio:1/1;display:block;
+    border-radius:6px;
+    background:rgba(0,0,0,0.30);
+    border:1px solid var(--line);
+  }
+  .track-foot{display:flex;align-items:center;gap:7px;}
+  .track-dot{
+    width:8px;height:8px;flex:0 0 auto;border-radius:50%;
+    background:hsl(var(--thue) 70% 55%);
+  }
+  .track-name{
+    flex:1;min-width:0;
+    font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;
+    color:var(--ink-dim);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .track-mute{
+    flex:0 0 auto;width:22px;height:22px;
+    border-radius:6px;
+    background:none;border:1px solid var(--cell-edge);
+    color:var(--ink-dim);
+    font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;
+    cursor:pointer;
+    transition:color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .track-mute:hover{color:var(--ink);border-color:var(--ink-dim);}
+  .track-mute.on{color:var(--accent);border-color:var(--accent);background:rgba(90,209,205,0.14);}
+  .track-remove{
+    position:absolute;top:6px;right:6px;
+    width:18px;height:18px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.45);border:1px solid var(--cell-edge);
+    color:var(--ink-dim);
+    font-size:13px;line-height:1;cursor:pointer;
+    display:none;place-items:center;
+    padding:0;
+  }
+  .track-card:hover .track-remove{display:grid;}
+  .track-remove:hover{color:var(--ink);border-color:var(--ink-dim);}
+  .track-add{
+    min-height:116px;
+    border:1px dashed var(--cell-edge);
+    border-radius:12px;
+    background:none;
+    color:var(--ink-dim);
+    font-size:30px;font-weight:300;line-height:1;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .track-add:hover{color:var(--accent);border-color:var(--accent);}
+  .track-add:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
   @media (prefers-reduced-motion:reduce){
     .cell,.cell.beam.on{transition:none;transform:none;}
   }
@@ -297,26 +389,37 @@
         <h1>Tone Grid</h1>
         <p>pentatonic step sequencer</p>
       </div>
-      <div class="voice">
-        <label for="voice">voice</label>
-        <select id="voice">
-          <option value="am">AM hollow</option>
-          <option value="bell" selected>Bell</option>
-          <option value="drum">Drum bass</option>
-          <option value="duo">Duo (fat)</option>
-          <option value="fm">FM electric</option>
-          <option value="glass">Glass FM</option>
-          <option value="mono">Mono lead</option>
-          <option value="pad">Pad</option>
-          <option value="pluck">Pluck</option>
-          <option value="pulse">Pulse</option>
-          <option value="pwm">PWM</option>
-          <option value="square">Square lead</option>
-          <option value="supersaw">Supersaw</option>
-        </select>
+      <div class="head-right">
+        <button class="view-toggle" id="viewToggle" aria-pressed="false" aria-label="Toggle track view" title="Track view">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="10" y="1" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="1" y="10" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="10" y="10" width="7" height="7" rx="1.5" fill="currentColor"/>
+          </svg>
+        </button>
+        <div class="voice" id="voiceWrap">
+          <label for="voice">voice</label>
+          <select id="voice">
+            <option value="am">AM hollow</option>
+            <option value="bell" selected>Bell</option>
+            <option value="drum">Drum bass</option>
+            <option value="duo">Duo (fat)</option>
+            <option value="fm">FM electric</option>
+            <option value="glass">Glass FM</option>
+            <option value="mono">Mono lead</option>
+            <option value="pad">Pad</option>
+            <option value="pluck">Pluck</option>
+            <option value="pulse">Pulse</option>
+            <option value="pwm">PWM</option>
+            <option value="square">Square lead</option>
+            <option value="supersaw">Supersaw</option>
+          </select>
+        </div>
       </div>
     </header>
 
+    <div id="matrixView" class="viewpane">
     <div class="grid-wrap">
       <div class="grid" id="grid"></div>
       <div class="hint" id="hint">click cells &middot; press play</div>
@@ -394,6 +497,11 @@
         <button class="chip" data-chord="Em7">Em7</button>
       </div>
     </div>
+    </div>
+
+    <div id="tracksView" class="viewpane" hidden>
+      <div class="track-grid" id="trackGrid"></div>
+    </div>
 
     <div class="transport">
       <button class="play" id="play" aria-label="Play">
@@ -420,91 +528,139 @@
 <script>
 const STEPS = 16;
 const ROWS = 16;
+const MAX_TRACKS = 16;
 
 // Major pentatonic, low -> high. Any pattern stays consonant — that's the ToneMatrix trick.
 const SCALE = ['C3','D3','E3','G3','A3','C4','D4','E4','G4','A4','C5','D5','E5','G5','A5','C6'];
-// visual row 0 is the top = highest pitch
 const noteForRow = r => SCALE[ROWS - 1 - r];
 
-// each voice carries its synth engine, a level (for headroom), and the
-// reverb/delay mix it sounds best with. switching voice restores these
-// defaults; the sliders then let you push them anywhere.
 const VOICES = {
-  // the original four — unchanged
   pluck:  { synth:Tone.Synth, opts:{oscillator:{type:'triangle'}, envelope:{attack:0.005,decay:0.30,sustain:0.0,release:0.9}}, level:-9, reverb:0.35, delay:0.0 },
   bell:   { synth:Tone.Synth, opts:{oscillator:{type:'sine'},     envelope:{attack:0.002,decay:1.20,sustain:0.0,release:1.8}}, level:-9, reverb:0.60, delay:0.0 },
   square: { synth:Tone.Synth, opts:{oscillator:{type:'square'},   envelope:{attack:0.010,decay:0.20,sustain:0.2,release:0.2}}, level:-9, reverb:0.12, delay:0.0 },
   pad:    { synth:Tone.Synth, opts:{oscillator:{type:'sawtooth'}, envelope:{attack:0.40,decay:0.30,sustain:0.6,release:1.4}},  level:-9, reverb:0.55, delay:0.0 },
-
-  // new engines — not just different oscillators
   fm:   { synth:Tone.FMSynth,      opts:{harmonicity:3, modulationIndex:10, envelope:{attack:0.01,decay:0.4,sustain:0.1,release:0.9}, modulationEnvelope:{attack:0.01,decay:0.6,sustain:0.2,release:0.6}}, level:-12, reverb:0.30, delay:0.18 },
   am:   { synth:Tone.AMSynth,      opts:{harmonicity:2, envelope:{attack:0.01,decay:0.5,sustain:0.2,release:0.9}, modulation:{type:'square'}}, level:-11, reverb:0.35, delay:0.12 },
   mono: { synth:Tone.MonoSynth,    opts:{oscillator:{type:'sawtooth'}, filter:{Q:3,type:'lowpass'}, envelope:{attack:0.02,decay:0.2,sustain:0.3,release:0.6}, filterEnvelope:{attack:0.03,decay:0.3,sustain:0.4,release:0.8,baseFrequency:220,octaves:3.5}}, level:-12, reverb:0.20, delay:0.15 },
   duo:  { synth:Tone.DuoSynth,     opts:{vibratoAmount:0.3, harmonicity:1.5, voice0:{oscillator:{type:'sawtooth'},envelope:{attack:0.05,decay:0.3,sustain:0.4,release:0.9}}, voice1:{oscillator:{type:'sawtooth'},envelope:{attack:0.05,decay:0.3,sustain:0.4,release:0.9}}}, level:-16, reverb:0.30, delay:0.20 },
   drum: { synth:Tone.MembraneSynth, opts:{pitchDecay:0.05, octaves:5, envelope:{attack:0.001,decay:0.4,sustain:0.0,release:0.3}}, level:-8, reverb:0.10, delay:0.0 },
-
-  // more oscillator types — same Synth engine, so still PolySynth-friendly
   supersaw: { synth:Tone.Synth, opts:{oscillator:{type:'fatsawtooth', count:3, spread:32}, envelope:{attack:0.03,decay:0.3,sustain:0.5,release:1.0}}, level:-15, reverb:0.35, delay:0.0 },
   pwm:      { synth:Tone.Synth, opts:{oscillator:{type:'pwm', modulationFrequency:0.6}, envelope:{attack:0.02,decay:0.25,sustain:0.5,release:0.6}}, level:-12, reverb:0.25, delay:0.10 },
   pulse:    { synth:Tone.Synth, opts:{oscillator:{type:'pulse', width:0.35}, envelope:{attack:0.005,decay:0.2,sustain:0.3,release:0.3}}, level:-13, reverb:0.20, delay:0.08 },
   glass:    { synth:Tone.Synth, opts:{oscillator:{type:'fmsine', harmonicity:2, modulationIndex:3}, envelope:{attack:0.004,decay:0.8,sustain:0.0,release:1.2}}, level:-12, reverb:0.45, delay:0.10 },
 };
+const VOICE_LABEL = { am:'AM hollow', bell:'Bell', drum:'Drum bass', duo:'Duo', fm:'FM electric', glass:'Glass FM', mono:'Mono lead', pad:'Pad', pluck:'Pluck', pulse:'Pulse', pwm:'PWM', square:'Square lead', supersaw:'Supersaw' };
 
-const grid = Array.from({length:STEPS}, () => Array(ROWS).fill(false));
-const cells = [];          // cells[step][row] -> DOM node
-let started = false;       // AudioContext begun?
-let poly, reverb, delay, limiter, seq;
-let chorus, autoFilter, dist, crusher, pingpong, phaser, compressor, filt;
-let pendingShare = null;
+// each fx slider: [sliderId, readoutId, state key, (nodes, f, track) => apply]
+const FX_WIRING = [
+  ['reverb',     'reverbVal',     'reverb',     (n,f)=>n.reverb.wet.value=f],
+  ['delay',      'delayVal',      'delay',      (n,f)=>n.delay.wet.value=f],
+  ['chorus',     'chorusVal',     'chorus',     (n,f)=>n.chorus.wet.value=f],
+  ['autofilter', 'autofilterVal', 'autofilter', (n,f)=>n.autoFilter.wet.value=f],
+  ['dist',       'distVal',       'dist',       (n,f)=>{ n.dist.distortion=f; n.dist.wet.value = f>0?1:0; }],
+  ['crusher',    'crusherVal',    'crusher',    (n,f)=>n.crusher.wet.value=f],
+  ['ping',       'pingVal',       'ping',       (n,f)=>{ n.pingpong.wet.value=f; n.pingpong.feedback.value=0.2+f*0.65; }],
+  ['phaser',     'phaserVal',     'phaser',     (n,f)=>n.phaser.wet.value=f],
+  ['cutoff',     'cutoffVal',     'cutoff',     (n,f)=>n.filt.frequency.value=20*Math.pow(1000,f)],
+  ['reso',       'resoVal',       'reso',       (n,f)=>n.filt.Q.value=0.7+f*18],
+];
 
-// --- build the grid (row-major in the DOM, but stored step-major) ---
-const gridEl = document.getElementById('grid');
+const ROW_OF = {};
+SCALE.forEach((n, i) => { ROW_OF[n] = ROWS - 1 - i; });
+const CHORDS = {
+  'Cmaj7': ['C4','E4','G4'],
+  'Am7':   ['A3','C4','E4','G4'],
+  'Dm7':   ['D4','A4','C5'],
+  'Em7':   ['E4','G4','D5'],
+};
+
+// ---- state ----
+function makeTrack(voice='bell'){
+  const v = VOICES[voice] || VOICES.bell;
+  return {
+    grid: Array.from({length:STEPS}, () => Array(ROWS).fill(false)),
+    voice,
+    fx: { reverb:Math.round(v.reverb*100), delay:Math.round(v.delay*100),
+          chorus:0, autofilter:0, dist:0, crusher:0, ping:0, phaser:0, cutoff:100, reso:0 },
+    muted:false,
+    nodes:null,
+    seq:null,
+  };
+}
+let tracks = [ makeTrack('bell') ];
+let active = 0;
+let started = false;
+let compressor, limiter, beamSeq = null;
+let chordCol = 0;
+let painting = false, paintValue = true;
+
+// ---- DOM refs ----
+const gridEl     = document.getElementById('grid');
+const hintEl     = document.getElementById('hint');
+const voiceSelect= document.getElementById('voice');
+const voiceWrap  = document.getElementById('voiceWrap');
+const matrixView = document.getElementById('matrixView');
+const tracksView = document.getElementById('tracksView');
+const trackGrid  = document.getElementById('trackGrid');
+const viewToggle = document.getElementById('viewToggle');
+const playBtn    = document.getElementById('play');
+const playIcon   = document.getElementById('playIcon');
+const tempo      = document.getElementById('tempo');
+const bpmVal     = document.getElementById('bpmVal');
+const volSlider  = document.getElementById('volume');
+const volVal     = document.getElementById('volVal');
+const saveBtn    = document.getElementById('save');
+
+// ---- grid editor (shows the active track) ----
+const cells = [];
 for (let r = 0; r < ROWS; r++){
-  const hue = Math.round(30 + ((ROWS - 1 - r) / (ROWS - 1)) * 170); // low=amber, high=cyan
+  const hue = Math.round(30 + ((ROWS - 1 - r) / (ROWS - 1)) * 170);
   for (let s = 0; s < STEPS; s++){
     const cell = document.createElement('button');
     cell.className = 'cell';
     cell.style.setProperty('--hue', hue);
     cell.setAttribute('aria-label', `step ${s+1} note ${noteForRow(r)}`);
     cell.setAttribute('aria-pressed', 'false');
-    cell.dataset.s = s;
-    cell.dataset.r = r;
+    cell.dataset.s = s; cell.dataset.r = r;
     cell.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setCell(s, r, !grid[s][r]); }
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setCell(s, r, !tracks[active].grid[s][r]); }
     });
     gridEl.appendChild(cell);
     (cells[s] ||= [])[r] = cell;
   }
 }
 
-const hintEl = document.getElementById('hint');
 function setCell(s, r, on){
-  grid[s][r] = on;
+  const t = tracks[active];
+  t.grid[s][r] = on;
   const cell = cells[s][r];
   cell.classList.toggle('on', on);
   cell.setAttribute('aria-pressed', String(on));
-  if (on) hintEl.classList.add('gone');
+  if (on){ hintEl.classList.add('gone'); ensureTrackAudio(t); }
 }
-
-// click-and-drag painting. the first cell of a stroke decides the mode:
-// land on an empty cell and you're drawing, land on a lit one and you're
-// erasing — the rest of the stroke just follows that value (so re-crossing
-// a cell doesn't flicker it back).
-let painting = false;
-let paintValue = true;
+function repaintGrid(){
+  const g = tracks[active].grid;
+  let any = false;
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++){
+    const on = g[s][r];
+    if (on) any = true;
+    cells[s][r].classList.toggle('on', on);
+    cells[s][r].setAttribute('aria-pressed', String(on));
+  }
+  hintEl.classList.toggle('gone', any);
+}
 
 function cellFromPoint(x, y){
   const el = document.elementFromPoint(x, y);
   if (!el || !el.classList.contains('cell')) return null;
   return { s:+el.dataset.s, r:+el.dataset.r };
 }
-
 gridEl.addEventListener('pointerdown', (e) => {
   const c = cellFromPoint(e.clientX, e.clientY);
   if (!c) return;
   e.preventDefault();
   painting = true;
-  paintValue = !grid[c.s][c.r];
+  paintValue = !tracks[active].grid[c.s][c.r];
   setCell(c.s, c.r, paintValue);
 });
 gridEl.addEventListener('pointermove', (e) => {
@@ -515,72 +671,64 @@ gridEl.addEventListener('pointermove', (e) => {
 window.addEventListener('pointerup', () => { painting = false; });
 window.addEventListener('pointercancel', () => { painting = false; });
 
-// --- audio graph: poly synth -> reverb -> limiter -> out ---
-// audio graph: poly -> drive -> crush -> chorus -> auto-filter -> delay -> reverb -> limiter -> out
-// dirt and modulation sit before the time-based effects; reverb stays last.
-function buildAudio(){
+// ---- audio ----
+// per track:  poly -> filt -> dist -> crush -> chorus -> phaser -> autoFilter
+//                  -> delay -> pingpong -> reverb -> channel -> [master] -> out
+// master (shared): compressor -> limiter -> destination
+function buildMaster(){
   limiter    = new Tone.Limiter(-2).toDestination();
   compressor = new Tone.Compressor({threshold:-6, ratio:3, attack:0.003, release:0.18, knee:8}).connect(limiter);
-  reverb     = new Tone.Reverb({decay:3, wet:0}).connect(compressor);
-  pingpong   = new Tone.PingPongDelay({delayTime:'8n', feedback:0.30, wet:0}).connect(reverb);
-  delay      = new Tone.FeedbackDelay({delayTime:'8n', feedback:0.32, wet:0}).connect(pingpong);
-  autoFilter = new Tone.AutoFilter({
-    frequency:'8n', type:'sine', depth:0.8,
-    baseFrequency:400, octaves:2.6,
-    filter:{type:'lowpass', rolloff:-12, Q:2}, wet:0
-  }).connect(delay);
-  autoFilter.start();
-  phaser     = new Tone.Phaser({frequency:0.5, octaves:3, baseFrequency:350, wet:0}).connect(autoFilter);
-  chorus     = new Tone.Chorus({frequency:1.5, delayTime:3.5, depth:0.7, wet:0}).connect(phaser);
-  chorus.start();
-  crusher    = new Tone.BitCrusher({bits:4}).connect(chorus);
-  crusher.wet.value = 0;
-  // "drive" sets the distortion amount; wet follows so it's fully bypassed at 0.
-  // (the waveshaper hard-clips a hot, many-note signal even at 0 distortion, so
-  // it must be out of circuit when drive is off.)
-  dist       = new Tone.Distortion({distortion:0, oversample:'2x'}).connect(crusher);
-  dist.wet.value = 0;
-  // manual lowpass at the head: cutoff open (transparent) + resonance off by default
-  filt       = new Tone.Filter({type:'lowpass', frequency:20000, Q:0.7, rolloff:-12}).connect(dist);
-  applyVoice(document.getElementById('voice').value); // connects the synth to the chain head (dist)
-  syncExtraFx();                                       // honour any extra slider moved before play
 }
-
-// different voices use different synth engines, so we rebuild the PolySynth
-// rather than just re-setting an oscillator type.
-function applyVoice(name){
-  const v = VOICES[name];
-  const next = new Tone.PolySynth(v.synth);
-  next.set(v.opts);
-  next.volume.value = v.level;
-  next.connect(filt);    // manual filter is the head of the effects chain
-  if (poly){ poly.disconnect(); poly.dispose(); }
-  poly = next;
-  setReverb(v.reverb);   // restore this voice's signature mix...
-  setDelay(v.delay);     // ...which the sliders can then override
+function makePoly(voiceKey){
+  const v = VOICES[voiceKey] || VOICES.bell;
+  const p = new Tone.PolySynth(v.synth);
+  p.set(v.opts);
+  p.volume.value = v.level;
+  return p;
 }
-
-function setReverb(amount){
-  if (reverb) reverb.wet.value = amount;
-  reverbSlider.value = Math.round(amount * 100);
-  reverbVal.textContent = reverbSlider.value;
+function buildTrackNodes(t){
+  const n = {};
+  n.channel  = new Tone.Channel().connect(compressor);
+  n.reverb   = new Tone.Reverb({decay:3, wet:0}).connect(n.channel);
+  n.pingpong = new Tone.PingPongDelay({delayTime:'8n', feedback:0.30, wet:0}).connect(n.reverb);
+  n.delay    = new Tone.FeedbackDelay({delayTime:'8n', feedback:0.32, wet:0}).connect(n.pingpong);
+  n.autoFilter = new Tone.AutoFilter({frequency:'8n', type:'sine', depth:0.8, baseFrequency:400, octaves:2.6, filter:{type:'lowpass', rolloff:-12, Q:2}, wet:0}).connect(n.delay);
+  n.autoFilter.start();
+  n.phaser   = new Tone.Phaser({frequency:0.5, octaves:3, baseFrequency:350, wet:0}).connect(n.autoFilter);
+  n.chorus   = new Tone.Chorus({frequency:1.5, delayTime:3.5, depth:0.7, wet:0}).connect(n.phaser);
+  n.chorus.start();
+  n.crusher  = new Tone.BitCrusher({bits:4}).connect(n.chorus); n.crusher.wet.value = 0;
+  n.dist     = new Tone.Distortion({distortion:0, oversample:'2x'}).connect(n.crusher); n.dist.wet.value = 0;
+  n.filt     = new Tone.Filter({type:'lowpass', frequency:20000, Q:0.7, rolloff:-12}).connect(n.dist);
+  n.poly     = makePoly(t.voice).connect(n.filt);
+  t.nodes = n;
+  n.channel.mute = t.muted;
+  applyFxToNodes(t);
+  if (!t.seq) buildTrackSeq(t);
 }
-function setDelay(amount){
-  if (delay) delay.wet.value = amount;
-  delaySlider.value = Math.round(amount * 100);
-  delayVal.textContent = delaySlider.value;
+function disposeTrackNodes(t){
+  const n = t.nodes; if (!n) return;
+  ['poly','filt','dist','crusher','chorus','phaser','autoFilter','delay','pingpong','reverb','channel']
+    .forEach(k => { try { n[k].dispose(); } catch(e){} });
+  t.nodes = null;
 }
-
-function buildSequence(){
-  seq = new Tone.Sequence((time, step) => {
-    Tone.Draw.schedule(() => beam(step), time);
+function trackHasNotes(t){ return t.grid.some(col => col.some(v => v)); }
+function ensureTrackAudio(t){ if (started && !t.nodes) buildTrackNodes(t); }
+function applyFxToNodes(t){
+  if (!t.nodes) return;
+  FX_WIRING.forEach(([id,valId,key,apply]) => apply(t.nodes, t.fx[key] / 100, t));
+}
+function buildTrackSeq(t){
+  t.seq = new Tone.Sequence((time, step) => {
+    if (t.muted || !t.nodes) return;
     const notes = [];
-    for (let r = 0; r < ROWS; r++) if (grid[step][r]) notes.push(noteForRow(r));
-    if (notes.length) poly.triggerAttackRelease(notes, '8n', time);
+    for (let r = 0; r < ROWS; r++) if (t.grid[step][r]) notes.push(noteForRow(r));
+    if (notes.length) t.nodes.poly.triggerAttackRelease(notes, '8n', time);
   }, [...Array(STEPS).keys()], '8n');
-  seq.start(0);
+  t.seq.start(0);
 }
 
+// playhead — one beam for whatever matrix is on screen
 let lastBeam = -1;
 function beam(step){
   if (lastBeam >= 0) for (let r=0;r<ROWS;r++) cells[lastBeam][r].classList.remove('beam');
@@ -591,18 +739,65 @@ function clearBeam(){
   if (lastBeam >= 0) for (let r=0;r<ROWS;r++) cells[lastBeam][r].classList.remove('beam');
   lastBeam = -1;
 }
+function buildBeam(){
+  beamSeq = new Tone.Sequence((time, step) => { Tone.Draw.schedule(() => beam(step), time); }, [...Array(STEPS).keys()], '8n');
+  beamSeq.start(0);
+}
 
-// --- transport ---
-const playBtn = document.getElementById('play');
-const playIcon = document.getElementById('playIcon');
+// ---- controls (edit the active track) ----
+function setFxUI(id, valId, n){ document.getElementById(id).value = n; document.getElementById(valId).textContent = n; }
+
+function wireFx(id, valId, key, applyNode){
+  const slider = document.getElementById(id), valEl = document.getElementById(valId);
+  slider.addEventListener('input', () => {
+    valEl.textContent = slider.value;
+    const t = tracks[active];
+    t.fx[key] = +slider.value;
+    if (t.nodes) applyNode(t.nodes, +slider.value / 100, t);
+  });
+}
+FX_WIRING.forEach(([id,valId,key,apply]) => wireFx(id, valId, key, apply));
+
+voiceSelect.addEventListener('change', () => {
+  const t = tracks[active], name = voiceSelect.value, v = VOICES[name];
+  t.voice = name;
+  t.fx.reverb = Math.round(v.reverb * 100);   // restore the voice's signature reverb/delay
+  t.fx.delay  = Math.round(v.delay * 100);
+  setFxUI('reverb','reverbVal', t.fx.reverb);
+  setFxUI('delay','delayVal', t.fx.delay);
+  if (t.nodes){
+    t.nodes.poly.disconnect(); t.nodes.poly.dispose();
+    t.nodes.poly = makePoly(name).connect(t.nodes.filt);
+    applyFxToNodes(t);
+  }
+});
+
+function syncControls(){
+  const t = tracks[active];
+  voiceSelect.value = t.voice;
+  FX_WIRING.forEach(([id,valId,key]) => setFxUI(id, valId, t.fx[key]));
+  repaintGrid();
+}
+
+// tempo + master volume (global)
+Tone.Transport.bpm.value = +tempo.value;
+tempo.addEventListener('input', () => { bpmVal.textContent = tempo.value; Tone.Transport.bpm.value = +tempo.value; });
+function setVolume(){
+  volVal.textContent = volSlider.value;
+  const pct = +volSlider.value;
+  Tone.getDestination().volume.value = pct <= 0 ? -Infinity : 20 * Math.log10(pct / 100);
+}
+volSlider.addEventListener('input', setVolume);
+setVolume();
+
+// ---- transport ----
 let playing = false;
-
 playBtn.addEventListener('click', async () => {
   if (!started){
     await Tone.start();
-    buildAudio();
-    buildSequence();
-    if (pendingShare){ applyShareFx(pendingShare); pendingShare = null; }
+    buildMaster();
+    buildBeam();
+    tracks.forEach(t => { if (trackHasNotes(t)) buildTrackNodes(t); });
     started = true;
   }
   playing = !playing;
@@ -618,55 +813,27 @@ playBtn.addEventListener('click', async () => {
   }
 });
 
-// fx sliders
-const reverbSlider = document.getElementById('reverb');
-const reverbVal    = document.getElementById('reverbVal');
-const delaySlider  = document.getElementById('delay');
-const delayVal     = document.getElementById('delayVal');
-
-reverbSlider.addEventListener('input', () => {
-  reverbVal.textContent = reverbSlider.value;
-  if (reverb) reverb.wet.value = reverbSlider.value / 100;
-});
-delaySlider.addEventListener('input', () => {
-  delayVal.textContent = delaySlider.value;
-  if (delay) delay.wet.value = delaySlider.value / 100;
-});
-
-document.getElementById('voice').addEventListener('change', e => {
-  if (started){
-    applyVoice(e.target.value);     // rebuilds the synth + restores its fx mix
-  } else {
-    const v = VOICES[e.target.value]; // not playing yet — just reflect the mix on the sliders
-    setReverb(v.reverb);
-    setDelay(v.delay);
-  }
-});
-
-// extra effects (the "more effects" panel). most are a wet-mix; "drive" is the
-// exception — it sets the distortion amount (the node stays fully wet), so the
-// slider reads as clean -> driven rather than a dry/wet blend.
-function wireFx(sliderId, valId, apply){
-  const slider = document.getElementById(sliderId);
-  const val = document.getElementById(valId);
-  const update = () => { val.textContent = slider.value; apply(+slider.value / 100); };
-  slider.addEventListener('input', update);
-  return update;
+// ---- clear + chords (act on the active track) ----
+function clearGrid(){
+  const g = tracks[active].grid;
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++) g[s][r] = false;
+  repaintGrid();
+  chordCol = 0;
 }
-const fxUpdaters = [
-  wireFx('chorus',     'chorusVal',     f => { if (chorus)     chorus.wet.value     = f; }),
-  wireFx('autofilter', 'autofilterVal', f => { if (autoFilter) autoFilter.wet.value = f; }),
-  wireFx('dist',       'distVal',       f => { if (dist){ dist.distortion = f; dist.wet.value = f > 0 ? 1 : 0; } }),
-  wireFx('crusher',    'crusherVal',    f => { if (crusher)    crusher.wet.value    = f; }),
-  wireFx('ping',       'pingVal',       f => { if (pingpong){ pingpong.wet.value = f; pingpong.feedback.value = 0.2 + f * 0.65; } }),
-  wireFx('phaser',     'phaserVal',     f => { if (phaser)     phaser.wet.value     = f; }),
-  wireFx('cutoff',     'cutoffVal',     f => { if (filt)       filt.frequency.value = 20 * Math.pow(1000, f); }),
-  wireFx('reso',       'resoVal',       f => { if (filt)       filt.Q.value         = 0.7 + f * 18; }),
-];
-// re-apply every slider to the (possibly just-built) nodes
-function syncExtraFx(){ fxUpdaters.forEach(u => u()); }
+document.getElementById('clear').addEventListener('click', clearGrid);
 
-// more / fewer effects disclosure
+function drawChord(name){
+  const notes = CHORDS[name]; if (!notes) return;
+  const g = tracks[active].grid;
+  let col = chordCol;
+  for (let k=0;k<STEPS;k++){ const s=(chordCol+k)%STEPS; if (g[s].every(v=>!v)){ col=s; break; } }
+  for (let r=0;r<ROWS;r++) setCell(col, r, false);
+  for (const n of notes){ const r=ROW_OF[n]; if (r!=null) setCell(col, r, true); }
+  chordCol = (col + 1) % STEPS;
+}
+document.querySelectorAll('#chordPanel .chip').forEach(b => b.addEventListener('click', () => drawChord(b.dataset.chord)));
+
+// ---- disclosures ----
 const moreBtn = document.getElementById('more');
 const moreFx  = document.getElementById('moreFx');
 moreBtn.addEventListener('click', () => {
@@ -675,57 +842,6 @@ moreBtn.addEventListener('click', () => {
   moreBtn.setAttribute('aria-expanded', String(opening));
   moreBtn.firstChild.textContent = opening ? 'fewer effects ' : 'more effects ';
 });
-
-const tempo = document.getElementById('tempo');
-const bpmVal = document.getElementById('bpmVal');
-Tone.Transport.bpm.value = +tempo.value;
-tempo.addEventListener('input', () => {
-  bpmVal.textContent = tempo.value;
-  Tone.Transport.bpm.value = +tempo.value;
-});
-
-// master volume — the slider reads as amplitude, applied in dB to the output
-const volSlider = document.getElementById('volume');
-const volVal = document.getElementById('volVal');
-function setVolume(){
-  volVal.textContent = volSlider.value;
-  const pct = +volSlider.value;
-  Tone.getDestination().volume.value = pct <= 0 ? -Infinity : 20 * Math.log10(pct / 100);
-}
-volSlider.addEventListener('input', setVolume);
-setVolume();
-
-function clearGrid(){
-  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++){
-    grid[s][r] = false;
-    cells[s][r].classList.remove('on');
-    cells[s][r].setAttribute('aria-pressed','false');
-  }
-  chordCol = 0;
-}
-document.getElementById('clear').addEventListener('click', clearGrid);
-
-// --- chords: stamp a chord into the next free column. the grid is major-
-// pentatonic (no B, no accidentals), so any chord tone the scale can't host is
-// skipped — "if possible". Am7 lands complete; the rest draw what fits.
-const ROW_OF = {};
-SCALE.forEach((n, i) => { ROW_OF[n] = ROWS - 1 - i; });
-const CHORDS = {
-  'Cmaj7': ['C4','E4','G4'],       // B (the maj 7th) isn't on the grid
-  'Am7':   ['A3','C4','E4','G4'],  // complete
-  'Dm7':   ['D4','A4','C5'],       // F (the min 3rd) isn't on the grid
-  'Em7':   ['E4','G4','D5'],       // B (the 5th) isn't on the grid
-};
-let chordCol = 0;
-function drawChord(name){
-  const notes = CHORDS[name]; if (!notes) return;
-  let col = chordCol;
-  for (let k=0;k<STEPS;k++){ const s=(chordCol+k)%STEPS; if (grid[s].every(v=>!v)){ col=s; break; } }
-  for (let r=0;r<ROWS;r++) setCell(col, r, false);              // clear that column first
-  for (const n of notes){ const r=ROW_OF[n]; if (r!=null) setCell(col, r, true); }
-  chordCol = (col + 1) % STEPS;
-}
-document.querySelectorAll('#chordPanel .chip').forEach(b => b.addEventListener('click', () => drawChord(b.dataset.chord)));
 const chordsToggle = document.getElementById('chordsToggle');
 const chordPanel = document.getElementById('chordPanel');
 chordsToggle.addEventListener('click', () => {
@@ -734,103 +850,147 @@ chordsToggle.addEventListener('click', () => {
   chordsToggle.setAttribute('aria-expanded', String(opening));
 });
 
-// --- share: the whole patch goes in the URL hash as key=value pairs plus the
-// grid notes, e.g. #v=pad&t=140&rev=35&dly=10&cho=0&fil=0&drv=0&cru=0&png=0&n=a1,b2,g4
-// grid codes: column = letter a–p (left to right), row = number 1–16 (top to bottom) ---
-function gridToCodes(){
-  const out = [];
-  for (let s=0;s<STEPS;s++)
-    for (let r=0;r<ROWS;r++)
-      if (grid[s][r]) out.push(String.fromCharCode(97+s) + (r+1));
-  return out.join(',');
-}
-function applyCodes(str){
-  clearGrid();
-  const tokens = String(str).toLowerCase().match(/[a-p]\d{1,2}/g) || [];
-  for (const t of tokens){
-    const s = t.charCodeAt(0) - 97;
-    const r = parseInt(t.slice(1), 10) - 1;
-    if (s>=0 && s<STEPS && r>=0 && r<ROWS) setCell(s, r, true);
+// ---- track (overview) view ----
+const trackHue = i => (i * 47 + 200) % 360;
+function drawThumb(cv, t){
+  const ctx = cv.getContext('2d'), W = cv.width, H = cv.height;
+  ctx.clearRect(0,0,W,H);
+  const cw = W/STEPS, ch = H/ROWS;
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++){
+    if (t.grid[s][r]){
+      const hue = Math.round(30 + ((ROWS-1-r)/(ROWS-1))*170);
+      ctx.fillStyle = `hsl(${hue} 80% 58%)`;
+      ctx.fillRect(s*cw, r*ch, Math.ceil(cw), Math.ceil(ch));
+    }
   }
 }
+function renderTracksView(){
+  trackGrid.innerHTML = '';
+  tracks.forEach((t, i) => {
+    const card = document.createElement('div');
+    card.className = 'track-card' + (i===active ? ' active' : '') + (t.muted ? ' muted' : '');
+    card.style.setProperty('--thue', trackHue(i));
 
-const val = id => document.getElementById(id).value;
+    const cv = document.createElement('canvas');
+    cv.width = 128; cv.height = 128; cv.className = 'track-thumb';
+    drawThumb(cv, t);
+    card.appendChild(cv);
+
+    const foot = document.createElement('div');
+    foot.className = 'track-foot';
+    const dot = document.createElement('span'); dot.className = 'track-dot';
+    const name = document.createElement('span'); name.className = 'track-name'; name.textContent = VOICE_LABEL[t.voice] || t.voice;
+    const mute = document.createElement('button');
+    mute.className = 'track-mute' + (t.muted ? ' on' : ''); mute.textContent = 'M'; mute.title = 'Mute';
+    mute.addEventListener('click', ev => {
+      ev.stopPropagation();
+      t.muted = !t.muted;
+      if (t.nodes) t.nodes.channel.mute = t.muted;
+      renderTracksView();
+    });
+    foot.append(dot, name, mute);
+    card.appendChild(foot);
+
+    if (tracks.length > 1){
+      const rm = document.createElement('button');
+      rm.className = 'track-remove'; rm.textContent = '\u00d7'; rm.title = 'Remove track';
+      rm.addEventListener('click', ev => { ev.stopPropagation(); removeTrack(i); });
+      card.appendChild(rm);
+    }
+    card.addEventListener('click', () => openTrack(i));
+    trackGrid.appendChild(card);
+  });
+  if (tracks.length < MAX_TRACKS){
+    const add = document.createElement('button');
+    add.className = 'track-add'; add.textContent = '+'; add.title = 'Add track';
+    add.setAttribute('aria-label', 'Add track');
+    add.addEventListener('click', () => addTrack());
+    trackGrid.appendChild(add);
+  }
+}
+function openTrack(i){
+  active = i;
+  syncControls();
+  setView('matrix');
+}
+function addTrack(){
+  if (tracks.length >= MAX_TRACKS) return;
+  tracks.push(makeTrack('bell'));
+  openTrack(tracks.length - 1);   // drop straight into editing the new (empty) track
+}
+function removeTrack(i){
+  if (tracks.length <= 1) return;
+  const t = tracks[i];
+  if (t.seq){ t.seq.stop(); t.seq.dispose(); }
+  disposeTrackNodes(t);
+  tracks.splice(i, 1);
+  if (active > i) active--; else if (active >= tracks.length) active = tracks.length - 1;
+  syncControls();
+  renderTracksView();
+}
+function setView(view){
+  const tv = view === 'tracks';
+  matrixView.hidden = tv;
+  tracksView.hidden = !tv;
+  voiceWrap.hidden = tv;
+  viewToggle.setAttribute('aria-pressed', String(tv));
+  if (tv) renderTracksView();
+}
+viewToggle.addEventListener('click', () => setView(tracksView.hidden ? 'tracks' : 'matrix'));
+
+// ---- share: whole session in the hash ----
+// #t=140&a=0&k=<track>;<track>   where track = voice|fx.dot.joined|notes|muted
+function gridToCodes(g){
+  const out = [];
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++) if (g[s][r]) out.push(String.fromCharCode(97+s) + (r+1));
+  return out.join(',');
+}
+function codesToGrid(g, str){
+  for (let s=0;s<STEPS;s++) for (let r=0;r<ROWS;r++) g[s][r] = false;
+  const tokens = String(str||'').toLowerCase().match(/[a-p]\d{1,2}/g) || [];
+  for (const tk of tokens){
+    const s = tk.charCodeAt(0) - 97, r = parseInt(tk.slice(1),10) - 1;
+    if (s>=0 && s<STEPS && r>=0 && r<ROWS) g[s][r] = true;
+  }
+}
+const clamp100 = n => Math.max(0, Math.min(100, n));
+function trackToStr(t){
+  const fx = FX_WIRING.map(([id,vId,key]) => t.fx[key]).join('.');
+  return [t.voice, fx, gridToCodes(t.grid), t.muted ? 1 : 0].join('|');
+}
 function buildShareHash(){
-  return [
-    'v='   + val('voice'),
-    't='   + val('tempo'),
-    'rev=' + val('reverb'),
-    'dly=' + val('delay'),
-    'cho=' + val('chorus'),
-    'fil=' + val('autofilter'),
-    'drv=' + val('dist'),
-    'cru=' + val('crusher'),
-    'png=' + val('ping'),
-    'phs=' + val('phaser'),
-    'cut=' + val('cutoff'),
-    'res=' + val('reso'),
-    'n='   + gridToCodes(),
-  ].join('&');
+  return ['t=' + tempo.value, 'a=' + active, 'k=' + tracks.map(trackToStr).join(';')].join('&');
 }
-
-// set a slider's value and its readout (clamped); used when loading a share
-function setSliderUI(id, valId, raw){
-  if (raw == null || raw === '') return;
-  const n = Math.max(0, Math.min(100, parseInt(raw, 10) || 0));
-  document.getElementById(id).value = n;
-  document.getElementById(valId).textContent = n;
+function parseTrack(str){
+  const [voice, fxStr, notesStr, muted] = str.split('|');
+  const t = makeTrack(VOICES[voice] ? voice : 'bell');
+  const fxVals = (fxStr || '').split('.');
+  FX_WIRING.forEach(([id,vId,key], idx) => { const n = parseInt(fxVals[idx],10); if (!isNaN(n)) t.fx[key] = clamp100(n); });
+  codesToGrid(t.grid, notesStr);
+  t.muted = muted === '1';
+  return t;
 }
-
 function applyShareHash(hash){
   if (!hash) return;
-  if (!hash.includes('=')){ applyCodes(hash); return; }   // legacy: notes only
   const p = {};
   for (const part of hash.split('&')){ const i = part.indexOf('='); if (i > 0) p[part.slice(0,i)] = part.slice(i+1); }
 
-  if (p.v && VOICES[p.v]) document.getElementById('voice').value = p.v;
   if (p.t){
-    const t = Math.max(50, Math.min(220, parseInt(p.t, 10) || 118));
-    document.getElementById('tempo').value = t;
-    document.getElementById('bpmVal').textContent = t;
-    Tone.Transport.bpm.value = t;
+    const bpm = Math.max(50, Math.min(220, parseInt(p.t,10) || 118));
+    tempo.value = bpm; bpmVal.textContent = bpm; Tone.Transport.bpm.value = bpm;
   }
-  setSliderUI('reverb','reverbVal', p.rev);
-  setSliderUI('delay','delayVal', p.dly);
-  setSliderUI('chorus','chorusVal', p.cho);
-  setSliderUI('autofilter','autofilterVal', p.fil);
-  setSliderUI('dist','distVal', p.drv);
-  setSliderUI('crusher','crusherVal', p.cru);
-  setSliderUI('ping','pingVal', p.png);
-  setSliderUI('phaser','phaserVal', p.phs);
-  setSliderUI('cutoff','cutoffVal', p.cut);
-  setSliderUI('reso','resoVal', p.res);
-  if (p.n != null) applyCodes(p.n);
-
-  // remember the fx so they survive applyVoice restoring the voice's own
-  // defaults when audio is first built
-  pendingShare = {
-    rev:+val('reverb'), dly:+val('delay'), cho:+val('chorus'), fil:+val('autofilter'),
-    drv:+val('dist'), cru:+val('crusher'), png:+val('ping'), phs:+val('phaser'),
-    cut:+val('cutoff'), res:+val('reso'),
-  };
+  if (p.k != null){
+    const list = p.k.split(';').filter(Boolean).map(parseTrack);
+    if (list.length){ tracks = list; active = Math.max(0, Math.min(parseInt(p.a,10)||0, tracks.length-1)); }
+  } else if (p.v != null || p.n != null){
+    // legacy single-patch format
+    const t = makeTrack(VOICES[p.v] ? p.v : 'bell');
+    const map = { rev:'reverb', dly:'delay', cho:'chorus', fil:'autofilter', drv:'dist', cru:'crusher', png:'ping', phs:'phaser', cut:'cutoff', res:'reso' };
+    for (const [short,key] of Object.entries(map)){ if (p[short]!=null){ const n=parseInt(p[short],10); if(!isNaN(n)) t.fx[key]=clamp100(n); } }
+    codesToGrid(t.grid, p.n || '');
+    tracks = [t]; active = 0;
+  }
 }
-
-// re-apply shared fx to the live nodes after the graph is built
-function applyShareFx(s){
-  setReverb(s.rev / 100);
-  setDelay(s.dly / 100);
-  document.getElementById('chorus').value     = s.cho;
-  document.getElementById('autofilter').value = s.fil;
-  document.getElementById('dist').value       = s.drv;
-  document.getElementById('crusher').value    = s.cru;
-  document.getElementById('ping').value       = s.png;
-  document.getElementById('phaser').value     = s.phs;
-  document.getElementById('cutoff').value     = s.cut;
-  document.getElementById('reso').value       = s.res;
-  syncExtraFx();
-}
-
-const saveBtn = document.getElementById('save');
 saveBtn.addEventListener('click', async () => {
   const hash = buildShareHash();
   try { location.hash = hash; } catch (e) {}
@@ -841,15 +1001,11 @@ saveBtn.addEventListener('click', async () => {
   setTimeout(() => { saveBtn.textContent = orig; }, 1400);
 });
 
-// load a shared patch on startup, or seed the fx sliders from the default voice
+// ---- init ----
 {
   const h = decodeURIComponent(location.hash.replace(/^#/, ''));
-  if (h){
-    applyShareHash(h);
-  } else {
-    const dv = VOICES[document.getElementById('voice').value];
-    if (dv){ setReverb(dv.reverb); setDelay(dv.delay); }
-  }
+  if (h) applyShareHash(h);
+  syncControls();
 }
 </script>
 </body>
