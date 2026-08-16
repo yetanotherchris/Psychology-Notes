@@ -45,7 +45,7 @@ There are 4 types -
 - *Variable ratio schedule*: as the fixed ratio schedule but not fixed. Once, then maybe 7 times.
 
 Ultimately the victim becomes more amenable to manipulation, and trauma bonded.  
-People's responses to abuse, including leaving or remaining in a relationship, vary and are shaped by safety, dependence, coercion, resources, and individual circumstances.
+Vaknin: "Mentally ill people objectify people rather than treating them as people."
 
 ### Rewriting history between you
 https://www.youtube.com/watch?v=asYPvno0xbw
