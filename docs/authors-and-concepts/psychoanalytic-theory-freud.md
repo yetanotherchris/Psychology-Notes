@@ -16,7 +16,7 @@ https://www.simplypsychology.org/repetition-compulsion.html#Why-is-change-hard
 https://www.psychologytoday.com/us/blog/the-freedom-to-change/202405/how-to-change-your-outlook-by-shaping-your-negative-memories
 
 #### Persecutory Object
-The persecutory object is the element of the personality which attacks your confidence, productivity and acceptance to the point of no return. Persecuted patients torture themselves, hurt their loved ones and torment their therapists.
+A persecutory object is a Kleinian object-relations concept: an internal or external object experienced as threatening or attacking. It is not a Freudian structural agency or a general term for self-criticism.
 
 #### Super Ego
 *To be added*

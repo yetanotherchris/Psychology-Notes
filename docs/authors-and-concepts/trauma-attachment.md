@@ -6,18 +6,18 @@ Disorganised memory is a symptom of trauma and PTSD, where memories aren't "asse
 [What research and information is there about involuntary autobiographical memories (IAMs)](/tools/llm-consensus-answers/iams-involuntary-autobiographical-memories.html).
 
 #### Vicarious Trauma
-Vicarious trauma, first developed by McCann and Pearlman (Branson, D. C., 2019), relates to compassion fatigue and workers (nurses, counsellors etc.) who experience trauma from interactions with trauma victims.
+Vicarious trauma is the lasting effect that working closely with trauma survivors can have on a helper's beliefs, emotions, and sense of safety. McCann and Pearlman introduced the idea in 1990. It is related to, but not the same as, compassion fatigue.
 
 https://doi.org/10.1037/trm0000161
 
 #### Intergenerational Trauma
 Intergenerational trauma occurs when the impacts of trauma are passed from one generation to the next. Trauma can shape thoughts, feelings, and behaviour, thus affecting how individuals parent and communicate with their children.
 
-#### Intrusion Trauma
-Intrusion trauma is a core symptom of post-traumatic stress disorder (PTSD), and can include unwanted and upsetting memories, nightmares, flashbacks, and emotional distress.
+#### Intrusion Symptoms
+Intrusion symptoms are one PTSD symptom cluster and include distressing memories, dreams, flashbacks, and distress or physiological reactions to reminders. "Intrusion trauma" is not a standard diagnostic term.
 
 #### PTSD Night Terrors
-Night terrors, also known as sleep terrors, are a sleep disturbance that can be a symptom of post-traumatic stress disorder (PTSD) in adults.
+PTSD commonly includes trauma-related nightmares and sleep disturbance. Sleep terrors are distinct NREM parasomnias and are not a PTSD diagnostic criterion.
 
 #### Anaclitic Depression
 Anaclitic depression is a term introduced by René Spitz to describe a type of depression that occurs in infants who have been separated from their primary caregiver, typically the mother. It is characterized by withdrawal, crying, and refusal to eat, resulting from the loss of emotional connection and care.
@@ -28,11 +28,11 @@ Introjective depression is a form of depression where the individual experiences
 #### Adult Attachment Interview
 [attachmentproject.com](https://www.attachmentproject.com/attachment-theory/adult-attachment-interview/)
 
-The AAI, developed by Mary Main, consists of an interview that looks at the narratives they tell of their childhood, not the experiences themselves. Categories are Autonomous / Secure, Dismissing (downplaying), Preoccupied (overwhelmed), Unresolved (truama), Cannot Classify, Hostile (of their caregivers).
+The AAI, developed by Mary Main, examines how people narrate childhood attachment experiences rather than those experiences themselves. The standard classifications are secure/autonomous, dismissing, preoccupied, and unresolved/disorganized with respect to loss or trauma; "cannot classify" may also be assigned.
 
 
 #### Adult Attachment Interview and PTSD
-The (U)nresolved category of the AAI gives indications of PTSD, or potential PTSD risk. Not about the trauma but how it's mentally organised. People with U often have a history of trauma, and show signs of PTSD: dissociation, intrusions, unprocessed affect.
+The unresolved classification concerns the organization of discourse about loss or trauma. The AAI is not a diagnostic test for PTSD or a measure of PTSD risk.
 
 
 ====

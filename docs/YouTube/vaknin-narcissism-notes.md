@@ -36,7 +36,7 @@ Mentally healthy people:
 https://youtu.be/-PjtJeMvsFI?si=31tmfH196zNiffmV  
 (false hope, approach avoidance)
 
-This appears in the form of being very loving, and then being indifferent or unkind - a form of classical conditioning (also respondent conditioning and Pavlovian conditioning). 
+This appears in the form of being very loving, and then being indifferent or unkind. These fixed and variable interval/ratio schedules are operant-conditioning schedules. Classical (Pavlovian) conditioning instead concerns associations between stimuli.
 There are 4 types - 
 
 - *Fixed interval* - a message or behaviour which can be bad or good. E.g. Every two weeks something good happens (or bad). The victim develops abuse tolerance.
@@ -45,8 +45,7 @@ There are 4 types -
 - *Variable ratio schedule*: as the fixed ratio schedule but not fixed. Once, then maybe 7 times.
 
 Ultimately the victim becomes more amenable to manipulation, and trauma bonded.  
-Mentally ill people bond, NT people just walk away from abuse.  
-Mentally ill objectify people rather than treating them as people.
+People's responses to abuse, including leaving or remaining in a relationship, vary and are shaped by safety, dependence, coercion, resources, and individual circumstances.
 
 ### Rewriting history between you
 https://www.youtube.com/watch?v=asYPvno0xbw

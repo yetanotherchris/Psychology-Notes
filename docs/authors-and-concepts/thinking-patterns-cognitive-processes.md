@@ -20,7 +20,7 @@ A stationary object is moving.
 Dialectical thinking refers to the ability to view issues from multiple perspectives and to arrive at the most economical and reasonable reconciliation of seemingly contradictory information and postures.
 
 #### Autistic Thinking
-A form of thinking characterized by a focus on internal, subjective experiences rather than external reality. This mode of thinking is often seen in children or individuals with certain mental disorders, such as autism, where thoughts are disconnected from practical reality and may involve fantasy or self-centered ideas.
+Bleuler used "autistic thinking" for withdrawal into inner fantasy in schizophrenia. The term was common in older psychiatric and psychoanalytic writing, especially in discussions of schizophrenia and dereistic or fantasy-oriented thought.
 
 #### Hyper Reflexivity (Psychology)
 Hyper reflexivity refers to an excessive self-focus or self-monitoring, where an individual becomes overly aware of their thoughts, feelings, and actions. This heightened self-awareness can lead to difficulties in social interactions and may contribute to anxiety, especially in those with conditions like schizophrenia or obsessive-compulsive disorder.

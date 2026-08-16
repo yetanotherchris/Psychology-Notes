@@ -19,12 +19,13 @@ BDNF has been shown to influence the release of dopamine in the mesolimbic dopam
 #### Reduced Frontal Lobe Function with Alcohol
 Alcohol can make it difficult for people to control their emotions and impulses because it affects the frontal lobes of the brain. The frontal lobes are responsible for abstract thinking, planning, problem solving, and emotions.
 
-#### 4 Core Executive Functions of the Brain
-The four core executive functions are:
+#### Core Executive Functions of the Brain
+Three commonly identified core executive functions are:
 1. Working Memory: The ability to hold and manipulate information in mind over short periods
 2. Cognitive Flexibility: The capacity to switch between thinking about different concepts or to adapt behavior in response to changing circumstances
 3. Inhibitory Control: The ability to suppress inappropriate or unwanted behaviors or thoughts, including self-control and attentional control
-4. Planning and Organization: The ability to set goals, develop strategies, and manage time and resources to achieve objectives
+
+Planning and organization are higher-order executive functions built from these core processes.
 
 #### Anterior Insular Disgust
 Disgust to horrible toilets and moral outrage.

@@ -29,7 +29,7 @@ How we become defensive:
 #### How Long Does it Actually Take to Form a New Habit?
 Phillippa Lally is a health psychology researcher at University College London. In a study published in the European Journal of Social Psychology, Lally and her research team decided to figure out just how long it actually takes to form a habit.
 
-On average, it takes more than 2 months before a new behaviour becomes automatic - 66 days to be exact.
+In Lally et al.'s sample, the middle participant took 66 days for a new behaviour to become mostly automatic. The time varied widely across behaviours and people, from 18 to 254 days.
 
 You have to repeat something 7 times for it to sink in.
 

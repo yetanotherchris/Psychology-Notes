@@ -1,7 +1,7 @@
 # Assessment Tools & Scales
 
 #### IQ Test
-The standard IQ test is the Wechsler Adult Intelligence Scale.
+The Wechsler Adult Intelligence Scale (WAIS) is an individually administered intelligence test for adults; IQ assessment also uses other age- and purpose-specific instruments.
 
 #### Connor-Davidson Resilience Scale (CD-RISC)
 A self-report questionnaire designed to measure resilience, or the ability to cope with adversity. The scale has various versions, with the original consisting of 25 items. It assesses personal qualities that allow individuals to thrive despite challenges.

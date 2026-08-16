@@ -3,7 +3,7 @@
 
 | Concept                    | Definition                                                                                                                                                                       |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Alternative hypothesis     | What will happen according to the hypothesis, the opposite of the null hypothesis. e.g. 'Students who sleep more perform better on tests.'                                       |
+| Alternative hypothesis     | What will happen according to the hypothesis, it contradicts of the null hypothesis. e.g. 'Students who sleep more perform better on tests.'                                     |
 | Averages                   | Central values of data. e.g. mean, median, mode - measures of central tendency                                                                                                   |
 | Between participants       | Dividing participants into groups for each condition of the experiment. e.g. Group A receives a drug, Group B receives a placebo.                                                |
 | Bimodal                    | If there are two modes, and they're clearly higher (peeks) than other values. Unimodal (1 mode) and multimodal (multiple modes)                                                  |
@@ -30,7 +30,7 @@
 | Measures of central tendency| Mode, median, mean                                                                                                                                                              |
 | Mode                       | The most common result, e.g. scores 1,3, 5, 6, 6, 7 it would be 6. There would be no mode if they're all unique.                                                                 |
 | NHST                       | TODO                                                                                                                                                                             |
-| Normal distribution        | The mean, median, and mode are equal. The data is symmetric (bell curve). The data tapers off gradually. AKA Gaussian distribution                                               |                                                                                           |
+| Normal distribution        | The mean, median, and mode are equal. The data is symmetric (bell curve). The data tapers off gradually. AKA Gaussian distribution                                               |
 | P-Value                    | Probability between 0 and 1                                                                                                                                                      |
 | Qualitative data           | Descriptive data. e.g. interviews.                                                                                                                                               |
 | Quantitative data          | Numerical data. e.g. height, temperature.                                                                                                                                        |
@@ -43,17 +43,17 @@
 | Sampling error: Type 2     | Failing to reject a false null hypothesis. e.g. missing the effect of a useful drug.                                                                                             |
 | Scale                      | Measurement system classifying data. e.g. nominal, ordinal, interval, ratio scales.                                                                                              |
 | Scatterplot                | Graph showing a two variable relationship. e.g. height vs. weight.                                                                                                               |
-| Standard deviation         | Spread of data around the mean. e.g. SD = 2 means most scores lie within 2 points of the mean.                                                                                   |
+| Standard deviation         | Spread of data around the mean. e.g. SD = 2 means most scores lie within 2 points of the mean.  about 95% of observations lie within 2 SD of the mean.                           |
 | Statistical significance   | In psychology, statistical significance occurs when the p-value, calculated from a test like chi-squared, is less than 0.05 (5%). This means there's less than a 5% chance the results are due to random variation if the null hypothesis is true, so we reject it for the alternative hypothesis. |
 | Within participants        | The same group of people are affected by different conditions of the independent variable, e.g. juror's guilty verdict before and after deliberation                             |
 
 ## Value types
 | Concept                    | Definition                                                                                                                                                                       |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nominal                    | Categories with no order (e.g., types of fruit, colours).|
+| Nominal                    | Categories with no order (e.g., types of fruit, colours).                                                                                                                        |
 | Ordinal                    | Data with a clear order, the interval between each value isn't always equal (e.g., rankings, scariest horror films, GCSE, A Level, BSc, Ph.D.).                                  |
-| Interval                   | Ordered items with equal spacing, and no true zero (e.g., temperature in Celsius, IQ, dates in a calendar).|
-| Ratio                      | Ordered, equal spacing, and has a true zero (e.g. height, money, weight, age). You can form ratios from the data e g 50kg is double 25kg.|
+| Interval                   | Ordered items with equal spacing, and no true zero (e.g., temperature in Celsius, IQ, dates in a calendar).                                                                      |
+| Ratio                      | Ordered, equal spacing, and has a true zero (e.g. height, money, weight, age). You can form ratios from the data e g 50kg is double 25kg.                                        |
 
 
 ## Statistical test types / designs

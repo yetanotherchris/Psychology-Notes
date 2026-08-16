@@ -1,5 +1,5 @@
 # Stress
-This is the updated (2023) version of the Holmes–Rahe Social Readjustment Rating Scale: a list of stressful life events, each scored by how much readjustment it tends to take. The 1967 original was refreshed by Wallace, Cooper, Sel & Russo: the same 43 events (12 reworded) plus one new one, *"Single person, living alone"*. Marriage is the fixed reference point at 50.
+This is the updated (2023) version of the Holmes–Rahe Social Readjustment Rating Scale: a list of stressful life events, each scored by how much readjustment it tends to take. The 1967 original was refreshed by Wallace, Cooper, Sel & Russo: it retains the original 43 events (12 reworded) and adds one optional item, *"Single person, living alone,"* for 44 items total. Marriage is the fixed reference point at 50.
 
 ## How to read your score
 

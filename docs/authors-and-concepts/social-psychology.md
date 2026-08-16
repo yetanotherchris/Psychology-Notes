@@ -10,7 +10,7 @@ Developed by Jack Brehm in 1966. When people feel their freedom or autonomy is t
 - Pathological Demand Avoidance
 
 #### Propinquity
-Piaget
+The propinquity effect concerns the association between physical proximity and interpersonal attraction. It was established in research by Festinger, Schachter, and Back.
 
 #### Gaming
 It's shifted from "cheating" to "optimisation" in the minds of many players. The culture has accepted it as normal
@@ -32,9 +32,9 @@ https://www.sciencedirect.com/science/article/abs/pii/S0747563220302867
 This concept, rooted in psychoanalytic theory, refers to a psychological dynamic where two individuals, often in a close relationship, mutually project idealized qualities onto each other. This "shared fantasy" helps them maintain an illusion of perfection or superiority, reinforcing each other's self-image and avoiding the anxiety of confronting flaws or insecurities.
 
 #### Hawthorne effect
-Studies conducted at the Hawthorne Works factory in Chicago in the 1920s–1930s, to observe worker behaviour. Lead by Elton Mayo.
+Studies conducted at the Hawthorne Works factory in Chicago in the 1920s-1930s to observe worker behaviour, including work associated with Elton Mayo.
 
-People change their behavior simply because they know they are being observed. Employees work harder if they know the manager is watching, for example. The study also revealed lighting influenced the performance of workers.
+The term "Hawthorne effect" is commonly used for the possibility that people alter behavior because they know they are being observed. The studies included illumination experiments, but later analysis found the familiar claim that lighting changes reliably increased productivity is unsupported by the original data.
 
 > Mayo, E. (1933) The human problems of an industrial civilization. New York: Macmillan.
 
@@ -98,7 +98,7 @@ However it's been shown more recently in a review of the experiment, that the pa
 #### Stanford prison experiment
 Conducted by Philip Zimbardo in 1971 at Stanford University. 
 
-24 male college students were randomly assigned to roles of prisoners or guards, in a mock prison for 2 weeks. Guards quickly adopted abusive and authoritarian behaviors, prisoners showed emotional distress, depression, and submissive behaviors.
+24 male college students were randomly assigned to roles of prisoners or guards in a mock prison. The study was planned for two weeks but terminated after six days. Guards quickly adopted abusive and authoritarian behaviors, while prisoners showed emotional distress, depression, and submissive behaviors.
 
 Criticisms include the students guessing the purpose of the study, and behaving how they believed was expected of them, and replication has been poor.
 

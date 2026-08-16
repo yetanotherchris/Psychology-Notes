@@ -3,7 +3,7 @@
 ## Borderline Personality Organisation
 
 #### Kohut's Tragic Man + Imago
-Heinz Kohut, a psychoanalyst, developed the concept of the "tragic man" as part of his self-psychology theory. This concept suggests that individuals are inherently flawed due to their vulnerabilities and inevitable disappointments in life. The "imago" refers to an idealized image of self or others, which often contrasts with reality and can lead to narcissistic injuries.
+Heinz Kohut, a psychoanalyst, developed the concept of the "tragic man" as part of his self-psychology theory. He contrasted "tragic man," whose central struggle concerns realizing a coherent nuclear self and ambitions, with "guilty man," the classical Freudian conflict model. The "imago" refers to an idealized image of self or others, which often contrasts with reality and can lead to narcissistic injuries.
 
 #### Kohut Mirroring
 Heinz Kohut introduced the concept of mirroring as part of his Self Psychology theory. Mirroring refers to the process by which parents (or others) reflect back a child's feelings, thoughts, and actions, validating their experience and helping to build a healthy sense of self. A lack of adequate mirroring can lead to issues with self-esteem and identity.

@@ -53,10 +53,10 @@ Jennifer Freyd is an American psychologist known for her pioneering work on memo
 *Definition to be added*
 
 #### John Bowlby
-John Bowlby was a British psychologist and psychoanalyst who is best known as the father of Attachment Theory. He argued that early emotional bonds between children and their caregivers are crucial for psychological development. Bowlby's work identified different attachment styles—secure, insecure, and disorganized—and showed how these early experiences shape emotional and relational patterns throughout life.
+John Bowlby was a British psychologist and psychoanalyst who is best known as the father of Attachment Theory. He argued that early emotional bonds between children and their caregivers are crucial for psychological development. Ainsworth's Strange Situation research identified secure, avoidant, and resistant/ambivalent attachment patterns; Main and Solomon later described the disorganized/disoriented classification. These early experiences can shape emotional and relational patterns throughout life.
 
 #### John Gunderson
-John Gunderson was an American psychiatrist widely recognized as a leading expert on Borderline Personality Disorder (BPD). He played a crucial role in defining and refining the diagnosis of BPD and contributed to the development of BPD-specific treatment models, including Dialectical Behavior Therapy (DBT). His work has been instrumental in shaping contemporary approaches to understanding and treating BPD.
+John Gunderson was an American psychiatrist widely recognized as a leading expert on Borderline Personality Disorder (BPD). He played a crucial role in defining and refining the diagnosis of BPD and contributed to the development of BPD-specific treatment models. Marsha Linehan developed Dialectical Behavior Therapy (DBT). Gunderson's work has been instrumental in shaping contemporary approaches to understanding and treating BPD.
 
 #### Jonathan Shedler SWAP Methodology
 Defines 23 mental health signs:
@@ -79,7 +79,7 @@ Heinz Kohut was an Austrian-American psychoanalyst who founded Self Psychology. 
 Heinz Kohut introduced the concept of mirroring as part of his Self Psychology theory. Mirroring refers to the process by which parents (or others) reflect back a child's feelings, thoughts, and actions, validating their experience and helping to build a healthy sense of self. A lack of adequate mirroring can lead to issues with self-esteem and identity.
 
 #### Kohut's Tragic Man + Imago
-Heinz Kohut, a psychoanalyst, developed the concept of the "tragic man" as part of his self-psychology theory. This concept suggests that individuals are inherently flawed due to their vulnerabilities and inevitable disappointments in life. The "imago" refers to an idealized image of self or others, which often contrasts with reality and can lead to narcissistic injuries.
+Heinz Kohut, a psychoanalyst, developed the concept of the "tragic man" as part of his self-psychology theory. He contrasted "tragic man," whose central struggle concerns realizing a coherent nuclear self and ambitions, with "guilty man," the classical Freudian conflict model. The "imago" refers to an idealized image of self or others, which often contrasts with reality and can lead to narcissistic injuries.
 
 #### Kohlberg's Levels of Morality
 *Definition to be added*

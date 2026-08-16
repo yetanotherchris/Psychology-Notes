@@ -13,7 +13,7 @@ Pathology in psychology refers to the study of psychological disorders and malad
 The psychological process by which an individual distinguishes between the internal world (thoughts, feelings, fantasies) and the external world (objective reality). Effective reality testing is crucial for healthy psychological functioning and is impaired in conditions like psychosis.
 
 #### Microexpressions
-Brief, involuntary facial expressions that reveal true emotions, often occurring in a fraction of a second. Microexpressions are difficult to fake and are used in psychological research and lie detection to understand underlying emotions.
+Very brief facial expressions.
 
 #### Delusions
 What evidence could change your mind about a delusion? If they say nothing it's pathological. And if the evidence is impossible to get. Consider the evidence.

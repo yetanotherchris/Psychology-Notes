@@ -10,11 +10,9 @@ Don't:
 yourself with difficult family members.
 
 #### DARVO
-They will do this when confronted about wrong doing:
-- **Defend**, then they
-- **Attack**, then they paint themselves as
-- **Reverse victim**, casting you as the
-- **Offender**
+DARVO stands for **Deny, Attack, and Reverse Victim and Offender**.
+
+The term has also been popularized through therapy-speak and online psychology content on social media.
 
 #### Emotional Delay
 Delayed response to someone upsetting you.
