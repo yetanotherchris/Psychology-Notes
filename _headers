@@ -1,0 +1,19 @@
+# Response headers for Cloudflare Workers Static Assets.
+# Copied into dist/ by scripts/build.mjs. Mirrors the headers in nginx.conf.
+# Only a single `*` splat is supported per rule, and it is greedy.
+
+# Security headers for every response.
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Content-Security-Policy: default-src 'self' http: https: data: blob: 'unsafe-inline'
+  Cache-Control: public, max-age=86400, no-transform
+
+# Versioned build assets (Zensical emits hashed bundles under /assets/).
+/assets/*
+  Cache-Control: public, max-age=604800, immutable, no-transform
+
+# SurveyJS vendor bundle is large and stable.
+/tools/questionnaires/surveyjs/*
+  Cache-Control: public, max-age=2592000, immutable, no-transform

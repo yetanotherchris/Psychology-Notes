@@ -1,0 +1,24 @@
+{
+  // Cloudflare Worker config. This is a static site served through a Worker
+  // using the Static Assets binding. Build output (dist/) is produced by
+  // `npm run build` (see scripts/build.mjs), which mirrors the Dockerfile.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "psychology-notes",
+  "compatibility_date": "2025-06-01",
+  "main": "src/worker.mjs",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Serve /foo/index.html for /foo/ and redirect /foo -> /foo/
+    "html_handling": "auto-trailing-slash",
+    // Serve dist/404.html for unmatched routes (MkDocs/Zensical generates one)
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Custom domain (optional): uncomment and set your zone/route.
+  // "routes": [
+  //   { "pattern": "psychology-notes.yetanotherchris.dev", "custom_domain": true }
+  // ]
+}

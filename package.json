@@ -1,0 +1,17 @@
+{
+  "name": "psychology-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static psychology notes site (Zensical + tools) deployed to Cloudflare Workers",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "wrangler dev",
+    "preview": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "wrangler": "^4.146.0"
+  }
+}

@@ -46,3 +46,7 @@ fly.toml
 # Node
 node_modules
 **/node_modules
+
+# Cloudflare
+dist
+.wrangler
