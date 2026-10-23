@@ -1,10 +1,6 @@
 ---
 template: research-notes.html
 posts:
-  - title: "On Feeling Down - Duncan Trussell"
-    date: "March 12, 2026"
-    description: "Some of the best descriptions of emotions and feelings, taken from Duncan Trussell's Nightstream 13. On sinking into feelings, the tidal flow of emotions, and the annoyingly simple fix."
-    url: "research-notes/posts/2026-03-12-emotions-duncan-trussell/"
   - title: "Types of Psychological mirroring"
     date: "January 20, 2026"
     description: "What are there various types of mirroring? How do they differ and what are the main papers. For example: childhood mirroring vs psychopathic mirroring."
