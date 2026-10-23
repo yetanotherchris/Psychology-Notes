@@ -76,7 +76,9 @@ function buildSite() {
 
 function buildCs2() {
   log('Building cs2-flicker-paradigm...');
-  run('npm ci', cs2Dir);
+  // CI uses a clean lockfile install. Locally, update dependencies in place:
+  // npm ci removes node_modules first, which can fail on Windows file locks.
+  run(process.env.CI && process.env.CI !== 'false' ? 'npm ci' : 'npm install', cs2Dir);
   run('npm run build', cs2Dir);
   if (!existsSync(join(cs2Out, 'index.html'))) {
     throw new Error(`cs2-flicker-paradigm build did not produce ${cs2Out}/index.html`);
