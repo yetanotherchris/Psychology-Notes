@@ -1,0 +1,38 @@
+# Psychology Notes
+
+> Personal psychology study notes, research summaries, and educational tools by Chris. Topics include psychological theories, cognition, personality, autism, attachment, psychotherapy, and research methods.
+
+These are personal study notes, not a peer-reviewed reference or clinical advice. Notes may be written by the author or rewritten using an LLM; AI involvement is indicated where applicable. LLM Council reports contain AI-generated answers and synthesis, not independently verified research findings. Follow the cited papers and books when checking claims, and preserve attribution when quoting.
+
+## Start here
+
+- [Home](https://psychology-notes.yetanotherchris.dev/): About the notes and their sources.
+- [Authors and concepts](https://psychology-notes.yetanotherchris.dev/authors-and-concepts/): Topic index linking to definitions, psychologists, theories, and assessment scales.
+- [Research notes](https://psychology-notes.yetanotherchris.dev/research-notes/): Dated research summaries and discussions, with links to individual posts.
+- [LLM Council research](https://psychology-notes.yetanotherchris.dev/research-topics-llm-council/): Index of multi-model answers and AI-generated consensus reports on psychology topics.
+
+## Core notes
+
+- [Cognitive biases](https://psychology-notes.yetanotherchris.dev/cognitive-biases/): Notes on biases in judgment and thinking.
+- [Experimentation and statistics](https://psychology-notes.yetanotherchris.dev/experimentation-and-statistics/): Psychology research methods and statistical concepts.
+- [Logical fallacies](https://psychology-notes.yetanotherchris.dev/logical-fallacies/): Common errors in reasoning and argument.
+- [Psychotherapy modalities](https://psychology-notes.yetanotherchris.dev/psychotherapy-modalities/): Approaches to psychotherapy.
+- [Stress](https://psychology-notes.yetanotherchris.dev/stress/): Notes on stress.
+
+## Source access and discovery
+
+- [GitHub repository](https://github.com/yetanotherchris/Psychology-Notes/): Source files and project history. Markdown notes are under docs/; standalone applications and LLM reports are under tools/.
+- [Markdown source directory](https://github.com/yetanotherchris/Psychology-Notes/tree/HEAD/docs): Browse the notes as Markdown on the repository's current default branch.
+- [Raw home page Markdown](https://raw.githubusercontent.com/yetanotherchris/Psychology-Notes/HEAD/docs/README.md): Example raw source URL. Other Markdown sources use the same prefix followed by their path under docs/.
+- [Sitemap](https://psychology-notes.yetanotherchris.dev/sitemap.xml): Discover published documentation URLs.
+
+Most documentation URLs map to docs/<path>.md in the repository. Section indexes map to docs/<path>/index.md, and research posts map to docs/research-notes/posts/<post-slug>.md. The home page maps to docs/README.md. Source changes may precede the deployed site; use published pages when describing what is currently live. Cite the specific note and its original references rather than this index alone.
+
+## Optional
+
+- [Questionnaires](https://psychology-notes.yetanotherchris.dev/questionnaires-list/): Educational psychological questionnaires and inventories.
+- [Academic search](https://psychology-notes.yetanotherchris.dev/tools/academic-search/): Browser-based academic literature search tool.
+- [Speedreader](https://psychology-notes.yetanotherchris.dev/tools/speedreader/): Browser-based speed-reading tool.
+- [Word counter](https://psychology-notes.yetanotherchris.dev/tools/wordcounter/): Browser-based text utility.
+
+Interactive tools may require JavaScript and external services. Their HTML alone does not provide the same functionality as running them in a browser.
